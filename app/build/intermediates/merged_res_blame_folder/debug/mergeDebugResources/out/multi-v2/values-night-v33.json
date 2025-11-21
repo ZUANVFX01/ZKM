@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.zuan.kernelmanager.app-mergeDebugResources-52:/values-night-v33/values-night-v33.xml",
+            "map": [
+                {
+                    "source": "/data/user/0/com.tom.rv2ide/files/home/.gradle/caches/9.2.0/transforms/8bcc5474e05c7d24fb4ce28c96c0380a/transformed/core-splashscreen-1.2.0/res/values-night-v33/values-night-v33.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "4",
+                        "endColumns": "12",
+                        "endOffsets": "215"
+                    }
+                }
+            ]
+        }
+    ]
+}
