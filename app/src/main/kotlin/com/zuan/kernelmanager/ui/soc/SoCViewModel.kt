@@ -2,6 +2,10 @@
  * Copyright (c) 2025 Rve <rve27github@gmail.com>
  * All Rights Reserved.
  */
+ /*
+ * Copyright (c) 2025 ZKM <zuanvfx01github@gmail.com>
+ * All Rights Reserved.
+ */
 package com.zuan.kernelmanager.ui.soc
 
 import android.app.Application
@@ -21,6 +25,7 @@ import kotlinx.coroutines.launch
 class SoCViewModel(application: Application) : AndroidViewModel(application) {
     private val settingsPreference = SettingsPreference.getInstance(application)
 
+    // === CPU STATE ===
     data class CPUState(
         val minFreq: String,
         val maxFreq: String,
@@ -34,24 +39,22 @@ class SoCViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
+    // === GPU STATE (INI YANG PENTING) ===
     data class GPUState(
-        val minFreq: String,
-        val maxFreq: String,
+        val type: SoCUtils.GpuType,
         val currentFreq: String,
-        val gov: String,
-        val maxPwrlevel: String,
-        val minPwrlevel: String,
-        val defaultPwrlevel: String,
-        val adrenoBoost: String,
-        val gpuThrottling: String,
-        val availableFreq: List<String>,
-        val availableGov: List<String>,
+        
+        // FIELD INI YANG DICARI OLEH SOCSCREEN
+        val isAdrenoBoostActive: Boolean = false, 
+        
+        val mtkFixedIndex: String = "-1",
     ) {
         companion object {
-            val EMPTY = GPUState("N/A", "N/A", "N/A", "N/A", "N/A", "N/A", "N/A", "N/A", "0", emptyList(), emptyList())
+            val EMPTY = GPUState(SoCUtils.GpuType.UNKNOWN, "N/A")
         }
     }
 
+    // === CLUSTER CONFIG ===
     sealed class ClusterConfig(
         val name: String,
         val minFreqPath: String,
@@ -95,6 +98,7 @@ class SoCViewModel(application: Application) : AndroidViewModel(application) {
         )
     }
 
+    // StateFlow Declarations
     private val _cpu0State = MutableStateFlow(CPUState.EMPTY)
     val cpu0State: StateFlow<CPUState> = _cpu0State
 
@@ -136,15 +140,10 @@ class SoCViewModel(application: Application) : AndroidViewModel(application) {
 
     private val _hasPrimeCluster = MutableStateFlow(false)
     val hasPrimeCluster: StateFlow<Boolean> = _hasPrimeCluster
-
-    private val _hasDefaultPwrlevel = MutableStateFlow(false)
-    val hasDefaultPwrlevel: StateFlow<Boolean> = _hasDefaultPwrlevel
-
+    
+    // Feature Flag: Apakah file Adreno Boost ADA di sistem?
     private val _hasAdrenoBoost = MutableStateFlow(false)
     val hasAdrenoBoost: StateFlow<Boolean> = _hasAdrenoBoost
-
-    private val _hasGPUThrottling = MutableStateFlow(false)
-    val hasGPUThrottling: StateFlow<Boolean> = _hasGPUThrottling
 
     private var job: Job? = null
     private var detectedBigClusterConfig: ClusterConfig.Big? = null
@@ -202,24 +201,38 @@ class SoCViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     private fun loadGPUData() {
-        val gpuState = GPUState(
-            minFreq = Utils.readFile(SoCUtils.MIN_FREQ_GPU),
-            maxFreq = Utils.readFile(SoCUtils.MAX_FREQ_GPU),
-            currentFreq = SoCUtils.readFreqGPU(SoCUtils.CURRENT_FREQ_GPU),
-            gov = Utils.readFile(SoCUtils.GOV_GPU),
-            maxPwrlevel = Utils.readFile(SoCUtils.MAX_PWRLEVEL),
-            minPwrlevel = Utils.readFile(SoCUtils.MIN_PWRLEVEL),
-            defaultPwrlevel = Utils.readFile(SoCUtils.DEFAULT_PWRLEVEL),
-            adrenoBoost = Utils.readFile(SoCUtils.ADRENO_BOOST),
-            gpuThrottling = Utils.readFile(SoCUtils.GPU_THROTTLING),
-            availableFreq = SoCUtils.readAvailableFreqGPU(SoCUtils.AVAILABLE_FREQ_GPU),
-            availableGov = SoCUtils.readAvailableGovGPU(SoCUtils.AVAILABLE_GOV_GPU),
-        )
-        _gpuState.value = gpuState
+        val type = SoCUtils.getGpuType()
 
-        _hasDefaultPwrlevel.value = Utils.testFile(SoCUtils.DEFAULT_PWRLEVEL)
-        _hasAdrenoBoost.value = Utils.testFile(SoCUtils.ADRENO_BOOST)
-        _hasGPUThrottling.value = Utils.testFile(SoCUtils.GPU_THROTTLING)
+        if (type == SoCUtils.GpuType.ADRENO) {
+            val freq = SoCUtils.readFreqGPU(SoCUtils.CURRENT_FREQ_GPU)
+            
+            // Check Feature Availability
+            _hasAdrenoBoost.value = Utils.testFile(SoCUtils.ADRENO_BOOST)
+            
+            // Check if Active (Value != 0)
+            val boostVal = Utils.readFile(SoCUtils.ADRENO_BOOST)
+            val isBoostActive = boostVal.isNotEmpty() && boostVal != "0"
+            
+            _gpuState.value = GPUState(
+                type = type,
+                currentFreq = freq,
+                isAdrenoBoostActive = isBoostActive
+            )
+            
+        } else if (type == SoCUtils.GpuType.MEDIATEK_V2) {
+            val freqMap = SoCUtils.getMtkFreqMap()
+            val currentFixedIdx = Utils.readFile(SoCUtils.MTK_FIXED_INDEX).trim()
+            
+            val displayFreq = if (currentFixedIdx == "-1" || currentFixedIdx.isEmpty()) "Dynamic" else {
+                freqMap.entries.find { it.value.toIntOrNull() == currentFixedIdx.toIntOrNull() }?.key ?: "Unknown"
+            }
+
+            _gpuState.value = GPUState(
+                type = type,
+                currentFreq = displayFreq,
+                mtkFixedIndex = currentFixedIdx
+            )
+        }
     }
 
     private fun loadTemperatureAndUsageData() {
@@ -272,7 +285,6 @@ class SoCViewModel(application: Application) : AndroidViewModel(application) {
                 ClusterConfig.Little.name -> updateLittleClusterFreq(target, selectedFreq)
                 ClusterConfig.Big(4).name, ClusterConfig.Big(6).name -> updateBigClusterFreq(target, selectedFreq)
                 ClusterConfig.Prime.name -> updatePrimeClusterFreq(target, selectedFreq)
-                "gpu" -> updateGPUFreq(target, selectedFreq)
             }
         }
     }
@@ -281,7 +293,6 @@ class SoCViewModel(application: Application) : AndroidViewModel(application) {
         val config = ClusterConfig.Little
         val path = if (target == "min") config.minFreqPath else config.maxFreqPath
         SoCUtils.writeFreqCPU(path, selectedFreq)
-
         _cpu0State.value = _cpu0State.value.copy(
             minFreq = SoCUtils.readFreqCPU(config.minFreqPath),
             maxFreq = SoCUtils.readFreqCPU(config.maxFreqPath),
@@ -292,7 +303,6 @@ class SoCViewModel(application: Application) : AndroidViewModel(application) {
         val config = detectedBigClusterConfig ?: return
         val path = if (target == "min") config.minFreqPath else config.maxFreqPath
         SoCUtils.writeFreqCPU(path, selectedFreq)
-
         _bigClusterState.value = _bigClusterState.value.copy(
             minFreq = SoCUtils.readFreqCPU(config.minFreqPath),
             maxFreq = SoCUtils.readFreqCPU(config.maxFreqPath),
@@ -303,20 +313,9 @@ class SoCViewModel(application: Application) : AndroidViewModel(application) {
         val config = ClusterConfig.Prime
         val path = if (target == "min") config.minFreqPath else config.maxFreqPath
         SoCUtils.writeFreqCPU(path, selectedFreq)
-
         _primeClusterState.value = _primeClusterState.value.copy(
             minFreq = SoCUtils.readFreqCPU(config.minFreqPath),
             maxFreq = SoCUtils.readFreqCPU(config.maxFreqPath),
-        )
-    }
-
-    private fun updateGPUFreq(target: String, selectedFreq: String) {
-        val path = if (target == "min") SoCUtils.MIN_FREQ_GPU else SoCUtils.MAX_FREQ_GPU
-        SoCUtils.writeFreqGPU(path, selectedFreq)
-
-        _gpuState.value = _gpuState.value.copy(
-            minFreq = Utils.readFile(SoCUtils.MIN_FREQ_GPU),
-            maxFreq = Utils.readFile(SoCUtils.MAX_FREQ_GPU),
         )
     }
 
@@ -333,7 +332,6 @@ class SoCViewModel(application: Application) : AndroidViewModel(application) {
             ClusterConfig.Little.name -> ClusterConfig.Little.govPath
             ClusterConfig.Big(4).name, ClusterConfig.Big(6).name -> detectedBigClusterConfig?.govPath
             ClusterConfig.Prime.name -> ClusterConfig.Prime.govPath
-            "gpu" -> SoCUtils.GOV_GPU
             else -> null
         }
     }
@@ -341,18 +339,9 @@ class SoCViewModel(application: Application) : AndroidViewModel(application) {
     private fun updateClusterGovernorState(cluster: String, governorPath: String) {
         val newGovernor = Utils.readFile(governorPath)
         when (cluster) {
-            ClusterConfig.Little.name -> {
-                _cpu0State.value = _cpu0State.value.copy(gov = newGovernor)
-            }
-            ClusterConfig.Big(4).name, ClusterConfig.Big(6).name -> {
-                _bigClusterState.value = _bigClusterState.value.copy(gov = newGovernor)
-            }
-            ClusterConfig.Prime.name -> {
-                _primeClusterState.value = _primeClusterState.value.copy(gov = newGovernor)
-            }
-            "gpu" -> {
-                _gpuState.value = _gpuState.value.copy(gov = newGovernor)
-            }
+            ClusterConfig.Little.name -> _cpu0State.value = _cpu0State.value.copy(gov = newGovernor)
+            ClusterConfig.Big(4).name, ClusterConfig.Big(6).name -> _bigClusterState.value = _bigClusterState.value.copy(gov = newGovernor)
+            ClusterConfig.Prime.name -> _primeClusterState.value = _primeClusterState.value.copy(gov = newGovernor)
         }
     }
 
@@ -366,37 +355,8 @@ class SoCViewModel(application: Application) : AndroidViewModel(application) {
     fun updateCpuSchedBoostOnInput(isEnabled: Boolean) {
         viewModelScope.launch(Dispatchers.IO) {
             val value = if (isEnabled) "1" else "0"
-
             Utils.writeFile(SoCUtils.CPU_SCHED_BOOST_ON_INPUT, value)
             _cpuSchedBoostOnInput.value = Utils.readFile(SoCUtils.CPU_SCHED_BOOST_ON_INPUT)
-        }
-    }
-
-    fun updateDefaultPwrlevel(value: String) {
-        viewModelScope.launch(Dispatchers.IO) {
-            Utils.writeFile(SoCUtils.DEFAULT_PWRLEVEL, value)
-            _gpuState.value = _gpuState.value.copy(
-                defaultPwrlevel = Utils.readFile(SoCUtils.DEFAULT_PWRLEVEL),
-            )
-        }
-    }
-
-    fun updateAdrenoBoost(value: String) {
-        viewModelScope.launch(Dispatchers.IO) {
-            Utils.writeFile(SoCUtils.ADRENO_BOOST, value)
-            _gpuState.value = _gpuState.value.copy(
-                adrenoBoost = Utils.readFile(SoCUtils.ADRENO_BOOST),
-            )
-        }
-    }
-
-    fun updateGPUThrottling(isChecked: Boolean) {
-        viewModelScope.launch(Dispatchers.IO) {
-            val newValue = if (isChecked) "1" else "0"
-            Utils.writeFile(SoCUtils.GPU_THROTTLING, newValue)
-            _gpuState.value = _gpuState.value.copy(
-                gpuThrottling = Utils.readFile(SoCUtils.GPU_THROTTLING),
-            )
         }
     }
 
