@@ -2,16 +2,21 @@
  * Copyright (c) 2025 Rve <rve27github@gmail.com>
  * All Rights Reserved.
  */
+ /*
+ * Copyright (c) 2025 ZKM <zuanvfx01github@gmail.com>
+ * All Rights Reserved.
+ */
 @file:OptIn(ExperimentalMaterial3Api::class)
 
 package com.zuan.kernelmanager.ui.home
 
-import android.content.Intent
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.combinedClickable
+import androidx.compose.foundation.isSystemInDarkTheme // IMPORT FIX
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
@@ -22,18 +27,15 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.DisposableEffect
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.rotate // IMPORT FIX
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.StrokeCap // IMPORT FIX
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalClipboardManager
@@ -44,86 +46,52 @@ import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow // IMPORT FIX
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.core.net.toUri
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.zuan.kernelmanager.R
-import com.zuan.kernelmanager.ui.components.CustomListItem
 import com.zuan.kernelmanager.ui.components.PinnedTopAppBar
 import com.zuan.kernelmanager.ui.navigation.BottomNavigationBar
 import com.zuan.kernelmanager.ui.navigation.NavigationRoute
-import com.zuan.kernelmanager.ui.home.HomeViewModel.DeviceInfo
-import dev.chrisbanes.haze.HazeState
 import dev.chrisbanes.haze.haze
 import dev.chrisbanes.haze.rememberHazeState
 
-// Data class untuk Extension Menu - field 'route' sudah ada
-data class ExtensionItem(
-    val name: String,
-    val type: String,
-    val imageVector: ImageVector,
-    val status: ExtensionStatus,
-    val route: String
-)
-
-enum class ExtensionStatus { GOOD, WARNING }
-
-// Data class untuk GPU Info
-data class GpuInfo(
-    val name: String,
-    val vendor: String,
-    val openglInfo: String
-)
-
-// UPDATE: Kernel sudah dihapus dari sini
-val dummyExtensions = listOf(
-    ExtensionItem("Terminal", "SYSTEM", Icons.Default.Code, ExtensionStatus.GOOD, NavigationRoute.Terminal.route),
-    ExtensionItem("SetEdit", "SYSTEM", Icons.Default.Description, ExtensionStatus.WARNING, NavigationRoute.SetEdit.route),
-    ExtensionItem("Performa", "PERFORMANCE", Icons.Default.Speed, ExtensionStatus.GOOD, NavigationRoute.Performance.route)
-)
-
 @Composable
-fun HomeScreen(viewModel: HomeViewModel = viewModel(), navController: NavController) {
+fun HomeScreen(
+    viewModel: HomeViewModel = viewModel(), 
+    navController: NavController
+) {
     val context = LocalContext.current
     val lifecycleOwner = LocalLifecycleOwner.current
     val colorScheme = MaterialTheme.colorScheme
-
     val hazeState = rememberHazeState()
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior(rememberTopAppBarState())
 
+    val deviceInfo by viewModel.deviceInfo.collectAsState()
+    val extensions by viewModel.extensionList.collectAsState()
+
     DisposableEffect(lifecycleOwner) {
         val observer = LifecycleEventObserver { _, event ->
-            when (event) {
-                Lifecycle.Event.ON_RESUME -> viewModel.loadDeviceInfo(context)
-                else -> {}
+            if (event == Lifecycle.Event.ON_RESUME) {
+                viewModel.loadDeviceInfo(context)
+                viewModel.startRamMonitor(context)
             }
         }
-
         lifecycleOwner.lifecycle.addObserver(observer)
-
-        onDispose {
-            lifecycleOwner.lifecycle.removeObserver(observer)
-        }
+        onDispose { lifecycleOwner.lifecycle.removeObserver(observer) }
     }
 
     Scaffold(
-        topBar = {
-            PinnedTopAppBar(
-                scrollBehavior = scrollBehavior,
-                hazeState = hazeState
-            )
-        },
-        bottomBar = { BottomNavigationBar(navController) },
+        topBar = { PinnedTopAppBar(scrollBehavior = scrollBehavior, hazeState = hazeState) },
+        bottomBar = { BottomNavigationBar(navController, hazeState = hazeState) },
         modifier = Modifier.background(colorScheme.background)
     ) { innerPadding ->
-        val deviceInfo by viewModel.deviceInfo.collectAsState()
-
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -142,18 +110,14 @@ fun HomeScreen(viewModel: HomeViewModel = viewModel(), navController: NavControl
             GpuInfoSection(deviceInfo)
             Spacer(modifier = Modifier.height(24.dp))
 
-            // Pass navController untuk navigasi saat diklik
             ExtensionMenuSection(
-                onItemClick = { route ->
-                    navController.navigate(route)
-                }
+                extensions = extensions,
+                onItemClick = { route -> navController.navigate(route) }
             )
             Spacer(modifier = Modifier.height(24.dp))
 
             PerformanceSettingsSection(
-                onClick = {
-                    navController.navigate(NavigationRoute.Performance.route)
-                }
+                onClick = { navController.navigate(NavigationRoute.Performance.route) }
             )
 
             Spacer(modifier = Modifier.height(innerPadding.calculateBottomPadding() + 24.dp))
@@ -161,132 +125,165 @@ fun HomeScreen(viewModel: HomeViewModel = viewModel(), navController: NavControl
     }
 }
 
-// ... (Kode DeviceInfoSection, SystemInfoSection, KernelInfoCard, SystemStatsCard, GpuInfoSection, GpuInfoCard sama seperti sebelumnya) ...
-// (Untuk menghemat ruang, saya fokus ke bagian yang berubah. Jika Anda perlu full code, silakan bilang.)
-
 @Composable
 fun DeviceInfoSection(deviceInfo: DeviceInfo) {
     val colorScheme = MaterialTheme.colorScheme
-    val isDarkMode = colorScheme.primary == Color(0xFFBB86FC) ||
-            colorScheme.background == Color(0xFF121212)
-
-    val gradientBrush = if (isDarkMode) {
-        Brush.verticalGradient(
-            colors = listOf(
-                Color(0xFF004D40),
-                colorScheme.surface
-            )
-        )
+    val isDark = isSystemInDarkTheme()
+    val gradientColors = if (isDark) {
+        listOf(Color(0xFF004D40), Color(0xFF00695C)) 
     } else {
-        Brush.verticalGradient(
-            colors = listOf(
-                Color(0xFF00695C),
-                colorScheme.background
-            )
-        )
+        listOf(Color(0xFF00897B), Color(0xFF4DB6AC)) 
     }
+
+    val animatedProgress by animateFloatAsState(
+        targetValue = deviceInfo.ramUsageProgress,
+        label = "RamProgress",
+        animationSpec = androidx.compose.animation.core.tween(500)
+    )
 
     Card(
         modifier = Modifier
             .fillMaxWidth()
             .padding(horizontal = 16.dp)
-            .background(
-                brush = gradientBrush,
-                shape = RoundedCornerShape(20.dp)
-            ),
-        shape = RoundedCornerShape(20.dp),
+            .height(180.dp), 
+        shape = RoundedCornerShape(24.dp),
         colors = CardDefaults.cardColors(containerColor = Color.Transparent)
     ) {
-        Column(
-            modifier = Modifier.padding(vertical = 20.dp, horizontal = 16.dp)
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(Brush.horizontalGradient(gradientColors))
         ) {
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Icon(
-                    imageVector = Icons.Default.PhoneAndroid,
-                    contentDescription = "Device Info",
-                    tint = colorScheme.onSurface,
-                    modifier = Modifier.size(20.dp)
-                )
-                Spacer(modifier = Modifier.width(8.dp))
-                Text(
-                    text = "Device Information",
-                    fontWeight = FontWeight.Bold,
-                    color = colorScheme.onSurface,
-                    fontSize = 16.sp
-                )
-                Spacer(modifier = Modifier.weight(1f))
-
-                Box(contentAlignment = Alignment.TopEnd) {
-                    Box(
-                        modifier = Modifier
-                            .size(12.dp)
-                            .clip(CircleShape)
-                            .background(Color.Red)
-                    )
-                }
-            }
-
-            Spacer(modifier = Modifier.height(16.dp))
+            // --- WATERMARK LOGO ICON ---
+            Icon(
+                painter = painterResource(id = R.drawable.ic_app), // GANTI ICON SESUAI DRAWABLE KAMU
+                contentDescription = null,
+                tint = Color.White.copy(alpha = 0.1f),
+                modifier = Modifier
+                    .align(Alignment.BottomEnd)
+                    .size(160.dp)
+                    .offset(x = 30.dp, y = 30.dp)
+                    .rotate(-15f)
+            )
 
             Row(
-                modifier = Modifier.fillMaxWidth(),
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(24.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Column(
-                    modifier = Modifier.weight(1f)
-                ) {
+                // === BAGIAN KIRI (TEKS) ===
+                Column(modifier = Modifier.weight(1f)) {
                     Text(
                         text = deviceInfo.manufacturer,
-                        color = colorScheme.onSurface,
-                        fontSize = 32.sp,
-                        fontWeight = FontWeight.Bold
+                        fontSize = 36.sp,
+                        fontWeight = FontWeight.Black,
+                        color = Color.White,
+                        lineHeight = 40.sp,
+                        letterSpacing = (-1).sp
                     )
-                    Text(
-                        text = deviceInfo.deviceCodename,
-                        color = colorScheme.onSurface,
-                        fontSize = 16.sp,
-                        fontWeight = FontWeight.Medium
-                    )
-                    Spacer(modifier = Modifier.height(4.dp))
+
+                    Spacer(modifier = Modifier.height(8.dp))
+
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Text(
-                            text = deviceInfo.deviceName,
-                            color = colorScheme.onSurface.copy(alpha = 0.7f),
-                            fontSize = 14.sp
+                            text = deviceInfo.deviceCodename,
+                            fontSize = 18.sp,
+                            fontWeight = FontWeight.Bold,
+                            color = Color.White.copy(alpha = 0.9f)
                         )
-                        Icon(
-                            imageVector = Icons.Default.ArrowDropDown,
-                            contentDescription = "Dropdown",
-                            tint = colorScheme.onSurface.copy(alpha = 0.7f)
+                        Spacer(modifier = Modifier.width(8.dp))
+                        Text(
+                            text = "21121210C", // Model number (bisa diganti dinamis)
+                            fontSize = 14.sp,
+                            fontWeight = FontWeight.Medium,
+                            color = Color.White.copy(alpha = 0.7f)
+                        )
+                        
+                        Spacer(modifier = Modifier.width(12.dp))
+                        
+                        Surface(
+                            color = Color(0xFF2D2D2D), 
+                            shape = RoundedCornerShape(50),
+                            modifier = Modifier.height(24.dp)
+                        ) {
+                            Box(contentAlignment = Alignment.Center, modifier = Modifier.padding(horizontal = 10.dp)) {
+                                Text(
+                                    text = "VIP",
+                                    color = Color(0xFFFFD700),
+                                    fontSize = 11.sp,
+                                    fontWeight = FontWeight.Bold
+                                )
+                            }
+                        }
+                    }
+
+                    Spacer(modifier = Modifier.weight(1f))
+
+                    // --- UPDATE DISINI SESUAI REQUEST ---
+                    // LABEL ATAS: Build User (Hasil Shell Command)
+                    // LABEL BAWAH: Info CPU (Hasil SoCUtils.getCpuInfo)
+                    Column {
+                        Text(
+                            text = deviceInfo.buildUser.uppercase(), // Judul kecil jadi nama usernya (misal: USER)
+                            fontSize = 12.sp,
+                            fontWeight = FontWeight.Bold,
+                            color = Color.White.copy(alpha = 0.6f)
+                        )
+                        Text(
+                            text = deviceInfo.cpu, // Isinya tetap CPU info
+                            fontSize = 14.sp,
+                            fontWeight = FontWeight.Medium,
+                            color = Color.White,
+                            maxLines = 1,
+                            overflow = TextOverflow.Ellipsis
                         )
                     }
                 }
 
-                Box(
-                    contentAlignment = Alignment.Center,
-                    modifier = Modifier.size(100.dp)
+                // === BAGIAN KANAN (RAM MONITOR) ===
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center
                 ) {
-                    CircularProgressIndicator(
-                        progress = 1f,
-                        modifier = Modifier.fillMaxSize(),
-                        color = colorScheme.onSurface.copy(alpha = 0.3f),
-                        strokeWidth = 10.dp
-                    )
-                    CircularProgressIndicator(
-                        progress = 0.65f,
-                        modifier = Modifier.fillMaxSize(),
-                        color = colorScheme.onSurface,
-                        strokeWidth = 10.dp
-                    )
+                    Box(contentAlignment = Alignment.Center, modifier = Modifier.size(90.dp)) {
+                        CircularProgressIndicator(
+                            progress = { 1f },
+                            modifier = Modifier.fillMaxSize(),
+                            color = Color.White.copy(alpha = 0.2f),
+                            strokeWidth = 8.dp,
+                        )
+                        CircularProgressIndicator(
+                            progress = { animatedProgress },
+                            modifier = Modifier.fillMaxSize(),
+                            color = Color.White,
+                            strokeWidth = 8.dp,
+                            trackColor = Color.Transparent,
+                            strokeCap = StrokeCap.Round 
+                        )
+                        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                            Text(
+                                text = deviceInfo.ramAvailableText, 
+                                fontSize = 16.sp,
+                                fontWeight = FontWeight.Bold,
+                                color = Color.White
+                            )
+                            Text(
+                                text = "Free",
+                                fontSize = 10.sp,
+                                fontWeight = FontWeight.Normal,
+                                color = Color.White.copy(alpha = 0.8f)
+                            )
+                        }
+                    }
+                    
+                    Spacer(modifier = Modifier.height(8.dp))
+                    
                     Text(
-                        text = "${deviceInfo.ramInfo}\nAvailable",
-                        color = colorScheme.onSurface,
-                        textAlign = TextAlign.Center,
-                        fontSize = 14.sp,
-                        fontWeight = FontWeight.Bold
+                        text = "Total: ${deviceInfo.ramTotalText}",
+                        fontSize = 11.sp,
+                        color = Color.White.copy(alpha = 0.7f),
+                        fontWeight = FontWeight.Medium
                     )
                 }
             }
@@ -294,38 +291,44 @@ fun DeviceInfoSection(deviceInfo: DeviceInfo) {
     }
 }
 
+// ... Bagian Card System, Kernel, dll biarkan sama ...
+
 @Composable
 fun SystemInfoSection(deviceInfo: DeviceInfo) {
-    val colorScheme = MaterialTheme.colorScheme
-
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(horizontal = 16.dp),
+            .padding(horizontal = 16.dp)
+            .height(IntrinsicSize.Min), 
         horizontalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         KernelInfoCard(
-            deviceInfo = deviceInfo,
-            modifier = Modifier.weight(1f)
+            deviceInfo = deviceInfo, 
+            modifier = Modifier.weight(1f).fillMaxHeight()
         )
-
+        
         Column(
-            modifier = Modifier.weight(1f),
+            modifier = Modifier
+                .weight(1f)
+                .fillMaxHeight(),
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             SystemStatsCard(
-                title = "Android",
-                icon = Icons.Default.Android,
-                value = deviceInfo.androidVersion.split(" ").firstOrNull() ?: "13",
-                unit = "Version",
-                trend = deviceInfo.androidVersion.split(" ").getOrNull(1) ?: "Tiramisu"
+                title = "Android", 
+                icon = Icons.Default.Android, 
+                value = deviceInfo.androidVersionNumber, 
+                unit = "Version", 
+                trend = deviceInfo.androidVersionTrend,
+                modifier = Modifier.weight(0.4f).fillMaxWidth()
             )
+
             SystemStatsCard(
-                title = "Selinux",
-                icon = Icons.Default.Security,
-                value = "Enforcing",
-                unit = "Mode",
-                trend = "Strict"
+                title = "Selinux", 
+                icon = Icons.Default.Security, 
+                value = deviceInfo.selinuxStatus, 
+                unit = "Mode", 
+                trend = "Status",
+                modifier = Modifier.weight(0.6f).fillMaxWidth().fillMaxHeight()
             )
         }
     }
@@ -333,94 +336,57 @@ fun SystemInfoSection(deviceInfo: DeviceInfo) {
 
 @Composable
 fun KernelInfoCard(deviceInfo: DeviceInfo, modifier: Modifier = Modifier) {
-    var isFullKernelVersion by rememberSaveable { mutableStateOf(false) }
+    var isFullKernelVersion by rememberSaveable { mutableStateOf(true) }
     val clipboardManager = LocalClipboardManager.current
+    val context = LocalContext.current
     val colorScheme = MaterialTheme.colorScheme
+    val displayText = if (isFullKernelVersion) deviceInfo.fullKernelVersion else deviceInfo.kernelVersion
 
     Card(
-        modifier = modifier.height(350.dp),
+        modifier = modifier, 
         shape = RoundedCornerShape(20.dp),
-        colors = CardDefaults.cardColors(
-            containerColor = colorScheme.surfaceVariant
-        )
+        colors = CardDefaults.cardColors(containerColor = colorScheme.surfaceVariant)
     ) {
         Box(modifier = Modifier.fillMaxSize()) {
             Image(
                 painter = painterResource(id = R.drawable.ic_linux),
-                contentDescription = "Linux Tux Icon",
-                modifier = Modifier
-                    .align(Alignment.TopEnd)
-                    .padding(16.dp)
-                    .size(20.dp),
+                contentDescription = "Linux",
+                modifier = Modifier.align(Alignment.TopEnd).padding(16.dp).size(20.dp),
                 contentScale = ContentScale.Fit,
                 colorFilter = androidx.compose.ui.graphics.ColorFilter.tint(colorScheme.onSurface)
             )
-
             Column {
                 Column(
                     modifier = Modifier
                         .padding(16.dp)
                         .combinedClickable(
                             onClick = { isFullKernelVersion = !isFullKernelVersion },
-                            onLongClick = {
-                                clipboardManager.setText(
-                                    AnnotatedString(
-                                        if (isFullKernelVersion) deviceInfo.fullKernelVersion
-                                        else deviceInfo.kernelVersion
-                                    )
-                                )
-                            }
+                            onLongClick = { clipboardManager.setText(AnnotatedString(displayText)) }
                         )
                 ) {
-                    Text(
-                        text = "Kernel",
-                        fontWeight = FontWeight.Bold,
-                        fontSize = 16.sp,
-                        color = colorScheme.onSurface
-                    )
+                    Text("Kernel", fontWeight = FontWeight.Bold, fontSize = 16.sp, color = colorScheme.onSurface)
                     Spacer(modifier = Modifier.height(4.dp))
-                    Text(
-                        text = if (isFullKernelVersion) deviceInfo.fullKernelVersion
-                        else deviceInfo.kernelVersion,
-                        fontSize = 12.sp,
-                        color = colorScheme.onSurfaceVariant,
-                        lineHeight = 16.sp,
-                        modifier = Modifier.padding(end = 24.dp)
-                    )
+                    Text(displayText, fontSize = 12.sp, color = colorScheme.onSurfaceVariant, lineHeight = 16.sp, modifier = Modifier.padding(end = 24.dp))
                 }
-
                 Spacer(modifier = Modifier.weight(1f))
-
                 Box(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(150.dp)
-                        .background(colorScheme.surfaceVariant),
+                    modifier = Modifier.fillMaxWidth().height(150.dp).background(colorScheme.surfaceVariant),
                     contentAlignment = Alignment.Center
                 ) {
-                    Icon(
-                        imageVector = Icons.Default.Settings,
-                        contentDescription = "Kernel Info",
-                        modifier = Modifier.size(100.dp),
-                        tint = colorScheme.onSurfaceVariant
-                    )
+                    Icon(Icons.Default.Settings, "Kernel", modifier = Modifier.size(100.dp), tint = colorScheme.onSurfaceVariant)
                     Button(
-                        onClick = { /* TODO: Navigate to kernel details */ },
-                        modifier = Modifier
-                            .align(Alignment.BottomCenter)
-                            .padding(bottom = 16.dp)
-                            .width(120.dp),
+                        onClick = { 
+                            try {
+                                val intent = android.content.Intent(android.provider.Settings.ACTION_DEVICE_INFO_SETTINGS)
+                                intent.addFlags(android.content.Intent.FLAG_ACTIVITY_NEW_TASK) 
+                                context.startActivity(intent)
+                            } catch (e: Exception) { e.printStackTrace() }
+                        },
+                        modifier = Modifier.align(Alignment.BottomCenter).padding(bottom = 16.dp).width(120.dp),
                         shape = RoundedCornerShape(50),
-                        colors = ButtonDefaults.buttonColors(
-                            containerColor = colorScheme.primaryContainer,
-                            contentColor = colorScheme.onPrimaryContainer
-                        )
+                        colors = ButtonDefaults.buttonColors(containerColor = colorScheme.primaryContainer, contentColor = colorScheme.onPrimaryContainer)
                     ) {
-                        Text(
-                            text = "View Details",
-                            fontSize = 12.sp,
-                            fontWeight = FontWeight.Bold
-                        )
+                        Text("View Details", fontSize = 12.sp, fontWeight = FontWeight.Bold)
                     }
                 }
             }
@@ -429,62 +395,14 @@ fun KernelInfoCard(deviceInfo: DeviceInfo, modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun SystemStatsCard(title: String, icon: ImageVector, value: String, unit: String, trend: String) {
-    val colorScheme = MaterialTheme.colorScheme
-    Card(
-        modifier = Modifier.fillMaxWidth(),
-        shape = RoundedCornerShape(20.dp),
-        colors = CardDefaults.cardColors(containerColor = colorScheme.surfaceVariant)
-    ) {
-        Column(modifier = Modifier.padding(16.dp)) {
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.SpaceBetween
-            ) {
-                Text(text = title, fontWeight = FontWeight.Bold, fontSize = 12.sp, color = colorScheme.onSurface)
-                Box(
-                    modifier = Modifier
-                        .size(24.dp)
-                        .clip(CircleShape)
-                        .background(colorScheme.primaryContainer),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Icon(imageVector = icon, contentDescription = title, modifier = Modifier.size(16.dp), tint = colorScheme.onPrimaryContainer)
-                }
-            }
-            Spacer(modifier = Modifier.height(12.dp))
-            Row(verticalAlignment = Alignment.CenterVertically) {
-                Text(text = value, fontSize = 28.sp, fontWeight = FontWeight.Bold, color = colorScheme.onSurface)
-                Text(text = unit, fontSize = 14.sp, color = colorScheme.onSurfaceVariant, modifier = Modifier.padding(start = 4.dp))
-            }
-            Spacer(modifier = Modifier.height(8.dp))
-            Row(verticalAlignment = Alignment.CenterVertically) {
-                Icon(imageVector = Icons.Default.ArrowDownward, contentDescription = "Status", modifier = Modifier.size(16.dp), tint = colorScheme.onSurfaceVariant)
-                Text(text = trend, fontSize = 12.sp, color = colorScheme.onSurfaceVariant, modifier = Modifier.padding(start = 4.dp))
-            }
-        }
-    }
-}
-
-@Composable
-fun GpuInfoSection(deviceInfo: DeviceInfo) {
-    Column(modifier = Modifier.fillMaxWidth()) {
-        GpuInfoCard(
-            gpuInfo = GpuInfo(
-                name = deviceInfo.gpuModel,
-                vendor = deviceInfo.gpuVendor,
-                openglInfo = deviceInfo.gpuGlVersion
-            ),
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 16.dp)
-        )
-    }
-}
-
-@Composable
-fun GpuInfoCard(gpuInfo: GpuInfo, modifier: Modifier = Modifier) {
+fun SystemStatsCard(
+    title: String, 
+    icon: ImageVector, 
+    value: String, 
+    unit: String, 
+    trend: String,
+    modifier: Modifier = Modifier
+) {
     val colorScheme = MaterialTheme.colorScheme
     Card(
         modifier = modifier,
@@ -497,28 +415,55 @@ fun GpuInfoCard(gpuInfo: GpuInfo, modifier: Modifier = Modifier) {
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                Text(text = "Graphics Processing Unit", fontWeight = FontWeight.Bold, fontSize = 16.sp, color = colorScheme.onSurface)
+                Text(title, fontWeight = FontWeight.Bold, fontSize = 12.sp, color = colorScheme.onSurface)
                 Box(
-                    modifier = Modifier
-                        .size(32.dp)
-                        .clip(CircleShape)
-                        .background(colorScheme.primaryContainer),
+                    modifier = Modifier.size(24.dp).clip(CircleShape).background(colorScheme.primaryContainer),
                     contentAlignment = Alignment.Center
                 ) {
-                    Icon(imageVector = Icons.Default.Memory, contentDescription = "GPU", modifier = Modifier.size(20.dp), tint = colorScheme.onPrimaryContainer)
+                    Icon(icon, title, modifier = Modifier.size(16.dp), tint = colorScheme.onPrimaryContainer)
+                }
+            }
+            Spacer(modifier = Modifier.height(12.dp))
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Text(value, fontSize = 28.sp, fontWeight = FontWeight.Bold, color = colorScheme.onSurface)
+                Text(unit, fontSize = 14.sp, color = colorScheme.onSurfaceVariant, modifier = Modifier.padding(start = 4.dp))
+            }
+            Spacer(modifier = Modifier.height(8.dp))
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Icon(Icons.Default.ArrowDownward, "Trend", modifier = Modifier.size(16.dp), tint = colorScheme.onSurfaceVariant)
+                Text(trend, fontSize = 12.sp, color = colorScheme.onSurfaceVariant, modifier = Modifier.padding(start = 4.dp))
+            }
+        }
+    }
+}
+
+@Composable
+fun GpuInfoSection(deviceInfo: DeviceInfo) {
+    val colorScheme = MaterialTheme.colorScheme
+    Card(
+        modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
+        shape = RoundedCornerShape(20.dp),
+        colors = CardDefaults.cardColors(containerColor = colorScheme.surfaceVariant)
+    ) {
+        Column(modifier = Modifier.padding(16.dp)) {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+                Text("Graphics Processing Unit", fontWeight = FontWeight.Bold, fontSize = 16.sp, color = colorScheme.onSurface)
+                Box(
+                    modifier = Modifier.size(32.dp).clip(CircleShape).background(colorScheme.primaryContainer),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Icon(Icons.Default.Memory, "GPU", modifier = Modifier.size(20.dp), tint = colorScheme.onPrimaryContainer)
                 }
             }
             Spacer(modifier = Modifier.height(16.dp))
             Column {
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    Text(text = "GPU:", fontSize = 14.sp, color = colorScheme.onSurfaceVariant, fontWeight = FontWeight.Medium, modifier = Modifier.width(60.dp))
-                    Text(text = gpuInfo.name, fontSize = 16.sp, color = colorScheme.onSurface, fontWeight = FontWeight.Bold)
-                }
+                GpuDetailRow("GPU:", deviceInfo.gpuModel)
                 Spacer(modifier = Modifier.height(8.dp))
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    Text(text = "Vendor:", fontSize = 14.sp, color = colorScheme.onSurfaceVariant, fontWeight = FontWeight.Medium, modifier = Modifier.width(60.dp))
-                    Text(text = gpuInfo.vendor, fontSize = 16.sp, color = colorScheme.onSurface, fontWeight = FontWeight.Bold)
-                }
+                GpuDetailRow("Vendor:", deviceInfo.gpuVendor)
             }
             Spacer(modifier = Modifier.height(16.dp))
             Card(
@@ -527,9 +472,9 @@ fun GpuInfoCard(gpuInfo: GpuInfo, modifier: Modifier = Modifier) {
                 colors = CardDefaults.cardColors(containerColor = colorScheme.surfaceVariant)
             ) {
                 Column(modifier = Modifier.padding(12.dp)) {
-                    Text(text = "OpenGL ES Info:", fontSize = 12.sp, color = colorScheme.onSurfaceVariant, fontWeight = FontWeight.Medium)
+                    Text("OpenGL ES Info:", fontSize = 12.sp, color = colorScheme.onSurfaceVariant, fontWeight = FontWeight.Medium)
                     Spacer(modifier = Modifier.height(4.dp))
-                    Text(text = gpuInfo.openglInfo, fontSize = 10.sp, color = colorScheme.onSurfaceVariant, lineHeight = 12.sp)
+                    Text(deviceInfo.gpuGlVersion, fontSize = 10.sp, color = colorScheme.onSurfaceVariant, lineHeight = 12.sp)
                 }
             }
         }
@@ -537,14 +482,23 @@ fun GpuInfoCard(gpuInfo: GpuInfo, modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun ExtensionMenuSection(onItemClick: (String) -> Unit) {
+fun GpuDetailRow(label: String, value: String) {
+    val colorScheme = MaterialTheme.colorScheme
+    Row(verticalAlignment = Alignment.CenterVertically) {
+        Text(label, fontSize = 14.sp, color = colorScheme.onSurfaceVariant, fontWeight = FontWeight.Medium, modifier = Modifier.width(60.dp))
+        Text(value, fontSize = 16.sp, color = colorScheme.onSurface, fontWeight = FontWeight.Bold)
+    }
+}
+
+@Composable
+fun ExtensionMenuSection(extensions: List<ExtensionItem>, onItemClick: (String) -> Unit) {
     val colorScheme = MaterialTheme.colorScheme
     Column(modifier = Modifier.fillMaxWidth()) {
         Text(
             text = buildAnnotatedString {
                 append("Extension menu")
-                withStyle(style = SpanStyle(baselineShift = androidx.compose.ui.text.style.BaselineShift.Superscript, fontSize = 16.sp)) {
-                    append(dummyExtensions.size.toString())
+                withStyle(SpanStyle(baselineShift = androidx.compose.ui.text.style.BaselineShift.Superscript, fontSize = 16.sp)) {
+                    append(extensions.size.toString())
                 }
             },
             style = MaterialTheme.typography.headlineLarge,
@@ -557,8 +511,8 @@ fun ExtensionMenuSection(onItemClick: (String) -> Unit) {
             contentPadding = PaddingValues(horizontal = 16.dp),
             horizontalArrangement = Arrangement.spacedBy(16.dp)
         ) {
-            items(dummyExtensions) { extension ->
-                ExtensionItemCard(extension = extension, onClick = { onItemClick(extension.route) })
+            items(extensions) { extension ->
+                ExtensionItemCard(extension, onClick = { onItemClick(extension.route) })
             }
         }
     }
@@ -568,18 +522,20 @@ fun ExtensionMenuSection(onItemClick: (String) -> Unit) {
 fun ExtensionItemCard(extension: ExtensionItem, onClick: () -> Unit) {
     val colorScheme = MaterialTheme.colorScheme
     val isDarkMode = colorScheme.primary == Color(0xFFBB86FC) || colorScheme.background == Color(0xFF121212)
+    val cardColor = if (isDarkMode) Color(0xFF004D40) else Color(0xFF00695C)
+
     Box(
         modifier = Modifier
             .width(160.dp)
             .height(200.dp)
             .clip(RoundedCornerShape(20.dp))
-            .background(if (isDarkMode) Color(0xFF004D40) else Color(0xFF00695C))
+            .background(cardColor)
             .clickable { onClick() }
             .padding(16.dp)
     ) {
         Icon(
             imageVector = if (extension.status == ExtensionStatus.GOOD) Icons.Default.CheckCircle else Icons.Default.Error,
-            contentDescription = "Status",
+            contentDescription = null,
             tint = Color.White.copy(alpha = 0.8f),
             modifier = Modifier.align(Alignment.TopStart)
         )
@@ -590,8 +546,8 @@ fun ExtensionItemCard(extension: ExtensionItem, onClick: () -> Unit) {
             tint = Color.White
         )
         Column(modifier = Modifier.align(Alignment.BottomStart)) {
-            Text(text = extension.name, color = Color.White, fontWeight = FontWeight.Bold, fontSize = 18.sp)
-            Text(text = extension.type, color = Color.White.copy(alpha = 0.7f), fontSize = 12.sp, fontWeight = FontWeight.Medium)
+            Text(extension.name, color = Color.White, fontWeight = FontWeight.Bold, fontSize = 18.sp)
+            Text(extension.type, color = Color.White.copy(alpha = 0.7f), fontSize = 12.sp, fontWeight = FontWeight.Medium)
         }
     }
 }
@@ -600,6 +556,8 @@ fun ExtensionItemCard(extension: ExtensionItem, onClick: () -> Unit) {
 fun PerformanceSettingsSection(onClick: () -> Unit) {
     val colorScheme = MaterialTheme.colorScheme
     val isDarkMode = colorScheme.primary == Color(0xFFBB86FC) || colorScheme.background == Color(0xFF121212)
+    val iconBgColor = if (isDarkMode) Color(0xFF004D40) else Color(0xFF00695C)
+
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -607,17 +565,14 @@ fun PerformanceSettingsSection(onClick: () -> Unit) {
             .padding(horizontal = 16.dp, vertical = 12.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        Icon(imageVector = Icons.Default.ChevronRight, contentDescription = null, tint = colorScheme.onSurfaceVariant)
-        Text(text = "Adjust the performance settings", fontSize = 16.sp, fontWeight = FontWeight.Medium, color = colorScheme.onSurface, modifier = Modifier.padding(start = 8.dp))
+        Icon(Icons.Default.ChevronRight, null, tint = colorScheme.onSurfaceVariant)
+        Text("Adjust the performance settings", fontSize = 16.sp, fontWeight = FontWeight.Medium, color = colorScheme.onSurface, modifier = Modifier.padding(start = 8.dp))
         Spacer(modifier = Modifier.weight(1f))
         Box(
-            modifier = Modifier
-                .size(56.dp)
-                .clip(RoundedCornerShape(16.dp))
-                .background(if (isDarkMode) Color(0xFF004D40) else Color(0xFF00695C)),
+            modifier = Modifier.size(56.dp).clip(RoundedCornerShape(16.dp)).background(iconBgColor),
             contentAlignment = Alignment.Center
         ) {
-            Icon(imageVector = Icons.Default.Tune, contentDescription = "Performance Settings", tint = Color.White)
+            Icon(Icons.Default.Tune, "Performance", tint = Color.White)
         }
     }
 }
