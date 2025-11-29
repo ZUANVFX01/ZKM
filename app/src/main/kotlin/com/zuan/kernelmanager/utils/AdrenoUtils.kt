@@ -23,30 +23,63 @@ object AdrenoUtils {
     const val GPU_THROTTLING = "/sys/class/kgsl/kgsl-3d0/throttling"
     const val GPU_BUSY = "/sys/class/kgsl/kgsl-3d0/gpu_busy_percentage"
 
+    // === ADRENO IDLER PATHS ===
+    const val IDLER_DIR = "/sys/module/adreno_idler/parameters"
+    const val IDLER_ACTIVE = "$IDLER_DIR/adreno_idler_active"
+    const val IDLER_IDLEWAIT = "$IDLER_DIR/adreno_idler_idlewait"
+    const val IDLER_DOWNDIFF = "$IDLER_DIR/adreno_idler_downdifferential"
+    const val IDLER_WORKLOAD = "$IDLER_DIR/adreno_idler_idleworkload"
+
+    // === SIMPLE GPU ALGO PATHS ===
+    const val SIMPLE_GPU_DIR = "/sys/module/simple_gpu_algorithm/parameters"
+    const val SIMPLE_GPU_ACTIVATE = "$SIMPLE_GPU_DIR/simple_gpu_activate"
+    const val SIMPLE_GPU_LAZINESS = "$SIMPLE_GPU_DIR/simple_laziness"
+    const val SIMPLE_RAMP_THRESHOLD = "$SIMPLE_GPU_DIR/simple_ramp_threshold"
+
     fun isAdreno(): Boolean {
         return File("/sys/class/kgsl/kgsl-3d0").exists()
     }
 
+    fun hasAdrenoIdler(): Boolean = File(IDLER_DIR).exists()
+    fun hasSimpleGpu(): Boolean = File(SIMPLE_GPU_DIR).exists()
+
     fun readFreqGPU(filePath: String): String {
         return try {
             val result = Shell.cmd("cat $filePath").exec()
-            if (result.isSuccess) result.out.firstOrNull()?.trim()?.let { (it.toLong() / 1000000).toString() } ?: ""
+            if (result.isSuccess) result.out.firstOrNull()?.trim()?.let { 
+                try {
+                    (it.toLong() / 1000000).toString() 
+                } catch (e: Exception) { "" }
+            } ?: ""
             else ""
         } catch (e: Exception) { "" }
     }
 
     fun writeFreqGPU(filePath: String, frequency: String) {
         try {
-            val freqInKHz = frequency.replace("000000", "")
-            Shell.cmd("echo $freqInKHz > $filePath").exec()
+            // frequency input biasanya sudah dalam MHz dari UI (misal "800")
+            // Kernel biasanya butuh Hz (800000000) atau KHz. 
+            // Implementasi awal kamu menghapus 000000, kita asumsikan input UI sudah benar.
+            val freqInHzOrRaw = frequency.replace("000000", "") 
+            Shell.cmd("echo $freqInHzOrRaw > $filePath").exec()
         } catch (e: Exception) { e.printStackTrace() }
     }
 
     fun readAvailableFreqGPU(): List<String> {
         return try {
             val result = Shell.cmd("cat $AVAILABLE_FREQ_GPU").exec()
-            if (result.isSuccess) result.out.firstOrNull()?.trim()?.split(" ")?.map { (it.toInt() / 1000000).toString() } ?: emptyList()
+            if (result.isSuccess) result.out.firstOrNull()?.trim()?.split(" ")?.map { 
+                try {
+                    (it.toLong() / 1000000).toString() 
+                } catch (e: Exception) { it }
+            } ?: emptyList()
             else emptyList()
         } catch (e: Exception) { emptyList() }
+    }
+
+    // Fungsi Helper yang hilang sebelumnya
+    fun readParam(path: String): String {
+        if (!File(path).exists()) return "N/A"
+        return Utils.readFile(path)
     }
 }
