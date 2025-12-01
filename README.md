@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./logo/logo.png" width="200" height="200" alt="ZKM Logo"/>
+  <img src="./logo/logo.jpg" width="200" height="200" alt="ZKM Logo"/>
   
   <br/>
   <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjA0dG16M2w1ZmV4eDl2ZG54ZGV4ZnRodm1tZ3Z4bm50Z3Z4bm50ZSZlcD12MV9zdGlja2VyX3NlYXJjaCZjdD1z/fqYhjP2t37eQvF57XN/giphy.gif" width="150" alt="Coding Anime">
