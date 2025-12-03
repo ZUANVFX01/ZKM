@@ -38,7 +38,7 @@ import com.zuan.kernelmanager.ui.home.HomeScreen
 import com.zuan.kernelmanager.ui.kernelParameter.KernelParameterScreen
 import com.zuan.kernelmanager.ui.fpsmanager.FpsManagerScreen
 import com.zuan.kernelmanager.ui.soc.SoCScreen
-import com.zuan.kernelmanager.ui.terminal.TerminalScreen
+import com.zuan.kernelmanager.ui.fastshell.FastShellScreen
 import com.zuan.kernelmanager.ui.gpu.AdrenoScreen
 import com.zuan.kernelmanager.ui.gpu.MtkScreen
 import com.zuan.kernelmanager.ui.gpu.GenericGpuScreen
@@ -51,7 +51,7 @@ sealed class NavigationRoute(val route: String, val title: String, val selectedI
     object KernelParameter : NavigationRoute("kernel", "Kernel", Icons.Filled.Storage, Icons.Outlined.Storage)
     
     // Extension Routes
-    object Terminal : NavigationRoute("terminal", "Terminal", Icons.Filled.Code, Icons.Outlined.Code)
+    object FastShell : NavigationRoute("FastShell", "FastShell", Icons.Filled.Code, Icons.Outlined.Code)
     object SetEdit : NavigationRoute("SetEdit", "Set_Edit", Icons.Filled.Description, Icons.Outlined.Description)
     object FpsManager : NavigationRoute("fps_manager", "FPS Manager", Icons.Filled.Speed, Icons.Outlined.Speed)
     
@@ -76,7 +76,7 @@ fun ZuanKernelManagerNavHost() {
         composable(NavigationRoute.KernelParameter.route) { KernelParameterScreen(navController = navController) }
         
         // Extension Screens
-        composable(NavigationRoute.Terminal.route) { TerminalScreen(navController = navController) }
+        composable(NavigationRoute.FastShell.route) { FastShellScreen(navController = navController) }
         composable(NavigationRoute.SetEdit.route) { SetEditScreen(navController = navController) }
         composable(NavigationRoute.FpsManager.route) { FpsManagerScreen(navController = navController) }
         

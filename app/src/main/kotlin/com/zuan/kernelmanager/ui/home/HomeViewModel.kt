@@ -84,10 +84,10 @@ class HomeViewModel : ViewModel() {
 
     private fun loadExtensions() {
         _extensionList.value = listOf(
-            ExtensionItem("Terminal", "SYSTEM", Icons.Default.Code, ExtensionStatus.GOOD, NavigationRoute.Terminal.route),
+            ExtensionItem("FastShell", "SYSTEM", Icons.Default.Code, ExtensionStatus.GOOD, NavigationRoute.FastShell.route),
             ExtensionItem("SetEdit", "SYSTEM", Icons.Default.Description, ExtensionStatus.WARNING, NavigationRoute.SetEdit.route),
             ExtensionItem("FpsManager", "PERFORMANCE", Icons.Default.BarChart, ExtensionStatus.GOOD, NavigationRoute.FpsManager.route),
-            ExtensionItem("Process Mgr", "MONITORING", Icons.Default.Assessment, ExtensionStatus.GOOD, NavigationRoute.ProcessManager.route)
+            ExtensionItem("ProcessManager", "MONITORING", Icons.Default.Assessment, ExtensionStatus.GOOD, NavigationRoute.ProcessManager.route)
         )
     }
 

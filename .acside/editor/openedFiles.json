@@ -1,0 +1,65 @@
+{
+  "allFiles": [
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/Kernelmanagerx/app/src/main/kotlin/com/zuan/kernelmanager/ui/fastshell/FastShellScreen.kt",
+      "selection": {
+        "end": {
+          "column": 44,
+          "index": 1224,
+          "line": 26
+        },
+        "start": {
+          "column": 44,
+          "index": 1224,
+          "line": 26
+        }
+      }
+    },
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/Kernelmanagerx/app/src/main/kotlin/com/zuan/kernelmanager/ui/fastshell/FastShellViewModel.kt",
+      "selection": {
+        "end": {
+          "column": 43,
+          "index": 43,
+          "line": 0
+        },
+        "start": {
+          "column": 43,
+          "index": 43,
+          "line": 0
+        }
+      }
+    },
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/Kernelmanagerx/app/src/main/kotlin/com/zuan/kernelmanager/utils/FastShelllUtils.kt",
+      "selection": {
+        "end": {
+          "column": 0,
+          "index": 0,
+          "line": 0
+        },
+        "start": {
+          "column": 0,
+          "index": 0,
+          "line": 0
+        }
+      }
+    },
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/Kernelmanagerx/app/src/main/kotlin/com/zuan/kernelmanager/ui/home/HomeViewModel.kt",
+      "selection": {
+        "end": {
+          "column": 0,
+          "index": 0,
+          "line": 0
+        },
+        "start": {
+          "column": 0,
+          "index": 0,
+          "line": 0
+        }
+      }
+    }
+  ],
+  "selectedFile": "/storage/emulated/0/AndroidIDEProjects/Kernelmanagerx/app/src/main/kotlin/com/zuan/kernelmanager/ui/home/HomeViewModel.kt"
+}
