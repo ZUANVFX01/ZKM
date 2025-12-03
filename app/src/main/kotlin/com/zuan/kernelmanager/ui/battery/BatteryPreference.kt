@@ -1,34 +1,45 @@
-/*
- * Copyright (c) 2025 Rve <rve27github@gmail.com>
- * All Rights Reserved.
- */
 package com.zuan.kernelmanager.ui.battery
 
 import android.content.Context
 import android.content.SharedPreferences
-import androidx.core.content.edit
 
-class BatteryPreference(context: Context) {
-    private val prefs: SharedPreferences = context.getSharedPreferences("battery_prefs", Context.MODE_PRIVATE)
+class BatteryPreference private constructor(context: Context) {
+
+    private val prefs: SharedPreferences = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
 
     companion object {
-        @Volatile
-        private var INSTANCE: BatteryPreference? = null
+        private const val PREFS_NAME = "battery_prefs"
+        private const val KEY_MANUAL_CAPACITY = "manual_design_capacity"
+        private const val KEY_CUTOFF_LIMIT = "cutoff_limit"
+        // Key Baru
+        private const val KEY_MONITOR_ENABLED = "monitor_enabled"
 
-        private const val KEY_MANUAL_DESIGN_CAPACITY = "manual_design_capacity"
+        @Volatile
+        private var instance: BatteryPreference? = null
 
         fun getInstance(context: Context): BatteryPreference {
-            return INSTANCE ?: synchronized(this) {
-                INSTANCE ?: BatteryPreference(context).also { INSTANCE = it }
+            return instance ?: synchronized(this) {
+                instance ?: BatteryPreference(context.applicationContext).also { instance = it }
             }
         }
     }
 
-    fun setManualDesignCapacity(value: Int) {
-        prefs.edit { putInt(KEY_MANUAL_DESIGN_CAPACITY, value) }
+    fun getManualDesignCapacity(): Int = prefs.getInt(KEY_MANUAL_CAPACITY, 0)
+
+    fun setManualDesignCapacity(capacity: Int) {
+        prefs.edit().putInt(KEY_MANUAL_CAPACITY, capacity).apply()
     }
 
-    fun getManualDesignCapacity(): Int {
-        return prefs.getInt(KEY_MANUAL_DESIGN_CAPACITY, 0)
+    fun getCutoffLimit(): Float = prefs.getFloat(KEY_CUTOFF_LIMIT, 80f)
+
+    fun setCutoffLimit(limit: Float) {
+        prefs.edit().putFloat(KEY_CUTOFF_LIMIT, limit).apply()
+    }
+    
+    // --- MONITOR PREFS ---
+    fun isMonitorEnabled(): Boolean = prefs.getBoolean(KEY_MONITOR_ENABLED, false)
+    
+    fun setMonitorEnabled(enable: Boolean) {
+        prefs.edit().putBoolean(KEY_MONITOR_ENABLED, enable).apply()
     }
 }

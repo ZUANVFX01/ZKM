@@ -1,0 +1,112 @@
+-keep enum j$.time.DayOfWeek {
+  public java.lang.String getDisplayName(j$.time.format.TextStyle, java.util.Locale);
+  public int getValue();
+  public static j$.time.DayOfWeek[] values();
+}
+-keep class j$.time.Duration {
+  public int compareTo(j$.time.Duration);
+  public int getNano();
+  public long getSeconds();
+  public static j$.time.Duration ofMillis(long);
+  public static j$.time.Duration ofSeconds(long, long);
+  public long toMillis();
+  j$.time.Duration ZERO;
+}
+-keep class j$.time.Instant {
+  public j$.time.ZonedDateTime atZone(j$.time.ZoneId);
+  public long getEpochSecond();
+  public int getNano();
+  public static j$.time.Instant now();
+  public static j$.time.Instant ofEpochMilli(long);
+  public static j$.time.Instant ofEpochSecond(long, long);
+  public long toEpochMilli();
+}
+-keep class j$.time.LocalDate {
+  public j$.time.LocalDateTime atStartOfDay();
+  public j$.time.LocalDateTime atTime(j$.time.LocalTime);
+  public java.lang.String format(j$.time.format.DateTimeFormatter);
+  public int getDayOfMonth();
+  public j$.time.DayOfWeek getDayOfWeek();
+  public j$.time.Month getMonth();
+  public int getMonthValue();
+  public int getYear();
+  public int lengthOfMonth();
+  public j$.time.LocalDate minusMonths(long);
+  public static j$.time.LocalDate now();
+  public static j$.time.LocalDate of(int, int, int);
+  public static j$.time.LocalDate parse(java.lang.CharSequence, j$.time.format.DateTimeFormatter);
+  public j$.time.LocalDate plusMonths(long);
+}
+-keep class j$.time.LocalDateTime {
+  public j$.time.ZonedDateTime atZone(j$.time.ZoneId);
+}
+-keep class j$.time.LocalTime {
+  j$.time.LocalTime MIDNIGHT;
+}
+-keep enum j$.time.Month {
+  public int getValue();
+}
+-keep class j$.time.TimeConversions {
+  public static java.time.Duration convert(j$.time.Duration);
+  public static j$.time.Duration convert(java.time.Duration);
+  public static j$.time.Instant convert(java.time.Instant);
+}
+-keep class j$.time.YearMonth {
+  public j$.time.LocalDate atDay(int);
+  public static j$.time.YearMonth from(j$.time.temporal.TemporalAccessor);
+}
+-keep class j$.time.ZoneId {
+  public static j$.time.ZoneId of(java.lang.String);
+}
+-keep class j$.time.ZoneOffset {
+  j$.time.ZoneOffset UTC;
+}
+-keep class j$.time.ZonedDateTime {
+  public j$.time.LocalDate toLocalDate();
+  public j$.time.ZonedDateTime withDayOfMonth(int);
+}
+-keep interface j$.time.chrono.ChronoLocalDateTime {
+  public long toEpochSecond(j$.time.ZoneOffset);
+  public j$.time.Instant toInstant(j$.time.ZoneOffset);
+}
+-keep interface j$.time.chrono.ChronoZonedDateTime {
+  public j$.time.Instant toInstant();
+}
+-keep interface j$.time.chrono.Chronology {
+  public static j$.time.chrono.Chronology ofLocale(java.util.Locale);
+}
+-keep class j$.time.format.DateTimeFormatter {
+  public static j$.time.format.DateTimeFormatter ofPattern(java.lang.String, java.util.Locale);
+  public j$.time.format.DateTimeFormatter withDecimalStyle(j$.time.format.DecimalStyle);
+}
+-keep class j$.time.format.DateTimeFormatterBuilder {
+  public static java.lang.String getLocalizedDateTimePattern(j$.time.format.FormatStyle, j$.time.format.FormatStyle, j$.time.chrono.Chronology, java.util.Locale);
+}
+-keep class j$.time.format.DateTimeParseException {
+}
+-keep class j$.time.format.DecimalStyle {
+  public static j$.time.format.DecimalStyle of(java.util.Locale);
+}
+-keep enum j$.time.format.FormatStyle {
+  j$.time.format.FormatStyle SHORT;
+}
+-keep enum j$.time.format.TextStyle {
+  j$.time.format.TextStyle FULL_STANDALONE;
+  j$.time.format.TextStyle NARROW_STANDALONE;
+}
+-keep enum j$.time.temporal.ChronoUnit {
+  public j$.time.Duration getDuration();
+  j$.time.temporal.ChronoUnit MILLIS;
+}
+-keep interface j$.time.temporal.TemporalAccessor {
+}
+-keep class j$.time.temporal.WeekFields {
+  public j$.time.DayOfWeek getFirstDayOfWeek();
+  public static j$.time.temporal.WeekFields of(java.util.Locale);
+}
+-keep class j$.util.DateRetargetClass {
+  public static j$.time.Instant toInstant(java.util.Date);
+}
+-keep class j$.util.DesugarTimeZone {
+  public static java.util.TimeZone getTimeZone(java.lang.String);
+}

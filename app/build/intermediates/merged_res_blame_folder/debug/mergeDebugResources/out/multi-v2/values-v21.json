@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.zuan.kernelmanager.app-mergeDebugResources-52:/values-v21/values-v21.xml",
+            "outputFile": "com.zuan.kernelmanager.app-mergeDebugResources-51:/values-v21/values-v21.xml",
             "map": [
                 {
-                    "source": "/data/user/0/com.tom.rv2ide/files/home/.gradle/caches/9.2.0/transforms/2c561fc05ee765844a55906370ac56ba/transformed/core-1.17.0/res/values-v21/values-v21.xml",
+                    "source": "/data/user/0/com.tom.rv2ide/files/home/.gradle/caches/9.2.1/transforms/9aba83588b7500795070ea3d91b90295/transformed/core-1.17.0/res/values-v21/values-v21.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,13",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",

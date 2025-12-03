@@ -1,317 +1,164 @@
 /*
- * Copyright (c) 2025 Rve <rve27github@gmail.com>
+ * Copyright (c) 2025 ZKM <zuanvfx01github@gmail.com>
  * All Rights Reserved.
  */
 package com.zuan.kernelmanager.utils
 
 import android.app.ActivityManager
 import android.content.Context
-import android.util.Log
-import com.zuan.kernelmanager.utils.Utils
 import com.topjohnwu.superuser.Shell
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import java.io.File
 import kotlin.math.ceil
 
 object SoCUtils {
 
-    const val CPU_TEMP = "/sys/class/thermal/thermal_zone0/temp"
-
-    const val MIN_FREQ_CPU0 = "/sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq"
-    const val MAX_FREQ_CPU0 = "/sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq"
-    const val CURRENT_FREQ_CPU0 = "/sys/devices/system/cpu/cpufreq/policy0/scaling_cur_freq"
-    const val AVAILABLE_FREQ_CPU0 = "/sys/devices/system/cpu/cpufreq/policy0/scaling_available_frequencies"
-    const val GOV_CPU0 = "/sys/devices/system/cpu/cpufreq/policy0/scaling_governor"
-    const val AVAILABLE_GOV_CPU0 = "/sys/devices/system/cpu/cpufreq/policy0/scaling_available_governors"
-
-    const val MIN_FREQ_CPU4 = "/sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq"
-    const val MAX_FREQ_CPU4 = "/sys/devices/system/cpu/cpufreq/policy4/scaling_max_freq"
-    const val CURRENT_FREQ_CPU4 = "/sys/devices/system/cpu/cpufreq/policy4/scaling_cur_freq"
-    const val AVAILABLE_FREQ_CPU4 = "/sys/devices/system/cpu/cpufreq/policy4/scaling_available_frequencies"
-    const val AVAILABLE_BOOST_CPU4 = "/sys/devices/system/cpu/cpufreq/policy4/scaling_boost_frequencies"
-    const val GOV_CPU4 = "/sys/devices/system/cpu/cpufreq/policy4/scaling_governor"
-    const val AVAILABLE_GOV_CPU4 = "/sys/devices/system/cpu/cpufreq/policy4/scaling_available_governors"
-
-    const val MIN_FREQ_CPU6 = "/sys/devices/system/cpu/cpufreq/policy6/scaling_min_freq"
-    const val MAX_FREQ_CPU6 = "/sys/devices/system/cpu/cpufreq/policy6/scaling_max_freq"
-    const val CURRENT_FREQ_CPU6 = "/sys/devices/system/cpu/cpufreq/policy6/scaling_cur_freq"
-    const val AVAILABLE_FREQ_CPU6 = "/sys/devices/system/cpu/cpufreq/policy6/scaling_available_frequencies"
-    const val AVAILABLE_BOOST_CPU6 = "/sys/devices/system/cpu/cpufreq/policy6/scaling_boost_frequencies"
-    const val GOV_CPU6 = "/sys/devices/system/cpu/cpufreq/policy6/scaling_governor"
-    const val AVAILABLE_GOV_CPU6 = "/sys/devices/system/cpu/cpufreq/policy6/scaling_available_governors"
-
-    const val MIN_FREQ_CPU7 = "/sys/devices/system/cpu/cpufreq/policy7/scaling_min_freq"
-    const val MAX_FREQ_CPU7 = "/sys/devices/system/cpu/cpufreq/policy7/scaling_max_freq"
-    const val CURRENT_FREQ_CPU7 = "/sys/devices/system/cpu/cpufreq/policy7/scaling_cur_freq"
-    const val AVAILABLE_FREQ_CPU7 = "/sys/devices/system/cpu/cpufreq/policy7/scaling_available_frequencies"
-    const val AVAILABLE_BOOST_CPU7 = "/sys/devices/system/cpu/cpufreq/policy7/scaling_boost_frequencies"
-    const val GOV_CPU7 = "/sys/devices/system/cpu/cpufreq/policy7/scaling_governor"
-    const val AVAILABLE_GOV_CPU7 = "/sys/devices/system/cpu/cpufreq/policy7/scaling_available_governors"
-
-    const val CPU_INPUT_BOOST_MS = "/sys/devices/system/cpu/cpu_boost/input_boost_ms"
-    const val CPU_SCHED_BOOST_ON_INPUT = "/sys/devices/system/cpu/cpu_boost/sched_boost_on_input"
-
-    const val MIN_FREQ_GPU = "/sys/class/kgsl/kgsl-3d0/min_clock_mhz"
-    const val MAX_FREQ_GPU = "/sys/class/kgsl/kgsl-3d0/max_clock_mhz"
-    const val CURRENT_FREQ_GPU = "/sys/class/kgsl/kgsl-3d0/gpuclk"
-    const val AVAILABLE_FREQ_GPU = "/sys/class/kgsl/kgsl-3d0/gpu_available_frequencies"
-    const val GOV_GPU = "/sys/class/kgsl/kgsl-3d0/devfreq/governor"
-    const val AVAILABLE_GOV_GPU = "/sys/class/kgsl/kgsl-3d0/devfreq/available_governors"
-    const val MAX_PWRLEVEL = "/sys/class/kgsl/kgsl-3d0/max_pwrlevel"
-    const val MIN_PWRLEVEL = "/sys/class/kgsl/kgsl-3d0/min_pwrlevel"
-    const val DEFAULT_PWRLEVEL = "/sys/class/kgsl/kgsl-3d0/default_pwrlevel"
-    const val ADRENO_BOOST = "/sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost"
-    const val GPU_THROTTLING = "/sys/class/kgsl/kgsl-3d0/throttling"
+    // GPU Paths
     const val GPU_TEMP = "/sys/class/kgsl/kgsl-3d0/temp"
-
+    const val CURRENT_FREQ_GPU = "/sys/class/kgsl/kgsl-3d0/gpuclk"
+    
+    // Variables for CPU Usage calc (Total System)
     private var sPrevTotal: Long = -1
     private var sPrevIdle: Long = -1
 
-    fun getCpuInfo(): String {
-        return try {
-            val hardware = Utils.getSystemProperty("ro.hardware")
-            val manufacturer = Utils.getSystemProperty("ro.soc.manufacturer")
-            val model = Utils.getSystemProperty("ro.soc.model")
+    // Cache jumlah core
+    private val numCores by lazy { Runtime.getRuntime().availableProcessors() }
 
-            if (hardware.contains("qcom", ignoreCase = true) && model.isNotEmpty()) {
-                "Qualcomm Technologies, Inc $model"
-            } else if (manufacturer.contains("QTI", ignoreCase = true) && model.isNotEmpty()) {
-                "Qualcomm Technologies, Inc $model"
-            } else {
-                "Unknown"
-            }
-        } catch (securityException: SecurityException) {
-            "Unknown"
-        } catch (exception: Exception) {
-            "Unknown"
-        }
+    enum class GpuType {
+        ADRENO, MEDIATEK_V2, MEDIATEK_LEGACY, GENERIC_DEVFREQ, UNKNOWN
     }
 
-    fun readFreqCPU(filePath: String): String {
-        return try {
-            val file = File(filePath)
-            if (file.exists()) {
-                val freq = file.readText().trim()
-                (freq.toInt() / 1000).toString()
-            } else {
-                ""
-            }
-        } catch (e: Exception) {
-            Log.e("readFreqCPU", "Error reading file $filePath: ${e.message}", e)
-            ""
-        }
-    }
+    // --- GENERAL INFO ---
 
-    fun writeFreqCPU(filePath: String, frequency: String) {
+    suspend fun getCpuInfo(): String = withContext(Dispatchers.IO) {
         try {
-            val freqInKHz = (frequency.toInt() * 1000).toString()
-            val command = "echo $freqInKHz > $filePath"
-            Shell.cmd(command).exec()
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
-    }
-
-    fun readAvailableFreqCPU(filePath: String): List<String> {
-        return try {
-            val file = File("$filePath")
-            if (file.exists()) {
-                file.readText()
-                    .trim()
-                    .split(" ")
-                    .map { (it.toInt() / 1000).toString() }
+            val manufacturer = Utils.getSystemProperty("ro.soc.manufacturer").trim()
+            val model = Utils.getSystemProperty("ro.soc.model").trim()
+            if (manufacturer.isNotEmpty() && model.isNotEmpty()) {
+                "$manufacturer $model"
             } else {
-                emptyList()
+                Utils.getSystemProperty("ro.board.platform").takeIf { it.isNotEmpty() } ?: "Unknown SoC"
             }
-        } catch (e: Exception) {
-            Log.e("readAvailableFreqCPU", "Error reading file $filePath: ${e.message}", e)
-            emptyList()
-        }
+        } catch (e: Exception) { "Unknown" }
     }
 
-    fun readAvailableFreqBoost(freqPath: String, boostPath: String): List<String> {
-        val regularFreq = readAvailableFreqCPU(freqPath)
-        val boostFreq = readAvailableFreqCPU(boostPath)
-        return (regularFreq + boostFreq)
-            .distinct()
-            .sortedBy { it.toIntOrNull() ?: 0 }
-    }
-
-    fun readAvailableGovCPU(filePath: String): List<String> {
-        return try {
-            val file = File("$filePath")
-            if (file.exists()) {
-                file.readText()
-                    .trim()
-                    .split(" ")
-            } else {
-                emptyList()
-            }
-        } catch (e: Exception) {
-            Log.e("readAvailableGov", "Error reading file $filePath: ${e.message}", e)
-            emptyList()
-        }
-    }
-
-        // HAPUS fun getGPUModel() yang lama, GANTI dengan ini:
-    fun getGpuInfo(): Triple<String, String, String> {
-        return try {
-            // Logika Bash: dumpsys SurfaceFlinger | grep "GLES:"
+    suspend fun getGpuInfo(): Triple<String, String, String> = withContext(Dispatchers.IO) {
+        try {
             val result = Shell.cmd("dumpsys SurfaceFlinger | grep \"GLES:\"").exec()
-            
             if (result.isSuccess && result.out.isNotEmpty()) {
-                val line = result.out.firstOrNull() ?: return Triple("N/A", "N/A", "N/A")
-                
-                // Struktur output biasanya: GLES: [Vendor], [Renderer], [Version]
-                // Kita split berdasarkan koma (sesuai logika 'cut -d,' di bash)
+                val line = result.out.firstOrNull() ?: return@withContext Triple("N/A", "N/A", "N/A")
                 val parts = line.split(",")
-
-                // 1. VENDOR: Ambil bagian pertama, buang teks "GLES:"
-                // Bash: cut -d',' -f1 | cut -d':' -f2
                 val vendor = parts.getOrNull(0)?.substringAfter("GLES:")?.trim() ?: "Unknown"
-
-                // 2. RENDERER (GPU): Ambil bagian kedua
-                // Bash: cut -d',' -f2
                 val renderer = parts.getOrNull(1)?.trim() ?: "Unknown"
-
-                // 3. VERSION: Ambil sisa bagian (bagian ke-3 dan seterusnya jika ada koma lain)
-                // Bash: cut -d',' -f3-
-                val version = if (parts.size > 2) {
-                    parts.drop(2).joinToString(",").trim()
-                } else {
-                    "Unknown"
-                }
-
+                val version = if (parts.size > 2) parts.drop(2).joinToString(",").trim() else "Unknown"
                 Triple(vendor, renderer, version)
-            } else {
-                Triple("N/A", "N/A", "N/A")
-            }
-        } catch (e: Exception) {
-            Log.e("SoCUtils", "Error getting GPU Info: ${e.message}", e)
-            Triple("N/A", "N/A", "N/A")
+            } else { Triple("N/A", "N/A", "N/A") }
+        } catch (e: Exception) { Triple("N/A", "N/A", "N/A") }
+    }
+
+    suspend fun getGpuType(): GpuType = withContext(Dispatchers.IO) {
+        when {
+            File("/sys/class/kgsl/kgsl-3d0").exists() -> GpuType.ADRENO
+            MtkUtils.isMtkV2() -> GpuType.MEDIATEK_V2
+            MtkUtils.isMtkLegacy() -> GpuType.MEDIATEK_LEGACY
+            GenericGpuUtils.getGpuPath() != null -> GpuType.GENERIC_DEVFREQ
+            else -> GpuType.UNKNOWN
         }
     }
 
-    fun writeFreqGPU(filePath: String, frequency: String) {
+    suspend fun readFreqGPU(filePath: String): String = withContext(Dispatchers.IO) {
         try {
-            val freqInKHz = frequency.replace("000000", "")
-            val command = "echo $freqInKHz > $filePath"
-            Shell.cmd(command).exec()
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
-    }
-
-    fun readAvailableFreqGPU(filePath: String): List<String> {
-        return try {
             val result = Shell.cmd("cat $filePath").exec()
-            if (result.isSuccess) {
-                result.out.firstOrNull()
-                    ?.trim()
-                    ?.split(" ")
-                    ?.map { (it.toInt() / 1000000).toString() }
-                    ?: emptyList()
-            } else {
-                Log.e("readAvailableFreqGPU", "Command execution failed: ${result.err}")
-                emptyList()
-            }
-        } catch (e: Exception) {
-            Log.e("readAvailableFreqGPU", "Error reading file $filePath: ${e.message}", e)
-            emptyList()
-        }
+            if (result.isSuccess) result.out.firstOrNull()?.trim()?.let { (it.toLong() / 1000000).toString() } ?: ""
+            else ""
+        } catch (e: Exception) { "" }
     }
 
-    fun readAvailableGovGPU(filePath: String): List<String> {
-        return try {
-            val result = Shell.cmd("cat $filePath").exec()
-            if (result.isSuccess) {
-                result.out.firstOrNull()
-                    ?.trim()
-                    ?.split(" ")
-                    ?: emptyList()
-            } else {
-                Log.e("readAvailableGovGPU", "Command execution failed: ${result.err}")
-                emptyList()
-            }
-        } catch (e: Exception) {
-            Log.e("readAvailableGovGPU", "Error reading file $filePath: ${e.message}", e)
-            emptyList()
-        }
-    }
+    // --- CPU USAGE CALCULATION (System Wide) ---
 
-    fun readFreqGPU(filePath: String): String {
-        return try {
-            val result = Shell.cmd("cat $filePath").exec()
-            if (result.isSuccess) {
-                result.out.firstOrNull()
-                    ?.trim()
-                    ?.let { (it.toLong() / 1000000).toString() }
-                    ?: ""
-            } else {
-                Log.e("readCurrentGPUFreq", "Command execution failed: ${result.err}")
-                ""
-            }
-        } catch (e: Exception) {
-            Log.e("readCurrentGPUFreq", "Error reading file $filePath: ${e.message}", e)
-            ""
-        }
-    }
-
-    fun getCpuUsage(): String {
-        val stat = Utils.readFile("/proc/stat") ?: return "N/A"
-        val trimmedStat = stat.trim()
-
-        if (!trimmedStat.startsWith("cpu")) return "N/A"
-
-        val parts = trimmedStat.split("\\s+".toRegex()).filter { it.isNotEmpty() }
-        if (parts.size < 8) return "N/A"
-
+    suspend fun calculateCpuUsage(): String = withContext(Dispatchers.IO) {
+        val stat = Utils.readFile("/proc/stat")
+        if (stat.isEmpty()) return@withContext "N/A"
+        
+        val parts = stat.trim().split("\\s+".toRegex()).filter { it.isNotEmpty() }
+        if (parts.size < 8 || !parts[0].startsWith("cpu")) return@withContext "N/A"
+        
         try {
-            val user = parts[1].toLong()
-            val nice = parts[2].toLong()
-            val system = parts[3].toLong()
-            val idle = parts[4].toLong()
-            val iowait = parts[5].toLong()
-            val irq = parts[6].toLong()
-            val softirq = parts[7].toLong()
-            val steal = if (parts.size > 8) parts[8].toLong() else 0
-
-            val total = user + nice + system + idle + iowait + irq + softirq + steal
-
+            val user = parts[1].toLong(); val nice = parts[2].toLong(); val system = parts[3].toLong()
+            val idle = parts[4].toLong(); val total = user + nice + system + idle + parts[5].toLong() + parts[6].toLong() + parts[7].toLong()
+            
             if (sPrevTotal != -1L && total > sPrevTotal) {
-                val diffTotal = total - sPrevTotal
-                val diffIdle = idle - sPrevIdle
-                val usage = 100 * (diffTotal - diffIdle) / diffTotal
-                sPrevTotal = total
-                sPrevIdle = idle
-                return usage.toString()
+                val usage = 100 * ((total - sPrevTotal) - (idle - sPrevIdle)) / (total - sPrevTotal)
+                sPrevTotal = total; sPrevIdle = idle
+                usage.toString()
             } else {
-                sPrevTotal = total
-                sPrevIdle = idle
-                return "N/A"
+                sPrevTotal = total; sPrevIdle = idle
+                "N/A"
             }
-        } catch (e: NumberFormatException) {
-            Log.e("SoCUtils", "Error parsing CPU stats: ${e.message}")
-            return "N/A"
-        }
+        } catch (e: Exception) { "N/A" }
     }
 
-    fun getGpuUsage(): String {
-        val usage = Utils.readFile("/sys/class/kgsl/kgsl-3d0/gpu_busy_percentage")
-        if (usage.isEmpty()) return "N/A"
-        val cleanedUsage = usage.replace("%", "").trim()
+    // --- PER CORE MONITORING (NEW LOGIC) ---
+
+    fun getCoreCount(): Int = numCores
+
+    // Get Freq per core index (e.g. cpu0)
+    fun getCoreFreq(index: Int): Long {
         return try {
-            val value = cleanedUsage.toInt()
-            value.toString()
-        } catch (e: NumberFormatException) {
-            "N/A"
-        }
+            val path = "/sys/devices/system/cpu/cpu$index/cpufreq/scaling_cur_freq"
+            val content = Utils.readFile(path).trim()
+            if (content.isNotEmpty()) content.toLong() / 1000 else 0L
+        } catch (e: Exception) { 0L }
     }
 
-    fun getTotalRam(context: Context): String {
-        val memoryInfo = ActivityManager.MemoryInfo().apply {
-            (context.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager).getMemoryInfo(this)
+    // Get Governor per core index
+    fun getCoreGov(index: Int): String {
+        return try {
+            val path = "/sys/devices/system/cpu/cpu$index/cpufreq/scaling_governor"
+            Utils.readFile(path).trim().ifEmpty { "offline" }
+        } catch (e: Exception) { "offline" }
+    }
+
+    // New Logic: Hitung Load berdasarkan (Current - Min) / (Max - Min)
+    fun getCoreLoadBasedOnFreq(index: Int, currentFreq: Long): Float {
+        return try {
+            val minPath = "/sys/devices/system/cpu/cpu$index/cpufreq/scaling_min_freq"
+            val maxPath = "/sys/devices/system/cpu/cpu$index/cpufreq/scaling_max_freq"
+            
+            val minRaw = Utils.readFile(minPath).trim().toLongOrNull() ?: 0L
+            val maxRaw = Utils.readFile(maxPath).trim().toLongOrNull() ?: 0L
+            
+            val min = minRaw / 1000
+            val max = maxRaw / 1000
+            
+            if (max > min && currentFreq >= min) {
+                val percentage = ((currentFreq - min).toFloat() / (max - min).toFloat()) * 100f
+                percentage.coerceIn(0f, 100f)
+            } else {
+                if (currentFreq > 0) 100f else 0f // Jika Max==Min (Locked), anggap 100% jika hidup
+            }
+        } catch (e: Exception) { 0f }
+    }
+
+    suspend fun getGpuUsage(): String = withContext(Dispatchers.IO) {
+        val kgslUsage = Utils.readFile("/sys/class/kgsl/kgsl-3d0/gpu_busy_percentage")
+        if (kgslUsage.isNotEmpty()) return@withContext kgslUsage.replace("%", "").trim()
+        
+        val genericPath = GenericGpuUtils.getGpuPath()
+        if (genericPath != null) {
+            val loadFile = File("$genericPath/load")
+            if (loadFile.exists()) return@withContext Utils.readFile(loadFile.absolutePath).split("@")[0].trim()
         }
-        val sizeInGb = memoryInfo.totalMem / (1024.0 * 1024 * 1024)
-        return "${ceil(sizeInGb).toInt()} GB"
+        "N/A"
+    }
+    
+    suspend fun getTotalRam(context: Context): String = withContext(Dispatchers.IO) {
+        try {
+            val memoryInfo = ActivityManager.MemoryInfo().apply {
+                (context.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager).getMemoryInfo(this)
+            }
+            "${ceil(memoryInfo.totalMem / (1024.0 * 1024 * 1024)).toInt()} GB"
+        } catch (e: Exception) { "N/A" }
     }
 }

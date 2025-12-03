@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zuan Kernel Manager</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <style>
+        /* --- VARIABLE & RESET --- */
+        :root {
+            --bg-color: #0f172a;       /* Background Gelap */
+            --card-bg: #1e293b;        /* Warna Kartu */
+            --primary: #60a5fa;        /* Biru Terang (Mirip Encore) */
+            --accent: #818cf8;         /* Ungu Soft */
+            --text-main: #f1f5f9;
+            --text-sec: #94a3b8;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
+
+        /* --- NAVBAR --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 24px;
+            align-items: center;
+        }
+        .nav-brand { font-weight: 700; font-size: 1.2rem; }
+        .nav-icons i { font-size: 1.5rem; margin-left: 15px; cursor: pointer; color: var(--text-main); }
+
+        /* --- HERO SECTION (INI YANG MIRIP SCREENSHOT) --- */
+        .hero {
+            text-align: center;
+            padding: 40px 20px 60px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Tempat Gambar Anime */
+        .mascot-container {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .mascot-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            /* Efek glowing di belakang gambar biar kece */
+            filter: drop-shadow(0 0 30px rgba(96, 165, 250, 0.4));
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Teks Judul */
+        h1.title {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h2.subtitle {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        p.description {
+            color: var(--text-sec);
+            font-size: 1rem;
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+
+        /* Tombol-tombol */
+        .btn-group {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 12px 28px;
+            border-radius: 50px; /* Bentuk Pill */
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: #0f172a;
+            box-shadow: 0 4px 15px rgba(96, 165, 250, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: var(--card-bg);
+            color: var(--text-main);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .btn:hover { transform: translateY(-2px); }
+
+        /* --- CARDS SECTION --- */
+        .content-area {
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            background: rgba(96, 165, 250, 0.1);
+            padding: 15px;
+            border-radius: 15px;
+            color: var(--primary);
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 600px) {
+            h1.title { font-size: 2rem; }
+            .mascot-container { width: 160px; height: 160px; }
+            .card { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-brand">ZKM TWEAKS</div>
+        <div class="nav-icons">
+            <i class="ri-search-line"></i>
+            <i class="ri-menu-4-line"></i>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="mascot-container">
+            <img src="logo.jpg" alt="ZKM Mascot" class="mascot-img">
+        </div>
+
+        <h1 class="title">Zuan Kernel Manager</h1>
+        
+        <h2 class="subtitle">Ultimate control for your device</h2>
+        
+        <p class="description">
+            A no-nonsense root application based on RvKernel. 
+            Modified with modern UI and advanced SoC tuning capabilities.
+        </p>
+
+        <div class="btn-group">
+            <a href="#features" class="btn btn-primary">What is ZKM?</a>
+            <a href="LINK_DOWNLOAD_DISINI" class="btn btn-secondary">Download Now</a>
+            <a href="LINK_GITHUB_DISINI" class="btn btn-secondary">View on GitHub</a>
+        </div>
+    </header>
+
+    <section class="content-area" id="features">
+        <div class="card">
+            <div class="card-icon"><i class="ri-smartphone-line"></i></div>
+            <div>
+                <h3>Modern UI</h3>
+                <p style="color: var(--text-sec); font-size: 0.9rem;">Clean aesthetic designed for Android 12+. Glassmorphism style included.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-icon"><i class="ri-cpu-line"></i></div>
+            <div>
+                <h3>Performance Tuning</h3>
+                <p style="color: var(--text-sec); font-size: 0.9rem;">Optimize Snapdragon & MediaTek frequencies efficiently.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const cards = document.querySelectorAll('.card');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+            background-image: radial-gradient(circle at top right, rgba(56, 189, 248, 0.1), transparent 40%),
+                              radial-gradient(circle at bottom left, rgba(129, 140, 248, 0.1), transparent 40%);
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            background: rgba(15, 23, 42, 0.8);
+            border-bottom: var(--glass-border);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links a {
+            color: var(--text-dim);
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .hero span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            color: var(--text-dim);
+            max-width: 600px;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #000;
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(56, 189, 248, 0.5);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid var(--text-dim);
+            color: var(--text-main);
+            margin-left: 10px;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        /* --- FEATURES GRID --- */
+        .section {
+            padding: 80px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 16px;
+            border: var(--glass-border);
+            backdrop-filter: blur(5px);
+            transition: 0.3s;
+            opacity: 0; /* Hidden for animation */
+            transform: translateY(30px);
+        }
+
+        .card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .card p {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* --- DOWNLOAD SECTION --- */
+        .cta-section {
+            background: linear-gradient(180deg, transparent, rgba(56, 189, 248, 0.05));
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            padding: 40px;
+            text-align: center;
+            color: var(--text-dim);
+            font-size: 0.8rem;
+            border-top: var(--glass-border);
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        /* --- ANIMATION UTILS --- */
+        .fade-in-up {
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Mobile Tweaks */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .nav-links { display: none; } /* Hide menu links on small mobile for simplicity */
+            .btn { width: 100%; justify-content: center; margin: 5px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">ZKM</div>
+        <div class="nav-links">
+            <a href="#features">Features</a>
+            <a href="#requirements">Specs</a>
+            <a href="#download">Download</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1 class="fade-in-up">Control Your Android<br><span>Like a Pro</span></h1>
+        <p class="fade-in-up" style="animation-delay: 0.2s;">
+            Zuan Kernel Manager (ZKM). Optimized performance, sophisticated modern UI, and deep customization for rooted devices.
+        </p>
+        <div class="fade-in-up" style="animation-delay: 0.4s;">
+            <a href="#download" class="btn btn-primary"><i class="ri-download-cloud-2-line"></i> Download ZKM</a>
+            <a href="https://t.me/LINK_GRUP_LU" class="btn btn-secondary"><i class="ri-telegram-line"></i> Join Group</a>
+        </div>
+    </header>
+
+    <section id="features" class="section">
+        <div class="section-title">
+            <h2>Why Choose ZKM?</h2>
+            <p style="color: var(--text-dim)">Built based on RveKernel, refined for better experience.</p>
+        </div>
+        
+        <div class="grid">
+            <div class="card">
+                <i class="ri-layout-masonry-line"></i>
+                <h3>Modern UI</h3>
+                <p>A completely revamped interface with glassmorphism elements, optimized for Android 12+ aesthetics.</p>
+            </div>
+            <div class="card">
+                <i class="ri-cpu-line"></i>
+                <h3>SoC Tuning</h3>
+                <p>Advanced tuning for Snapdragon (Adreno) and MediaTek (Mali). Also supports Exynos & Tensor.</p>
+            </div>
+            <div class="card">
+                <i class="ri-shield-keyhole-line"></i>
+                <h3>Root Tools</h3>
+                <p>Deep kernel management requires Root access. Take full control of your hardware.</p>
+            </div>
+            <div class="card">
+                <i class="ri-code-s-slash-line"></i>
+                <h3>Open Source</h3>
+                <p>Transparent and safe. Credits to RveProject, Scene, and Rem01Gaming for the foundation.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="requirements" class="section">
+        <div class="section-title">
+            <h2>Requirements</h2>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <h3>🌱 Android OS</h3>
+                <p>Recommended: <strong>Android 12+</strong><br>Supported: Android 10/11 (Minor UI visual bugs possible).</p>
+            </div>
+            <div class="card">
+                <h3>⚙️ Chipset Support</h3>
+                <p>• Snapdragon / Adreno<br>• MediaTek / Mali<br>• Generic: Tensor, Exynos, Tegra</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="download" class="cta-section">
+        <h2>Ready to Upgrade?</h2>
+        <p style="color: var(--text-dim); margin: 20px 0;">Get the latest version of ZKM now.</p>
+        <a href="LINK_DOWNLOAD_GITHUB_RELEASE" class="btn btn-primary"><i class="ri-download-fill"></i> Download Latest APK</a>
+        <br><br>
+        <p style="font-size: 0.8rem; color: var(--text-dim);"> Developed by @zuanvfxproject2</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Zuan Kernel Manager. Open Source Project.</p>
+        <p style="margin-top: 10px;">
+            Credits: RveProject | Scene4.7 | Rem01Gaming
+        </p>
+    </footer>
+
+    <script>
+        // Simple Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>

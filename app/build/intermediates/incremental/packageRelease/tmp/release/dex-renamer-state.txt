@@ -1,0 +1,16 @@
+#Wed Dec 03 07:24:22 GMT 2025
+base.0=/storage/emulated/0/AndroidIDEProjects/Kernelmanagerx/app/build/intermediates/dex/release/mergeDexRelease/classes.dex
+base.1=/storage/emulated/0/AndroidIDEProjects/Kernelmanagerx/app/build/intermediates/global_synthetics_dex/release/mergeReleaseGlobalSynthetics/classes.dex
+base.2=/storage/emulated/0/AndroidIDEProjects/Kernelmanagerx/app/build/intermediates/desugar_lib_dex/release/l8DexDesugarLibRelease/classes1000.dex
+base.3=/storage/emulated/0/AndroidIDEProjects/Kernelmanagerx/app/build/intermediates/dex/release/mergeDexRelease/classes2.dex
+base.4=/storage/emulated/0/AndroidIDEProjects/Kernelmanagerx/app/build/intermediates/dex/release/mergeDexRelease/classes3.dex
+path.0=classes.dex
+path.1=classes.dex
+path.2=classes1000.dex
+path.3=classes2.dex
+path.4=classes3.dex
+renamed.0=classes.dex
+renamed.1=classes2.dex
+renamed.2=classes3.dex
+renamed.3=classes4.dex
+renamed.4=classes5.dex

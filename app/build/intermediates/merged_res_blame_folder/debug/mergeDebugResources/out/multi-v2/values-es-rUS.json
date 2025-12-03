@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.zuan.kernelmanager.app-mergeDebugResources-52:/values-es-rUS/values-es-rUS.xml",
+            "outputFile": "com.zuan.kernelmanager.app-mergeDebugResources-51:/values-es-rUS/values-es-rUS.xml",
             "map": [
                 {
-                    "source": "/data/user/0/com.tom.rv2ide/files/home/.gradle/caches/9.2.0/transforms/08bd98ba868e9914574733fdf650d3d6/transformed/foundation/res/values-es-rUS/values-es-rUS.xml",
+                    "source": "/data/user/0/com.tom.rv2ide/files/home/.gradle/caches/9.2.1/transforms/dc129e83c8e200d66be601dc2ac7a637/transformed/foundation/res/values-es-rUS/values-es-rUS.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
@@ -21,24 +21,7 @@
                     }
                 },
                 {
-                    "source": "/data/user/0/com.tom.rv2ide/files/home/.gradle/caches/9.2.0/transforms/2c561fc05ee765844a55906370ac56ba/transformed/core-1.17.0/res/values-es-rUS/values-es-rUS.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,154,256,356,454,561,667,787",
-                        "endColumns": "98,101,99,97,106,105,119,100",
-                        "endOffsets": "149,251,351,449,556,662,782,883"
-                    },
-                    "to": {
-                        "startLines": "4,5,6,7,8,9,10,96",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "315,414,516,616,714,821,927,10094",
-                        "endColumns": "98,101,99,97,106,105,119,100",
-                        "endOffsets": "409,511,611,709,816,922,1042,10190"
-                    }
-                },
-                {
-                    "source": "/data/user/0/com.tom.rv2ide/files/home/.gradle/caches/9.2.0/transforms/f79bae5838e268fc932235715d79eeeb/transformed/ui/res/values-es-rUS/values-es-rUS.xml",
+                    "source": "/data/user/0/com.tom.rv2ide/files/home/.gradle/caches/9.2.1/transforms/be94c430cd83bd8df77a5349a18c455f/transformed/ui/res/values-es-rUS/values-es-rUS.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -55,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "/data/user/0/com.tom.rv2ide/files/home/.gradle/caches/9.2.0/transforms/8de0c77783d4dbee05104a01988ef5b0/transformed/material/res/values-es-rUS/values-es-rUS.xml",
+                    "source": "/data/user/0/com.tom.rv2ide/files/home/.gradle/caches/9.2.1/transforms/429432a1b24998e61fa3931ec05e47e7/transformed/material/res/values-es-rUS/values-es-rUS.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -72,7 +55,7 @@
                     }
                 },
                 {
-                    "source": "/data/user/0/com.tom.rv2ide/files/home/.gradle/caches/9.2.0/transforms/3b7e556642f8053865d02411c15c0a94/transformed/material3/res/values-es-rUS/values-es-rUS.xml",
+                    "source": "/data/user/0/com.tom.rv2ide/files/home/.gradle/caches/9.2.1/transforms/6ab9d6c65ab4a9088b1bb5f8d7b91f74/transformed/material3/res/values-es-rUS/values-es-rUS.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -86,6 +69,23 @@
                         "startOffsets": "1693,1815,1937,2060,2180,2280,2381,2479,2594,2737,2855,3007,3092,3194,3291,3393,3511,3634,3741,3877,4010,4149,4331,4462,4582,4704,4831,4929,5025,5146,5279,5380,5485,5600,5735,5876,5987,6092,6169,6265,6360,6481,6603,6723,6828,6915,7004,7093,7204,7305,7385,7491,7575,7676,7782,7882,7981,8069,8184,8285,8389,8512,8592,8718,8830,8937,9036,9142",
                         "endColumns": "121,121,122,119,99,100,97,114,142,117,151,84,101,96,101,117,122,106,135,132,138,181,130,119,121,126,97,95,120,132,100,104,114,134,140,110,104,76,95,94,120,121,119,104,86,88,88,110,100,79,105,83,100,105,99,98,87,114,100,103,122,79,125,111,106,98,105,112",
                         "endOffsets": "1810,1932,2055,2175,2275,2376,2474,2589,2732,2850,3002,3087,3189,3286,3388,3506,3629,3736,3872,4005,4144,4326,4457,4577,4699,4826,4924,5020,5141,5274,5375,5480,5595,5730,5871,5982,6087,6164,6260,6355,6476,6598,6718,6823,6910,6999,7088,7199,7300,7380,7486,7570,7671,7777,7877,7976,8064,8179,8280,8384,8507,8587,8713,8825,8932,9031,9137,9250"
+                    }
+                },
+                {
+                    "source": "/data/user/0/com.tom.rv2ide/files/home/.gradle/caches/9.2.1/transforms/9aba83588b7500795070ea3d91b90295/transformed/core-1.17.0/res/values-es-rUS/values-es-rUS.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,154,256,356,454,561,667,787",
+                        "endColumns": "98,101,99,97,106,105,119,100",
+                        "endOffsets": "149,251,351,449,556,662,782,883"
+                    },
+                    "to": {
+                        "startLines": "4,5,6,7,8,9,10,96",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "315,414,516,616,714,821,927,10094",
+                        "endColumns": "98,101,99,97,106,105,119,100",
+                        "endOffsets": "409,511,611,709,816,922,1042,10190"
                     }
                 }
             ]

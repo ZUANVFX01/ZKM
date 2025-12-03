@@ -2,6 +2,10 @@
  * Copyright (c) 2025 Rve <rve27github@gmail.com>
  * All Rights Reserved.
  */
+ /*
+ * Copyright (c) 2025 ZKM <zuanvfx01github@gmail.com>
+ * All Rights Reserved.
+ */
 @file:OptIn(ExperimentalMaterial3ExpressiveApi::class, ExperimentalMaterial3Api::class,
     ExperimentalHazeMaterialsApi::class
 )
@@ -9,6 +13,11 @@
 package com.zuan.kernelmanager.ui.components
 
 import android.content.Intent
+import androidx.compose.foundation.Image // Tambahan
+import androidx.compose.foundation.layout.Row // Tambahan
+import androidx.compose.foundation.layout.padding // Tambahan
+import androidx.compose.foundation.layout.size // Tambahan
+import androidx.compose.foundation.shape.CircleShape // Tambahan
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Code
@@ -30,7 +39,7 @@ import androidx.compose.material3.TooltipAnchorPosition
 import androidx.compose.material3.TooltipBox
 import androidx.compose.material3.TooltipDefaults
 import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBarDefaults // Tambahan penting
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.material3.rememberTooltipState
 import androidx.compose.runtime.Composable
@@ -38,14 +47,18 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.Modifier // Tambahan
-import androidx.compose.ui.graphics.Color // Tambahan
+import androidx.compose.ui.Alignment // Tambahan
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip // Tambahan
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.unit.dp // Tambahan
 import androidx.core.net.toUri
 import com.zuan.kernelmanager.R
-import com.zuan.kernelmanager.ui.contributor.ContributorActivity
+import com.zuan.kernelmanager.ui.about.AboutActivity
 import com.zuan.kernelmanager.ui.settings.SettingsActivity
 import dev.chrisbanes.haze.HazeState
 import dev.chrisbanes.haze.hazeChild
@@ -55,13 +68,35 @@ import dev.chrisbanes.haze.materials.HazeMaterials
 @Composable
 fun PinnedTopAppBar(
     scrollBehavior: TopAppBarScrollBehavior,
-    hazeState: HazeState? = null // Tambahkan parameter ini (nullable agar aman)
+    hazeState: HazeState? = null
 ) {
     var expanded by remember { mutableStateOf(false) }
     val context = LocalContext.current
 
     TopAppBar(
-        title = { Text("Zuan Kernel Manager", maxLines = 1, overflow = TextOverflow.Ellipsis) },
+        title = {
+            // --- BAGIAN INI DIUBAH ---
+            Row(
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Image(
+                    // TODO: GANTI R.drawable.ic_launcher_foreground DENGAN ID LOGO ANDA YG SEBENARNYA
+                    painter = painterResource(R.drawable.ic_app),
+                    contentDescription = "App Logo",
+                    modifier = Modifier
+                        .size(32.dp) // Ukuran logo
+                        .clip(CircleShape) // Membuatnya bulat
+                        .padding(end = 12.dp) // Jarak antara logo dan teks
+                )
+                Text(
+                    text = "Zuan Kernel Manager",
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
+                    fontWeight = FontWeight.Bold
+                )
+            }
+            // --- BATAS PERUBAHAN ---
+        },
         // Terapkan HazeChild di sini
         modifier = Modifier.let { modifier ->
             if (hazeState != null) {
@@ -102,7 +137,7 @@ fun PinnedTopAppBar(
                         Text("Source code")
                     },
                     onClick = {
-                        context.startActivity(Intent(Intent.ACTION_VIEW, "https://github.com/Rve27/RvKernel-Manager".toUri()))
+                        context.startActivity(Intent(Intent.ACTION_VIEW, "https://github.com/ZUANVFX01/ZKM".toUri()))
                         expanded = false
                     },
                     leadingIcon = {
@@ -117,7 +152,7 @@ fun PinnedTopAppBar(
                         Text("Telegram group")
                     },
                     onClick = {
-                        context.startActivity(Intent(Intent.ACTION_VIEW, "https://t.me/rve_enterprises".toUri()))
+                        context.startActivity(Intent(Intent.ACTION_VIEW, "https://t.me/zuanvfxproject2group".toUri()))
                         expanded = false
                     },
                     leadingIcon = {
@@ -129,16 +164,16 @@ fun PinnedTopAppBar(
                 )
                 DropdownMenuItem(
                     text = {
-                        Text("Contributors")
+                        Text("About ZKM")
                     },
                     onClick = {
-                        context.startActivity(Intent(context, ContributorActivity::class.java))
+                        context.startActivity(Intent(context, AboutActivity::class.java))
                         expanded = false
                     },
                     leadingIcon = {
                         Icon(
                             Icons.Filled.People,
-                            contentDescription = "Contributors",
+                            contentDescription = "About",
                         )
                     },
                 )
@@ -169,7 +204,7 @@ fun TopAppBarWithBackButton(
     text: String,
     onBack: () -> Unit,
     scrollBehavior: TopAppBarScrollBehavior,
-    hazeState: HazeState? = null // Tambahkan parameter ini
+    hazeState: HazeState? = null
 ) {
     LargeFlexibleTopAppBar(
         title = {
@@ -177,6 +212,7 @@ fun TopAppBarWithBackButton(
                 text = text,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
+                fontWeight = FontWeight.Bold,
             )
         },
         // Terapkan HazeChild

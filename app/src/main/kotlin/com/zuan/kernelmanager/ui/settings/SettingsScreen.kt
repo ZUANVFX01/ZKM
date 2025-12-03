@@ -2,6 +2,10 @@
  * Copyright (c) 2025 Rve <rve27github@gmail.com>
  * All Rights Reserved.
  */
+ /*
+ * Copyright (c) 2025 ZKM <zuanvfx01github@gmail.com>
+ * All Rights Reserved.
+ */
 @file:OptIn(ExperimentalMaterial3ExpressiveApi::class, ExperimentalMaterial3Api::class)
 
 package com.zuan.kernelmanager.ui.settings
@@ -9,11 +13,14 @@ package com.zuan.kernelmanager.ui.settings
 import android.app.Activity
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize // Tambahan
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState // Tambahan
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.foundation.verticalScroll // Tambahan
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Android
 import androidx.compose.material.icons.filled.DarkMode
@@ -55,12 +62,19 @@ import com.zuan.kernelmanager.ui.components.DialogTextButton
 import com.zuan.kernelmanager.ui.components.DialogUnstyled
 import com.zuan.kernelmanager.ui.components.TopAppBarWithBackButton
 import com.zuan.kernelmanager.ui.theme.ThemeMode
+// Import Haze
+import dev.chrisbanes.haze.HazeState
+import dev.chrisbanes.haze.haze
+import dev.chrisbanes.haze.rememberHazeState
 
 @Composable
 fun SettingsScreen(viewModel: SettingsViewModel = viewModel(), lifecycleOwner: LifecycleOwner) {
     val context = LocalContext.current
     val clipboardManager = LocalClipboardManager.current
     val scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior()
+
+    // 1. Setup Haze State
+    val hazeState = rememberHazeState()
 
     val themeMode by viewModel.themeMode.collectAsState()
     val pollingInterval by viewModel.pollingInterval.collectAsState()
@@ -93,10 +107,19 @@ fun SettingsScreen(viewModel: SettingsViewModel = viewModel(), lifecycleOwner: L
                 text = "Settings",
                 onBack = { (context as? Activity)?.finish() },
                 scrollBehavior = scrollBehavior,
+                hazeState = hazeState // 2. Pasang hazeState di AppBar
             )
         },
     ) { paddingValues ->
-        Column(modifier = Modifier.padding(paddingValues)) {
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .haze(state = hazeState) // 3. Pasang modifier haze di content
+                .verticalScroll(rememberScrollState()) // Tambahkan scroll biar aman
+        ) {
+            // 4. Gunakan Spacer untuk padding atas (Status Bar + AppBar)
+            Spacer(modifier = Modifier.height(paddingValues.calculateTopPadding()))
+
             CustomListItem(
                 icon = Icons.Default.Palette,
                 title = "App theme",
@@ -115,11 +138,15 @@ fun SettingsScreen(viewModel: SettingsViewModel = viewModel(), lifecycleOwner: L
                 summary = appVersion,
                 onLongClick = { clipboardManager.setText(AnnotatedString(appVersion)) },
             )
+
+            // 5. Gunakan Spacer untuk padding bawah (Nav Bar)
+            Spacer(modifier = Modifier.height(paddingValues.calculateBottomPadding() + 16.dp))
         }
     }
 
     DialogUnstyled(
         state = openThemeDialog,
+        hazeState = hazeState, // 6. Pass hazeState ke Dialog
         title = "Select theme",
         text = {
             Column {
@@ -161,6 +188,7 @@ fun SettingsScreen(viewModel: SettingsViewModel = viewModel(), lifecycleOwner: L
 
     DialogUnstyled(
         state = openPollingDialog,
+        hazeState = hazeState, // 6. Pass hazeState ke Dialog
         title = "SoC polling interval",
         text = {
             Column {

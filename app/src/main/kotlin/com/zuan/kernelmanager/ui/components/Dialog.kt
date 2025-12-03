@@ -2,6 +2,10 @@
  * Copyright (c) 2025 Rve <rve27github@gmail.com>
  * All Rights Reserved.
  */
+ /*
+ * Copyright (c) 2025 ZKM <zuanvfx01github@gmail.com>
+ * All Rights Reserved.
+ */
 @file:OptIn(ExperimentalMaterial3ExpressiveApi::class, ExperimentalMaterial3Api::class,
     ExperimentalHazeMaterialsApi::class
 )
@@ -36,6 +40,7 @@ import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.graphics.vector.ImageVector
@@ -57,21 +62,20 @@ fun DialogUnstyled(
     text: @Composable (() -> Unit)? = null,
     confirmButton: @Composable (() -> Unit)? = null,
     dismissButton: @Composable (() -> Unit)? = null,
-    hazeState: HazeState? = null // Parameter wajib buat efek kaca
+    hazeState: HazeState? = null
 ) {
     Dialog(state = state) {
-        // Logika Scrim (Background)
-        // Kalau hazeState ada -> Background Transparan (biar blur kelihatan)
-        // Kalau gak ada -> Hitam transparan (default)
-        val scrimColor = if (hazeState != null) Color.Transparent else Color.Black.copy(0.6f)
-
-        // Modifier HazeChild buat bikin efek blur di background
+        // --- 1. LOGIKA SCRIM (Background Belakang) ---
+        // Warna scrim kita buat transparan total jika haze aktif, biar blurnya clean
+        val scrimColor = if (hazeState != null) Color.Black.copy(alpha = 0.2f) else Color.Black.copy(0.6f)
+        
         val scrimModifier = if (hazeState != null) {
             Modifier
                 .fillMaxSize()
+                // NYALAKAN LAGI BLUR BACKGROUND DI SINI
                 .hazeChild(
-                    state = hazeState,
-                    style = HazeMaterials.regular() // Style material glass
+                    state = hazeState, 
+                    style = HazeMaterials.regular() // Pakai regular biar background agak gelap/blur
                 )
         } else {
             Modifier.fillMaxSize()
@@ -84,17 +88,32 @@ fun DialogUnstyled(
             exit = fadeOut()
         )
 
+        // --- 2. LOGIKA MODIFIER DIALOG (Kotak Kaca) ---
+        val dialogShape = AlertDialogDefaults.shape
+        
+        val baseModifier = Modifier
+            .displayCutoutPadding()
+            .systemBarsPadding()
+            .widthIn(min = 280.dp, max = 560.dp)
+            .padding(24.dp)
+
+        val dialogModifier = if (hazeState != null) {
+            baseModifier
+                .clip(dialogShape)
+                .hazeChild(
+                    state = hazeState, 
+                    style = HazeMaterials.thin() // Dialog pakai thin biar beda layer sama background
+                )
+        } else {
+            baseModifier
+        }
+
+        // --- 3. DIALOG PANEL ---
         DialogPanel(
-            // Ganti background jadi PUTIH (mirip iOS), text jadi HITAM
-            backgroundColor = Color.White,
+            modifier = dialogModifier,
+            backgroundColor = if (hazeState != null) Color.White.copy(alpha = 0.45f) else Color.White,
             contentColor = Color.Black,
-            shape = AlertDialogDefaults.shape,
-            modifier = Modifier
-                .displayCutoutPadding()
-                .systemBarsPadding()
-                .widthIn(min = 280.dp, max = 560.dp)
-                .padding(24.dp),
-            // Animasi Spring biar 'bouncy' dikit pas muncul
+            shape = dialogShape,
             enter = fadeIn(spring(stiffness = Spring.StiffnessHigh)) + scaleIn(
                 initialScale = 0.8f,
                 animationSpec = spring(
@@ -119,7 +138,7 @@ fun DialogUnstyled(
                             Text(
                                 text = title,
                                 style = MaterialTheme.typography.headlineSmall,
-                                color = Color.Black, // Paksa hitam biar kontras di background putih
+                                color = Color.Black.copy(alpha = 0.9f),
                             )
                         }
                     }
@@ -153,8 +172,6 @@ fun DialogTextButton(icon: Any? = null, text: String, onClick: () -> Unit) {
         onClick = onClick,
         modifier = Modifier.fillMaxWidth(),
         shapes = ButtonDefaults.shapes(),
-        // Tambahan: Pastikan warna text button sesuai tema (biasanya primary color)
-        // tapi karena background putih, default TextButton sudah aman.
     ) {
         Row(
             modifier = Modifier.fillMaxWidth(),

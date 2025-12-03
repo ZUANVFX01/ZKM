@@ -2,13 +2,22 @@
  * Copyright (c) 2025 Rve <rve27github@gmail.com>
  * All Rights Reserved.
  */
+ /*
+ * Copyright (c) 2025 ZKM <zuanvfx01github@gmail.com>
+ * All Rights Reserved.
+ */
 @file:OptIn(ExperimentalMaterial3ExpressiveApi::class)
 
 package com.zuan.kernelmanager.ui
+
+import android.Manifest
+import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
@@ -20,6 +29,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
+import androidx.core.content.ContextCompat
 import androidx.core.splashscreen.SplashScreen
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.zuan.kernelmanager.ui.navigation.ZuanKernelManagerNavHost
@@ -30,6 +40,13 @@ import kotlin.system.exitProcess
 class MainActivity : ComponentActivity() {
     private var isRoot = false
     private var showRootDialog by mutableStateOf(false)
+
+    // Launcher untuk request izin notifikasi (Android 13+)
+    private val requestPermissionLauncher = registerForActivityResult(
+        ActivityResultContracts.RequestPermission()
+    ) { _ -> 
+        // Hasil request (bisa kosongkan jika tidak ada logic khusus)
+    }
 
     private val checkRoot = Runnable {
         Shell.getShell { shell ->
@@ -48,9 +65,22 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         Thread(checkRoot).start()
 
+        // Minta Izin Notifikasi saat App Dibuka
+        askNotificationPermission()
+
         setContent {
             ZuanKernelManagerTheme {
                 ZuanKernelManagerApp(showRootDialog = showRootDialog)
+            }
+        }
+    }
+
+    private fun askNotificationPermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) !=
+                PackageManager.PERMISSION_GRANTED
+            ) {
+                requestPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
             }
         }
     }

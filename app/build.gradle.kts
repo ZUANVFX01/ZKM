@@ -6,14 +6,14 @@ plugins {
 
 android {
     namespace = "com.zuan.kernelmanager"
-    compileSdk = 36  // Disarankan 34, bukan 36
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.zuan.kernelmanager"
-        minSdk = 23
+        minSdk = 24
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 10000
+        versionName = "1.0.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         
@@ -81,8 +81,10 @@ dependencies {
     
     // Navigation
     implementation(libs.androidx.navigation.compose)
-    implementation("dev.chrisbanes.haze:haze:1.7.0") // Atau versi terbaru
-implementation("dev.chrisbanes.haze:haze-materials:1.7.0")
+    
+    // Haze
+    implementation(libs.haze)
+    implementation(libs.haze.materials)
     
     // Lifecycle
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -92,10 +94,20 @@ implementation("dev.chrisbanes.haze:haze-materials:1.7.0")
     // Kotlin
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.serialization.json)
+    
+    //Shizuku
+    implementation(libs.shizuku.api)
+    implementation(libs.shizuku.provider)
+    
+    //Service
+    implementation(libs.androidx.lifecycle.service)
+    implementation(libs.androidx.savedstate.ktx)
 
     // Third Party
     implementation(libs.coil.compose)
     implementation(libs.coil.network.okhttp)
     implementation(libs.libsu.core)
+    implementation(libs.libsu.service)
+    implementation(libs.libsu.nio)
     implementation(libs.composables.core)
 }
