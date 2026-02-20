@@ -350,13 +350,6 @@ This software contains code dari proyek open-source berikut:
 <div align="center" style="margin-top: 40px; padding: 20px; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); border-radius: 12px;">
 
   <img src="./logo/logo.jpg" width="60" height="60" style="border-radius: 12px; margin-bottom: 15px;" alt="Zuan Technologies"/>
-  
-  <h3 style="margin: 10px 0; color: #2c3e50;">Zuan Technologies</h3>
-  
-  <p style="color: #555; font-size: 0.9em; max-width: 600px; margin: 0 auto;">
-    Pioneering Android System Optimization Solutions<br>
-    <sub>© 2024 Zuan Technologies. All rights reserved.</sub>
-  </p>
 
   <p style="margin-top: 15px;">
     <a href="https://github.com/ZUANVFX01/ZKM">GitHub</a> • 
