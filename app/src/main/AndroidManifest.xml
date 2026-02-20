@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- NETWORK & UPDATE -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    
+    <!-- INSTALL APK (Auto-update) -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    
+    <!-- STORAGE (Download APK) -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+    
+    <!-- NOTIFICATION -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    
+    <!-- SYSTEM -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+    
+    <!-- FOREGROUND SERVICES -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+    
+    <!-- PACKAGES QUERY -->
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"
+        tools:ignore="QueryAllPackagesPermission" />
+
+    <application 
+        android:icon="@mipmap/ic_launcher" 
+        android:label="@string/app_name" 
+        android:supportsRtl="true" 
+        android:windowSoftInputMode="adjustResize"
+        android:enableOnBackInvokedCallback="true"
+        android:theme="@style/ZuanTheme"
+        android:usesCleartextTraffic="true">
+
+        <!-- FileProvider untuk Install APK (Update System) -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <!-- Shizuku Provider -->
+        <provider
+            android:name="rikka.shizuku.ShizukuProvider"
+            android:authorities="${applicationId}.shizuku"
+            android:multiprocess="false"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.INTERACT_ACROSS_USERS_FULL" />
+
+        <activity 
+            android:name=".ui.MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.ZuanTheme.SplashScreen"
+            android:windowSoftInputMode="adjustResize"> 
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name=".ui.settings.SettingsActivity"
+            android:exported="false" />
+            
+        <activity
+            android:name=".ui.about.AboutActivity"
+            android:exported="false" />
+            
+        <service 
+            android:name=".services.FpsOverlayService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="specialUse" />
+            
+        <service
+            android:name=".service.SmartCutoffService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="specialUse" />
+
+        <service 
+            android:name=".service.BatteryMonitorService" 
+            android:foregroundServiceType="specialUse|dataSync"
+            android:exported="false" 
+            android:enabled="true" />
+
+        <service
+            android:name=".ui.ksuweb.core.FileSystemService"
+            android:process=":ksu_web_service"
+            android:exported="false" />
+
+        <service
+            android:name=".ui.terminal.FloatingTerminalService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="dataSync" />
+
+        <service 
+            android:name=".ui.proces.FloatingProcessService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="specialUse" />
+<service
+    android:name=".ui.ksuweb.core.FileSystemService"
+    android:process=":ksu_web_service"
+    android:exported="false"
+    tools:ignore="Instantiatable" />
+
+            
+        <service
+            android:name=".ui.activitylauncher.FloatingActivityService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="specialUse">
+            <property
+                android:name="android.app.property.FOREGROUND_SERVICE_TYPE"
+                android:value="specialUse" />
+        </service>
+            
+    </application>
+</manifest>

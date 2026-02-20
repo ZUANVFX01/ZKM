@@ -1,0 +1,1125 @@
+<resources>
+    <string name="app_name">Zuan Kernel Manager</string>
+
+    <string name="nav_home">Strona główna</string>
+    <string name="nav_soc">SoC</string>
+    <string name="nav_pref">Preferencje</string>
+    <string name="nav_feature">Funkcje</string>
+    <string name="nav_overview">Przegląd</string>
+    <string name="nav_adjust">Dostosuj</string>
+    <string name="nav_support">Wsparcie</string>
+    <string name="sect_general">Ogólne</string>
+    <string name="sect_appearance">Wygląd</string>
+    <string name="nav_fastshell">Szybka Powłoka</string>
+    <string name="nav_setedit">SetEdit</string>
+    <string name="nav_fps">Menedżer FPS</string>
+    <string name="nav_process">Menedżer Procesów</string>
+    <string name="nav_flasher">Programator Kernela</string>
+    <string name="nav_launcher">Launcher Aktywności</string>
+    <string name="nav_ksuweb">KSU WebUI</string>
+    <string name="nav_gpu">GPU</string>
+
+    <string name="pref_language">Język Aplikacji</string>
+    <string name="lang_system">Domyślny Systemu</string>
+    <string name="lang_indonesia">Bahasa Indonesia</string>
+    <string name="lang_english">English</string>
+    <string name="lang_region_us">Stany Zjednoczone</string>
+    <string name="lang_sect_recommended">Zalecane</string>
+    <string name="lang_sect_all">Wszystkie Języki</string>
+    <string name="lang_search_hint">Szukaj języka…</string>
+
+    <string name="wallpaper_style_title">Tapeta &amp; Styl</string>
+    <string name="tab_colors">Kolory</string>
+    <string name="tab_background">Tło</string>
+    <string name="tab_effects">Efekty</string>
+    <string name="style_theme_header">Styl &amp; Motyw</string>
+    <string name="dark_theme">Ciemny Motyw</string>
+    <string name="dark_theme_on">Włączony</string>
+    <string name="dark_theme_off">Wyłączony</string>
+    <string name="color_palette">Paleta Kolorów</string>
+    <string name="dynamic_color">Kolor Dynamiczny</string>
+    <string name="dynamic_color_desc">Na podstawie tapety</string>
+    <string name="custom_color">Kolor Niestandardowy</string>
+    <string name="custom_color_desc">Stwórz własny motyw</string>
+    <string name="custom_color_editor">Edytor Koloru Niestandardowego</string>
+    <string name="color_primary">Podstawowy</string>
+    <string name="color_secondary">Drugorzędny</string>
+    <string name="color_tertiary">Trzeciorzędny</string>
+    <string name="background_type">Typ Tła</string>
+    <string name="bg_type_gallery">Galeria</string>
+    <string name="bg_type_system">System</string>
+    <string name="bg_adjustments">Dostosowania Tła</string>
+    <string name="saturation">Nasycenie</string>
+    <string name="bg_blur">Rozmycie Tła</string>
+    <string name="bg_blur_desc">Zastosuj rozmycie do tapety</string>
+    <string name="blur_strength">Siła Rozmycia</string>
+    <string name="blur_strength_dp">%1$.0fdp</string>
+    <string name="dark_overlay">Ciemna Nakładka</string>
+    <string name="dark_overlay_desc">Dodaj ciemny odcień do tła</string>
+    <string name="glass_effects">Efekty Szklane</string>
+    <string name="card_blur">Rozmycie Kart</string>
+    <string name="card_blur_desc">Styl glassmorphism</string>
+    <string name="card_opacity">Nieprzezroczystość Kart</string>
+    <string name="weather_effects">Efekty Pogodowe</string>
+    <string name="effect_intensity">Intensywność Efektu</string>
+    <string name="intensity_low">Niska</string>
+    <string name="intensity_high">Wysoka</string>
+    <string name="effect_none">Brak</string>
+    <string name="effect_fog">Mgła</string>
+    <string name="effect_rain">Deszcz</string>
+    <string name="effect_snow">Śnieg</string>
+    <string name="effect_sun_rays">Promienie Słońca</string>
+    <string name="effect_desc_none">Brak efektu pogodowego</string>
+    <string name="effect_desc_fog">Mglista nakładka tworząca tajemniczą atmosferę</string>
+    <string name="effect_desc_rain">Animowane krople deszczu spadające na ekran</string>
+    <string name="effect_desc_snow">Delikatne płatki śniegu opadające w dół</string>
+    <string name="effect_desc_sun">Ciepłe promienie słońca świecące z rogu</string>
+    <string name="preview_title">Podgląd</string>
+    <string name="preview_live">Widok Na Żywo</string>
+
+    <string name="settings_title">Ustawienia</string>
+    <string name="pref_wallpaper_style">Tapeta &amp; Styl</string>
+    <string name="pref_wallpaper_style_desc">Kolory, motyw, ikona aplikacji</string>
+    <string name="sect_custom">Personalizacja</string>
+    <string name="label_applied_dpi">Zastosowany DPI</string>
+    <string name="pref_applied_dpi_desc">Aktualny: %1$d dpi</string>
+    <string name="pref_alt_icon">Alternatywna Ikona</string>
+    <string name="pref_alt_icon_desc">Użyj alternatywnej ikony aplikacji</string>
+    <string name="pref_polling">Interwał Odpytywania</string>
+    <string name="pref_polling_desc">%1$dms</string>
+
+    <string name="dialog_title_dpi">Zastosowany DPI</string>
+    <string name="dialog_msg_dpi">Aktualny DPI urządzenia to %1$d. Dostosuj suwak, aby zmienić gęstość aplikacji.\n\nWybrano: %2$d dpi</string>
+    <string name="dialog_title_polling">Interwał Odpytywania</string>
+    <string name="dialog_msg_polling">Ustaw interwał odświeżania dla monitorowania systemu (1–30 sekund).</string>
+    <string name="label_interval_sec">Interwał (sekundy)</string>
+    <string name="btn_confirm">Potwierdź</string>
+    <string name="btn_cancel">Anuluj</string>
+    <string name="btn_apply">Zastosuj</string>
+
+    <string name="fps_manager_title">Menedżer FPS</string>
+    <string name="fps_display_header">Wyświetlacz</string>
+    <string name="fps_tab_home">Strona główna</string>
+    <string name="fps_tab_stats">Statystyki</string>
+    <string name="fps_tab_games">Gry</string>
+    <string name="fps_tab_overlay">Nakładka</string>
+
+    <string name="fps_system_access">Dostęp do Systemu</string>
+    <string name="fps_reader_mode">Tryb Czytnika FPS</string>
+    <string name="fps_mode_universal_android">Uniwersalny Android</string>
+    <string name="fps_mode_android_desc">Max Android 13/14</string>
+    <string name="fps_mode_universal_gpu">Uniwersalny GPU</string>
+    <string name="fps_mode_gpu_desc">Obsługiwane przez prawie wszystkie GPU (Adreno/Inne)</string>
+    <string name="fps_mode_universal_devices">Urządzenia Uniwersalne</string>
+    <string name="fps_mode_devices_desc">Każde urządzenie (Używając dumpsys timestats)</string>
+    <string name="fps_beta_label">BETA</string>
+    <string name="fps_device_env">Środowisko Urządzenia</string>
+    <string name="fps_manufacturer">Producent</string>
+    <string name="fps_model">Model</string>
+    <string name="fps_android_ver">Wersja Android</string>
+    <string name="fps_overlay_service">Usługa Nakładki</string>
+    <string name="fps_service_active">Aktywna &amp; Monitorowanie</string>
+    <string name="fps_service_stopped">Usługa Zatrzymana</string>
+    <string name="fps_checking_root">Sprawdzanie Root…</string>
+    <string name="fps_root_needed">Wymagany Dostęp Root</string>
+    <string name="fps_start_service">Uruchom Usługę</string>
+    <string name="fps_stop_service">Zatrzymaj Usługę</string>
+    <string name="fps_root_granted">Dostęp Root Przyznany</string>
+    <string name="fps_root_not_found">Root Nie Znaleziony</string>
+    <string name="fps_root_available_desc">Wykryto KernelSU / Magisk. Pełna funkcjonalność dostępna.</string>
+    <string name="fps_root_missing_desc">Zrootuj urządzenie, aby użyć Menedżera FPS.</string>
+
+    <string name="fps_game_launcher">Launcher Gier</string>
+    <string name="fps_game_launcher_desc">Uruchom gry, aby rozpocząć monitorowanie</string>
+
+    <string name="fps_overlay_active">Nakładka Aktywna</string>
+    <string name="fps_overlay_showing">Wyświetlanie statystyk w czasie rzeczywistym</string>
+    <string name="fps_overlay_tap_enable">Dotknij przełącznika, aby włączyć</string>
+    <string name="fps_overlay_style">Styl Nakładki</string>
+    <string name="fps_style_android">Android</string>
+    <string name="fps_style_pc">Tryb PC</string>
+    <string name="fps_style_mini">Mini</string>
+    <string name="fps_pc_options">Opcje Trybu PC</string>
+    <string name="fps_show_render">Pokaż Nazwę Renderera (Vulkan/OGL)</string>
+    <string name="fps_orientation">Orientacja</string>
+    <string name="fps_vertical">Pionowa</string>
+    <string name="fps_horizontal">Pozioma</string>
+    <string name="fps_metrics">Metryki</string>
+    <string name="fps_metric_fps">FPS</string>
+    <string name="fps_metric_cpu">CPU</string>
+    <string name="fps_metric_ram">RAM</string>
+    <string name="fps_metric_watts">Waty</string>
+    <string name="fps_metric_temp">Temp</string>
+    <string name="fps_adjustments">Dostosowania</string>
+    <string name="fps_text_size">Rozmiar Tekstu</string>
+    <string name="fps_width_scale">Skala Szerokości</string>
+    <string name="fps_opacity">Nieprzezroczystość</string>
+    <string name="fps_color_theme">Motyw Kolorów</string>
+    <string name="fps_color_android_only">Kolor niestandardowy dostępny tylko w Trybie Android</string>
+    <string name="fps_custom_color">Kolor Niestandardowy</string>
+    <string name="fps_color_red">C</string>
+    <string name="fps_color_green">Z</string>
+    <string name="fps_color_blue">N</string>
+
+    <string name="fps_session_history">Historia Sesji</string>
+    <string name="fps_records_count">%1$d rekordów</string>
+    <string name="fps_stat_max">MAX FPS</string>
+    <string name="fps_stat_min">MIN FPS</string>
+    <string name="fps_stat_avg">ŚR FPS</string>
+    <string name="fps_stat_var">WAR</string>
+    <string name="fps_stat_stable">STABILNE %</string>
+    <string name="fps_stat_max_temp">MAX TEMP</string>
+    <string name="fps_stat_avg_pwr">ŚR MOC</string>
+    <string name="fps_stat_ram">RAM</string>
+    <string name="fps_chart_fps_temp">FPS &amp; Temperatura</string>
+    <string name="fps_chart_cpu">Obciążenie CPU (%)</string>
+    <string name="fps_export_csv">EKSPORTUJ CSV</string>
+    <string name="fps_delete">USUŃ</string>
+
+    <string name="setedit_title">SetEdit</string>
+    <string name="setedit_subtitle">Edytor Bazy Danych</string>
+    <string name="setedit_search_hint">Szukaj właściwości...</string>
+    <string name="setedit_view_grid">Siatka</string>
+    <string name="setedit_view_list">Lista</string>
+    <string name="setedit_empty">Nie znaleziono właściwości</string>
+    <string name="setedit_copy_value">Kopiuj Wartość</string>
+
+    <string name="setedit_tab_all">Wszystkie</string>
+    <string name="setedit_tab_global">Globalne</string>
+    <string name="setedit_tab_secure">Bezpieczne</string>
+    <string name="setedit_tab_system">Systemowe</string>
+    <string name="setedit_tab_android">Android</string>
+
+    <string name="setedit_msg_saved">Zapisano:</string>
+    <string name="setedit_msg_failed">Nie udało się zapisać</string>
+    <string name="setedit_msg_deleted">Usunięto:</string>
+    <string name="setedit_msg_error_delete">Nie można usunąć właściwości Android</string>
+
+    <string name="setedit_sheet_title">Edytuj Właściwość</string>
+    <string name="setedit_label_key">Klucz</string>
+    <string name="setedit_label_original">Wartość Oryginalna</string>
+    <string name="setedit_label_edit">Nowa Wartość</string>
+    <string name="setedit_btn_remove">Usuń</string>
+    <string name="setedit_btn_save">Zapisz</string>
+
+    <string name="home_update_new">Co nowego:</string>
+    <string name="home_update_avail">Dostępna Aktualizacja:</string>
+
+    <string name="about_maintainer_title">Opiekun Projektów ZKM</string>
+    <string name="about_opensource_thanks">Podziękowania dla projektów open source</string>
+    <string name="about_section_categories">Kategorie</string>
+    <string name="about_section_links">Linki</string>
+    <string name="about_link_channel">Kanał</string>
+    <string name="about_link_discussion">Dyskusja</string>
+    <string name="about_link_translate">Tłumacz</string>
+    <string name="about_link_website">Strona WWW</string>
+    <string name="about_version_format">v%1$s (%2$d)</string>
+
+    <string name="soc_tab_processor">Procesor</string>
+    <string name="soc_tab_scheduler">Planista</string>
+    <string name="soc_tab_memory">Pamięć</string>
+    <string name="soc_tab_network">Sieć</string>
+    <string name="soc_system_monitor">Monitor Systemu</string>
+
+    <string name="home_features">Funkcje</string>
+    <string name="home_dashboard">Pulpit</string>
+    <string name="home_device_content_desc">Urządzenie</string>
+
+    <string name="cat_all">Wszystkie</string>
+    <string name="cat_system">System</string>
+    <string name="cat_monitor">Monitor</string>
+    <string name="cat_root">Root</string>
+
+    <string name="ext_terminal">Terminal</string>
+    <string name="ext_setedit">SetEdit</string>
+    <string name="ext_flasher">Programator</string>
+    <string name="ext_launcher">Launcher</string>
+    <string name="ext_dod">DoD</string>
+    <string name="ext_compiler">Kompilator</string>
+    <string name="ext_thermal">Termiczny</string>
+    <string name="ext_display">Wyświetlacz</string>
+    <string name="ext_battery">Bateria</string>
+    <string name="ext_dozemode">Tryb Doze</string>
+    <string name="ext_logs">Logi</string>
+    <string name="ext_fps">Fps</string>
+    <string name="ext_process">Proces</string>
+    <string name="ext_ksuweb">KsuWeb</string>
+
+    <string name="desc_terminal">Wpisuj komendy</string>
+    <string name="desc_setedit">Edytuj bazę danych</string>
+    <string name="desc_flasher">Programuj obrazy</string>
+    <string name="desc_launcher">Aktywność aplikacji</string>
+    <string name="desc_dod">Wyłącz/Zamroź aplikację</string>
+    <string name="desc_compiler">Optymalizator Dex2oat</string>
+    <string name="desc_thermal">Monitoruj i kontroluj</string>
+    <string name="desc_display">Modyfikacje i więcej</string>
+    <string name="desc_battery">Kontroler statystyk ładowania</string>
+    <string name="desc_dozemode">Ustaw zoptymalizowany tryb doze</string>
+    <string name="desc_logs">Czytaj logi</string>
+    <string name="desc_fps">Częstotliwość klatek</string>
+    <string name="desc_process">Menedżer zadań</string>
+    <string name="desc_ksuweb">Menedżer WWW</string>
+
+    <string name="overall_title">Ogólne</string>
+    <string name="overall_subtitle">Zuan Kernel Manager</string>
+    <string name="overall_dashboard">Pulpit</string>
+    <string name="overall_processor">Procesor</string>
+    <string name="overall_graphics">Grafika</string>
+    <string name="overall_memory">Pamięć</string>
+    <string name="overall_vm_params">Parametry VM</string>
+    <string name="overall_display">Wyświetlacz</string>
+
+    <string name="core_detail_title">Rdzeń %1$d</string>
+    <string name="core_detail_governor">Governor:</string>
+    <string name="core_detail_params">Parametry Governor</string>
+    <string name="core_detail_no_params">Brak dostępnych parametrów.</string>
+    <string name="core_detail_cancel">Anuluj</string>
+    <string name="core_detail_settings">Ustawienia</string>
+
+    <string name="cpu_total_load">Całkowite Obciążenie</string>
+    <string name="cpu_core_usage">Użycie Rdzeni</string>
+    <string name="cpu_loading">Ładowanie Rdzeni...</string>
+    <string name="cpu_top_processes">Najważniejsze Procesy</string>
+    <string name="cpu_view_all">Zobacz Wszystkie</string>
+
+    <string name="gpu_load">Obciążenie GPU</string>
+    <string name="gpu_renderer_info">Info o Rendererze</string>
+
+    <string name="ram_physical">RAM Fizyczna</string>
+    <string name="ram_swap_zram">Swap / ZRAM</string>
+    <string name="ram_used">Użyta</string>
+    <string name="ram_free">Wolna</string>
+    <string name="ram_total">Całkowita</string>
+
+    <string name="vm_swappiness">Swappiness</string>
+    <string name="vm_extra_free">Extra Free Kbytes</string>
+    <string name="vm_watermark">Watermark Scale</string>
+    <string name="vm_vfs_cache">VFS Cache Pressure</string>
+    <string name="vm_dirty_ratio">Dirty Ratio</string>
+    <string name="vm_dirty_bg">Dirty BG Ratio</string>
+
+    <string name="display_density">Gęstość</string>
+    <string name="display_hdr">Wsparcie HDR</string>
+
+    <string name="temp_freezing">Zamrażający</string>
+    <string name="temp_cool">Chłodny</string>
+    <string name="temp_warm">Ciepły</string>
+    <string name="temp_hot">Gorący</string>
+    <string name="temp_overheat">Przegrzanie</string>
+    <string name="temp_temperature">Temperatura</string>
+
+    <string name="battery_details">Szczegóły</string>
+    <string name="battery_uptime">Czas Pracy</string>
+    <string name="battery_deep_sleep">Głęboki Sen</string>
+    <string name="battery_electric_current">Prąd Elektryczny</string>
+    <string name="battery_health">Zdrowie</string>
+    <string name="battery_cycles">Cykle</string>
+
+    <string name="update_available">Dostępna Aktualizacja: %1$s</string>
+    <string name="update_tap_install">Dotknij, aby zobaczyć changelog i zainstalować</string>
+
+    <string name="device_android_version">Wersja Android</string>
+    <string name="device_kernel_info">Informacje o Kernelu</string>
+    <string name="status_loading">Ładowanie...</string>
+
+    <string name="terminal_title">zuan@kernel</string>
+    <string name="terminal_overlay_title">zuan@overlay</string>
+    <string name="terminal_overlay_title_locked">zuan@overlay [ZABLOKOWANY]</string>
+    <string name="terminal_preferences_title">PREFERENCJE</string>
+    <string name="terminal_overlay_active">Nakładka Terminala Aktywna</string>
+    <string name="terminal_custom_bg_desc">Tło Niestandardowe</string>
+
+    <string name="action_close">Zamknij</string>
+    <string name="action_lock">Zablokuj</string>
+    <string name="action_resize">Zmień Rozmiar</string>
+    <string name="action_settings">Ustawienia</string>
+    <string name="action_input_keyboard">Wprowadź z Klawiatury</string>
+
+    <string name="terminal_glass_mode">Tryb Szklany A12+</string>
+    <string name="terminal_theme_dark_glass">Motyw: Ciemne Szkło</string>
+    <string name="terminal_theme_light_glass">Motyw: Jasne Szkło</string>
+    <string name="terminal_glass_intensity">Intensywność Szkła: %1$d dp</string>
+    <string name="terminal_background_section">TŁO</string>
+    <string name="terminal_live_video_wall">Ściana Wideo na Żywo (4K)</string>
+    <string name="terminal_change_video">Zmień Wideo</string>
+    <string name="terminal_video_dim">Przyciemnienie Wideo: %1$d%%</string>
+    <string name="terminal_custom_image">Obraz Niestandardowy</string>
+    <string name="terminal_select_image">Wybierz Nowy Obraz</string>
+    <string name="terminal_image_blur">Rozmycie Obrazu: %1$d dp</string>
+    <string name="terminal_image_dim">Przyciemnienie Obrazu: %1$d%%</string>
+    <string name="terminal_bubble_gradient">Gradient Bąbelkowy</string>
+    <string name="terminal_bg_dark_mode">TŁO: Tryb Ciemny</string>
+    <string name="terminal_bg_light_mode">TŁO: Tryb Jasny</string>
+    <string name="terminal_live_gradient">Animacja Gradientu na Żywo</string>
+    <string name="terminal_fullscreen">Pełny Ekran (UI)</string>
+    <string name="terminal_floating_mode">Tryb Pływający (Nakładka)</string>
+
+    <string name="kernel_flasher_title">Programator Kernela</string>
+    <string name="flasher_mode_horizon">Horizon</string>
+    <string name="flasher_mode_capntrips">Capntrips</string>
+    <string name="flasher_init">Inicjalizacja...</string>
+    <string name="flasher_checking_tools">Sprawdzanie Narzędzi...</string>
+    <string name="flasher_ready">Gotowy</string>
+    <string name="flasher_error">Błąd: %1$s</string>
+    <string name="flasher_connecting_root">Łączenie z Root...</string>
+    <string name="flasher_scanning_partitions">Skanowanie Partycji...</string>
+    <string name="please_wait">Proszę czekać...</string>
+    <string name="error_occurred">Wystąpił Błąd</string>
+    <string name="unknown_error">Nieznany Błąd</string>
+    <string name="go_back">Wróć</string>
+    <string name="slot_a_not_found">Slot A Nie Znaleziony</string>
+    <string name="slot_b_not_available">Slot B Niedostępny</string>
+    <string name="slot_vm_not_found">Slot VM Nie Znaleziony</string>
+    <string name="confirm_reboot_system">POTWIERDŹ URUCHOMIENIE PONOWNE SYSTEMU</string>
+    <string name="scanning">Skanowanie...</string>
+
+    <string name="horizon_engine_legacy">Silnik Horizon (Legacy)</string>
+    <string name="device_model">Model Urządzenia</string>
+    <string name="kernel_version">Wersja Kernela</string>
+    <string name="active_slot">Aktywny Slot</string>
+    <string name="slot_current">Slot %1$s</string>
+    <string name="boot_partitions">Partycje Rozruchowe</string>
+    <string name="slot_a">Slot A</string>
+    <string name="slot_b">Slot B</string>
+    <string name="flasher_console">Konsola Programatora</string>
+    <string name="terminal_output">Wyjście Terminala</string>
+    <string name="horizon_ready">> Silnik Horizon Gotowy...</string>
+    <string name="flashing_kernel_progress">Programowanie Kernela...</string>
+    <string name="flash_horizon_method">Programuj (Metoda Horizon)</string>
+    <string name="flashing_complete">Programowanie Zakończone</string>
+    <string name="flasher_reboot_message">Obraz kernela został pomyślnie zaprogramowany. Zalecane jest ponowne uruchomienie, aby zastosować zmiany.</string>
+    <string name="reboot_system">Uruchom Ponownie System</string>
+    <string name="later">Później</string>
+    <string name="active_label">Aktywny</string>
+    <string name="format_label">Fmt: %1$s</string>
+
+    <string name="flasher_init_process">Inicjalizacja Procesu Programowania...</string>
+    <string name="flasher_success">[SUKCES] Programowanie Zakończone.</string>
+    <string name="flasher_failed">[BŁĄD] Wystąpił błąd.</string>
+    <string name="flasher_toast_failed">Programowanie Nieudane!</string>
+    <string name="loading">Ładowanie...</string>
+
+    <string name="activity_launcher_title">Launcher Aktywności</string>
+    <string name="search_hint">Szukaj aplikacji…</string>
+    <string name="loading_apps">Ładowanie Aplikacji…</string>
+    <string name="apps_installed_count">Zainstalowane Aplikacje (%1$d)</string>
+    <string name="user_apps">Aplikacje Użytkownika</string>
+    <string name="system_apps">Aplikacje Systemowe</string>
+    <string name="active_apps">Aktywne Aplikacje</string>
+    <string name="recycle_bin">Kosz</string>
+    <string name="app_detail_title">Szczegóły Aplikacji</string>
+    <string name="version_info">Wersja: %1$s (%2$s)</string>
+    <string name="total_activities">Wszystkie Aktywności: %1$d</string>
+    <string name="activity_list">Lista Aktywności</string>
+    <string name="launch_activity_title">Uruchomić Aktywność?</string>
+    <string name="activity_name">Nazwa Aktywności</string>
+    <string name="class_label">Klasa</string>
+    <string name="package_label">Package</string>
+    <string name="launch">Uruchom</string>
+    <string name="copy_info">Kopiuj Info</string>
+    <string name="display_settings">Ustawienia Wyświetlania</string>
+    <string name="name_asc">Nazwa A-Z</string>
+    <string name="name_desc">Nazwa Z-A</string>
+    <string name="filter_all">Wszystkie</string>
+    <string name="filter_system">Systemowe</string>
+    <string name="filter_user">Użytkownika</string>
+    <string name="no_apps_found">Nie znaleziono aplikacji</string>
+    <string name="copied">Skopiowano</string>
+    <string name="permission_denied">Odmowa Dostępu</string>
+    <string name="error_message">Błąd: %1$s</string>
+    <string name="btn_back">Wstecz</string>
+    <string name="permission_required">Wymagane Uprawnienie</string>
+    <string name="inspector_started">Inspektor Uruchomiony</string>
+    <string name="toggle_inspector">Przełącz Inspektora</string>
+    <string name="scanning_activities">Skanowanie Aktywności…</string>
+    <string name="activities">Aktywności</string>
+
+    <string name="battery_statistics_title">Statystyki Baterii</string>
+    <string name="battery_tab_dashboard">Pulpit</string>
+    <string name="battery_tab_controls">Kontrolki</string>
+    <string name="battery_tab_settings">Ustawienia</string>
+
+    <string name="battery_status">Status</string>
+    <string name="battery_charging">Ładowanie</string>
+    <string name="battery_discharging">Rozładowywanie</string>
+    <string name="battery_temp">Temp</string>
+    <string name="battery_voltage">Napięcie</string>
+
+    <string name="battery_peak_records">Rekordy Szczytowe</string>
+    <string name="battery_temp_max">Max Temp</string>
+    <string name="battery_discharge">Rozładowanie</string>
+    <string name="battery_charge_max">Max Ładowanie</string>
+    <string name="battery_current_live_chart">Wykres Prądu na Żywo</string>
+    <string name="battery_bms_data">Dane BMS / Uevent</string>
+    <string name="battery_discharge_charge_speed">Szybkość Rozładowania/Ładowania</string>
+    <string name="battery_charging_type">Typ Ładowania</string>
+    <string name="battery_level">Poziom Baterii</string>
+    <string name="battery_current_voltage">Aktualne Napięcie</string>
+    <string name="battery_max_voltage">Max Napięcie</string>
+    <string name="battery_power_watt">Moc/Wat</string>
+    <string name="battery_temp_label">Temp Baterii</string>
+    <string name="battery_tech">Technologia Baterii</string>
+    <string name="battery_cycle_count">Liczba Cykli</string>
+    <string name="battery_real_capacity">Rzeczywista Pojemność</string>
+
+    <string name="battery_monitor_service">Usługa Monitorowania Baterii</string>
+    <string name="battery_monitor_service_desc">Zapisuj statystyki baterii w tle</string>
+    <string name="battery_enable_charging">Włącz Ładowanie</string>
+    <string name="battery_enable_charging_desc">Główny przełącznik do włączania/wyłączania ładowania</string>
+    <string name="battery_smart_cutoff">Inteligentne Odcinanie</string>
+    <string name="battery_smart_cutoff_desc">Zatrzymaj usługę ładowania przy docelowym limicie</string>
+    <string name="battery_limit_label">Limit: %1$d%%</string>
+    <string name="battery_thermal_profile">Profil Termiczny</string>
+    <string name="battery_select_thermal_profile">Wybierz Profil Termiczny</string>
+    <string name="battery_thermal_default">Domyślny (0)</string>
+    <string name="battery_thermal_gaming">Gaming (13)</string>
+    <string name="battery_thermal_benchmark">Benchmark (10)</string>
+    <string name="battery_fast_charging">Szybkie Ładowanie</string>
+    <string name="battery_fast_charging_desc">Wymuś włączenie/wyłączenie szybkiego ładowania</string>
+    <string name="battery_bypass_charging">Ładowanie Bypass</string>
+    <string name="battery_bypass_charging_desc">Zasilaj urządzenie bezpośrednio ze źródła</string>
+    <string name="battery_charging_speed_limit">Limit Szybkości Ładowania</string>
+    <string name="battery_saver_mode">Tryb Oszczędzania Energii</string>
+    <string name="battery_saver_mode_desc">Zmniejsz zużycie energii</string>
+
+    <string name="battery_system_charging_limit">Limit Ładowania Systemu</string>
+    <string name="battery_system_charging_limit_desc">Ogranicz ładowanie za pomocą ogólnego interfejsu Kernela, aby chronić zdrowie baterii.</string>
+    <string name="battery_health_tips">Wskazówki Zdrowia Baterii</string>
+    <string name="battery_tip_temp_title">Unikaj Ekstremalnych Temperatur</string>
+    <string name="battery_tip_temp_desc">Utrzymuj baterię między 20°C - 30°C dla optymalnego zdrowia</string>
+    <string name="battery_tip_discharge_title">Unikaj Pełnego Rozładowania</string>
+    <string name="battery_tip_discharge_desc">Nie pozwalaj, aby bateria spadała poniżej 20%% często</string>
+
+    <string name="dod_title">Menedżer DoD</string>
+    <string name="dod_back">Wstecz</string>
+    <string name="dod_search_hint">Szukaj package lub nazwy aplikacji…</string>
+    <string name="dod_user_apps">Aplikacje Użytkownika</string>
+    <string name="dod_system_apps">Systemowe</string>
+    <string name="dod_frozen_apps">Zamrożone</string>
+    <string name="dod_tab_all">Wszystkie</string>
+    <string name="dod_tab_user">Użytkownika</string>
+    <string name="dod_tab_system">Systemowe</string>
+    <string name="dod_tab_frozen">Zamrożone</string>
+    <string name="dod_status_frozen">ZAMROŻONA</string>
+    <string name="dod_app_info">Info o Aplikacji</string>
+    <string name="dod_version">Wersja</string>
+    <string name="dod_version_code">Kod</string>
+    <string name="dod_package">Package</string>
+    <string name="dod_target_sdk">Docelowy SDK</string>
+    <string name="dod_freeze_app">Zamroź Aplikację</string>
+    <string name="dod_unfreeze_app">Odmroź Aplikację</string>
+    <string name="dod_debloat_uninstall">Odchudź (Odinstaluj)</string>
+    <string name="dod_action_freeze">ZAMROŹ</string>
+    <string name="dod_action_uninstall">ODINSTALUJ</string>
+    <string name="dod_system_warning_title">Ostrzeżenie o Aplikacji Systemowej</string>
+    <string name="dod_system_warning_desc">Zamierzasz %1$s aplikację systemową:</string>
+    <string name="dod_system_warning_notice">Usuwanie lub wyłączanie aplikacji systemowych może spowodować bootloopy, awarie lub niestabilność urządzenia. Kontynuuj tylko, jeśli wiesz, co robisz.</string>
+    <string name="dod_accept_risk">Akceptuję ryzyko i odpowiedzialność.</string>
+    <string name="dod_confirm_freeze">Potwierdź Zamrożenie</string>
+    <string name="dod_confirm_debloat">Potwierdź Odchudzenie</string>
+
+    <string name="dex2oat_title">Kompilator Aplikacji</string>
+    <string name="dex2oat_back">Wstecz</string>
+    <string name="dex2oat_options">Opcje</string>
+    <string name="dex2oat_compile_all">Skompiluj Wszystko</string>
+    <string name="dex2oat_art_title">O Android Runtime (ART)</string>
+    <string name="dex2oat_art_desc">Dowiedz się, jak działa kompilacja JIT/AOT i jak wpływa na wydajność.</string>
+    <string name="dex2oat_view_source">Zobacz Dokumentację Źródłową</string>
+    <string name="dex2oat_search_hint">Szukaj aplikacji…</string>
+    <string name="dex2oat_compilation_mode">Tryb Kompilacji (Wymuszony)</string>
+    <string name="dex2oat_compile_system_only">Skompiluj Tylko Aplikacje Systemowe</string>
+    <string name="dex2oat_compile_user_only">Skompiluj Tylko Aplikacje Użytkownika</string>
+    <string name="dex2oat_reset_all">Zresetuj Całą Kompilację</string>
+    <string name="dex2oat_system_app">Aplikacja Systemowa</string>
+
+    <string name="display_title">Menedżer Wyświetlacza</string>
+    <string name="display_back">Wstecz</string>
+    <string name="display_tab_info">Info</string>
+    <string name="display_tab_res_dpi">Roz/DPI</string>
+    <string name="display_tab_color">Kolor</string>
+    <string name="display_tab_extra">Extra</string>
+    <string name="display_device_info">Info o Wyświetlaczu Urządzenia</string>
+    <string name="display_resolution">Rozdzielczość</string>
+    <string name="display_density_dpi">Gęstość (DPI)</string>
+    <string name="display_exact_dpi">Dokładny X/Y DPI</string>
+    <string name="display_technology">Technologia</string>
+    <string name="display_diagonal_size">Rozmiar Przekątnej</string>
+    <string name="display_physical_size">Rozmiar Fizyczny</string>
+    <string name="display_refresh_rate">Częstotliwość Odświeżania</string>
+    <string name="display_orientation">Orientacja</string>
+    <string name="display_graphics_hdr">Grafika &amp; HDR</string>
+    <string name="display_gpu_renderer">Renderer GPU</string>
+    <string name="display_opengl_version">Wersja OpenGL</string>
+    <string name="display_hdr_support">Wsparcie HDR</string>
+    <string name="display_wide_color_gamut">Szeroka Paleta Kolorów</string>
+    <string name="display_supported">Wspierane</string>
+    <string name="display_not_supported">Nie Wspierane</string>
+    <string name="display_resolution_section">Rozdzielczość</string>
+    <string name="display_current_resolution">Aktualna: %1$s</string>
+    <string name="display_tap_presets">Dotknij dla Presetów</string>
+    <string name="display_manual_input">Wprowadzanie Ręczne</string>
+    <string name="display_reset">Resetuj</string>
+    <string name="display_presets">Presety</string>
+    <string name="display_density_section">Gęstość (DPI)</string>
+    <string name="display_current_dpi">Aktualny: %1$d dpi</string>
+    <string name="display_density_desc">Niższa = Mniejszy UI, Wyższa = Większy UI</string>
+    <string name="display_saturation_title">Nasycenie Koloru</string>
+    <string name="display_saturation_level">Poziom Nasycenia</string>
+    <string name="display_bw">C&amp;B (0.0)</string>
+    <string name="display_default">Domyślny (1.0)</string>
+    
+    
+   
+    
+    <string name="display_vivid">Żywy (2.0)</string>
+    <string name="display_screen_timeout">Limit Czasu Ekranu</string>
+    <string name="display_font_scale">Skala Czcionki Systemowej</string>
+    <string name="display_current_scale">Aktualna Skala: %1$d%%</string>
+    <string name="display_animation_speed">Prędkość Animacji</string>
+    <string name="display_off">Wyłączone</string>
+    <string name="display_night_light">Światło Nocne</string>
+    <string name="display_night_mode">Tryb Nocny</string>
+    <string name="display_custom_resolution">Rozdzielczość Niestandardowa</string>
+    <string name="display_custom_dpi">Niestandardowy DPI</string>
+    <string name="display_width_px">Szerokość (px)</string>
+    <string name="display_height_px">Wysokość (px)</string>
+    <string name="display_density_dpi_label">Gęstość (DPI)</string>
+
+    <string name="doze_title">Tryb Doze</string>
+    <string name="doze_back">Wstecz</string>
+    <string name="doze_system_state">Stan Systemu</string>
+    <string name="doze_idle_count">Licznik Bezczynności</string>
+    <string name="doze_tab_apps">Aplikacje</string>
+    <string name="doze_tab_whitelist">Biała Lista</string>
+    <string name="doze_tab_controls">Kontrolki</string>
+    <string name="doze_tab_settings">Ustawienia</string>
+    <string name="doze_search_whitelist">Szukaj w białej liście…</string>
+    <string name="doze_search_all">Szukaj we wszystkich aplikacjach…</string>
+    <string name="doze_no_whitelisted">Brak aplikacji na białej liście.</string>
+    <string name="doze_no_apps_found">Nie znaleziono aplikacji.</string>
+    <string name="doze_system_app">Systemowa</string>
+    <string name="doze_gms_title">Google Play Services (GMS)</string>
+    <string name="doze_force_gms">Wymuś Doze GMS</string>
+    <string name="doze_gms_subtitle">Poskrom pożeracza baterii</string>
+    <string name="doze_mode_default">Domyślny</string>
+    <string name="doze_mode_standard">Standardowy</string>
+    <string name="doze_mode_aggressive">Agresywny</string>
+    <string name="doze_aggressive_desc">Maksymalne oszczędzanie: Blokuje Wakelocki, Alarmy i zadania w tle. Powiadomienia push mogą być opóźnione.</string>
+    <string name="doze_standard_desc">Zrównoważony: Blokuje tylko działanie w tle. Bezpieczny dla powiadomień.</string>
+    <string name="doze_default_desc">Domyślny: GMS działa normalnie na podstawie logiki systemowej.</string>
+    <string name="doze_manual_controls">Kontrolki Ręczne</string>
+    <string name="doze_force_idle">Wymuś Bezczynność</string>
+    <string name="doze_wake_up">Obudź</string>
+    <string name="doze_step_state">Stan Kroku</string>
+    <string name="doze_reset_stats">Zresetuj Statystyki</string>
+    <string name="doze_auto_refresh">Auto Odświeżanie</string>
+    <string name="doze_auto_refresh_title">Stan Auto Odświeżania</string>
+    <string name="doze_auto_refresh_desc">Automatycznie odświeżaj stan Doze</string>
+    <string name="doze_states_info">Info o Stanach Doze</string>
+    <string name="doze_state_active">AKTYWNY</string>
+    <string name="doze_state_active_desc">Urządzenie jest w normalnym użyciu, Doze nie jest aktywne</string>
+    <string name="doze_state_idle_pending">IDLE_PENDING</string>
+    <string name="doze_state_idle_pending_desc">Urządzenie zaraz wejdzie w tryb Doze</string>
+    <string name="doze_state_sensing">SENSING</string>
+    <string name="doze_state_sensing_desc">Urządzenie wykrywa ruch przed wejściem w Doze</string>
+    <string name="doze_state_idle">IDLE</string>
+    <string name="doze_state_idle_desc">Urządzenie jest w trybie Doze, aktywność w tle ograniczona</string>
+    <string name="doze_state_maintenance">IDLE_MAINTENANCE</string>
+    <string name="doze_state_maintenance_desc">Krótkie okno dla aplikacji do ukończenia odroczonej pracy</string>
+    <string name="doze_global_settings">Globalne Ustawienia Trybu Doze</string>
+    <string name="doze_enable">Włącz Tryb Doze</string>
+    <string name="doze_enable_desc">Pozwól urządzeniu wejść w stan uśpienia</string>
+    <string name="doze_aggressive_mode">Agresywny Doze</string>
+    <string name="doze_aggressive_mode_desc">Wejdź w tryb Doze szybciej</string>
+    <string name="doze_battery_tips">Wskazówki Oszczędzania Baterii</string>
+    <string name="doze_tip_gms_title">Użyj Doze GMS</string>
+    <string name="doze_tip_gms_desc">Wymuś uśpienie Google Play Services dla maksymalnego oszczędzania baterii.</string>
+    <string name="doze_tip_whitelist_title">Ogranicz Białą Listę</string>
+    <string name="doze_tip_whitelist_desc">Dodaj do białej listy tylko aplikacje, które naprawdę potrzebują dostępu w tle (jak WhatsApp/Telegram).</string>
+
+    <string name="thermal_title">Menedżer Termiczny</string>
+    <string name="thermal_max_temp">Max Temp</string>
+    <string name="thermal_avg_temp">Śr Temp</string>
+    <string name="thermal_active_zones">Aktywne Strefy</string>
+    <string name="thermal_policy">Polityka</string>
+    <string name="thermal_live">Na Żywo</string>
+    <string name="thermal_tab_zones">Strefy</string>
+    <string name="thermal_tab_cooling">Chłodzenie</string>
+    <string name="thermal_tab_disabled">Wyłączone</string>
+    <string name="thermal_no_disabled">Brak Wyłączonych Stref</string>
+    <string name="thermal_disable">Wyłącz</string>
+    <string name="thermal_enable">Włącz</string>
+    <string name="thermal_trip_points">Punkty Zadziałania</string>
+    <string name="thermal_hide_trips">Ukryj Tripsy</string>
+    <string name="thermal_trip_config">Konfig Punktów Zadziałania</string>
+    <string name="thermal_current_state">Aktualny Stan</string>
+    <string name="thermal_policy_dialog_title">Polityka Termiczna Kernela</string>
+    <string name="thermal_back">Wstecz</string>
+
+    <string name="logs_empty">Nie znaleziono właściwości</string>
+    <string name="logs_reading">Czytanie logów systemowych...</string>
+    <string name="logs_search_hint">Szukaj w logach</string>
+    <string name="logs_count">%1$s logów</string>
+    <string name="logs_status_paused">Wstrzymane</string>
+    <string name="logs_status_live">Na Żywo</string>
+    <string name="logs_clear_search">Wyczyść</string>
+    <string name="logs_resume">Wznów</string>
+    <string name="logs_pause">Wstrzymaj</string>
+    <string name="logs_menu">Menu</string>
+    <string name="logs_settings">Ustawienia</string>
+    <string name="logs_display_options">Opcje wyświetlania</string>
+    <string name="logs_save">Zapisz logi</string>
+    <string name="logs_clear">Wyczyść logi</string>
+    <string name="logs_restart">Uruchom ponownie Logcat</string>
+    <string name="logs_copied">Skopiowano do schowka</string>
+    <string name="logs_scroll_bottom">Przewiń do dołu</string>
+
+    <string name="logs_settings_title">Ustawienia Logcat</string>
+    <string name="logs_settings_desc">Skonfiguruj zachowanie logowania</string>
+    <string name="logs_poll_interval">INTERWAŁ ODŚWIEŻANIA</string>
+    <string name="logs_ms">%1$d ms</string>
+    <string name="logs_poll_desc">Niższy = szybsze aktualizacje, wyższe użycie CPU</string>
+    <string name="logs_buffers">BUFORY</string>
+    <string name="logs_max_logs">MAX LOGI W PAMIĘCI</string>
+    <string name="logs_save_location">Lokalizacja Zapisu</string>
+    <string name="logs_internal_storage">Pamięć Wewnętrzna</string>
+    <string name="logs_external_docs">Dokumenty Zewnętrzne</string>
+
+    <string name="logs_display_options_title">Opcje Wyświetlania</string>
+    <string name="logs_display_options_desc">Dostosuj widok logów</string>
+    <string name="logs_metadata">METADANE</string>
+    <string name="logs_advanced">ZAAWANSOWANE</string>
+    <string name="logs_show_tag">Pokaż Tag</string>
+    <string name="logs_show_time">Pokaż Czas</string>
+    <string name="logs_show_date">Pokaż Datę</string>
+    <string name="logs_show_pid">Pokaż ID Procesu</string>
+    <string name="logs_show_tid">Pokaż ID Wątku</string>
+    <string name="logs_compact_mode">Tryb Kompaktowy</string>
+    <string name="logs_compact_desc">Mniejsze padding i rozmiar czcionki</string>
+
+    <string name="logs_copy">Kopiuj</string>
+    <string name="logs_raw_log">RAW LOG</string>
+    <string name="logs_time">Czas</string>
+    <string name="logs_date">Data</string>
+    <string name="logs_pid">ID Procesu</string>
+    <string name="logs_tid">ID Wątku</string>
+    <string name="logs_tag">Tag</string>
+    <string name="btn_done">Gotowe</string>
+
+    <string name="fps_notification_title">ZKM Monitor Działa</string>
+    <string name="fps_notification_text">Dotknij, aby otworzyć aplikację</string>
+    <string name="fps_monitor_title">Monitor</string>
+    <string name="fps_cpu">CPU</string>
+    <string name="fps_ram">RAM</string>
+    <string name="fps_error">Błąd...</string>
+    <string name="fps_resize">Zmień Rozmiar</string>
+
+    <string name="process_manager">Menedżer Procesów</string>
+    <string name="system">System</string>
+    <string name="processes">Procesy</string>
+    <string name="floating_mode">Tryb Pływający</string>
+    <string name="system_health">Zdrowie Systemu</string>
+    <string name="monitoring_threads">Monitorowanie %d aktywnych wątków</string>
+    <string name="top_load">Najwyższe Obciążenie: %1$s (%2$s)</string>
+    <string name="running_processes">Działające Procesy</string>
+    <string name="cpu_usage">Użycie CPU</string>
+    <string name="top_cpu_usage">Najwyższe Użycie CPU</string>
+    <string name="top_ram_usage">Najwyższe Użycie RAM</string>
+    <string name="memory">Pamięć</string>
+    <string name="limit_format">Limit: %d</string>
+    <string name="total">Całkowite</string>
+    <string name="user">Użytkownik</string>
+    <string name="sys">Sys</string>
+
+    <string name="overlay_permission_desc">Aby wyświetlić pływający monitor, zezwól na uprawnienie \'Wyświetlanie nad innymi aplikacjami\'.</string>
+    <string name="open_settings">Otwórz Ustawienia</string>
+    <string name="app_details">Szczegóły Aplikacji</string>
+    <string name="version">Wersja</string>
+    <string name="build">Build</string>
+    <string name="package_name">Package</string>
+
+    <string name="unknown">Nieznane</string>
+    <string name="not_found">Nie Znaleziono</string>
+    <string name="btn_close">Zamknij</string>
+    <string name="cpu">CPU</string>
+    <string name="ram">RAM</string>
+    <string name="pid">PID</string>
+    <string name="manage">Zarządzaj</string>
+    <string name="kill">Zabij</string>
+    <string name="force_stop">Wymuś Zatrzymanie (SIGSTOP)</string>
+    <string name="ksuweb_title">KernelSU WebUI</string>
+    <string name="ksuweb_no_modules">Nie znaleziono modułów WebUI</string>
+    <string name="ksuweb_card_style">Styl Karty</string>
+    <string name="ksuweb_sorting">Sortowanie</string>
+    <string name="ksuweb_sort_action">Najpierw Skrypty Akcji</string>
+    <string name="ksuweb_sort_enabled">Najpierw Włączone</string>
+    <string name="card_style_immersive">Immersyjny</string>
+    <string name="card_style_minimalist">Minimalistyczny</string>
+    <string name="card_style_media">Medialny</string>
+    <string name="card_style_outlined">Obrysowany</string>
+    <string name="ksuweb_status_active">Aktywny</string>
+    <string name="ksuweb_by_author">Autor %s</string>
+    <string name="ksuweb_version_prefix">v%s</string>
+    <string name="ksuweb_version_author_format">v%1$s • %2$s</string>
+    <string name="ksuweb_badge_action">AKCJA</string>
+    <string name="ksuweb_badge_disabled">WYŁĄCZONE</string>
+    <string name="ksuweb_badge_webui">WEBUI</string>
+    <string name="btn_refresh">Odśwież</string>
+    <string name="btn_options">Opcje</string>
+
+    <string name="nav_about">O Aplikacji</string>
+    <string name="tab_feature">Funkcje</string>
+    <string name="tab_overview">Przegląd</string>
+    <string name="tab_adjust">Dostosuj</string>
+    <string name="tab_support">Wsparcie</string>
+    <string name="tools">Narzędzia</string>
+    <string name="power">Zasilanie</string>
+    <string name="settings">Ustawienia</string>
+
+    <string name="quick_tools">Szybkie Narzędzia</string>
+    <string name="terminal_shell">Terminal Shell</string>
+    <string name="terminal_shell_desc">Okno terminala, w którym możesz pisać w terminalu w dowolnym miejscu</string>
+    <string name="fps_monitor">Monitor FPS</string>
+    <string name="fps_monitor_desc">Nakładka częstotliwości klatek w czasie rzeczywistym</string>
+    <string name="process_monitor">Monitor Procesów</string>
+    <string name="process_monitor_desc">Pokaż swój monitor procesów</string>
+    <string name="activity_inspector">Inspektor Aktywności</string>
+    <string name="activity_inspector_desc">Monitoruj obecny package i klasę aktywności</string>
+
+    <string name="overlay_permission_required">Wymagane uprawnienie nakładki!</string>
+
+    <string name="power_menu">Menu Zasilania</string>
+    <string name="power_reboot">Uruchom Ponownie System</string>
+    <string name="power_shutdown">Wyłącz</string>
+    <string name="power_recovery">Tryb Recovery</string>
+    <string name="power_fastboot">Tryb Fastboot</string>
+    <string name="power_restart_ui">Uruchom Ponownie SystemUI</string>
+    <string name="power_reboot_warning">Czy na pewno chcesz uruchomić ponownie urządzenie?</string>
+    <string name="power_shutdown_warning">Urządzenie zostanie całkowicie wyłączone.</string>
+    <string name="power_recovery_warning">Urządzenie uruchomi się ponownie w Trybie Recovery (TWRP/OrangeFox).</string>
+    <string name="power_fastboot_warning">Urządzenie uruchomi się ponownie w Trybie Fastboot/Bootloader.</string>
+    <string name="power_restart_ui_warning">Interfejs Użytkownika uruchomi się ponownie. To może potrwać kilka sekund.</string>
+    <string name="confirm_action">Potwierdź %s</string>
+    <string name="btn_confirm_yes">Tak, Zrób To</string>
+
+    <string name="about_section_developer">O Deweloperze</string>
+    <string name="about_section_app_info">O Aplikacji</string>
+    <string name="about_section_community">O Społeczności</string>
+    <string name="about_section_collaborator">O Współpracownikach</string>
+    <string name="about_changelog">Dziennik Zmian</string>
+    <string name="about_opensource">Otwarte Źródło</string>
+
+    <string name="intro_app_label">ZuanKernel</string>
+    <string name="intro_p1_title">Zuan Kernel Manager</string>
+    <string name="intro_p1_desc">Pełna kontrola nad wydajnością Twojego urządzenia. Overclocking, zarządzanie baterią i optymalizacja systemu w jednej aplikacji.</string>
+    <string name="intro_p2_title">Ostrzeżenie o Ryzyku</string>
+    <string name="intro_p2_desc">Ta aplikacja wymaga dostępu ROOT. Błędna konfiguracja może spowodować Bootloop. DWYOR (Do With Your Own Risk).</string>
+    <string name="intro_p3_title">Prywatność &amp; Zgoda</string>
+    <string name="intro_p3_desc">Dane są przetwarzane LOKALNIE. Nie wysyłamy Twoich danych osobowych na żadne serwery w chmurze.</string>
+    <string name="intro_btn_next">Dalej</string>
+    <string name="intro_btn_agree">Zgadzam Się &amp; Wejdź</string>
+    <string name="intro_btn_decline">Odrzuć &amp; Wyjdź</string>
+    <string name="intro_footer_legal">Naciskając \'Zgadzam Się\', akceptujesz Ryzyko i Politykę Prywatności.</string>
+
+    <string name="update_title">Aktualizuj do Wer %s</string>
+    <string name="update_changelog_title">Co Nowego</string>
+    <string name="btn_update">Aktualizuj</string>
+    <string name="downloading_update">Pobieranie aktualizacji…</string>
+    <string name="auto_download">Auto Pobieranie APK</string>
+    <string name="auto_download_desc">Pobierz i zainstaluj automatycznie</string>
+    <string name="btn_manual_download">Otwórz Przeglądarkę</string>
+<!-- Language Names -->
+
+<string name="lang_russian">Rosyjski</string>
+<string name="lang_ukrainian">Ukraiński</string>
+<string name="lang_belarusian">Białoruski</string>
+<string name="lang_kazakh">Kazachski</string>
+<string name="lang_moldovan">Mołdawski</string>
+<string name="lang_chinese_cn">Chiński (Chiny)</string>
+<string name="lang_chinese_sg">Chiński (Singapur)</string>
+<string name="lang_chinese_tw">Chiński (Tajwan)</string>
+<string name="lang_chinese_hk">Chiński (Hong Kong)</string>
+<string name="lang_chinese_mo">Chiński (Makau)</string>
+<string name="lang_japanese">Japoński</string>
+<string name="lang_korean">Koreański</string>
+<string name="lang_vietnamese">Wietnamski</string>
+<string name="lang_german">Niemiecki</string>
+<string name="lang_french">Francuski</string>
+<string name="lang_spanish">Hiszpański</string>
+<string name="lang_portuguese">Portugalski</string>
+<string name="lang_italian">Włoski</string>
+<string name="lang_polish">Polski</string>
+<string name="lang_turkish">Turecki</string>
+<string name="lang_dutch">Holenderski</string>
+
+<string name="graphics_unit">Jednostka Graficzna</string>
+<string name="graphics_processor">Procesor Graficzny</string>
+<string name="processor_sets">Zestawy Procesorów (Cpuset)</string>
+<string name="core_control">Kontrola Rdzeni</string>
+<string name="cpu_governor">Regulator CPU</string>
+<string name="select_governor">Wybierz Regulator</string>
+<string name="min_freq">Freq Min</string>
+<string name="max_freq">Freq Maks</string>
+<string name="min_frequency">Częstotliwość Minimalna</string>
+<string name="max_frequency">Częstotliwość Maksymalna</string>
+<string name="tab_performance">Wydajność</string>
+<string name="tab_tuning">Dostrajanie</string>
+<string name="disable_cpu_title">Wyłączyć CPU %1$d?</string>
+<string name="disable_cpu_warning">Wyłączenie tego rdzenia może obniżyć wydajność. Upewnij się, że inne rdzenie są aktywne, aby obsługiwać zadania systemowe.</string>
+<string name="btn_disable">Wyłącz</string>
+<string name="select_active_cores">Wybierz aktywne rdzenie:</string>
+<string name="cpu_core_id">CPU %1$d</string>
+<string name="freq_mhz_format">%1$s MHz</string>
+<string name="cluster_info_format">%1$s • %2$s-%3$s MHz</string>
+<string name="gpu_load_format">%1$s • Obciążenie %2$s%%</string>
+<string name="cores_count">Rdzenie: %1$s</string>
+<string name="gpu_not_supported">Interfejs GPU nie jest obsługiwany</string>
+<string name="not_available">N/D</string>
+<string name="no_options">Brak opcji</string>
+<string name="label_value">Wartość</string>
+<string name="zram_manager">Menedżer ZRAM</string>
+<string name="zram_status">Status ZRAM</string>
+<string name="disk_size_mb">Rozmiar Dysku: %1$d MB</string>
+<string name="zram_info_format">%1$d MB • %2$s</string>
+<string name="compression_algorithm">Algorytm Kompresji</string>
+<string name="io_scheduler">Planista I/O</string>
+<string name="select_scheduler">Wybierz Planistę</string>
+<string name="tunables">Parametry Konfigurowalne</string>
+<string name="virtual_memory">Pamięć Wirtualna</string>
+<string name="swappiness">Swappiness</string>
+<string name="vfs_cache_pressure">Ciśnienie Pamięci Podręcznej VFS</string>
+<string name="dirty_ratio">Dirty Ratio</string>
+<string name="dirty_bg_ratio">Dirty BG Ratio</string>
+<string name="no_storage_devices">Nie znaleziono obsługiwanych urządzeń pamięci masowej.</string>
+<string name="scheduler_format">Planista: %1$s</string>
+<string name="btn_set">Ustaw</string>
+<string name="tcp_congestion">Kongestja TCP</string>
+<string name="tcp_parameters">Parametry TCP</string>
+<string name="syn_cookies">Ciasteczka SYN</string>
+<string name="enabled">Włączone</string>
+<string name="disabled">Wyłączone</string>
+<string name="tcp_reuse">Ponowne Użycie TCP</string>
+<string name="on">Wł.</string>
+<string name="off">Wył.</string>
+<string name="fast_open">Szybkie Otwieranie</string>
+<string name="tcp_sack">TCP SACK</string>
+<string name="ecn">ECN</string>
+<string name="kernel_log">Log Kernela</string>
+<string name="printk">Printk</string>
+<string name="feature_toggles">Przełączniki Funkcji</string>
+<string name="bore_scheduler">Planista BORE</string>
+<string name="auto_group">Grupa Automatyczna</string>
+<string name="child_runs_first">Potomny Uruchamia się Pierwszy</string>
+<string name="sched_stats">Statystyki Planisty</string>
+<string name="tunable_scaling">Skalowalność Konfigurowalna</string>
+<string name="cstate_aware">Świadomość C-State</string>
+<string name="uclamp_configuration">Konfiguracja UClamp</string>
+<string name="uclamp_max">UClamp Maks</string>
+<string name="uclamp_min">UClamp Min</string>
+<string name="advanced_parameters">Parametry Zaawansowane</string>
+<string name="current_value_format">Aktualna wartość: %1$s</string>
+<string name="new_value">Nowa Wartość</string>
+<string name="edit">Edytuj</string>
+
+<!-- MTK Screen Main -->
+<string name="mtk_gpu_title">GPU MediaTek</string>
+<string name="mtk_gpu_subtitle">Tuning Dimensity/Mali</string>
+<string name="mtk_tab_freq">Freq</string>
+<string name="mtk_tab_dram">DRAM</string>
+<string name="mtk_tab_boost">Boost</string>
+<string name="mtk_tab_ppm">PPM</string>
+<string name="mtk_tab_cpu">CPU</string>
+<string name="mtk_tab_thermal">Termiczny</string>
+
+<!-- MTK Freq Tab -->
+<string name="mtk_dvfs_enabled_title">DVFS włączone</string>
+<string name="mtk_dvfs_enabled_desc">Częstotliwość GPU dynamiczna. Wyłącz DVFS lub zablokuj częstotliwość dla kontroli statycznej.</string>
+<string name="mtk_gpu_dvfs">DVFS GPU</string>
+<string name="mtk_dynamic_scaling_on">Skalowanie dynamiczne WŁĄCZONE</string>
+<string name="mtk_static_frequency">Częstotliwość statyczna</string>
+<string name="mtk_dynamic">Dynamiczny</string>
+<string name="mtk_freq_locked">Częstotliwość zablokowana</string>
+<string name="mtk_current_frequency">Aktualna częstotliwość</string>
+<string name="mtk_lock_frequency">Zablokuj częstotliwość</string>
+<string name="mtk_select_opp_index">Wybierz indeks OPP do zablokowania</string>
+<string name="mtk_unlock_frequency">Odblokuj częstotliwość</string>
+<string name="mtk_dvfs_limits">Limity DVFS</string>
+<string name="mtk_minimum_boost">Minimum (Boost)</string>
+<string name="mtk_maximum_limit">Maksimum (Limit)</string>
+
+<!-- MTK DRAM Tab -->
+<string name="mtk_dram_unavailable">Kontrola DRAM niedostępna</string>
+<string name="mtk_dram_type">Typ</string>
+<string name="mtk_dram_controller">Kontroler DRAM</string>
+<string name="mtk_dram_mmdvfs">MediaTek MMDVFS</string>
+<string name="mtk_dram_devfreq">DevFreq Generyczny</string>
+<string name="mtk_dram_fliper">Fliper Legacy</string>
+<string name="mtk_dram_unknown">Nieznany</string>
+<string name="mtk_dram_current_step">Aktualny</string>
+<string name="mtk_dram_force_frequency">Wymuś częstotliwość DRAM</string>
+<string name="mtk_dram_lock_opp">Zablokuj na konkretnym OPP (bez DVFS)</string>
+<string name="mtk_dram_reset_dvfs">Resetuj do DVFS</string>
+
+<!-- MTK Boost Tab -->
+<string name="mtk_gaming_performance">Gry i wydajność</string>
+<string name="mtk_fpsgo_title">FPSGO</string>
+<string name="mtk_fpsgo_subtitle">Wzmocnienie klatek dla płynnej rozgrywki</string>
+<string name="mtk_ged_game_mode_title">Tryb GED Game</string>
+<string name="mtk_ged_game_mode_subtitle">Optymalizacja governor GPU dla gier</string>
+<string name="mtk_touch_boost_title">Touch Boost</string>
+<string name="mtk_touch_boost_subtitle">Wzmocnienie CPU przy dotyku</string>
+<string name="mtk_sched_boost_title">Scheduler Boost</string>
+<string name="mtk_sched_boost_subtitle">Priorytet boost dla aplikacji na pierwszym planie</string>
+<string name="mtk_gaming_mode_preset">Preset trybu gaming</string>
+<string name="mtk_gaming_mode_desc">Włącz wszystkie wzmocnienia natychmiast</string>
+<string name="mtk_activate_gaming_mode">Aktywuj tryb gaming</string>
+
+<!-- MTK PPM Tab -->
+<string name="mtk_ppm_unavailable">PPM niedostępny</string>
+<string name="mtk_ppm_not_found">Nie znaleziono /proc/ppm</string>
+<string name="mtk_ppm_controller">Kontroler PPM</string>
+<string name="mtk_ppm_active">Aktywny</string>
+<string name="mtk_ppm_disabled">Wyłączony</string>
+<string name="mtk_active_policies">Aktywne polityki</string>
+<string name="mtk_policy_hash">Polityka #</string>
+<string name="mtk_ppm_no_policies">PPM włączony, ale nie wykryto polityk. Możliwe ograniczenie kernela.</string>
+<string name="mtk_about_ppm">O PPM</string>
+<string name="mtk_ppm_description">Performance Power Management kontroluje przydział energii CPU/GPU. Wyłączenie polityki \'Termicznej\' może spowodować przegrzanie, ale poprawi wydajność.</string>
+
+<!-- MTK CPU Tab -->
+<string name="mtk_cpu_unavailable">CPU Misc niedostępne</string>
+<string name="mtk_cci_interconnect">Interkonekt CCI</string>
+<string name="mtk_cache_coherent">Spójny interkonekt pamięci podręcznej</string>
+<string name="mtk_big_little_desc">Kontroluje interakcję klastrów big.LITTLE</string>
+<string name="mtk_normal">Normalny</string>
+<string name="mtk_performance">Wydajność</string>
+<string name="mtk_low_power">Niski pobór</string>
+<string name="mtk_balance">Balans</string>
+<string name="mtk_cpu_power_mode">Tryb zasilania CPU</string>
+<string name="mtk_current_mode">Aktualny</string>
+<string name="mtk_voltage_offset">Przesunięcie napięcia (EEM)</string>
+<string name="mtk_eem_unit">6.25mV/jednostka</string>
+<string name="mtk_offset_value">Wartość przesunięcia</string>
+
+<!-- MTK Thermal Tab -->
+<string name="mtk_thermal_throttling">TROTTING TERMICZNY</string>
+<string name="mtk_temp_limit_exceeded">Przekroczono limit temperatury</string>
+<string name="mtk_normal_temp">Normalna temperatura</string>
+<string name="mtk_eara_thermal">EARA Termiczny</string>
+<string name="mtk_early_adaptation">Wczesna alokacja zasobów adaptacyjnych</string>
+<string name="mtk_eara_fake_throttle">EARA Fake Throttle</string>
+<string name="mtk_fake_temp_desc">Zgłoś fałszywą temperaturę do kernela</string>
+<string name="mtk_throttling_desc">Urządzenie trotluje termicznie. Wydajność obniżona aby zapobiec przegrzaniu.</string>
+<string name="mtk_thermal_daemon_info">Zarządzanie termiczne MTK obsługiwane przez daemon termiczny kernela. Odczyty z czujników on-die (tsens).</string>
+
+<!-- Common Actions -->
+<string name="action_back">Wstecz</string>
+<string name="action_refresh">Odśwież</string>
+
+<!-- Adreno Screen -->
+<string name="adreno_gpu_title">GPU Adreno</string>
+<string name="adreno_gpu_subtitle">Wydajność i tuning</string>
+<string name="adreno_tab_freq">Freq</string>
+<string name="adreno_tab_power">Zasilanie</string>
+<string name="adreno_tab_bus">Magistrala</string>
+<string name="adreno_tab_thermal">Termiczny</string>
+<string name="adreno_tab_advanced">Zaaw</string>
+
+<!-- Adreno Freq -->
+<string name="adreno_current_frequency">Aktualna częstotliwość</string>
+<string name="adreno_freq_limits">Limity częstotliwości</string>
+<string name="adreno_minimum">Minimum</string>
+<string name="adreno_maximum">Maksimum</string>
+<string name="adreno_governor">Governor</string>
+<string name="adreno_current">Aktualny</string>
+<string name="adreno_change">Zmień</string>
+<string name="adreno_frequency">Częstotliwość</string>
+<string name="adreno_cancel">Anuluj</string>
+
+<!-- Adreno Power -->
+<string name="adreno_gpu_throttling">Throttling GPU</string>
+<string name="adreno_performance_limited">Wydajność ograniczona</string>
+<string name="adreno_full_performance">Pełna wydajność</string>
+<string name="adreno_adreno_boost">Adreno Boost</string>
+<string name="adreno_level">Poziom</string>
+<string name="adreno_off">Wył</string>
+<string name="adreno_low">Niski</string>
+<string name="adreno_med">Śr</string>
+<string name="adreno_high">Wysoki</string>
+<string name="adreno_boost_desc">Wyższe poziomy boost zwiększają wydajność, ale zużywają więcej baterii i generują więcej ciepła.</string>
+
+<!-- Adreno Bus -->
+<string name="adreno_bus_components">Komponenty magistrali</string>
+<string name="adreno_no_bus_controls">Brak kontroli magistrali</string>
+<string name="adreno_no_bus_desc">To urządzenie nie ma konfigurowalnych komponentów magistrali</string>
+<string name="adreno_min_freq">Częst min</string>
+<string name="adreno_max_freq">Częst maks</string>
+<string name="adreno_min">MIN</string>
+<string name="adreno_max">MAKS</string>
+<string name="adreno_edit">Edytuj</string>
+
+<!-- Adreno Thermal -->
+<string name="adreno_thermal_throttling">TROTTING TERMICZNY</string>
+<string name="adreno_gpu_temp">Temperatura GPU</string>
+<string name="adreno_thermal_zones">Strefy termiczne</string>
+<string name="adreno_cooling_devices">Urządzenia chłodzące</string>
+
+<!-- Adreno Advanced -->
+<string name="adreno_kgsl_advanced">KGSL Zaawansowane</string>
+<string name="adreno_force_no_nap">Wymuś No NAP</string>
+<string name="adreno_no_nap_desc">Zapobiegaj drzemce GPU</string>
+<string name="adreno_force_clk_on">Wymuś CLK On</string>
+<string name="adreno_clk_on_desc">Trzymaj zegar zawsze włączony</string>
+<string name="adreno_force_bus_on">Wymuś magistralę On</string>
+<string name="adreno_bus_on_desc">Trzymaj magistralę zawsze aktywną</string>
+<string name="adreno_bus_split">Bus Split</string>
+<string name="adreno_bus_split_desc">Włącz podział magistrali</string>
+<string name="adreno_throttling">Throttling</string>
+<string name="adreno_throttling_desc">Włącz throttling termiczny</string>
+<string name="adreno_power_levels">Poziomy mocy</string>
+<string name="adreno_default">Domyślny</string>
+<string name="adreno_thermal">Termiczny</string>
+<string name="adreno_save">Zapisz</string>
+<string name="adreno_adreno_idler">Adreno Idler</string>
+<string name="adreno_enable_idler">Włącz Idler</string>
+<string name="adreno_idler_desc">Zmniejsz zużycie energii w bezczynności</string>
+<string name="adreno_idle_wait">Oczekiwanie bezczynności</string>
+<string name="adreno_down_differential">Down Differential</string>
+<string name="adreno_workload_threshold">Próg obciążenia</string>
+<string name="adreno_simple_gpu">Simple GPU</string>
+<string name="adreno_enable_simple_gpu">Włącz Simple GPU</string>
+<string name="adreno_simple_gpu_desc">Alternatywny algorytm governor GPU</string>
+<string name="adreno_laziness">Lenistwo</string>
+<string name="adreno_ramp_threshold">Próg narastania</string>
+
+<!-- Navigation Tabs -->
+<string name="nav_tab_feature">Funkcja</string>
+<string name="nav_tab_overview">Przegląd</string>
+<string name="nav_tab_adjust">Dostosuj</string>
+<string name="nav_tab_support">Wsparcie</string>
+<string name="nav_tools_desc">Narzędzia</string>
+<string name="nav_power_desc">Zasilanie</string>
+<string name="nav_settings_desc">Ustawienia</string>
+
+<!-- Dialog Titles -->
+<string name="dialog_tools_title">Szybkie narzędzia</string>
+<string name="dialog_power_title">Menu zasilania</string>
+
+<!-- Tools -->
+<string name="tool_terminal_title">Terminal</string>
+<string name="tool_terminal_subtitle">Okno terminala, w którym można pisać w dowolnym miejscu</string>
+<string name="tool_fps_title">Monitor FPS</string>
+<string name="tool_fps_subtitle">Nakładka klatek na sekundę w czasie rzeczywistym</string>
+<string name="tool_process_title">Monitor procesów</string>
+<string name="tool_process_subtitle">Pokaż proces monitora</string>
+<string name="tool_activity_title">Inspektor aktywności</string>
+<string name="tool_activity_subtitle">Monitoruj bieżący pakiet i klasę aktywności</string>
+
+<!-- Common Actions -->
+<string name="action_done">Gotowe</string>
+<string name="action_cancel">Anuluj</string>
+<string name="action_yes_do_it">Tak, zrób to</string>
+<string name="confirm_action_title">Potwierdź %s</string>
+
+
+</resources>

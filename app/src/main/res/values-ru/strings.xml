@@ -1,0 +1,1129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Zuan Kernel Manager</string>
+
+    <string name="nav_home">Главная</string>
+    <string name="nav_soc">SoC</string>
+    <string name="nav_pref">Настройки</string>
+    <string name="nav_feature">Функции</string>
+    <string name="nav_overview">Обзор</string>
+    <string name="nav_adjust">Настройка</string>
+    <string name="nav_support">Поддержка</string>
+    <string name="sect_general">Основные</string>
+    <string name="sect_appearance">Внешний вид</string>
+    <string name="nav_fastshell">Fast Shell</string>
+    <string name="nav_setedit">SetEdit</string>
+    <string name="nav_fps">FPS Менеджер</string>
+    <string name="nav_process">Менеджер процессов</string>
+    <string name="nav_flasher">Прошивальщик ядра</string>
+    <string name="nav_launcher">Запуск активностей</string>
+    <string name="nav_ksuweb">KSU WebUI</string>
+    <string name="nav_gpu">ГПУ</string>
+
+    <string name="pref_language">Язык приложения</string>
+    <string name="lang_system">Системный</string>
+    <string name="lang_indonesia">Индонезийский</string>
+    <string name="lang_english">Английский</string>
+    <string name="lang_region_us">США</string>
+    <string name="lang_sect_recommended">Рекомендуемые</string>
+    <string name="lang_sect_all">Все языки</string>
+    <string name="lang_search_hint">Поиск языка…</string>
+
+    <string name="wallpaper_style_title">Обои и стиль</string>
+    <string name="tab_colors">Цвета</string>
+    <string name="tab_background">Фон</string>
+    <string name="tab_effects">Эффекты</string>
+    <string name="style_theme_header">Стиль и тема</string>
+    <string name="dark_theme">Тёмная тема</string>
+    <string name="dark_theme_on">Включена</string>
+    <string name="dark_theme_off">Выключена</string>
+    <string name="color_palette">Цветовая палитра</string>
+    <string name="dynamic_color">Динамический цвет</string>
+    <string name="dynamic_color_desc">На основе обоев</string>
+    <string name="custom_color">Пользовательский цвет</string>
+    <string name="custom_color_desc">Создайте свою тему</string>
+    <string name="custom_color_editor">Редактор цветов</string>
+    <string name="color_primary">Основной</string>
+    <string name="color_secondary">Вторичный</string>
+    <string name="color_tertiary">Третичный</string>
+    <string name="background_type">Тип фона</string>
+    <string name="bg_type_gallery">Галерея</string>
+    <string name="bg_type_system">Системный</string>
+    <string name="bg_adjustments">Настройки фона</string>
+    <string name="saturation">Насыщенность</string>
+    <string name="bg_blur">Размытие фона</string>
+    <string name="bg_blur_desc">Применить размытие к обоям</string>
+    <string name="blur_strength">Сила размытия</string>
+    <string name="blur_strength_dp">%1$.0f дп</string>
+    <string name="dark_overlay">Тёмный оверлей</string>
+    <string name="dark_overlay_desc">Добавить затемнение к фону</string>
+    <string name="glass_effects">Стеклянные эффекты</string>
+    <string name="card_blur">Размытие карточек</string>
+    <string name="card_blur_desc">Стиль стекломорфизма</string>
+    <string name="card_opacity">Прозрачность карточек</string>
+    <string name="weather_effects">Погодные эффекты</string>
+    <string name="effect_intensity">Интенсивность эффекта</string>
+    <string name="intensity_low">Низкая</string>
+    <string name="intensity_high">Высокая</string>
+    <string name="effect_none">Нет</string>
+    <string name="effect_fog">Туман</string>
+    <string name="effect_rain">Дождь</string>
+    <string name="effect_snow">Снег</string>
+    <string name="effect_sun_rays">Солнечные лучи</string>
+    <string name="effect_desc_none">Погодный эффект не применён</string>
+    <string name="effect_desc_fog">Туманный оверлей создающий мистическую атмосферу</string>
+    <string name="effect_desc_rain">Анимированные капли дождя падающие по экрану</string>
+    <string name="effect_desc_snow">Нежные снежинки падающие вниз</string>
+    <string name="effect_desc_sun">Тёплые солнечные лучи сияющие с угла</string>
+    <string name="preview_title">Предпросмотр</string>
+    <string name="preview_live">Прямой эфир</string>
+
+    <string name="settings_title">Настройки</string>
+    <string name="pref_wallpaper_style">Обои и стиль</string>
+    <string name="pref_wallpaper_style_desc">Цвета, тема, иконка приложения</string>
+    <string name="sect_custom">Персонализация</string>
+    <string name="label_applied_dpi">Применённый DPI</string>
+    <string name="pref_applied_dpi_desc">Текущий: %1$d dpi</string>
+    <string name="pref_alt_icon">Альтернативная иконка</string>
+    <string name="pref_alt_icon_desc">Использовать альтернативную иконку приложения</string>
+    <string name="pref_polling">Интервал опроса</string>
+    <string name="pref_polling_desc">%1$dмс</string>
+
+    <string name="dialog_title_dpi">Применённый DPI</string>
+    <string name="dialog_msg_dpi">Текущий DPI устройства %1$d. Отрегулируйте ползунок для изменения плотности приложения.\n\nВыбрано: %2$d dpi</string>
+    <string name="dialog_title_polling">Интервал опроса</string>
+    <string name="dialog_msg_polling">Установите интервал обновления для мониторинга системы (1–30 секунд).</string>
+    <string name="label_interval_sec">Интервал (секунды)</string>
+    <string name="btn_confirm">Подтвердить</string>
+    <string name="btn_cancel">Отмена</string>
+    <string name="btn_apply">Применить</string>
+
+    <string name="fps_manager_title">FPS Менеджер</string>
+    <string name="fps_display_header">Дисплей</string>
+    <string name="fps_tab_home">Главная</string>
+    <string name="fps_tab_stats">Статистика</string>
+    <string name="fps_tab_games">Игры</string>
+    <string name="fps_tab_overlay">Оверлей</string>
+
+    <string name="fps_system_access">Доступ к системе</string>
+    <string name="fps_reader_mode">Режим считывания FPS</string>
+    <string name="fps_mode_universal_android">Универсальный Android</string>
+    <string name="fps_mode_android_desc">Макс Android 13/14</string>
+    <string name="fps_mode_universal_gpu">Универсальный ГПУ</string>
+    <string name="fps_mode_gpu_desc">Поддержка почти всех ГПУ (Adreno/другие)</string>
+    <string name="fps_mode_universal_devices">Универсальные устройства</string>
+    <string name="fps_mode_devices_desc">Любое устройство (Используя dumpsys timestats)</string>
+    <string name="fps_beta_label">БЕТА</string>
+    <string name="fps_device_env">Окружение устройства</string>
+    <string name="fps_manufacturer">Производитель</string>
+    <string name="fps_model">Модель</string>
+    <string name="fps_android_ver">Версия Android</string>
+    <string name="fps_overlay_service">Служба оверлея</string>
+    <string name="fps_service_active">Активен и мониторит</string>
+    <string name="fps_service_stopped">Служба остановлена</string>
+    <string name="fps_checking_root">Проверка Root…</string>
+    <string name="fps_root_needed">Требуется Root доступ</string>
+    <string name="fps_start_service">Запустить службу</string>
+    <string name="fps_stop_service">Остановить службу</string>
+    <string name="fps_root_granted">Root доступ получен</string>
+    <string name="fps_root_not_found">Root не найден</string>
+    <string name="fps_root_available_desc">KernelSU / Magisk обнаружены. Полный функционал доступен.</string>
+    <string name="fps_root_missing_desc">Пожалуйста, получите root права для использования FPS Менеджера.</string>
+
+    <string name="fps_game_launcher">Игровой лаунчер</string>
+    <string name="fps_game_launcher_desc">Запускайте игры для начала мониторинга</string>
+
+    <string name="fps_overlay_active">Оверлей активен</string>
+    <string name="fps_overlay_showing">Показ в реальном времени</string>
+    <string name="fps_overlay_tap_enable">Нажмите переключатель для включения</string>
+    <string name="fps_overlay_style">Стиль оверлея</string>
+    <string name="fps_style_android">Android</string>
+    <string name="fps_style_pc">PC режим</string>
+    <string name="fps_style_mini">Мини</string>
+    <string name="fps_pc_options">Настройки PC режима</string>
+    <string name="fps_show_render">Показывать рендер (Vulkan/OGL)</string>
+    <string name="fps_orientation">Ориентация</string>
+    <string name="fps_vertical">Вертикальная</string>
+    <string name="fps_horizontal">Горизонтальная</string>
+    <string name="fps_metrics">Метрики</string>
+    <string name="fps_metric_fps">FPS</string>
+    <string name="fps_metric_cpu">ЦПУ</string>
+    <string name="fps_metric_ram">ОЗУ</string>
+    <string name="fps_metric_watts">Ватты</string>
+    <string name="fps_metric_temp">Темп</string>
+    <string name="fps_adjustments">Настройки</string>
+    <string name="fps_text_size">Размер текста</string>
+    <string name="fps_width_scale">Ширина</string>
+    <string name="fps_opacity">Прозрачность</string>
+    <string name="fps_color_theme">Цветовая тема</string>
+    <string name="fps_color_android_only">Пользовательский цвет доступен только в режиме Android</string>
+    <string name="fps_custom_color">Пользовательский цвет</string>
+    <string name="fps_color_red">R</string>
+    <string name="fps_color_green">G</string>
+    <string name="fps_color_blue">B</string>
+
+    <string name="fps_session_history">История сессий</string>
+    <string name="fps_records_count">%1$d записей</string>
+    <string name="fps_stat_max">МАКС FPS</string>
+    <string name="fps_stat_min">МИН FPS</string>
+    <string name="fps_stat_avg">СРД FPS</string>
+    <string name="fps_stat_var">ИЗМ</string>
+    <string name="fps_stat_stable">СТАБ %</string>
+    <string name="fps_stat_max_temp">МАКС ТЕМП</string>
+    <string name="fps_stat_avg_pwr">СРД МОЩН</string>
+    <string name="fps_stat_ram">ОЗУ</string>
+    <string name="fps_chart_fps_temp">FPS и Температура</string>
+    <string name="fps_chart_cpu">Нагрузка ЦПУ (%)</string>
+    <string name="fps_export_csv">ЭКСПОРТ CSV</string>
+    <string name="fps_delete">УДАЛИТЬ</string>
+
+    <string name="setedit_title">SetEdit</string>
+    <string name="setedit_subtitle">Редактор базы данных</string>
+    <string name="setedit_search_hint">Поиск свойств…</string>
+    <string name="setedit_view_grid">Сетка</string>
+    <string name="setedit_view_list">Список</string>
+    <string name="setedit_empty">Свойства не найдены</string>
+    <string name="setedit_copy_value">Копировать значение</string>
+
+    <string name="setedit_tab_all">Все</string>
+    <string name="setedit_tab_global">Global</string>
+    <string name="setedit_tab_secure">Secure</string>
+    <string name="setedit_tab_system">System</string>
+    <string name="setedit_tab_android">Android</string>
+
+    <string name="setedit_msg_saved">Сохранено:</string>
+    <string name="setedit_msg_failed">Не удалось сохранить</string>
+    <string name="setedit_msg_deleted">Удалено:</string>
+    <string name="setedit_msg_error_delete">Нельзя удалить свойства Android</string>
+
+    <string name="setedit_sheet_title">Редактировать свойство</string>
+    <string name="setedit_label_key">Ключ</string>
+    <string name="setedit_label_original">Исходное значение</string>
+    <string name="setedit_label_edit">Новое значение</string>
+    <string name="setedit_btn_remove">Удалить</string>
+    <string name="setedit_btn_save">Сохранить</string>
+
+    <string name="home_update_new">Что нового:</string>
+    <string name="home_update_avail">Доступно обновление:</string>
+
+    <string name="about_maintainer_title">Сопровождающий ZKM Projects</string>
+    <string name="about_opensource_thanks">Благодарность проектам с открытым исходным кодом</string>
+    <string name="about_section_categories">Категории</string>
+    <string name="about_section_links">Ссылки</string>
+    <string name="about_link_channel">Канал</string>
+    <string name="about_link_discussion">Обсуждение</string>
+    <string name="about_link_translate">Перевод</string>
+    <string name="about_link_website">Сайт</string>
+    <string name="about_version_format">v%1$s (%2$d)</string>
+
+    <string name="soc_tab_processor">Процессор</string>
+    <string name="soc_tab_scheduler">Планировщик</string>
+    <string name="soc_tab_memory">Память</string>
+    <string name="soc_tab_network">Сеть</string>
+    <string name="soc_system_monitor">Системный монитор</string>
+
+    <string name="home_features">Функции</string>
+    <string name="home_dashboard">Панель управления</string>
+    <string name="home_device_content_desc">Устройство</string>
+
+    <string name="cat_all">Все</string>
+    <string name="cat_system">Система</string>
+    <string name="cat_monitor">Монитор</string>
+    <string name="cat_root">Root</string>
+
+    <string name="ext_terminal">Терминал</string>
+    <string name="ext_setedit">SetEdit</string>
+    <string name="ext_flasher">Прошивальщик</string>
+    <string name="ext_launcher">Лаунчер</string>
+    <string name="ext_dod">DoD</string>
+    <string name="ext_compiler">Компилятор</string>
+    <string name="ext_thermal">Термальный</string>
+    <string name="ext_display">Дисплей</string>
+    <string name="ext_battery">Батарея</string>
+    <string name="ext_dozemode">Режим Doze</string>
+    <string name="ext_logs">Логи</string>
+    <string name="ext_fps">Fps</string>
+    <string name="ext_process">Процесс</string>
+    <string name="ext_ksuweb">KsuWeb</string>
+
+    <string name="desc_terminal">Ввод команд</string>
+    <string name="desc_setedit">Редактировать базу данных</string>
+    <string name="desc_flasher">Прошивать образы</string>
+    <string name="desc_launcher">Активности приложений</string>
+    <string name="desc_dod">Отключить/Заморозить приложение</string>
+    <string name="desc_compiler">Оптимизатор Dex2oat</string>
+    <string name="desc_thermal">Мониторинг и управление</string>
+    <string name="desc_display">Модификации и другое</string>
+    <string name="desc_battery">Контроллер статистики заряда</string>
+    <string name="desc_dozemode">Установить оптимизированный режим doze</string>
+    <string name="desc_logs">Чтение логов</string>
+    <string name="desc_fps">Частота кадров</string>
+    <string name="desc_process">Менеджер задач</string>
+    <string name="desc_ksuweb">Веб менеджер</string>
+
+    <string name="overall_title">Общий</string>
+    <string name="overall_subtitle">Zuan Kernel Manager</string>
+    <string name="overall_dashboard">Панель управления</string>
+    <string name="overall_processor">Процессор</string>
+    <string name="overall_graphics">Графика</string>
+    <string name="overall_memory">Память</string>
+    <string name="overall_vm_params">Параметры ВМ</string>
+    <string name="overall_display">Дисплей</string>
+
+    <string name="core_detail_title">Ядро %1$d</string>
+    <string name="core_detail_governor">Губернатор:</string>
+    <string name="core_detail_params">Параметры губернатора</string>
+    <string name="core_detail_no_params">Нет доступных параметров.</string>
+    <string name="core_detail_cancel">Отмена</string>
+    <string name="core_detail_settings">Настройки</string>
+
+    <string name="cpu_total_load">Общая нагрузка</string>
+    <string name="cpu_core_usage">Использование ядер</string>
+    <string name="cpu_loading">Загрузка ядер…</string>
+    <string name="cpu_top_processes">Топ процессов</string>
+    <string name="cpu_view_all">Смотреть все</string>
+
+    <string name="gpu_load">Нагрузка ГПУ</string>
+    <string name="gpu_renderer_info">Информация о рендере</string>
+
+    <string name="ram_physical">Физическая ОЗУ</string>
+    <string name="ram_swap_zram">Swap / ZRAM</string>
+    <string name="ram_used">Использовано</string>
+    <string name="ram_free">Свободно</string>
+    <string name="ram_total">Всего</string>
+
+    <string name="vm_swappiness">Swappiness</string>
+    <string name="vm_extra_free">Extra Free Kbytes</string>
+    <string name="vm_watermark">Watermark Scale</string>
+    <string name="vm_vfs_cache">VFS Cache Pressure</string>
+    <string name="vm_dirty_ratio">Dirty Ratio</string>
+    <string name="vm_dirty_bg">Dirty BG Ratio</string>
+
+    <string name="display_density">Плотность</string>
+    <string name="display_hdr">Поддержка HDR</string>
+
+    <string name="temp_freezing">Заморозка</string>
+    <string name="temp_cool">Холодно</string>
+    <string name="temp_warm">Тепло</string>
+    <string name="temp_hot">Горячо</string>
+    <string name="temp_overheat">Перегрев</string>
+    <string name="temp_temperature">Температура</string>
+
+    <string name="battery_details">Детали</string>
+    <string name="battery_uptime">Время работы</string>
+    <string name="battery_deep_sleep">Глубокий сон</string>
+    <string name="battery_electric_current">Электрический ток</string>
+    <string name="battery_health">Здоровье</string>
+    <string name="battery_cycles">Циклы</string>
+
+    <string name="update_available">Доступно обновление: %1$s</string>
+    <string name="update_tap_install">Нажмите для просмотра изменений и установки</string>
+
+    <string name="device_android_version">Версия Android</string>
+    <string name="device_kernel_info">Информация о ядре</string>
+    <string name="status_loading">Загрузка…</string>
+
+    <string name="terminal_title">zuan@kernel</string>
+    <string name="terminal_overlay_title">zuan@overlay</string>
+    <string name="terminal_overlay_title_locked">zuan@overlay [ЗАБЛОКИРОВАНО]</string>
+    <string name="terminal_preferences_title">НАСТРОЙКИ</string>
+    <string name="terminal_overlay_active">Терминал оверлей активен</string>
+    <string name="terminal_custom_bg_desc">Пользовательский фон</string>
+
+    <string name="action_close">Закрыть</string>
+    <string name="action_lock">Блокировать</string>
+    <string name="action_resize">Изменить размер</string>
+    <string name="action_settings">Настройки</string>
+    <string name="action_input_keyboard">Ввод с клавиатуры</string>
+
+    <string name="terminal_glass_mode">Режим стекла А12+</string>
+    <string name="terminal_theme_dark_glass">Тема: Тёмное стекло</string>
+    <string name="terminal_theme_light_glass">Тема: Светлое стекло</string>
+    <string name="terminal_glass_intensity">Интенсивность стекла: %1$d дп</string>
+    <string name="terminal_background_section">ФОН</string>
+    <string name="terminal_live_video_wall">Живое видео (4K)</string>
+    <string name="terminal_change_video">Изменить видео</string>
+    <string name="terminal_video_dim">Затемнение видео: %1$d%%</string>
+    <string name="terminal_custom_image">Пользовательское изображение</string>
+    <string name="terminal_select_image">Выбрать изображение</string>
+    <string name="terminal_image_blur">Размытие: %1$d дп</string>
+    <string name="terminal_image_dim">Затемнение: %1$d%%</string>
+    <string name="terminal_bubble_gradient">Градиент пузырьков</string>
+    <string name="terminal_bg_dark_mode">Фон: Тёмный режим</string>
+    <string name="terminal_bg_light_mode">Фон: Светлый режим</string>
+    <string name="terminal_live_gradient">Живая анимация градиента</string>
+    <string name="terminal_fullscreen">Полный экран (UI)</string>
+    <string name="terminal_floating_mode">Плавающий режим (Оверлей)</string>
+
+    <string name="kernel_flasher_title">Прошивальщик ядра</string>
+    <string name="flasher_mode_horizon">Horizon</string>
+    <string name="flasher_mode_capntrips">Capntrips</string>
+    <string name="flasher_init">Инициализация…</string>
+    <string name="flasher_checking_tools">Проверка инструментов…</string>
+    <string name="flasher_ready">Готов</string>
+    <string name="flasher_error">Ошибка: %1$s</string>
+    <string name="flasher_connecting_root">Подключение Root…</string>
+    <string name="flasher_scanning_partitions">Сканирование разделов…</string>
+    <string name="please_wait">Пожалуйста, подождите…</string>
+    <string name="error_occurred">Произошла ошибка</string>
+    <string name="unknown_error">Неизвестная ошибка</string>
+    <string name="go_back">Назад</string>
+    <string name="slot_a_not_found">Слот A не найден</string>
+    <string name="slot_b_not_available">Слот B недоступен</string>
+    <string name="slot_vm_not_found">Слот VM не найден</string>
+    <string name="confirm_reboot_system">ПОДТВЕРДИТЕ ПЕРЕЗАГРУЗКУ СИСТЕМЫ</string>
+    <string name="scanning">Сканирование…</string>
+
+    <string name="horizon_engine_legacy">Horizon Engine (Legacy)</string>
+    <string name="device_model">Модель устройства</string>
+    <string name="kernel_version">Версия ядра</string>
+    <string name="active_slot">Активный слот</string>
+    <string name="slot_current">Слот %1$s</string>
+    <string name="boot_partitions">Загрузочные разделы</string>
+    <string name="slot_a">Слот A</string>
+    <string name="slot_b">Слот B</string>
+    <string name="flasher_console">Консоль прошивальщика</string>
+    <string name="terminal_output">Вывод терминала</string>
+    <string name="horizon_ready">> Horizon Engine готов…</string>
+    <string name="flashing_kernel_progress">Прошивка ядра…</string>
+    <string name="flash_horizon_method">Прошить (Метод Horizon)</string>
+    <string name="flashing_complete">Прошивка завершена</string>
+    <string name="flasher_reboot_message">Образ ядра успешно прошит. Рекомендуется перезагрузка для применения изменений.</string>
+    <string name="reboot_system">Перезагрузить систему</string>
+    <string name="later">Позже</string>
+    <string name="active_label">Активен</string>
+    <string name="format_label">Форм: %1$s</string>
+
+    <string name="flasher_init_process">Инициализация процесса прошивки…</string>
+    <string name="flasher_success">[УСПЕХ] Прошивка завершена.</string>
+    <string name="flasher_failed">[ОШИБКА] Произошла ошибка.</string>
+    <string name="flasher_toast_failed">Прошивка не удалась!</string>
+    <string name="loading">Загрузка…</string>
+
+    <string name="activity_launcher_title">Запуск активностей</string>
+    <string name="search_hint">Поиск приложений…</string>
+    <string name="loading_apps">Загрузка приложений…</string>
+    <string name="apps_installed_count">Установлено приложений (%1$d)</string>
+    <string name="user_apps">Пользовательские</string>
+    <string name="system_apps">Системные</string>
+    <string name="active_apps">Активные</string>
+    <string name="recycle_bin">Корзина</string>
+    <string name="app_detail_title">Детали приложения</string>
+    <string name="version_info">Версия: %1$s (%2$s)</string>
+    <string name="total_activities">Всего активностей: %1$d</string>
+    <string name="activity_list">Список активностей</string>
+    <string name="launch_activity_title">Запустить активность?</string>
+    <string name="activity_name">Имя активности</string>
+    <string name="class_label">Класс</string>
+    <string name="package_label">Пакет</string>
+    <string name="launch">Запустить</string>
+    <string name="copy_info">Копировать информацию</string>
+    <string name="display_settings">Настройки отображения</string>
+    <string name="name_asc">Имя А-Я</string>
+    <string name="name_desc">Имя Я-А</string>
+    <string name="filter_all">Все</string>
+    <string name="filter_system">Системные</string>
+    <string name="filter_user">Пользовательские</string>
+    <string name="no_apps_found">Приложения не найдены</string>
+    <string name="copied">Скопировано</string>
+    <string name="permission_denied">Разрешение отклонено</string>
+    <string name="error_message">Ошибка: %1$s</string>
+    <string name="btn_back">Назад</string>
+    <string name="permission_required">Требуется разрешение</string>
+    <string name="inspector_started">Инспектор запущен</string>
+    <string name="toggle_inspector">Переключить инспектор</string>
+    <string name="scanning_activities">Сканирование активностей…</string>
+    <string name="activities">Активности</string>
+
+    <string name="battery_statistics_title">Статистика батареи</string>
+    <string name="battery_tab_dashboard">Панель</string>
+    <string name="battery_tab_controls">Управление</string>
+    <string name="battery_tab_settings">Настройки</string>
+
+    <string name="battery_status">Статус</string>
+    <string name="battery_charging">Зарядка</string>
+    <string name="battery_discharging">Разрядка</string>
+    <string name="battery_temp">Температура</string>
+    <string name="battery_voltage">Напряжение</string>
+
+    <string name="battery_peak_records">Пиковые записи</string>
+    <string name="battery_temp_max">Макс темп</string>
+    <string name="battery_discharge">Разряд</string>
+    <string name="battery_charge_max">Макс заряд</string>
+    <string name="battery_current_live_chart">График тока в реальном времени</string>
+    <string name="battery_bms_data">Данные BMS / Uevent</string>
+    <string name="battery_discharge_charge_speed">Скорость разряда/заряда</string>
+    <string name="battery_charging_type">Тип зарядки</string>
+    <string name="battery_level">Уровень батареи</string>
+    <string name="battery_current_voltage">Текущее напряжение</string>
+    <string name="battery_max_voltage">Макс напряжение</string>
+    <string name="battery_power_watt">Мощность/Ватты</string>
+    <string name="battery_temp_label">Темп батареи</string>
+    <string name="battery_tech">Технология батареи</string>
+    <string name="battery_cycle_count">Циклы заряда</string>
+    <string name="battery_real_capacity">Реальная ёмкость</string>
+
+    <string name="battery_monitor_service">Служба мониторинга батареи</string>
+    <string name="battery_monitor_service_desc">Запись статистики батареи в фоне</string>
+    <string name="battery_enable_charging">Включить зарядку</string>
+    <string name="battery_enable_charging_desc">Главный переключатель для вкл/выкл зарядки</string>
+    <string name="battery_smart_cutoff">Умное отключение</string>
+    <string name="battery_smart_cutoff_desc">Остановить зарядку при достижении лимита</string>
+    <string name="battery_limit_label">Лимит: %1$d%%</string>
+    <string name="battery_thermal_profile">Термальный профиль</string>
+    <string name="battery_select_thermal_profile">Выбрать термальный профиль</string>
+    <string name="battery_thermal_default">По умолчанию (0)</string>
+    <string name="battery_thermal_gaming">Игровой (13)</string>
+    <string name="battery_thermal_benchmark">Бенчмарк (10)</string>
+    <string name="battery_fast_charging">Быстрая зарядка</string>
+    <string name="battery_fast_charging_desc">Принудительно вкл/выкл быструю зарядку</string>
+    <string name="battery_bypass_charging">Обход зарядки</string>
+    <string name="battery_bypass_charging_desc">Питание устройства напрямую от источника</string>
+    <string name="battery_charging_speed_limit">Ограничение скорости заряда</string>
+    <string name="battery_saver_mode">Режим энергосбережения</string>
+    <string name="battery_saver_mode_desc">Снизить энергопотребление</string>
+
+    <string name="battery_system_charging_limit">Системный лимит заряда</string>
+    <string name="battery_system_charging_limit_desc">Ограничить зарядку используя интерфейс ядра для защиты здоровья батареи.</string>
+    <string name="battery_health_tips">Советы по здоровью батареи</string>
+    <string name="battery_tip_temp_title">Избегайте экстремальных температур</string>
+    <string name="battery_tip_temp_desc">Держите батарею между 20°C - 30°C для оптимального здоровья</string>
+    <string name="battery_tip_discharge_title">Избегайте полного разряда</string>
+    <string name="battery_tip_discharge_desc">Не позволяйте батарее падать ниже 20%% часто</string>
+
+    <string name="dod_title">DoD Менеджер</string>
+    <string name="dod_back">Назад</string>
+    <string name="dod_search_hint">Поиск пакета или имени…</string>
+    <string name="dod_user_apps">Пользовательские</string>
+    <string name="dod_system_apps">Системные</string>
+    <string name="dod_frozen_apps">Замороженные</string>
+    <string name="dod_tab_all">Все</string>
+    <string name="dod_tab_user">Пользовательские</string>
+    <string name="dod_tab_system">Системные</string>
+    <string name="dod_tab_frozen">Замороженные</string>
+    <string name="dod_status_frozen">ЗАМОРОЖЕНО</string>
+    <string name="dod_app_info">Информация о приложении</string>
+    <string name="dod_version">Версия</string>
+    <string name="dod_version_code">Код</string>
+    <string name="dod_package">Пакет</string>
+    <string name="dod_target_sdk">Целевой SDK</string>
+    <string name="dod_freeze_app">Заморозить приложение</string>
+    <string name="dod_unfreeze_app">Разморозить приложение</string>
+    <string name="dod_debloat_uninstall">Debloat (Удалить)</string>
+    <string name="dod_action_freeze">ЗАМОРОЗИТЬ</string>
+    <string name="dod_action_uninstall">УДАЛИТЬ</string>
+    <string name="dod_system_warning_title">Предупреждение системного приложения</string>
+    <string name="dod_system_warning_desc">Вы собираетесь %1$s системное приложение:</string>
+    <string name="dod_system_warning_notice">Удаление или отключение системных приложений может вызвать bootloop, сбои или нестабильность устройства. Продолжайте только если знаете что делаете.</string>
+    <string name="dod_accept_risk">Я принимаю риск и ответственность.</string>
+    <string name="dod_confirm_freeze">Подтвердить заморозку</string>
+    <string name="dod_confirm_debloat">Подтвердить удаление</string>
+
+    <string name="dex2oat_title">Компилятор приложений</string>
+    <string name="dex2oat_back">Назад</string>
+    <string name="dex2oat_options">Опции</string>
+    <string name="dex2oat_compile_all">Компилировать всё</string>
+    <string name="dex2oat_art_title">О Android Runtime (ART)</string>
+    <string name="dex2oat_art_desc">Узнайте как работает JIT/AOT компиляция и как это влияет на производительность.</string>
+    <string name="dex2oat_view_source">Открыть документацию</string>
+    <string name="dex2oat_search_hint">Поиск приложений…</string>
+    <string name="dex2oat_compilation_mode">Режим компиляции (Принудительно)</string>
+    <string name="dex2oat_compile_system_only">Только системные приложения</string>
+    <string name="dex2oat_compile_user_only">Только пользовательские приложения</string>
+    <string name="dex2oat_reset_all">Сбросить всю компиляцию</string>
+    <string name="dex2oat_system_app">Системное приложение</string>
+
+    <string name="display_title">Менеджер дисплея</string>
+    <string name="display_back">Назад</string>
+    <string name="display_tab_info">Инфо</string>
+    <string name="display_tab_res_dpi">Res/DPI</string>
+    <string name="display_tab_color">Цвет</string>
+    <string name="display_tab_extra">Дополнительно</string>
+    <string name="display_device_info">Информация о дисплее</string>
+    <string name="display_resolution">Разрешение</string>
+    <string name="display_density_dpi">Плотность (DPI)</string>
+    <string name="display_exact_dpi">Точный X/Y DPI</string>
+    <string name="display_technology">Технология</string>
+    <string name="display_diagonal_size">Диагональ</string>
+    <string name="display_physical_size">Физический размер</string>
+    <string name="display_refresh_rate">Частота обновления</string>
+    <string name="display_orientation">Ориентация</string>
+    <string name="display_graphics_hdr">Графика и HDR</string>
+    <string name="display_gpu_renderer">ГПУ Рендерер</string>
+    <string name="display_opengl_version">Версия OpenGL</string>
+    <string name="display_hdr_support">Поддержка HDR</string>
+    <string name="display_wide_color_gamut">Широкий цветовой охват</string>
+    <string name="display_supported">Поддерживается</string>
+    <string name="display_not_supported">Не поддерживается</string>
+    <string name="display_resolution_section">Разрешение</string>
+    <string name="display_current_resolution">Текущее: %1$s</string>
+    <string name="display_tap_presets">Нажмите для пресетов</string>
+    <string name="display_manual_input">Ручной ввод</string>
+    <string name="display_reset">Сброс</string>
+    <string name="display_presets">Пресеты</string>
+    <string name="display_density_section">Плотность (DPI)</string>
+    <string name="display_current_dpi">Текущий: %1$d dpi</string>
+    <string name="display_density_desc">Ниже = Меньше UI, Выше = Больше UI</string>
+    <string name="display_saturation_title">Насыщенность цвета</string>
+    <string name="display_saturation_level">Уровень насыщенности</string>
+    <string name="display_bw">Ч/Б (0.0)</string>
+    <string name="display_default">По умолчанию (1.0)</string>
+    <string name="display_vivid">Яркий (2.0)</string>
+    <string name="display_screen_timeout">Таймаут экрана</string>
+    <string name="display_font_scale">Масштаб шрифта системы</string>
+    <string name="display_current_scale">Текущий масштаб: %1$d%%</string>
+    <string name="display_animation_speed">Скорость анимации</string>
+    <string name="display_off">Выкл</string>
+    <string name="display_night_light">Ночной свет</string>
+    <string name="display_night_mode">Ночной режим</string>
+    <string name="display_custom_resolution">Пользовательское разрешение</string>
+    <string name="display_custom_dpi">Пользовательский DPI</string>
+    <string name="display_width_px">Ширина (px)</string>
+    <string name="display_height_px">Высота (px)</string>
+    <string name="display_density_dpi_label">Плотность (DPI)</string>
+
+    <string name="doze_title">Режим Doze</string>
+    <string name="doze_back">Назад</string>
+    <string name="doze_system_state">Состояние системы</string>
+    <string name="doze_idle_count">Счётчик бездействия</string>
+    <string name="doze_tab_apps">Приложения</string>
+    <string name="doze_tab_whitelist">Белый список</string>
+    <string name="doze_tab_controls">Управление</string>
+    <string name="doze_tab_settings">Настройки</string>
+    <string name="doze_search_whitelist">Поиск в белом списке…</string>
+    <string name="doze_search_all">Поиск во всех приложениях…</string>
+    <string name="doze_no_whitelisted">Нет приложений в белом списке.</string>
+    <string name="doze_no_apps_found">Приложения не найдены.</string>
+    <string name="doze_system_app">Системное</string>
+    <string name="doze_gms_title">Google Play Services (GMS)</string>
+    <string name="doze_force_gms">Принудительный Doze GMS</string>
+    <string name="doze_gms_subtitle">Укротить пожирателя батареи</string>
+    <string name="doze_mode_default">По умолчанию</string>
+    <string name="doze_mode_standard">Стандартный</string>
+    <string name="doze_mode_aggressive">Агрессивный</string>
+    <string name="doze_aggressive_desc">Максимальное сохранение: Блокирует Wakelocks, будильники и фоновые задачи. Push-уведомления могут задерживаться.</string>
+    <string name="doze_standard_desc">Сбалансированный: Блокирует только фоновые запуски. Безопасно для уведомлений.</string>
+    <string name="doze_default_desc">По умолчанию: GMS работает нормально на основе системной логики.</string>
+    <string name="doze_manual_controls">Ручное управление</string>
+    <string name="doze_force_idle">Принудительное бездействие</string>
+    <string name="doze_wake_up">Разбудить</string>
+    <string name="doze_step_state">Шаг состояния</string>
+    <string name="doze_reset_stats">Сбросить статистику</string>
+    <string name="doze_auto_refresh">Авто обновление</string>
+    <string name="doze_auto_refresh_title">Авто обновление состояния</string>
+    <string name="doze_auto_refresh_desc">Автоматически обновлять состояние Doze</string>
+    <string name="doze_states_info">Информация о состояниях Doze</string>
+    <string name="doze_state_active">АКТИВЕН</string>
+    <string name="doze_state_active_desc">Устройство в нормальном использовании, Doze не активен</string>
+    <string name="doze_state_idle_pending">ОЖИДАНИЕ БЕЗДЕЙСТВИЯ</string>
+    <string name="doze_state_idle_pending_desc">Устройство собирается войти в режим Doze</string>
+    <string name="doze_state_sensing">СЕНСОРЫ</string>
+    <string name="doze_state_sensing_desc">Устройство считывает движение перед входом в Doze</string>
+    <string name="doze_state_idle">БЕЗДЕЙСТВИЕ</string>
+    <string name="doze_state_idle_desc">Устройство в режиме Doze, фоновая активность ограничена</string>
+    <string name="doze_state_maintenance">ОБСЛУЖИВАНИЕ</string>
+    <string name="doze_state_maintenance_desc">Короткое окно для завершения отложенной работы приложений</string>
+    <string name="doze_global_settings">Глобальные настройки Doze</string>
+    <string name="doze_enable">Включить режим Doze</string>
+    <string name="doze_enable_desc">Разрешить устройству входить в сон</string>
+    <string name="doze_aggressive_mode">Агрессивный Doze</string>
+    <string name="doze_aggressive_mode_desc">Входить в режим Doze быстрее</string>
+    <string name="doze_battery_tips">Советы по экономии батареи</string>
+    <string name="doze_tip_gms_title">Используйте GMS Doze</string>
+    <string name="doze_tip_gms_desc">Принудительно усыпить Google Play Services для максимальной экономии батареи.</string>
+    <string name="doze_tip_whitelist_title">Ограничьте белый список</string>
+    <string name="doze_tip_whitelist_desc">Добавляйте в белый список только приложения которым действительно нужен фоновый доступ (как WhatsApp/Telegram).</string>
+
+    <string name="thermal_title">Термальный менеджер</string>
+    <string name="thermal_max_temp">Макс температура</string>
+    <string name="thermal_avg_temp">Средняя температура</string>
+    <string name="thermal_active_zones">Активные зоны</string>
+    <string name="thermal_policy">Политика</string>
+    <string name="thermal_live">Живой</string>
+    <string name="thermal_tab_zones">Зоны</string>
+    <string name="thermal_tab_cooling">Охлаждение</string>
+    <string name="thermal_tab_disabled">Отключённые</string>
+    <string name="thermal_no_disabled">Нет отключённых зон</string>
+    <string name="thermal_disable">Отключить</string>
+    <string name="thermal_enable">Включить</string>
+    <string name="thermal_trip_points">Точки срабатывания</string>
+    <string name="thermal_hide_trips">Скрыть точки</string>
+    <string name="thermal_trip_config">Настройка точек срабатывания</string>
+    <string name="thermal_current_state">Текущее состояние</string>
+    <string name="thermal_policy_dialog_title">Термальная политика ядра</string>
+    <string name="thermal_back">Назад</string>
+
+    <string name="logs_empty">Свойства не найдены</string>
+    <string name="logs_reading">Чтение системных логов…</string>
+    <string name="logs_search_hint">Поиск логов</string>
+    <string name="logs_count">%1$s логов</string>
+    <string name="logs_status_paused">Пауза</string>
+    <string name="logs_status_live">Живой</string>
+    <string name="logs_clear_search">Очистить</string>
+    <string name="logs_resume">Продолжить</string>
+    <string name="logs_pause">Пауза</string>
+    <string name="logs_menu">Меню</string>
+    <string name="logs_settings">Настройки</string>
+    <string name="logs_display_options">Настройки отображения</string>
+    <string name="logs_save">Сохранить логи</string>
+    <string name="logs_clear">Очистить логи</string>
+    <string name="logs_restart">Перезапустить Logcat</string>
+    <string name="logs_copied">Скопировано в буфер обмена</string>
+    <string name="logs_scroll_bottom">Прокрутить вниз</string>
+
+    <string name="logs_settings_title">Настройки Logcat</string>
+    <string name="logs_settings_desc">Настройка поведения логирования</string>
+    <string name="logs_poll_interval">ИНТЕРВАЛ ОПРОСА</string>
+    <string name="logs_ms">%1$d мс</string>
+    <string name="logs_poll_desc">Ниже = быстрее обновления, выше нагрузка на ЦПУ</string>
+    <string name="logs_buffers">БУФЕРЫ</string>
+    <string name="logs_max_logs">МАКС ЛОГОВ В ПАМЯТИ</string>
+    <string name="logs_save_location">Место сохранения</string>
+    <string name="logs_internal_storage">Внутреннее хранилище</string>
+    <string name="logs_external_docs">Внешние документы</string>
+
+    <string name="logs_display_options_title">Настройки отображения</string>
+    <string name="logs_display_options_desc">Настройка вида логов</string>
+    <string name="logs_metadata">МЕТАДАННЫЕ</string>
+    <string name="logs_advanced">ДОПОЛНИТЕЛЬНО</string>
+    <string name="logs_show_tag">Показывать тег</string>
+    <string name="logs_show_time">Показывать время</string>
+    <string name="logs_show_date">Показывать дату</string>
+    <string name="logs_show_pid">Показывать ID процесса</string>
+    <string name="logs_show_tid">Показывать ID потока</string>
+    <string name="logs_compact_mode">Компактный режим</string>
+    <string name="logs_compact_desc">Меньше отступов и размер шрифта</string>
+
+    <string name="logs_copy">Копировать</string>
+    <string name="logs_raw_log">СЫРОЙ ЛОГ</string>
+    <string name="logs_time">Время</string>
+    <string name="logs_date">Дата</string>
+    <string name="logs_pid">ID процесса</string>
+    <string name="logs_tid">ID потока</string>
+    <string name="logs_tag">Тег</string>
+    <string name="btn_done">Готово</string>
+
+    <string name="fps_notification_title">ZKM Монитор запущен</string>
+    <string name="fps_notification_text">Нажмите для открытия приложения</string>
+    <string name="fps_monitor_title">Монитор</string>
+    <string name="fps_cpu">ЦПУ</string>
+    <string name="fps_ram">ОЗУ</string>
+    <string name="fps_error">Ошибка…</string>
+    <string name="fps_resize">Изменить размер</string>
+
+    <string name="process_manager">Менеджер процессов</string>
+    <string name="system">Система</string>
+    <string name="processes">Процессы</string>
+    <string name="floating_mode">Плавающий режим</string>
+    <string name="system_health">Здоровье системы</string>
+    <string name="monitoring_threads">Мониторинг %d активных потоков</string>
+    <string name="top_load">Топ нагрузка: %1$s (%2$s)</string>
+    <string name="running_processes">Запущенные процессы</string>
+    <string name="cpu_usage">Использование ЦПУ</string>
+    <string name="top_cpu_usage">Топ использование ЦПУ</string>
+    <string name="top_ram_usage">Топ использование ОЗУ</string>
+    <string name="memory">Память</string>
+    <string name="limit_format">Лимит: %d</string>
+    <string name="total">Всего</string>
+    <string name="user">Пользователь</string>
+    <string name="sys">Система</string>
+
+    <string name="overlay_permission_desc">Для отображения плавающего монитора, пожалуйста, разрешите \'Отображение поверх других приложений\'.</string>
+    <string name="open_settings">Открыть настройки</string>
+    <string name="app_details">Детали приложения</string>
+    <string name="version">Версия</string>
+    <string name="build">Сборка</string>
+    <string name="package_name">Пакет</string>
+
+    <string name="unknown">Неизвестно</string>
+    <string name="not_found">Не найдено</string>
+    <string name="btn_close">Закрыть</string>
+    <string name="cpu">ЦПУ</string>
+    <string name="ram">ОЗУ</string>
+    <string name="pid">PID</string>
+    <string name="manage">Управление</string>
+    <string name="kill">Завершить</string>
+    <string name="force_stop">Принудительная остановка (SIGSTOP)</string>
+    <string name="ksuweb_title">KernelSU WebUI</string>
+    <string name="ksuweb_no_modules">WebUI модули не найдены</string>
+    <string name="ksuweb_card_style">Стиль карточек</string>
+    <string name="ksuweb_sorting">Сортировка</string>
+    <string name="ksuweb_sort_action">Сначала скрипты действий</string>
+    <string name="ksuweb_sort_enabled">Сначала включённые</string>
+    <string name="card_style_immersive">Погружение</string>
+    <string name="card_style_minimalist">Минимализм</string>
+    <string name="card_style_media">Медиа</string>
+    <string name="card_style_outlined">Контур</string>
+    <string name="ksuweb_status_active">Активен</string>
+    <string name="ksuweb_by_author">От %s</string>
+    <string name="ksuweb_version_prefix">v%s</string>
+    <string name="ksuweb_version_author_format">v%1$s • %2$s</string>
+    <string name="ksuweb_badge_action">ДЕЙСТВИЕ</string>
+    <string name="ksuweb_badge_disabled">ОТКЛЮЧЕНО</string>
+    <string name="ksuweb_badge_webui">WEBUI</string>
+    <string name="btn_refresh">Обновить</string>
+    <string name="btn_options">Опции</string>
+
+    <string name="nav_about">О приложении</string>
+    <string name="tab_feature">Функции</string>
+    <string name="tab_overview">Обзор</string>
+    <string name="tab_adjust">Настройка</string>
+    <string name="tab_support">Поддержка</string>
+    <string name="tools">Инструменты</string>
+    <string name="power">Питание</string>
+    <string name="settings">Настройки</string>
+
+    <string name="quick_tools">Быстрые инструменты</string>
+    <string name="terminal_shell">Терминал Shell</string>
+    <string name="terminal_shell_desc">Терминальное окно где вы можете вводить команды везде</string>
+    <string name="fps_monitor">FPS Монитор</string>
+    <string name="fps_monitor_desc">Оверлей частоты кадров в реальном времени</string>
+    <string name="process_monitor">Монитор процессов</string>
+    <string name="process_monitor_desc">Показывать монитор процессов</string>
+    <string name="activity_inspector">Инспектор активностей</string>
+    <string name="activity_inspector_desc">Мониторинг текущего пакета и класса активности</string>
+
+    <string name="overlay_permission_required">Требуется разрешение оверлея!</string>
+
+    <string name="power_menu">Меню питания</string>
+    <string name="power_reboot">Перезагрузить систему</string>
+    <string name="power_shutdown">Выключить</string>
+    <string name="power_recovery">Режим Recovery</string>
+    <string name="power_fastboot">Режим Fastboot</string>
+    <string name="power_restart_ui">Перезапустить SystemUI</string>
+    <string name="power_reboot_warning">Вы уверены что хотите перезагрузить устройство?</string>
+    <string name="power_shutdown_warning">Устройство будет полностью выключено.</string>
+    <string name="power_recovery_warning">Устройство перезагрузится в режим Recovery (TWRP/OrangeFox).</string>
+    <string name="power_fastboot_warning">Устройство перезагрузится в режим Fastboot/Bootloader.</string>
+    <string name="power_restart_ui_warning">Пользовательский интерфейс перезапустится. Это может занять несколько секунд.</string>
+    <string name="confirm_action">Подтвердить %s</string>
+    <string name="btn_confirm_yes">Да, сделать это</string>
+
+    <string name="about_section_developer">О разработчике</string>
+    <string name="about_section_app_info">О приложении</string>
+    <string name="about_section_community">О сообществе</string>
+    <string name="about_section_collaborator">О соавторе</string>
+    <string name="about_changelog">История изменений</string>
+    <string name="about_opensource">Открытый исходный код</string>
+
+    <string name="intro_app_label">ZuanKernel</string>
+    <string name="intro_p1_title">Zuan Kernel Manager</string>
+    <string name="intro_p1_desc">Полный контроль над производительностью вашего устройства. Разгон, управление батареей и оптимизация системы в одном приложении.</string>
+    <string name="intro_p2_title">Предупреждение о риске</string>
+    <string name="intro_p2_desc">Это приложение требует ROOT доступа. Неправильная конфигурация может вызвать Bootloop. Действуйте на свой страх и риск (DWYOR).</string>
+    <string name="intro_p3_title">Конфиденциальность и соглашение</string>
+    <string name="intro_p3_desc">Данные обрабатываются ЛОКАЛЬНО. Мы не отправляем ваши персональные данные на облачные серверы.</string>
+    <string name="intro_btn_next">Далее</string>
+    <string name="intro_btn_agree">Согласен и войти</string>
+    <string name="intro_btn_decline">Отклонить и выйти</string>
+    <string name="intro_footer_legal">Нажимая \'Согласен\', вы принимаете риски и политику конфиденциальности.</string>
+
+    <string name="update_title">Обновление до версии %s</string>
+    <string name="update_changelog_title">Что нового</string>
+    <string name="btn_update">Обновить</string>
+    <string name="downloading_update">Загрузка обновления…</string>
+    <string name="auto_download">Автозагрузка APK</string>
+    <string name="auto_download_desc">Загружать и устанавливать автоматически</string>
+    <string name="btn_manual_download">Открыть браузер</string>
+    
+    <string name="lang_russian">Russian</string>
+<string name="lang_ukrainian">Ukrainian</string>
+<string name="lang_belarusian">Belarusian</string>
+<string name="lang_kazakh">Kazakh</string>
+<string name="lang_moldovan">Moldovan</string>
+<string name="lang_chinese_cn">Chinese (China)</string>
+<string name="lang_chinese_sg">Chinese (Singapore)</string>
+<string name="lang_chinese_tw">Chinese (Taiwan)</string>
+<string name="lang_chinese_hk">Chinese (Hong Kong)</string>
+<string name="lang_chinese_mo">Chinese (Macau)</string>
+<string name="lang_japanese">Japanese</string>
+<string name="lang_korean">Korean</string>
+<string name="lang_vietnamese">Vietnamese</string>
+<string name="lang_german">German</string>
+<string name="lang_french">French</string>
+<string name="lang_spanish">Spanish</string>
+<string name="lang_portuguese">Portuguese</string>
+<string name="lang_italian">Italian</string>
+<string name="lang_polish">Polish</string>
+<string name="lang_turkish">Turkish</string>
+<string name="lang_dutch">Dutch</string>
+
+
+    <!-- CPU/GPU SCREEN STRINGS -->
+    <string name="graphics_unit">Графический блок</string>
+    <string name="graphics_processor">Графический процессор</string>
+    <string name="processor_sets">Наборы процессоров (Cpuset)</string>
+    <string name="core_control">Управление ядрами</string>
+    <string name="cpu_governor">Регулятор CPU</string>
+    <string name="select_governor">Выбрать регулятор</string>
+    <string name="min_freq">Мин. част.</string>
+    <string name="max_freq">Макс. част.</string>
+    <string name="min_frequency">Минимальная частота</string>
+    <string name="max_frequency">Максимальная частота</string>
+    <string name="tab_performance">Производительность</string>
+    <string name="tab_tuning">Настройка</string>
+    <string name="disable_cpu_title">Отключить CPU %1$d?</string>
+    <string name="disable_cpu_warning">Отключение этого ядра может снизить производительность. Убедитесь, что другие ядра активны для обработки системных задач.</string>
+    <string name="btn_disable">Отключить</string>
+    <string name="select_active_cores">Выберите активные ядра:</string>
+    <string name="cpu_core_id">CPU %1$d</string>
+    <string name="freq_mhz_format">%1$s МГц</string>
+    <string name="cluster_info_format">%1$s • %2$s-%3$s МГц</string>
+    <string name="gpu_load_format">%1$s • Загрузка %2$s%%</string>
+    <string name="cores_count">Ядер: %1$s</string>
+    <string name="gpu_not_supported">Интерфейс GPU не поддерживается</string>
+    <string name="not_available">Н/Д</string>
+    <string name="no_options">Нет параметров</string>
+    <string name="label_value">Значение</string>
+
+    <!-- MEMORY SCREEN STRINGS -->
+    <string name="zram_manager">Управление ZRAM</string>
+    <string name="zram_status">Статус ZRAM</string>
+    <string name="disk_size_mb">Размер диска: %1$d МБ</string>
+    <string name="zram_info_format">%1$d МБ • %2$s</string>
+    <string name="compression_algorithm">Алгоритм сжатия</string>
+    <string name="io_scheduler">Планировщик I/O</string>
+    <string name="select_scheduler">Выбрать планировщик</string>
+    <string name="tunables">Настройки</string>
+    <string name="virtual_memory">Виртуальная память</string>
+    <string name="swappiness">Swappiness</string>
+    <string name="vfs_cache_pressure">Давление кэша VFS</string>
+    <string name="dirty_ratio">Dirty Ratio</string>
+    <string name="dirty_bg_ratio">Dirty BG Ratio</string>
+    <string name="no_storage_devices">Поддерживаемые устройства хранения не найдены.</string>
+    <string name="scheduler_format">Планировщик: %1$s</string>
+    <string name="btn_set">Установить</string>
+
+    <!-- NETWORK SCREEN STRINGS -->
+    <string name="tcp_congestion">Управление перегрузкой TCP</string>
+    <string name="tcp_parameters">Параметры TCP</string>
+    <string name="syn_cookies">SYN-cookie</string>
+    <string name="enabled">Включено</string>
+    <string name="disabled">Отключено</string>
+    <string name="tcp_reuse">Повторное использование TCP</string>
+    <string name="on">Вкл</string>
+    <string name="off">Выкл</string>
+    <string name="fast_open">Быстрое открытие</string>
+    <string name="tcp_sack">TCP SACK</string>
+    <string name="ecn">ECN</string>
+    <string name="kernel_log">Журнал ядра</string>
+    <string name="printk">Printk</string>
+
+    <!-- SCHEDULER SCREEN STRINGS -->
+    <string name="feature_toggles">Переключатели функций</string>
+    <string name="bore_scheduler">Планировщик BORE</string>
+    <string name="auto_group">Автогруппировка</string>
+    <string name="child_runs_first">Сначала дочерние процессы</string>
+    <string name="sched_stats">Статистика планировщика</string>
+    <string name="tunable_scaling">Масштабирование настроек</string>
+    <string name="cstate_aware">Учёт C-состояний</string>
+    <string name="uclamp_configuration">Конфигурация UClamp</string>
+    <string name="uclamp_max">UClamp макс</string>
+    <string name="uclamp_min">UClamp мин</string>
+    <string name="advanced_parameters">Расширенные параметры</string>
+    <string name="current_value_format">Текущее значение: %1$s</string>
+    <string name="new_value">Новое значение</string>
+    <string name="edit">Изменить</string>
+
+  <!-- MTK Screen Main -->
+<string name="mtk_gpu_title">GPU MediaTek</string>
+<string name="mtk_gpu_subtitle">Настройка Dimensity/Mali</string>
+<string name="mtk_tab_freq">Част</string>
+<string name="mtk_tab_dram">DRAM</string>
+<string name="mtk_tab_boost">Буст</string>
+<string name="mtk_tab_ppm">PPM</string>
+<string name="mtk_tab_cpu">CPU</string>
+<string name="mtk_tab_thermal">Терм</string>
+
+<!-- MTK Freq Tab -->
+<string name="mtk_dvfs_enabled_title">DVFS включен</string>
+<string name="mtk_dvfs_enabled_desc">Частота GPU динамическая. Отключите DVFS или заблокируйте частоту для статического управления.</string>
+<string name="mtk_gpu_dvfs">DVFS GPU</string>
+<string name="mtk_dynamic_scaling_on">Динамическое масштабирование ВКЛ</string>
+<string name="mtk_static_frequency">Статическая частота</string>
+<string name="mtk_dynamic">Динамический</string>
+<string name="mtk_freq_locked">Частота заблокирована</string>
+<string name="mtk_current_frequency">Текущая частота</string>
+<string name="mtk_lock_frequency">Заблокировать частоту</string>
+<string name="mtk_select_opp_index">Выберите индекс OPP для блокировки</string>
+<string name="mtk_unlock_frequency">Разблокировать частоту</string>
+<string name="mtk_dvfs_limits">Лимиты DVFS</string>
+<string name="mtk_minimum_boost">Минимум (Буст)</string>
+<string name="mtk_maximum_limit">Максимум (Лимит)</string>
+
+<!-- MTK DRAM Tab -->
+<string name="mtk_dram_unavailable">Управление DRAM недоступно</string>
+<string name="mtk_dram_type">Тип</string>
+<string name="mtk_dram_controller">Контроллер DRAM</string>
+<string name="mtk_dram_mmdvfs">MediaTek MMDVFS</string>
+<string name="mtk_dram_devfreq">DevFreq Generic</string>
+<string name="mtk_dram_fliper">Fliper Legacy</string>
+<string name="mtk_dram_unknown">Неизвестно</string>
+<string name="mtk_dram_current_step">Текущий</string>
+<string name="mtk_dram_force_frequency">Принудительная частота DRAM</string>
+<string name="mtk_dram_lock_opp">Блокировка на OPP (без DVFS)</string>
+<string name="mtk_dram_reset_dvfs">Сброс к DVFS</string>
+
+<!-- MTK Boost Tab -->
+<string name="mtk_gaming_performance">Игры и производительность</string>
+<string name="mtk_fpsgo_title">FPSGO</string>
+<string name="mtk_fpsgo_subtitle">Ускорение кадров для плавной игры</string>
+<string name="mtk_ged_game_mode_title">Режим GED Game</string>
+<string name="mtk_ged_game_mode_subtitle">Оптимизация губернатора GPU для игр</string>
+<string name="mtk_touch_boost_title">Touch Boost</string>
+<string name="mtk_touch_boost_subtitle">Ускорение CPU при касании</string>
+<string name="mtk_sched_boost_title">Scheduler Boost</string>
+<string name="mtk_sched_boost_subtitle">Приоритет для активных приложений</string>
+<string name="mtk_gaming_mode_preset">Пресет игрового режима</string>
+<string name="mtk_gaming_mode_desc">Включить все ускорения мгновенно</string>
+<string name="mtk_activate_gaming_mode">Активировать игровой режим</string>
+
+<!-- MTK PPM Tab -->
+<string name="mtk_ppm_unavailable">PPM недоступен</string>
+<string name="mtk_ppm_not_found">/proc/ppm не найден</string>
+<string name="mtk_ppm_controller">Контроллер PPM</string>
+<string name="mtk_ppm_active">Активен</string>
+<string name="mtk_ppm_disabled">Отключен</string>
+<string name="mtk_active_policies">Активные политики</string>
+<string name="mtk_policy_hash">Политика #</string>
+<string name="mtk_ppm_no_policies">PPM включен, но политики не обнаружены. Возможно ограничение ядра.</string>
+<string name="mtk_about_ppm">О PPM</string>
+<string name="mtk_ppm_description">Performance Power Management контролирует распределение энергии CPU/GPU. Отключение политики \'Thermal\' может вызвать перегрев, но улучшит производительность.</string>
+
+<!-- MTK CPU Tab -->
+<string name="mtk_cpu_unavailable">CPU Misc недоступно</string>
+<string name="mtk_cci_interconnect">CCI Interconnect</string>
+<string name="mtk_cache_coherent">Когерентное кэш-соединение</string>
+<string name="mtk_big_little_desc">Управление взаимодействием кластеров big.LITTLE</string>
+<string name="mtk_normal">Нормальный</string>
+<string name="mtk_performance">Производительность</string>
+<string name="mtk_low_power">Низкое энергопотребление</string>
+<string name="mtk_balance">Баланс</string>
+<string name="mtk_cpu_power_mode">Режим питания CPU</string>
+<string name="mtk_current_mode">Текущий</string>
+<string name="mtk_voltage_offset">Смещение напряжения (EEM)</string>
+<string name="mtk_eem_unit">6.25мВ/ед</string>
+<string name="mtk_offset_value">Значение смещения</string>
+
+<!-- MTK Thermal Tab -->
+<string name="mtk_thermal_throttling">ТЕРМАЛЬНОЕ ТРОТТЛИНГ</string>
+<string name="mtk_temp_limit_exceeded">Превышен температурный лимит</string>
+<string name="mtk_normal_temp">Нормальная температура</string>
+<string name="mtk_eara_thermal">EARA Thermal</string>
+<string name="mtk_early_adaptation">Раннее распределение ресурсов</string>
+<string name="mtk_eara_fake_throttle">EARA Fake Throttle</string>
+<string name="mtk_fake_temp_desc">Поддельная температура для ядра</string>
+<string name="mtk_throttling_desc">Устройство троттлит. Производительность снижена для предотвращения перегрева.</string>
+<string name="mtk_thermal_daemon_info">Управление температурой MTK осуществляется демоном ядра. Данные сенсоров on-die (tsens).</string>
+
+<!-- Common Actions -->
+<string name="action_back">Назад</string>
+<string name="action_refresh">Обновить</string>
+
+<!-- Adreno Screen -->
+<string name="adreno_gpu_title">GPU Adreno</string>
+<string name="adreno_gpu_subtitle">Производительность и настройка</string>
+<string name="adreno_tab_freq">Част</string>
+<string name="adreno_tab_power">Питание</string>
+<string name="adreno_tab_bus">Шина</string>
+<string name="adreno_tab_thermal">Терм</string>
+<string name="adreno_tab_advanced">Adv</string>
+
+<!-- Adreno Freq -->
+<string name="adreno_current_frequency">Текущая частота</string>
+<string name="adreno_freq_limits">Лимиты частоты</string>
+<string name="adreno_minimum">Минимум</string>
+<string name="adreno_maximum">Максимум</string>
+<string name="adreno_governor">Губернатор</string>
+<string name="adreno_current">Текущий</string>
+<string name="adreno_change">Изменить</string>
+<string name="adreno_frequency">Частота</string>
+<string name="adreno_cancel">Отмена</string>
+
+<!-- Adreno Power -->
+<string name="adreno_gpu_throttling">Троттлинг GPU</string>
+<string name="adreno_performance_limited">Производительность ограничена</string>
+<string name="adreno_full_performance">Полная производительность</string>
+<string name="adreno_adreno_boost">Adreno Boost</string>
+<string name="adreno_level">Уровень</string>
+<string name="adreno_off">Выкл</string>
+<string name="adreno_low">Низкий</string>
+<string name="adreno_med">Сред</string>
+<string name="adreno_high">Высокий</string>
+<string name="adreno_boost_desc">Высокие уровни boost увеличивают производительность, но потребляют больше батареи и генерируют больше тепла.</string>
+
+<!-- Adreno Bus -->
+<string name="adreno_bus_components">Компоненты шины</string>
+<string name="adreno_no_bus_controls">Нет управления шиной</string>
+<string name="adreno_no_bus_desc">Это устройство не имеет настраиваемых компонентов шины</string>
+<string name="adreno_min_freq">Мин частота</string>
+<string name="adreno_max_freq">Макс частота</string>
+<string name="adreno_min">МИН</string>
+<string name="adreno_max">МАКС</string>
+<string name="adreno_edit">Редакт</string>
+
+<!-- Adreno Thermal -->
+<string name="adreno_thermal_throttling">ТЕРМАЛЬНЫЙ ТРОТТЛИНГ</string>
+<string name="adreno_gpu_temp">Температура GPU</string>
+<string name="adreno_thermal_zones">Термальные зоны</string>
+<string name="adreno_cooling_devices">Охлаждающие устройства</string>
+
+<!-- Adreno Advanced -->
+<string name="adreno_kgsl_advanced">KGSL Расширенные</string>
+<string name="adreno_force_no_nap">Принудительно No NAP</string>
+<string name="adreno_no_nap_desc">Запретить GPU переходить в сон</string>
+<string name="adreno_force_clk_on">Принудительно CLK On</string>
+<string name="adreno_clk_on_desc">Держать тактовый сигнал всегда включенным</string>
+<string name="adreno_force_bus_on">Принудительно Bus On</string>
+<string name="adreno_bus_on_desc">Держать шину всегда активной</string>
+<string name="adreno_bus_split">Bus Split</string>
+<string name="adreno_bus_split_desc">Включить разделение шины</string>
+<string name="adreno_throttling">Троттлинг</string>
+<string name="adreno_throttling_desc">Включить термальный троттлинг</string>
+<string name="adreno_power_levels">Уровни мощности</string>
+<string name="adreno_default">По умолчанию</string>
+<string name="adreno_thermal">Термальный</string>
+<string name="adreno_save">Сохранить</string>
+<string name="adreno_adreno_idler">Adreno Idler</string>
+<string name="adreno_enable_idler">Включить Idler</string>
+<string name="adreno_idler_desc">Снизить потребление энергии в простое</string>
+<string name="adreno_idle_wait">Ожидание простоя</string>
+<string name="adreno_down_differential">Down Differential</string>
+<string name="adreno_workload_threshold">Порог нагрузки</string>
+<string name="adreno_simple_gpu">Simple GPU</string>
+<string name="adreno_enable_simple_gpu">Включить Simple GPU</string>
+<string name="adreno_simple_gpu_desc">Альтернативный алгоритм губернатора GPU</string>
+<string name="adreno_laziness">Леность</string>
+<string name="adreno_ramp_threshold">Порог нарастания</string>
+
+<!-- Navigation Tabs -->
+<string name="nav_tab_feature">Функция</string>
+<string name="nav_tab_overview">Обзор</string>
+<string name="nav_tab_adjust">Настройка</string>
+<string name="nav_tab_support">Поддержка</string>
+<string name="nav_tools_desc">Инструменты</string>
+<string name="nav_power_desc">Питание</string>
+<string name="nav_settings_desc">Настройки</string>
+
+<!-- Dialog Titles -->
+<string name="dialog_tools_title">Быстрые инструменты</string>
+<string name="dialog_power_title">Меню питания</string>
+
+<!-- Tools -->
+<string name="tool_terminal_title">Терминал</string>
+<string name="tool_terminal_subtitle">Окно терминала для ввода команд в любом месте</string>
+<string name="tool_fps_title">Монитор FPS</string>
+<string name="tool_fps_subtitle">Оверлей частоты кадров в реальном времени</string>
+<string name="tool_process_title">Монитор процессов</string>
+<string name="tool_process_subtitle">Показать процесс монитора</string>
+<string name="tool_activity_title">Инспектор активности</string>
+<string name="tool_activity_subtitle">Мониторинг текущего пакета и класса активности</string>
+
+<!-- Common Actions -->
+<string name="action_done">Готово</string>
+<string name="action_cancel">Отмена</string>
+<string name="action_yes_do_it">Да, сделать</string>
+<string name="confirm_action_title">Подтвердить %s</string>
+
+    
+</resources>

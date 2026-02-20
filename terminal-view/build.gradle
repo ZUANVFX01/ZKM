@@ -1,0 +1,32 @@
+plugins {
+    id 'com.android.library'
+}
+
+android {
+    namespace 'com.termux.view' // Namespace wajib
+    compileSdk 36               // Samakan dengan App utama
+
+    defaultConfig {
+        minSdk 24
+        targetSdk 36
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_21
+        targetCompatibility JavaVersion.VERSION_21
+    }
+}
+
+dependencies {
+    // Library ini butuh akses ke mesin terminal (emulator)
+    implementation project(':terminal-emulator')
+    
+    implementation "androidx.annotation:annotation:1.9.1"
+}
