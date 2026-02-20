@@ -49,16 +49,16 @@ Kami percaya bahwa kontrol mendalam terhadap sistem mobile tidak harus mengorban
 <div align="center">
   <table>
     <tr>
-      <td align="center"><b>System Dashboard</b><br><sub>Real-time Monitoring</sub></td>
-      <td align="center"><b>SoC Analytics</b><br><sub>Hardware Telemetry</sub></td>
-      <td align="center"><b>Power Management</b><br><sub>Battery Optimization</sub></td>
-      <td align="center"><b>Kernel Configuration</b><br><sub>Advanced Tuning</sub></td>
+      <td align="center"><b>Overall Dashboard</b><br><sub>Real-time Monitoring</sub></td>
+      <td align="center"><b>Home</b><br><sub>Hardware Telemetry</sub></td>
+      <td align="center"><b>Soc</b><br><sub>Battery Optimization</sub></td>
+      <td align="center"><b>About</b><br><sub>Advanced Tuning</sub></td>
     </tr>
     <tr>
-      <td><img src="https://github.com/user-attachments/assets/fa6ede6c-6231-469f-a2fc-a3fd7aea2f3e" width="200" style="border-radius: 12px;"/></td>
-      <td><img src="https://github.com/user-attachments/assets/7ada5790-4b74-4de0-954b-9a11c99c408c" width="200" style="border-radius: 12px;"/></td>
-      <td><img src="https://github.com/user-attachments/assets/a8e32f06-4bae-4b79-a66f-c758bd4a3ca5" width="200" style="border-radius: 12px;"/></td>
-      <td><img src="https://github.com/user-attachments/assets/339c6ada-7e91-44f1-807d-b5088b7eeec0" width="200" style="border-radius: 12px;"/></td>
+      <td><img src="https://github.com/user-attachments/assets/aa686b02-a1d6-4fc3-b3f7-388b0ea8af70" width="200" style="border-radius: 12px;"/></td>
+      <td><img src="https://github.com/user-attachments/assets/851cbef4-8ed6-4dbf-84f2-b79107cd361f" width="200" style="border-radius: 12px;"/></td>
+      <td><img src="https://github.com/user-attachments/assets/f82afa01-84b7-4227-971a-e6b05236e1d2" width="200" style="border-radius: 12px;"/></td>
+      <td><img src="https://github.com/user-attachments/assets/36b2472f-09bc-439f-a32b-010928ae04a3" width="200" style="border-radius: 12px;"/></td>
     </tr>
   </table>
 </div>
