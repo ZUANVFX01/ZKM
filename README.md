@@ -22,12 +22,12 @@
 
 ## 🏢 Corporate Profile
 
-**Zuan Kernel Manager (ZKM)** merupakan solusi manajemen kernel Android enterprise-class yang dikembangkan oleh Zuan Technologies. Dibangun di atas fondasi solid dari arsitektur Rve Kernel Manager, ZKM telah berevolusi menjadi platform optimasi sistem yang komprehensif untuk perangkat Android rooted.
+**Zuan Kernel Manager (ZKM)** is an enterprise-class Android kernel management solution developed by Zuan Technologies. Built upon the solid foundation of the Rve Kernel Manager architecture, ZKM has evolved into a comprehensive system optimization platform for rooted Android devices.
 
 ### Our Philosophy
 > *"Empowering Performance Through Precision Engineering"*
 
-Kami percaya bahwa kontrol mendalam terhadap sistem mobile tidak harus mengorbankan keamanan, stabilitas, atau pengalaman pengguna. ZKM menggabungkan engineering precision dengan desain modern untuk menghadirkan solusi enterprise yang accessible.
+We believe that deep control over mobile systems shouldn't compromise security, stability, or user experience. ZKM combines precision engineering with modern design to deliver an accessible enterprise solution.
 
 ---
 
@@ -49,16 +49,16 @@ Kami percaya bahwa kontrol mendalam terhadap sistem mobile tidak harus mengorban
 <div align="center">
   <table>
     <tr>
-      <td align="center"><b>System Dashboard</b><br><sub>Real-time Monitoring</sub></td>
-      <td align="center"><b>SoC Analytics</b><br><sub>Hardware Telemetry</sub></td>
-      <td align="center"><b>Power Management</b><br><sub>Battery Optimization</sub></td>
-      <td align="center"><b>Kernel Configuration</b><br><sub>Advanced Tuning</sub></td>
+      <td align="center"><b>Overall Dashboard</b><br><sub>Real-time Monitoring</sub></td>
+      <td align="center"><b>Home</b><br><sub>Hardware Telemetry</sub></td>
+      <td align="center"><b>Soc</b><br><sub>Battery Optimization</sub></td>
+      <td align="center"><b>About</b><br><sub>Advanced Tuning</sub></td>
     </tr>
     <tr>
-      <td><img src="https://github.com/user-attachments/assets/fa6ede6c-6231-469f-a2fc-a3fd7aea2f3e" width="200" style="border-radius: 12px;"/></td>
-      <td><img src="https://github.com/user-attachments/assets/7ada5790-4b74-4de0-954b-9a11c99c408c" width="200" style="border-radius: 12px;"/></td>
-      <td><img src="https://github.com/user-attachments/assets/a8e32f06-4bae-4b79-a66f-c758bd4a3ca5" width="200" style="border-radius: 12px;"/></td>
-      <td><img src="https://github.com/user-attachments/assets/339c6ada-7e91-44f1-807d-b5088b7eeec0" width="200" style="border-radius: 12px;"/></td>
+      <td><img src="https://github.com/user-attachments/assets/aa686b02-a1d6-4fc3-b3f7-388b0ea8af70" width="200" style="border-radius: 12px;"/></td>
+      <td><img src="https://github.com/user-attachments/assets/851cbef4-8ed6-4dbf-84f2-b79107cd361f" width="200" style="border-radius: 12px;"/></td>
+      <td><img src="https://github.com/user-attachments/assets/f82afa01-84b7-4227-971a-e6b05236e1d2" width="200" style="border-radius: 12px;"/></td>
+      <td><img src="https://github.com/user-attachments/assets/36b2472f-09bc-439f-a32b-010928ae04a3" width="200" style="border-radius: 12px;"/></td>
     </tr>
   </table>
 </div>
@@ -67,28 +67,28 @@ Kami percaya bahwa kontrol mendalam terhadap sistem mobile tidak harus mengorban
 
 ## ✨ Key Features
 
-ZKM menawarkan suite tools komprehensif yang dikategorikan dalam modul intuitif:
+ZKM offers a comprehensive suite of tools categorized into intuitive modules:
 
 ### 🎨 Appearance & User Interface
-* **Material 3 Expressive Design** - Interface modern dengan responsive layout dan adaptive design
-* **LogsView System** - Advanced log reading dengan komponen UI dinamis dan filtering capabilities
-* **Themes & Visual Effects** - Fluid transitions, glassmorphism blur effects (Haze integration), dan optimized layouts untuk berbagai screen density
+* **Material 3 Expressive Design** - Modern interface with responsive layout and adaptive design
+* **LogsView System** - Advanced log reading with dynamic UI components and filtering capabilities
+* **Themes & Visual Effects** - Fluid transitions, glassmorphism blur effects (Haze integration), and optimized layouts for various screen densities
 
 ### ⚙️ Performance & Kernel Control
-* **Enterprise Dashboard** - Monitoring real-time untuk SoC temperatures, CPU frequencies, RAM utilization, dengan data logging historis
-* **CPU/GPU Tuning** - Comprehensive governor control, min/max frequency management, dan boost configuration profiles
-* **Memory Management** - LMK (Low Memory Killer) tweaks, virtual memory tuning, ZRAM compression settings, dan swap management
-* **Thermal & Display Control** - Deep integration dengan device thermal drivers, brightness curve calibration, refresh rate management
-* **Battery & Doze Optimization** - Wakelock analysis and blocking, charging cycle control, deep sleep optimization, dan idle drain prevention
+* **Enterprise Dashboard** - Real-time monitoring for SoC temperatures, CPU frequencies, and RAM utilization, complete with historical data logging
+* **CPU/GPU Tuning** - Comprehensive governor control, min/max frequency management, and boost configuration profiles
+* **Memory Management** - LMK (Low Memory Killer) tweaks, virtual memory tuning, ZRAM compression settings, and swap management
+* **Thermal & Display Control** - Deep integration with device thermal drivers, brightness curve calibration, and refresh rate management
+* **Battery & Doze Optimization** - Wakelock analysis and blocking, charging cycle control, deep sleep optimization, and idle drain prevention
 
 ### 🛠️ Advanced System Utilities
-* **Dual-Engine Kernel Flasher** - Flashing system mendukung **Horizon Logic** dan **Capntrips Architecture** dengan A/B partition support
-* **Secure Terminal Emulator** - Built-in root shell dengan command history, scripting capabilities, dan environment variables management
-* **Dex2oat Compiler** - On-device APK optimization untuk improved runtime performance
-* **KsuWebUI Integration** - Embedded WebUI server untuk KernelSU module management tanpa browser eksternal
-* **System Modding Suite** - Build.prop editor dengan syntax validation, SetEdit integration untuk database editing
-* **Application Management** - Activity launcher, system app debloating dengan whitelist protection, dan disable/enable controls
-* **Real-time Monitoring** - On-screen FPS counter, process resource tracking, dan system load monitoring
+* **Dual-Engine Kernel Flasher** - Flashing system supporting **Horizon Logic** and **Capntrips Architecture** with A/B partition support
+* **Secure Terminal Emulator** - Built-in root shell with command history, scripting capabilities, and environment variables management
+* **Dex2oat Compiler** - On-device APK optimization for improved runtime performance
+* **KsuWebUI Integration** - Embedded WebUI server for KernelSU module management without an external browser
+* **System Modding Suite** - Build.prop editor with syntax validation, SetEdit integration for database editing
+* **Application Management** - Activity launcher, system app debloating with whitelist protection, and disable/enable controls
+* **Real-time Monitoring** - On-screen FPS counter, process resource tracking, and system load monitoring
 
 ---
 
@@ -98,22 +98,18 @@ ZKM menawarkan suite tools komprehensif yang dikategorikan dalam modul intuitif:
 - **Operating System**: Android 10 (Q) or higher
 - **Root Access**: Magisk v24.0+, KernelSU v0.9+, or APatch
 - **Storage**: 64MB available space
-- **RAM**: 2GB minimum (4GB recommended untuk profiling intensif)
+- **RAM**: 2GB minimum (4GB recommended for intensive profiling)
 
 ### Supported Architectures
-```
 
 ✓ ARM64 (arm64-v8a)     - Primary Support
 ✓ ARMv7 (armeabi-v7a)   - Legacy Support
-
 ✓ x86_64                - Emulator Support
 
-```
-
 ### Security Prerequisites
-- **SELinux Status**: Permissive atau mode Enforcing dengan policy modifikasi
-- **Bootloader Status**: Unlocked (untuk fungsi flasher)
-- **SafetyNet/Play Integrity**: Bypass required untuk beberapa fitur advanced
+- **SELinux Status**: Permissive or Enforcing mode with policy modifications
+- **Bootloader Status**: Unlocked (required for flasher functionality)
+- **SafetyNet/Play Integrity**: Bypass required for several advanced features
 
 ---
 
@@ -121,27 +117,27 @@ ZKM menawarkan suite tools komprehensif yang dikategorikan dalam modul intuitif:
 
 ### Standard Installation
 1. **Pre-Installation Check**
-   - Verifikasi status root melalui `su` binary check
-   - Konfirmasi kompatibilitas architecture device
+   - Verify root status via `su` binary check
+   - Confirm device architecture compatibility
 
 2. **Package Installation**
-   - Download `ZKM-vX.X.X-stable.apk` dari [Official Releases](../../releases)
-   - Enable "Install from Unknown Sources" pada device settings
-   - Execute installation package
+   - Download `ZKM-vX.X.X-stable.apk` from the [Official Releases](../../releases)
+   - Enable "Install from Unknown Sources" in device settings
+   - Execute the installation package
 
 3. **Permission Configuration**
-   - Grant Superuser permissions pada first launch
-   - Allow notifications untuk real-time monitoring alerts
-   - Configure storage permissions untuk backup operations
+   - Grant Superuser permissions on first launch
+   - Allow notifications for real-time monitoring alerts
+   - Configure storage permissions for backup operations
 
 ### Enterprise Distribution
-Untuk deployment massal dalam organisasi, tersedia konfigurasi MDM (Mobile Device Management) compatible package. Hubungi maintainers untuk Enterprise License Agreement.
+For mass deployment within an organization, MDM (Mobile Device Management) compatible packages are available. Please contact the maintainers for an Enterprise License Agreement.
 
 ---
 
 ## 🏆 Credits & Third-Party Integrations
 
-ZKM dibangun di atas fondasi teknologi open-source kelas dunia. Kami mengakui kontribusi signifikan dari developer dan library berikut:
+ZKM is built upon the foundation of world-class open-source technology. We acknowledge the significant contributions from the following developers and libraries:
 
 ### Core Architecture Contributors
 
@@ -305,28 +301,28 @@ ZKM dibangun di atas fondasi teknologi open-source kelas dunia. Kami mengakui ko
 | **Core Contributor** | Rve27 | [@Rve27](https://github.com/Rve27) | Kernel logic, performance tuning modules |
 
 ### Special Thanks
-* **Community Beta Testers** - Laporan bug dan feedback UX dari komunitas XDA dan Telegram
-* **Kernel Developers** - Para creator kernel custom (Predator Kernel, Nova Kernel, dll) yang menyediakan API testing
-* **XDA Community** - Forum support dan resource sharing untuk Android development
+* **Community Beta Testers** - Bug reports and UX feedback from the XDA and Telegram communities
+* **Kernel Developers** - Custom kernel creators (Predator Kernel, Nova Kernel, etc.) who provided testing APIs
+* **XDA Community** - Support forums and resource sharing for Android development
 
 ---
 
 ## 🔒 Security & Compliance
 
 ### Data Privacy Protocols
-- **Zero Data Collection**: ZKM tidak mengirimkan data telemetri atau analytics ke server eksternal
-- **Local Processing**: Seluruh komputasi dilakukan on-device tanpa cloud dependency
-- **Open Source Transparency**: Full source code audit available untuk security verification
+- **Zero Data Collection**: ZKM does not send telemetry data or analytics to external servers
+- **Local Processing**: All computations are performed on-device without cloud dependency
+- **Open Source Transparency**: Full source code audit available for security verification
 
 ### Root Access Management
-- **Scoped Permissions**: Implementasi principle of least privilege pada root operations
-- **Command Whitelisting**: Validasi strict terhadap system commands yang dieksekusi
-- **Audit Logging**: Logging komprehensif untuk setiap system modification (tersedia pada LogsView)
+- **Scoped Permissions**: Implementation of the principle of least privilege in root operations
+- **Command Whitelisting**: Strict validation of executed system commands
+- **Audit Logging**: Comprehensive logging for every system modification (available in LogsView)
 
 ### Compliance Standards
-- **GPL-3.0 License**: Full compliance dengan open source distribution requirements
-- **Apache-2.0 Components**: Proper attribution untuk library third-party
-- **Security Patching**: Regular updates untuk address CVEs pada dependencies
+- **GPL-3.0 License**: Full compliance with open source distribution requirements
+- **Apache-2.0 Components**: Proper attribution for third-party libraries
+- **Security Patching**: Regular updates to address CVEs in dependencies
 
 ---
 
@@ -336,27 +332,20 @@ ZKM dibangun di atas fondasi teknologi open-source kelas dunia. Kami mengakui ko
 This project is licensed under the **GNU General Public License v3.0** - see the [LICENSE](LICENSE) file for details.
 
 ### Third-Party Attributions
-This software contains code dari proyek open-source berikut:
+This software contains code from the following open-source projects:
 - Horizon Flasher (GPL-3.0)
 - Kernel Flasher by capntrips (Apache-2.0 & GPL-3.0)
 - Termux (Apache-2.0)
 - Android Liquid Glass (Apache-2.0)
 
 ### Disclaimer
-> **WARNING**: ZKM requires root access dan melakukan modifikasi terhadap system-level parameters. Pengguna bertanggung jawab penuh atas perubahan yang dilakukan. Zuan Technologies tidak bertanggung jawab atas device damage, data loss, atau warranty void yang mungkin terjadi.
+> **WARNING**: ZKM requires root access and modifies system-level parameters. Users are fully responsible for any changes made. Zuan Technologies is not responsible for any device damage, data loss, or voided warranties that may occur.
 
 ---
 
 <div align="center" style="margin-top: 40px; padding: 20px; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); border-radius: 12px;">
 
   <img src="./logo/logo.jpg" width="60" height="60" style="border-radius: 12px; margin-bottom: 15px;" alt="Zuan Technologies"/>
-  
-  <h3 style="margin: 10px 0; color: #2c3e50;">Zuan Technologies</h3>
-  
-  <p style="color: #555; font-size: 0.9em; max-width: 600px; margin: 0 auto;">
-    Pioneering Android System Optimization Solutions<br>
-    <sub>© 2024 Zuan Technologies. All rights reserved.</sub>
-  </p>
 
   <p style="margin-top: 15px;">
     <a href="https://github.com/ZUANVFX01/ZKM">GitHub</a> • 
