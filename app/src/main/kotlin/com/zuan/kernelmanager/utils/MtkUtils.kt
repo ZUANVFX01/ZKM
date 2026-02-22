@@ -14,19 +14,20 @@ import java.io.File
 object MtkUtils {
 
     // === Helper Functions untuk IPC (Dengan Fallback) ===
-    private fun checkExists(path: String): Boolean {
+    // Dibuat PUBLIC agar bisa dipakai oleh ViewModel nantinya
+    fun checkExists(path: String): Boolean {
         return try {
             RootIpcManager.ipc?.nodeExists(path) ?: File(path).exists()
         } catch (e: Exception) { File(path).exists() }
     }
 
-    private fun readData(path: String): String {
+    fun readData(path: String): String {
         return try {
             RootIpcManager.ipc?.readNode(path) ?: Utils.readFile(path).trim()
         } catch (e: Exception) { "" }
     }
 
-    private fun writeData(path: String, value: String): Boolean {
+    fun writeData(path: String, value: String): Boolean {
         return try {
             // Coba pakai IPC (Super cepat)
             RootIpcManager.ipc?.writeNode(path, value) ?: run {
@@ -36,7 +37,7 @@ object MtkUtils {
         } catch (e: Exception) { false }
     }
 
-    private fun readLines(path: String): List<String> {
+    fun readLines(path: String): List<String> {
         val content = readData(path)
         if (content.isNotEmpty()) return content.lines()
         
@@ -69,6 +70,9 @@ object MtkUtils {
     private const val V2_OPP_TABLE_ALT = "/proc/gpufreqv2/gpu_working_opp_table"
     private const val LEGACY_OPP_DUMP = "/proc/gpufreq/gpufreq_opp_dump"
 
+    // === DEVFREQ PATH (STANDAR GKI BARU) ===
+    const val GPU_DEVFREQ_DIR = "/sys/class/devfreq"
+
     // === DRAM PATHS (FIX G95) ===
     private val DRAM_DEVFREQ_CANDIDATES = listOf(
         "/sys/class/devfreq/mtk-dvfsrc-devfreq", 
@@ -99,12 +103,24 @@ object MtkUtils {
     const val MTK_FPSGO = "/sys/kernel/fpsgo/common/fpsgo_enable"
 
     enum class DramType { NONE, DEVFREQ, MMDVFS, MTK_FLIPER }
-    enum class GpuArch { UNKNOWN, LEGACY_GED, V2_GED }
+    enum class GpuArch { UNKNOWN, LEGACY_GED, V2_GED, DEVFREQ } // Tambahan DEVFREQ
+
+    // Fungsi untuk mencari path node Devfreq GPU
+    fun getGpuDevfreqNode(): String? {
+        val dirs = try {
+            RootIpcManager.ipc?.listDirectories(GPU_DEVFREQ_DIR) ?: File(GPU_DEVFREQ_DIR).listFiles()?.map { it.name } ?: emptyList()
+        } catch (e: Exception) { emptyList() }
+        
+        // Cari folder yang mengandung nama mali, gpu, atau dfrgx
+        val targetName = dirs.find { it.contains("mali", true) || it.contains("gpu", true) || it == "dfrgx" }
+        return targetName?.let { "$GPU_DEVFREQ_DIR/$it" }
+    }
 
     fun getGpuArch(): GpuArch {
         return when {
             checkExists(V2_DIR) -> GpuArch.V2_GED
             checkExists(LEGACY_DIR) -> GpuArch.LEGACY_GED
+            getGpuDevfreqNode() != null -> GpuArch.DEVFREQ // Fallback ke GKI standar
             else -> GpuArch.UNKNOWN
         }
     }
@@ -132,9 +148,22 @@ object MtkUtils {
 
     fun getCurrentGpuFreq(): String {
         return try {
-            val freqRaw = readData(CURRENT_FREQ_PATH)
-            val freq = freqRaw.split(" ").firstOrNull()?.toLongOrNull() ?: 0L
-            if (freq > 0) "${freq / 1000} MHz" else "N/A"
+            // Cek GED Terlebih Dahulu
+            if (checkExists(CURRENT_FREQ_PATH)) {
+                val freqRaw = readData(CURRENT_FREQ_PATH)
+                val freq = freqRaw.split(" ").firstOrNull()?.toLongOrNull() ?: 0L
+                if (freq > 0) "${freq / 1000} MHz" else "N/A"
+            } else {
+                // Fallback ke Devfreq
+                val devfreqNode = getGpuDevfreqNode()
+                if (devfreqNode != null && checkExists("$devfreqNode/cur_freq")) {
+                    val freqRaw = readData("$devfreqNode/cur_freq")
+                    val freq = freqRaw.toLongOrNull() ?: 0L
+                    if (freq > 1000000) "${freq / 1000000} MHz" else "${freq / 1000} MHz"
+                } else {
+                    "N/A"
+                }
+            }
         } catch (e: Exception) { "N/A" }
     }
 

@@ -54,9 +54,8 @@ import com.zuan.kernelmanager.ui.settings.WeatherEffect
 import com.zuan.kernelmanager.ui.theme.ThemeMode
 import dev.chrisbanes.haze.HazeState
 import dev.chrisbanes.haze.HazeStyle
-import dev.chrisbanes.haze.HazeTint
+import dev.chrisbanes.haze.haze
 import dev.chrisbanes.haze.hazeEffect
-import dev.chrisbanes.haze.hazeSource
 import dev.chrisbanes.haze.materials.ExperimentalHazeMaterialsApi
 import dev.chrisbanes.haze.materials.HazeMaterials
 import kotlinx.coroutines.launch
@@ -66,6 +65,7 @@ data class MtkTabItem(
     val icon: androidx.compose.ui.graphics.vector.ImageVector
 )
 
+@Suppress("DEPRECATION")
 @Composable
 fun MtkScreen(
     navController: NavController,
@@ -200,7 +200,7 @@ fun MtkScreen(
             Box(
                 modifier = Modifier
                     .fillMaxSize()
-                    .hazeSource(state = hazeState, zIndex = 0f)
+                    .haze(state = hazeState)
             ) {
                 if (isCustomBg && bgUriString != null) {
                     val blurModifier = if (isBgBlur && blurStrength > 0f) {
@@ -253,7 +253,7 @@ fun MtkScreen(
             Column(
                 modifier = Modifier
                     .fillMaxSize()
-                    .hazeSource(state = hazeState, zIndex = 1f)
+                    .haze(state = hazeState)
                     .padding(top = paddingValues.calculateTopPadding())
             ) {
                 // Expressive Tab Row
@@ -349,7 +349,10 @@ fun MtkScreen(
                             onSetMax = { viewModel.setMaxFreq(it) },
                             onToggleDvfs = { viewModel.setDvfsEnabled(it) },
                             onLockFreq = { viewModel.lockGpuFreq(it) },
-                            onUnlockFreq = { viewModel.unlockGpuFreq() }
+                            onUnlockFreq = { viewModel.unlockGpuFreq() },
+                            onSetDevfreqMin = { viewModel.setGpuDevfreqMin(it) },
+                            onSetDevfreqMax = { viewModel.setGpuDevfreqMax(it) },
+                            onSetGovernor = { viewModel.setGpuGovernor(it) }
                         )
                         1 -> MtkDramTab(
                             state = uiState.dramState,
@@ -382,7 +385,7 @@ fun MtkScreen(
                             cardColor = targetCardColor,
                             isGlassActive = isGlassActive,
                             accentColor = finalPrimary,
-                            onSetCciMode = { viewModel.setCciMode(it) },
+                            onSetCci = { viewModel.setCciMode(it) },
                             onSetPowerMode = { viewModel.setPowerMode(it) },
                             onSetEemOffset = { detName, offset -> viewModel.setEemOffset(detName, offset) }
                         )

@@ -8,16 +8,13 @@
  */
 package com.zuan.kernelmanager.ui.gpu.mtk.tabs
 
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.CheckCircle
-import androidx.compose.material.icons.filled.DeveloperMode
-import androidx.compose.material.icons.filled.ElectricBolt
+import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -26,6 +23,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.zuan.kernelmanager.R
 import com.zuan.kernelmanager.ui.gpu.mtk.viewmodel.MtkViewModel
@@ -34,6 +32,7 @@ import dev.chrisbanes.haze.HazeStyle
 import dev.chrisbanes.haze.haze
 import dev.chrisbanes.haze.hazeEffect
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun MtkCpuTab(
     state: MtkViewModel.CpuMiscState,
@@ -41,7 +40,7 @@ fun MtkCpuTab(
     cardColor: Color,
     isGlassActive: Boolean,
     accentColor: Color,
-    onSetCciMode: (String) -> Unit,
+    onSetCci: (String) -> Unit,
     onSetPowerMode: (String) -> Unit,
     onSetEemOffset: (String, String) -> Unit
 ) {
@@ -57,40 +56,6 @@ fun MtkCpuTab(
         )
     } else Modifier
 
-    if (!state.isAvailable) {
-        Box(
-            modifier = Modifier
-                .fillMaxSize()
-                .haze(state = hazeState),
-            contentAlignment = Alignment.Center
-        ) {
-            Column(
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.spacedBy(16.dp)
-            ) {
-                Surface(
-                    shape = RoundedCornerShape(24.dp),
-                    color = MaterialTheme.colorScheme.surfaceContainerHighest,
-                    modifier = Modifier.size(80.dp)
-                ) {
-                    Icon(
-                        Icons.Default.DeveloperMode,
-                        contentDescription = null,
-                        tint = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.5f),
-                        modifier = Modifier.padding(20.dp)
-                    )
-                }
-                Text(
-                    stringResource(R.string.mtk_cpu_unavailable),
-                    style = MaterialTheme.typography.headlineSmall,
-                    fontWeight = FontWeight.Bold,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
-                )
-            }
-        }
-        return
-    }
-    
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
@@ -98,214 +63,167 @@ fun MtkCpuTab(
         contentPadding = PaddingValues(24.dp),
         verticalArrangement = Arrangement.spacedBy(20.dp)
     ) {
-        // CCI Card
-        item {
-            Surface(
-                shape = RoundedCornerShape(24.dp),
-                color = cardColor,
-                modifier = Modifier.fillMaxWidth().then(if (isGlassActive) glassModifier else Modifier)
-            ) {
-                Column(
-                    modifier = Modifier.padding(24.dp)
-                ) {
-                    Row(
-                        verticalAlignment = Alignment.CenterVertically,
-                        horizontalArrangement = Arrangement.spacedBy(16.dp)
-                    ) {
-                        Surface(
-                            shape = RoundedCornerShape(14.dp),
-                            color = accentColor.copy(alpha = 0.2f),
-                            modifier = Modifier.size(48.dp)
-                        ) {
-                            Icon(
-                                Icons.Default.DeveloperMode,
-                                contentDescription = null,
-                                tint = accentColor,
-                                modifier = Modifier.padding(12.dp)
-                            )
-                        }
-                        Column {
-                            Text(
-                                stringResource(R.string.mtk_cci_interconnect),
-                                style = MaterialTheme.typography.titleLarge,
-                                fontWeight = FontWeight.Bold
-                            )
-                            Text(
-                                stringResource(R.string.mtk_cache_coherent),
-                                style = MaterialTheme.typography.bodyMedium,
-                                color = MaterialTheme.colorScheme.onSurfaceVariant
-                            )
-                        }
-                    }
-                    
-                    Spacer(Modifier.height(20.dp))
-                    
-                    SingleChoiceSegmentedButtonRow(
-                        modifier = Modifier.fillMaxWidth()
-                    ) {
-                        listOf("0" to stringResource(R.string.mtk_normal), 
-                               "1" to stringResource(R.string.mtk_performance)).forEachIndexed { index, (val_, label) ->
-                            SegmentedButton(
-                                selected = state.cciMode == val_,
-                                onClick = { onSetCciMode(val_) },
-                                shape = SegmentedButtonDefaults.itemShape(index, 2),
-                                modifier = Modifier.weight(1f)
-                            ) {
-                                Text(
-                                    label,
-                                    fontWeight = if (state.cciMode == val_) FontWeight.Bold else FontWeight.Medium
-                                )
-                            }
-                        }
-                    }
-                    
-                    Spacer(Modifier.height(12.dp))
-                    Text(
-                        stringResource(R.string.mtk_big_little_desc),
-                        style = MaterialTheme.typography.bodyMedium,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                    )
-                }
-            }
-        }
         
-        // Power Mode Card
-        item {
-            Surface(
-                shape = RoundedCornerShape(24.dp),
-                color = cardColor,
-                modifier = Modifier.fillMaxWidth().then(if (isGlassActive) glassModifier else Modifier)
-            ) {
-                Column(
-                    modifier = Modifier.padding(24.dp)
-                ) {
-                    Row(
-                        verticalAlignment = Alignment.CenterVertically,
-                        horizontalArrangement = Arrangement.spacedBy(16.dp)
-                    ) {
-                        Surface(
-                            shape = RoundedCornerShape(14.dp),
-                            color = MaterialTheme.colorScheme.secondaryContainer,
-                            modifier = Modifier.size(48.dp)
-                        ) {
-                            Icon(
-                                Icons.Default.ElectricBolt,
-                                contentDescription = null,
-                                tint = MaterialTheme.colorScheme.onSecondaryContainer,
-                                modifier = Modifier.padding(12.dp)
-                            )
-                        }
-                        Column {
-                            Text(
-                                stringResource(R.string.mtk_cpu_power_mode),
-                                style = MaterialTheme.typography.titleLarge,
-                                fontWeight = FontWeight.Bold
-                            )
-                            Text(
-                                "${stringResource(R.string.mtk_current_mode)}: ${getPowerModeLabel(state.powerMode)}",
-                                style = MaterialTheme.typography.bodyMedium,
-                                color = MaterialTheme.colorScheme.onSurfaceVariant
-                            )
-                        }
-                    }
-                    
-                    Spacer(Modifier.height(20.dp))
-                    
-                    Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
-                        listOf(
-                            "0" to stringResource(R.string.mtk_normal),
-                            "1" to stringResource(R.string.mtk_low_power),
-                            "2" to stringResource(R.string.mtk_balance),
-                            "3" to stringResource(R.string.mtk_performance)
-                        ).forEach { (val_, label) ->
-                            val selected = state.powerMode == val_
-                            Surface(
-                                color = if (selected) MaterialTheme.colorScheme.secondaryContainer 
-                                       else Color.Transparent,
-                                shape = RoundedCornerShape(12.dp),
-                                modifier = Modifier.fillMaxWidth()
-                            ) {
-                                Row(
-                                    modifier = Modifier
-                                        .fillMaxWidth()
-                                        .clickable { onSetPowerMode(val_) }
-                                        .padding(16.dp),
-                                    verticalAlignment = Alignment.CenterVertically,
-                                    horizontalArrangement = Arrangement.spacedBy(16.dp)
-                                ) {
-                                    RadioButton(
-                                        selected = selected,
-                                        onClick = { onSetPowerMode(val_) }
-                                    )
-                                    Text(
-                                        label,
-                                        style = MaterialTheme.typography.bodyLarge,
-                                        fontWeight = if (selected) FontWeight.Medium else FontWeight.Normal
-                                    )
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        
-        // EEM Offsets
-        if (state.eemOffsets.isNotEmpty()) {
+        // ==========================================
+        // FALLBACK JIKA DEVICE MODERN / GKI (TIDAK ADA NODE)
+        // ==========================================
+        if (!state.isAvailable) {
             item {
-                Text(
-                    stringResource(R.string.mtk_voltage_offset),
-                    style = MaterialTheme.typography.titleMedium,
-                    fontWeight = FontWeight.Bold,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    modifier = Modifier.padding(start = 8.dp, top = 8.dp)
-                )
-            }
-            
-            items(
-                items = state.eemOffsets,
-                key = { it.first }
-            ) { (detName, currentOffset) ->
                 Surface(
-                    shape = RoundedCornerShape(20.dp),
+                    shape = RoundedCornerShape(24.dp),
                     color = cardColor,
                     modifier = Modifier.fillMaxWidth().then(if (isGlassActive) glassModifier else Modifier)
                 ) {
                     Column(
-                        modifier = Modifier.padding(20.dp)
+                        modifier = Modifier.padding(32.dp),
+                        horizontalAlignment = Alignment.CenterHorizontally
                     ) {
+                        Surface(
+                            shape = RoundedCornerShape(20.dp),
+                            color = accentColor.copy(alpha = 0.15f),
+                            modifier = Modifier.size(72.dp)
+                        ) {
+                            Icon(
+                                Icons.Default.Memory,
+                                contentDescription = null,
+                                tint = accentColor,
+                                modifier = Modifier.padding(16.dp)
+                            )
+                        }
+                        Spacer(Modifier.height(20.dp))
                         Text(
-                            detName.replace("EEM_DET_", ""),
-                            style = MaterialTheme.typography.titleMedium,
-                            fontWeight = FontWeight.Medium
+                            "Generic CPU Managed",
+                            style = MaterialTheme.typography.titleLarge,
+                            fontWeight = FontWeight.Bold,
+                            textAlign = TextAlign.Center
                         )
+                        Spacer(Modifier.height(12.dp))
                         Text(
-                            "${stringResource(R.string.mtk_current_mode)}: $currentOffset (${stringResource(R.string.mtk_eem_unit)})",
+                            "Perangkat ini menggunakan kernel modern (GKI). Kontrol Governor dan Frekuensi CPU Mediatek secara otomatis dikelola oleh subsistem Linux standar.\n\nSilakan gunakan menu CPU Dashboard utama untuk mengatur Governor.",
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                            textAlign = TextAlign.Center
+                        )
+                    }
+                }
+            }
+        } 
+        // ==========================================
+        // UI KHUSUS MTK LAMA (HELIO G90T DLL)
+        // ==========================================
+        else {
+            // CCI Mode & Power Mode
+            item {
+                Surface(
+                    shape = RoundedCornerShape(24.dp),
+                    color = cardColor,
+                    modifier = Modifier.fillMaxWidth().then(if (isGlassActive) glassModifier else Modifier)
+                ) {
+                    Column(modifier = Modifier.padding(24.dp)) {
+                        Text(
+                            "CPU Power Settings",
+                            style = MaterialTheme.typography.titleLarge,
+                            fontWeight = FontWeight.Bold
+                        )
+                        Spacer(Modifier.height(20.dp))
+                        
+                        // CCI Mode
+                        Text(
+                            "CCI Mode",
                             style = MaterialTheme.typography.bodyMedium,
                             color = MaterialTheme.colorScheme.onSurfaceVariant
                         )
+                        Spacer(Modifier.height(8.dp))
+                        FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                            FilterChip(
+                                selected = state.cciMode == "0",
+                                onClick = { onSetCci("0") },
+                                label = { Text("Normal") },
+                                colors = FilterChipDefaults.filterChipColors(selectedContainerColor = accentColor, selectedLabelColor = MaterialTheme.colorScheme.onPrimary)
+                            )
+                            FilterChip(
+                                selected = state.cciMode == "1",
+                                onClick = { onSetCci("1") },
+                                label = { Text("Performance") },
+                                colors = FilterChipDefaults.filterChipColors(selectedContainerColor = accentColor, selectedLabelColor = MaterialTheme.colorScheme.onPrimary)
+                            )
+                        }
                         
-                        Spacer(Modifier.height(12.dp))
+                        HorizontalDivider(modifier = Modifier.padding(vertical = 16.dp), color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.5f))
                         
-                        var input by remember(detName) { mutableStateOf(currentOffset) }
-                        OutlinedTextField(
-                            value = input,
-                            onValueChange = { input = it },
-                            label = { Text(stringResource(R.string.mtk_offset_value)) },
-                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
-                            trailingIcon = {
-                                FilledIconButton(
-                                    onClick = { onSetEemOffset(detName, input) },
-                                    shape = RoundedCornerShape(12.dp),
-                                    modifier = Modifier.size(40.dp)
-                                ) {
-                                    Icon(Icons.Default.CheckCircle, null)
-                                }
-                            },
-                            shape = RoundedCornerShape(16.dp),
-                            singleLine = true,
-                            modifier = Modifier.fillMaxWidth()
+                        // Power Mode
+                        Text(
+                            "Power Mode",
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
                         )
+                        Spacer(Modifier.height(8.dp))
+                        FlowRow(
+                            horizontalArrangement = Arrangement.spacedBy(8.dp),
+                            verticalArrangement = Arrangement.spacedBy(8.dp)
+                        ) {
+                            listOf("0" to "Normal", "1" to "Low Power", "2" to "Balance", "3" to "Performance").forEach { (mode, label) ->
+                                FilterChip(
+                                    selected = state.powerMode == mode,
+                                    onClick = { onSetPowerMode(mode) },
+                                    label = { Text(label) },
+                                    colors = FilterChipDefaults.filterChipColors(selectedContainerColor = accentColor, selectedLabelColor = MaterialTheme.colorScheme.onPrimary)
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+            
+            // EEM Offsets
+            if (state.eemOffsets.isNotEmpty()) {
+                item {
+                    Text(
+                        "EEM Voltage Offsets",
+                        style = MaterialTheme.typography.titleMedium,
+                        fontWeight = FontWeight.Bold,
+                        modifier = Modifier.padding(horizontal = 8.dp)
+                    )
+                }
+                
+                items(state.eemOffsets) { (detName, currentOffset) ->
+                    Surface(
+                        shape = RoundedCornerShape(20.dp),
+                        color = cardColor,
+                        modifier = Modifier.fillMaxWidth().then(if (isGlassActive) glassModifier else Modifier)
+                    ) {
+                        Column(modifier = Modifier.padding(20.dp)) {
+                            Row(verticalAlignment = Alignment.CenterVertically) {
+                                Icon(Icons.Default.ElectricBolt, contentDescription = null, tint = accentColor)
+                                Spacer(Modifier.width(12.dp))
+                                Text(
+                                    detName.replace("EEM_DET_", "CPU "),
+                                    style = MaterialTheme.typography.titleMedium,
+                                    fontWeight = FontWeight.SemiBold
+                                )
+                            }
+                            Spacer(Modifier.height(16.dp))
+                            
+                            var input by remember(detName) { mutableStateOf(currentOffset) }
+                            OutlinedTextField(
+                                value = input,
+                                onValueChange = { input = it },
+                                label = { Text(stringResource(R.string.mtk_offset_value)) },
+                                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+                                trailingIcon = {
+                                    FilledIconButton(
+                                        onClick = { onSetEemOffset(detName, input) },
+                                        shape = RoundedCornerShape(12.dp),
+                                        modifier = Modifier.size(40.dp)
+                                    ) {
+                                        Icon(Icons.Default.CheckCircle, null)
+                                    }
+                                },
+                                shape = RoundedCornerShape(16.dp),
+                                singleLine = true,
+                                modifier = Modifier.fillMaxWidth()
+                            )
+                        }
                     }
                 }
             }

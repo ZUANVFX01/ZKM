@@ -675,7 +675,7 @@ fun AboutScreen(
                     containerColor = targetCardColor,
                     isGlassActive = isGlassActive,
                     hazeState = hazeState,
-                    onClick = { openUrl(context, "https://t.me/ZuanvfxProject2") }
+                    onClick = { openUrl(context, "https://t.me/ZuanvfxProject3") }
                 ) {
                     Row(
                         modifier = Modifier
@@ -700,7 +700,7 @@ fun AboutScreen(
                                 color = onSurfaceColor
                             )
                             Text(
-                                text = "@ZuanvfxProject2",
+                                text = "@ZuanvfxProject3",
                                 style = MaterialTheme.typography.bodyMedium,
                                 color = onSurfaceVariantColor
                             )
@@ -730,7 +730,7 @@ fun AboutScreen(
                     containerColor = targetCardColor,
                     isGlassActive = isGlassActive,
                     hazeState = hazeState,
-                    onClick = { openUrl(context, "https://t.me/ZuanKernelManager") }
+                    onClick = { openUrl(context, "https://t.me/zuanvfx01enterprise/2") }
                 ) {
                     Row(
                         modifier = Modifier
@@ -755,7 +755,7 @@ fun AboutScreen(
                                 color = onSurfaceColor
                             )
                             Text(
-                                text = "@ZuanKernelManager",
+                                text = "@zuanvfx01enterprise",
                                 style = MaterialTheme.typography.bodyMedium,
                                 color = onSurfaceVariantColor
                             )

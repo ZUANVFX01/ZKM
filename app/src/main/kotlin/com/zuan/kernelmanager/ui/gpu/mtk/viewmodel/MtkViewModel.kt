@@ -31,7 +31,23 @@ class MtkViewModel(application: Application) : AndroidViewModel(application) {
         try { RootIpcManager.ipc?.writeNode(path, value) } catch (e: Exception) { }
     }
 
-    data class FreqState(val availableFreqs: List<String> = emptyList(), val freqMap: Map<String, String> = emptyMap(), val currentMinIndex: String = "-1", val currentMaxIndex: String = "-1", val currentFreq: String = "N/A", val isDvfsEnabled: Boolean = true, val isLocked: Boolean = false, val lockedIndex: String = "-1")
+    data class FreqState(
+        val availableFreqs: List<String> = emptyList(), 
+        val freqMap: Map<String, String> = emptyMap(), 
+        val currentMinIndex: String = "-1", 
+        val currentMaxIndex: String = "-1", 
+        val currentFreq: String = "N/A", 
+        val isDvfsEnabled: Boolean = true, 
+        val isLocked: Boolean = false, 
+        val lockedIndex: String = "-1",
+        // TAMBAHAN DEVFREQ (Fallback GKI)
+        val isDevfreq: Boolean = false,
+        val minFreq: String = "",
+        val maxFreq: String = "",
+        val governor: String = "",
+        val availableGovernors: List<String> = emptyList()
+    )
+    
     data class DramState(val type: MtkUtils.DramType = MtkUtils.DramType.NONE, val availableFreqs: List<String> = emptyList(), val freqMap: Map<String, String> = emptyMap(), val currentStep: String = "-1", val isAvailable: Boolean = false)
     data class PpmPolicyUi(val idx: Int, val name: String, val enabled: Boolean)
     data class PpmState(val isAvailable: Boolean = false, val isEnabled: Boolean = false, val policies: List<PpmPolicyUi> = emptyList())
@@ -101,17 +117,62 @@ class MtkViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     private suspend fun loadFreqData(): FreqState {
+        val gpuArch = MtkUtils.getGpuArch()
+        
+        // CABANG 1: DEVFREQ (GKI / MODERN MTK)
+        if (gpuArch == MtkUtils.GpuArch.DEVFREQ) {
+            val devfreqNode = MtkUtils.getGpuDevfreqNode()
+            if (devfreqNode != null) {
+                val availFreqsRaw = fastRead("$devfreqNode/available_frequencies").split(" ").filter { it.isNotBlank() }
+                val availGovs = fastRead("$devfreqNode/available_governors").split(" ").filter { it.isNotBlank() }
+                
+                // Format ke format MHz untuk UI
+                val formattedFreqs = availFreqsRaw.map { 
+                    val mhz = it.toLongOrNull() ?: 0L
+                    if (mhz > 1000000) "${mhz / 1000000}" else "${mhz / 1000}"
+                }
+                
+                // Map Label UI ke Value Raw
+                val freqMap = formattedFreqs.zip(availFreqsRaw).toMap()
+
+                val curMinRaw = fastRead("$devfreqNode/min_freq")
+                val curMaxRaw = fastRead("$devfreqNode/max_freq")
+                
+                val minFormatted = (curMinRaw.toLongOrNull() ?: 0L).let { if (it > 1000000) "${it / 1000000}" else "${it / 1000}" }
+                val maxFormatted = (curMaxRaw.toLongOrNull() ?: 0L).let { if (it > 1000000) "${it / 1000000}" else "${it / 1000}" }
+
+                return FreqState(
+                    isDevfreq = true,
+                    availableFreqs = formattedFreqs.sortedByDescending { it.toLongOrNull() ?: 0L },
+                    freqMap = freqMap,
+                    minFreq = minFormatted,
+                    maxFreq = maxFormatted,
+                    governor = fastRead("$devfreqNode/governor"),
+                    availableGovernors = availGovs,
+                    currentFreq = MtkUtils.getCurrentGpuFreq(),
+                    isDvfsEnabled = true, // Bypass DVFS flag
+                    isLocked = false
+                )
+            }
+        }
+
+        // CABANG 2: LEGACY & V2 GED (MTK LAMA)
         val freqMap = MtkUtils.getMtkFreqMap()
-        val lockIdx = when (MtkUtils.getGpuArch()) {
+        val lockIdx = when (gpuArch) {
             MtkUtils.GpuArch.V2_GED -> fastRead("/proc/gpufreqv2/fix_target_opp_index")
             MtkUtils.GpuArch.LEGACY_GED -> fastRead("/proc/gpufreq/gpufreq_opp_freq")
             else -> "-1"
         }
         return FreqState(
-            availableFreqs = freqMap.keys.sortedByDescending { it.toIntOrNull() ?: 0 },
-            freqMap = freqMap, currentMinIndex = MtkUtils.getCurrentMinIndex(),
-            currentMaxIndex = MtkUtils.getCurrentMaxIndex(), currentFreq = MtkUtils.getCurrentGpuFreq(),
-            isDvfsEnabled = MtkUtils.isGedDvfsEnabled(), isLocked = lockIdx != "-1" && lockIdx.isNotBlank(), lockedIndex = lockIdx
+            isDevfreq = false,
+            availableFreqs = freqMap.keys.toList().sortedByDescending { it.toIntOrNull() ?: 0 },
+            freqMap = freqMap, 
+            currentMinIndex = MtkUtils.getCurrentMinIndex(),
+            currentMaxIndex = MtkUtils.getCurrentMaxIndex(), 
+            currentFreq = MtkUtils.getCurrentGpuFreq(),
+            isDvfsEnabled = MtkUtils.isGedDvfsEnabled(), 
+            isLocked = lockIdx != "-1" && lockIdx.isNotBlank(), 
+            lockedIndex = lockIdx
         )
     }
 
@@ -165,11 +226,30 @@ class MtkViewModel(application: Application) : AndroidViewModel(application) {
         )
     }
 
+    // === GED MTK SPECIFIC ACTIONS ===
     fun lockGpuFreq(freqDisplay: String) = viewModelScope.launch(Dispatchers.IO) { _state.value.freqState.freqMap[freqDisplay]?.let { index -> MtkUtils.setGedDvfsEnabled(false); MtkUtils.lockGpuFreq(index); loadAllData() } }
     fun unlockGpuFreq() = viewModelScope.launch(Dispatchers.IO) { MtkUtils.resetGpuLock(); MtkUtils.setGedDvfsEnabled(true); loadAllData() }
     fun setMinFreq(freqDisplay: String) = viewModelScope.launch(Dispatchers.IO) { _state.value.freqState.freqMap[freqDisplay]?.let { index -> MtkUtils.setMtkMinFreq(index); loadAllData() } }
     fun setMaxFreq(freqDisplay: String) = viewModelScope.launch(Dispatchers.IO) { _state.value.freqState.freqMap[freqDisplay]?.let { index -> MtkUtils.setMtkMaxFreq(index); loadAllData() } }
     fun setDvfsEnabled(enable: Boolean) = viewModelScope.launch(Dispatchers.IO) { MtkUtils.setGedDvfsEnabled(enable); if (enable) MtkUtils.resetGpuLock(); loadAllData() }
+    
+    // === DEVFREQ GKI ACTIONS ===
+    fun setGpuDevfreqMin(freqDisplay: String) = viewModelScope.launch(Dispatchers.IO) {
+        val rawValue = _state.value.freqState.freqMap[freqDisplay] ?: return@launch
+        val devfreqNode = MtkUtils.getGpuDevfreqNode()
+        if (devfreqNode != null) { fastWrite("$devfreqNode/min_freq", rawValue); loadAllData() }
+    }
+    fun setGpuDevfreqMax(freqDisplay: String) = viewModelScope.launch(Dispatchers.IO) {
+        val rawValue = _state.value.freqState.freqMap[freqDisplay] ?: return@launch
+        val devfreqNode = MtkUtils.getGpuDevfreqNode()
+        if (devfreqNode != null) { fastWrite("$devfreqNode/max_freq", rawValue); loadAllData() }
+    }
+    fun setGpuGovernor(gov: String) = viewModelScope.launch(Dispatchers.IO) {
+        val devfreqNode = MtkUtils.getGpuDevfreqNode()
+        if (devfreqNode != null) { fastWrite("$devfreqNode/governor", gov); loadAllData() }
+    }
+
+    // === OTHER ACTIONS ===
     fun setDramFreq(displayFreq: String) = viewModelScope.launch(Dispatchers.IO) { _state.value.dramState.freqMap[displayFreq]?.let { rawValue -> MtkUtils.setDramFreq(_state.value.dramState.type, displayFreq, rawValue); loadAllData() } }
     fun togglePpmPolicy(idx: Int, enable: Boolean) = viewModelScope.launch(Dispatchers.IO) { MtkUtils.togglePpmPolicy(idx, enable); loadAllData() }
     fun setPpmEnabled(enable: Boolean) = viewModelScope.launch(Dispatchers.IO) { MtkUtils.setPpmEnabled(enable); loadAllData() }

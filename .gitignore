@@ -1,0 +1,6 @@
+build/
+app/build/
+.gradle/
+terminal-emulator/build/
+terminal-view/build/
+.acside/
