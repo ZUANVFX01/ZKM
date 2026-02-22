@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Kernel Flasher</string>
+    <string name="root_required">Требуется root-доступ</string>
+    <string name="root_service_disconnected">Корневой сервис отключен</string>
+    <string name="device">Устройство</string>
+    <string name="model">Модель</string>
+    <string name="build_number">Номер сборки</string>
+    <string tools:keep="@string/kernel_name" name="kernel_name">Имя ядра</string>
+    <string name="kernel_version">Версия ядра</string>
+    <string name="slot_suffix">Akhiran Slot</string>
+    <string name="slot">Slot</string>
+    <string name="slot_a">Slot A</string>
+    <string name="slot_b">Slot B</string>
+    <string tools:ignore="Typos" name="boot_sha1">Boot SHA1</string>
+    <string name="vendor_dlkm">Vendor DLKM</string>
+    <string name="exists">Доступный</string>
+    <string name="not_found">Не найдено</string>
+    <string name="mounted">установлен</string>
+    <string name="unmounted">Спешенный</string>
+    <string name="view">Смотреть</string>
+    <string name="backups">Бронировать</string>
+    <string name="save_ramoops">Сохранить Рамупс</string>
+    <string name="save_dmesg">Сохранить dmesg</string>
+    <string name="save_logcat">Сохранить логарифм</string>
+    <string name="back">Возвращаться</string>
+    <string name="backup">Резервное копирование</string>
+    <string name="updates">Обновлять</string>
+    <string name="flash">Flash</string>
+    <string name="flash_ak3_zip">Флэш-Зип АК3</string>
+    <string name="flash_partition_image">Раздел флэш-образа</string>
+    <string name="restore">Восстанавливаться</string>
+    <string name="check_kernel_version">Проверьте версию ядра</string>
+    <string name="mount_vendor_dlkm">Гора Вендор ДЛКМ</string>
+    <string name="unmount_vendor_dlkm">Размонтировать поставщика DLKM</string>
+    <string name="map_vendor_dlkm">Папка поставщика DLKM</string>
+    <string name="unmap_vendor_dlkm">Отменить карту поставщиков DLKM</string>
+    <string name="migrate">Миграция</string>
+    <string name="no_backups_found">Резервная копия не найдена</string>
+    <string name="delete">Вытирать</string>
+    <string name="add">Плюс</string>
+    <string name="url">URL</string>
+    <string name="version">Версия</string>
+    <string name="date_released">Дата выпуска</string>
+    <string name="last_updated">Последнее обновление</string>
+    <string name="changelog">Catatan Perubahan</string>
+    <string name="check_for_updates">Проверьте наличие обновлений</string>
+    <string name="download">Скачать</string>
+    <string name="reboot">Перезапуск</string>
+    <string name="reboot_userspace">Мягкая перезагрузка</string>
+    <string name="reboot_recovery">Перезагрузить в рекавери</string>
+    <string name="reboot_bootloader">Перезагрузить загрузчик</string>
+    <string name="reboot_download">Mulai Ulang ke Download</string>
+    <string name="reboot_edl">Mulai Ulang ke EDL</string>
+    <string name="save_ak3_log">Сохранение журналов AK3</string>
+    <string name="save_flash_log">Сохранение флэш-логов</string>
+    <string name="save_backup_log">Ведите журнал резервного копирования</string>
+    <string tools:keep="@string/save_restore_log" name="save_restore_log">Сохранить журнал восстановления</string>
+    <string name="save_ak3_zip_as_backup">Сохраните AK3 Zip в качестве резервной копии.</string>
+    <string name="backup_type">Тип резервной копии</string>
+    <string name="hashes">Хэш</string>
+    <string name="partition_selection_unavailable">Выбор раздела недоступен для устаревших резервных копий.</string>
+</resources>

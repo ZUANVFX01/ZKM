@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Kernel Flasher</string>
+    <string name="root_required">Түбірлік рұқсат қажет</string>
+    <string name="root_service_disconnected">Түбірлік қызмет ажыратылған</string>
+    <string name="device">Құрылғы</string>
+    <string name="model">Үлгі</string>
+    <string name="build_number">Құрылым нөмірі</string>
+    <string tools:keep="@string/kernel_name" name="kernel_name">Ядро атауы</string>
+    <string name="kernel_version">Ядро нұсқасы</string>
+    <string name="slot_suffix">Akhiran Slot</string>
+    <string name="slot">Slot</string>
+    <string name="slot_a">Slot A</string>
+    <string name="slot_b">Slot B</string>
+    <string tools:ignore="Typos" name="boot_sha1">Boot SHA1</string>
+    <string name="vendor_dlkm">Vendor DLKM</string>
+    <string name="exists">Қол жетімді</string>
+    <string name="not_found">Табылмады</string>
+    <string name="mounted">Орнатылған</string>
+    <string name="unmounted">Салынған</string>
+    <string name="view">Қараңыз</string>
+    <string name="backups">Резерв</string>
+    <string name="save_ramoops">Рамуптарды сақтаңыз</string>
+    <string name="save_dmesg">dmesg сақтаңыз</string>
+    <string name="save_logcat">Logcat сақтау</string>
+    <string name="back">Қайту</string>
+    <string name="backup">Сақтық көшірме жасау</string>
+    <string name="updates">Жаңарту</string>
+    <string name="flash">Flash</string>
+    <string name="flash_ak3_zip">Flash Zip AK3</string>
+    <string name="flash_partition_image">Flash кескін бөлімі</string>
+    <string name="restore">Қалпына келтіру</string>
+    <string name="check_kernel_version">Ядро нұсқасын тексеріңіз</string>
+    <string name="mount_vendor_dlkm">Mount Vendor DLKM</string>
+    <string name="unmount_vendor_dlkm">DLKM жеткізушісін ажыратыңыз</string>
+    <string name="map_vendor_dlkm">DLKM жеткізуші қалтасы</string>
+    <string name="unmap_vendor_dlkm">DLKM жеткізушілерін картадан шығару</string>
+    <string name="migrate">Көші-қон</string>
+    <string name="no_backups_found">Сақтық көшірме табылмады</string>
+    <string name="delete">Сүрту</string>
+    <string name="add">Плюс</string>
+    <string name="url">URL</string>
+    <string name="version">Нұсқа</string>
+    <string name="date_released">Шығарылған күні</string>
+    <string name="last_updated">Соңғы жаңартылған</string>
+    <string name="changelog">Catatan Perubahan</string>
+    <string name="check_for_updates">Жаңартуларды тексеріңіз</string>
+    <string name="download">Жүктеп алу</string>
+    <string name="reboot">Қайтадан қосу</string>
+    <string name="reboot_userspace">Жұмсақ қайта жүктеу</string>
+    <string name="reboot_recovery">Қалпына келтіруге қайта іске қосыңыз</string>
+    <string name="reboot_bootloader">Жүктеу құралына қайта іске қосыңыз</string>
+    <string name="reboot_download">Mulai Ulang ke Download</string>
+    <string name="reboot_edl">Mulai Ulang ke EDL</string>
+    <string name="save_ak3_log">AK3 журналдарын сақтаңыз</string>
+    <string name="save_flash_log">Flash журналдарын сақтаңыз</string>
+    <string name="save_backup_log">Сақтық көшірме журналын сақтаңыз</string>
+    <string tools:keep="@string/save_restore_log" name="save_restore_log">Қалпына келтіру журналын сақтаңыз</string>
+    <string name="save_ak3_zip_as_backup">AK3 Zip файлын сақтық көшірме ретінде сақтаңыз</string>
+    <string name="backup_type">Сақтық көшірме түрі</string>
+    <string name="hashes">Хэш</string>
+    <string name="partition_selection_unavailable">Бөлімді таңдау бұрынғы сақтық көшірмелер үшін қолжетімді емес</string>
+</resources>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Kernel Flasher</string>
+    <string name="root_required">需要 root 访问权限</string>
+    <string name="root_service_disconnected">root服务已断开</string>
+    <string name="device">设备</string>
+    <string name="model">模型</string>
+    <string name="build_number">内部版本号</string>
+    <string tools:keep="@string/kernel_name" name="kernel_name">内核名称</string>
+    <string name="kernel_version">内核版本</string>
+    <string name="slot_suffix">Akhiran Slot</string>
+    <string name="slot">Slot</string>
+    <string name="slot_a">Slot A</string>
+    <string name="slot_b">Slot B</string>
+    <string tools:ignore="Typos" name="boot_sha1">Boot SHA1</string>
+    <string name="vendor_dlkm">Vendor DLKM</string>
+    <string name="exists">可用的</string>
+    <string name="not_found">未找到</string>
+    <string name="mounted">已安装</string>
+    <string name="unmounted">下马</string>
+    <string name="view">看</string>
+    <string name="backups">预订</string>
+    <string name="save_ramoops">保存拉莫普斯</string>
+    <string name="save_dmesg">保存dmesg</string>
+    <string name="save_logcat">保存日志</string>
+    <string name="back">返回</string>
+    <string name="backup">备份</string>
+    <string name="updates">更新</string>
+    <string name="flash">Flash</string>
+    <string name="flash_ak3_zip">闪光拉链 AK3</string>
+    <string name="flash_partition_image">Flash图像分区</string>
+    <string name="restore">恢复</string>
+    <string name="check_kernel_version">检查内核版本</string>
+    <string name="mount_vendor_dlkm">安装供应商 DLKM</string>
+    <string name="unmount_vendor_dlkm">卸载 DLKM 供应商</string>
+    <string name="map_vendor_dlkm">DLKM 供应商文件夹</string>
+    <string name="unmap_vendor_dlkm">取消映射 DLKM 供应商</string>
+    <string name="migrate">迁移</string>
+    <string name="no_backups_found">未找到备份</string>
+    <string name="delete">擦拭</string>
+    <string name="add">加</string>
+    <string name="url">URL</string>
+    <string name="version">版本</string>
+    <string name="date_released">发布日期</string>
+    <string name="last_updated">最后更新</string>
+    <string name="changelog">Catatan Perubahan</string>
+    <string name="check_for_updates">检查更新</string>
+    <string name="download">下载</string>
+    <string name="reboot">重新启动</string>
+    <string name="reboot_userspace">软重启</string>
+    <string name="reboot_recovery">重启恢复</string>
+    <string name="reboot_bootloader">重新启动到引导加载程序</string>
+    <string name="reboot_download">Mulai Ulang ke Download</string>
+    <string name="reboot_edl">Mulai Ulang ke EDL</string>
+    <string name="save_ak3_log">保存 AK3 日志</string>
+    <string name="save_flash_log">保存闪存日志</string>
+    <string name="save_backup_log">保留备份日志</string>
+    <string tools:keep="@string/save_restore_log" name="save_restore_log">保存恢复日志</string>
+    <string name="save_ak3_zip_as_backup">保留 AK3 Zip 作为备份</string>
+    <string name="backup_type">备份类型</string>
+    <string name="hashes">哈希值</string>
+    <string name="partition_selection_unavailable">分区选择不适用于旧备份</string>
+</resources>

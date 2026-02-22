@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Kernel Flasher</string>
+    <string name="root_required">È richiesto l'accesso root</string>
+    <string name="root_service_disconnected">Il servizio root è disconnesso</string>
+    <string name="device">Dispositivo</string>
+    <string name="model">Modello</string>
+    <string name="build_number">Numero di costruzione</string>
+    <string tools:keep="@string/kernel_name" name="kernel_name">Nome del kernel</string>
+    <string name="kernel_version">Versione del kernel</string>
+    <string name="slot_suffix">Akhiran Slot</string>
+    <string name="slot">Slot</string>
+    <string name="slot_a">Slot A</string>
+    <string name="slot_b">Slot B</string>
+    <string tools:ignore="Typos" name="boot_sha1">Boot SHA1</string>
+    <string name="vendor_dlkm">Vendor DLKM</string>
+    <string name="exists">Disponibile</string>
+    <string name="not_found">Non trovato</string>
+    <string name="mounted">Montato</string>
+    <string name="unmounted">Smontato</string>
+    <string name="view">Aspetto</string>
+    <string name="backups">Prenotare</string>
+    <string name="save_ramoops">Salva ramoops</string>
+    <string name="save_dmesg">Salva dmesg</string>
+    <string name="save_logcat">Salva registro</string>
+    <string name="back">Ritorno</string>
+    <string name="backup">Backup</string>
+    <string name="updates">Aggiornamento</string>
+    <string name="flash">Flash</string>
+    <string name="flash_ak3_zip">Zip flash AK3</string>
+    <string name="flash_partition_image">Partizione di immagini Flash</string>
+    <string name="restore">Recuperare</string>
+    <string name="check_kernel_version">Controlla la versione del kernel</string>
+    <string name="mount_vendor_dlkm">Montare il DLKM del fornitore</string>
+    <string name="unmount_vendor_dlkm">Smontare il fornitore DLKM</string>
+    <string name="map_vendor_dlkm">Cartella fornitore DLKM</string>
+    <string name="unmap_vendor_dlkm">Annulla la mappatura dei fornitori DLKM</string>
+    <string name="migrate">Migrazione</string>
+    <string name="no_backups_found">Nessun backup trovato</string>
+    <string name="delete">Pulire</string>
+    <string name="add">Più</string>
+    <string name="url">URL</string>
+    <string name="version">Versione</string>
+    <string name="date_released">Data di rilascio</string>
+    <string name="last_updated">Ultimo aggiornamento</string>
+    <string name="changelog">Catatan Perubahan</string>
+    <string name="check_for_updates">Controlla gli aggiornamenti</string>
+    <string name="download">Scaricamento</string>
+    <string name="reboot">Ricomincia</string>
+    <string name="reboot_userspace">Riavvio graduale</string>
+    <string name="reboot_recovery">Riavvia in ripristino</string>
+    <string name="reboot_bootloader">Riavvia il Bootloader</string>
+    <string name="reboot_download">Mulai Ulang ke Download</string>
+    <string name="reboot_edl">Mulai Ulang ke EDL</string>
+    <string name="save_ak3_log">Salva i registri AK3</string>
+    <string name="save_flash_log">Salva registri Flash</string>
+    <string name="save_backup_log">Conserva un registro di backup</string>
+    <string tools:keep="@string/save_restore_log" name="save_restore_log">Salva registro di ripristino</string>
+    <string name="save_ak3_zip_as_backup">Mantieni AK3 Zip come backup</string>
+    <string name="backup_type">Tipo di backup</string>
+    <string name="hashes">Hash</string>
+    <string name="partition_selection_unavailable">La selezione della partizione non è disponibile per i backup legacy</string>
+</resources>

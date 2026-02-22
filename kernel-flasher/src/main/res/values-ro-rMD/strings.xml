@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Kernel Flasher</string>
+    <string name="root_required">Este necesar accesul rădăcină</string>
+    <string name="root_service_disconnected">Serviciul rădăcină este deconectat</string>
+    <string name="device">Dispozitiv</string>
+    <string name="model">Model</string>
+    <string name="build_number">Numărul build</string>
+    <string tools:keep="@string/kernel_name" name="kernel_name">Nume Kernel</string>
+    <string name="kernel_version">Versiunea Kernel</string>
+    <string name="slot_suffix">Akhiran Slot</string>
+    <string name="slot">Slot</string>
+    <string name="slot_a">Slot A</string>
+    <string name="slot_b">Slot B</string>
+    <string tools:ignore="Typos" name="boot_sha1">Boot SHA1</string>
+    <string name="vendor_dlkm">Vendor DLKM</string>
+    <string name="exists">Disponibil</string>
+    <string name="not_found">Nu a fost găsit</string>
+    <string name="mounted">Montat</string>
+    <string name="unmounted">Descălecat</string>
+    <string name="view">Uite</string>
+    <string name="backups">Rezervaţie</string>
+    <string name="save_ramoops">Salvează ramoops</string>
+    <string name="save_dmesg">Salvați mesajul mesaj</string>
+    <string name="save_logcat">Salvați logcat</string>
+    <string name="back">Reveni</string>
+    <string name="backup">Backup</string>
+    <string name="updates">Actualizare</string>
+    <string name="flash">Flash</string>
+    <string name="flash_ak3_zip">Flash Zip AK3</string>
+    <string name="flash_partition_image">Flash Image Partition</string>
+    <string name="restore">Recupera</string>
+    <string name="check_kernel_version">Verificați versiunea kernelului</string>
+    <string name="mount_vendor_dlkm">Mount Vendor DLKM</string>
+    <string name="unmount_vendor_dlkm">Demontați furnizorul DLKM</string>
+    <string name="map_vendor_dlkm">Folderul furnizorului DLKM</string>
+    <string name="unmap_vendor_dlkm">Anulați harta furnizorilor DLKM</string>
+    <string name="migrate">Migrația</string>
+    <string name="no_backups_found">Nu a fost găsită nicio rezervă</string>
+    <string name="delete">Şterge</string>
+    <string name="add">Plus</string>
+    <string name="url">URL</string>
+    <string name="version">Versiune</string>
+    <string name="date_released">Data de lansare</string>
+    <string name="last_updated">Ultima actualizare</string>
+    <string name="changelog">Catatan Perubahan</string>
+    <string name="check_for_updates">Verificați actualizările</string>
+    <string name="download">Descărcați</string>
+    <string name="reboot">Repornire</string>
+    <string name="reboot_userspace">Repornire soft</string>
+    <string name="reboot_recovery">Reporniți la Recuperare</string>
+    <string name="reboot_bootloader">Reporniți la Bootloader</string>
+    <string name="reboot_download">Mulai Ulang ke Download</string>
+    <string name="reboot_edl">Mulai Ulang ke EDL</string>
+    <string name="save_ak3_log">Salvați jurnalele AK3</string>
+    <string name="save_flash_log">Salvați jurnalele flash</string>
+    <string name="save_backup_log">Păstrați un jurnal de rezervă</string>
+    <string tools:keep="@string/save_restore_log" name="save_restore_log">Salvați jurnalul de recuperare</string>
+    <string name="save_ak3_zip_as_backup">Păstrați AK3 Zip ca rezervă</string>
+    <string name="backup_type">Tip de rezervă</string>
+    <string name="hashes">Hash</string>
+    <string name="partition_selection_unavailable">Selectarea partiției nu este disponibilă pentru copiile de rezervă vechi</string>
+</resources>

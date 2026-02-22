@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Kernel Flasher</string>
+    <string name="root_required">Kök erişimi gerekli</string>
+    <string name="root_service_disconnected">Kök hizmetinin bağlantısı kesildi</string>
+    <string name="device">Cihaz</string>
+    <string name="model">Modeli</string>
+    <string name="build_number">Yapı Numarası</string>
+    <string tools:keep="@string/kernel_name" name="kernel_name">Çekirdek Adı</string>
+    <string name="kernel_version">Çekirdek Sürümü</string>
+    <string name="slot_suffix">Akhiran Slot</string>
+    <string name="slot">Slot</string>
+    <string name="slot_a">Slot A</string>
+    <string name="slot_b">Slot B</string>
+    <string tools:ignore="Typos" name="boot_sha1">Boot SHA1</string>
+    <string name="vendor_dlkm">Vendor DLKM</string>
+    <string name="exists">Mevcut</string>
+    <string name="not_found">Bulunamadı</string>
+    <string name="mounted">Monte edilmiş</string>
+    <string name="unmounted">Sökülmüş</string>
+    <string name="view">Bakmak</string>
+    <string name="backups">Rezerv</string>
+    <string name="save_ramoops">Ramoop'ları kaydet</string>
+    <string name="save_dmesg">Dmesg'i kaydet</string>
+    <string name="save_logcat">Logcat'i kaydet</string>
+    <string name="back">Geri dönmek</string>
+    <string name="backup">Yedekle</string>
+    <string name="updates">Güncelleme</string>
+    <string name="flash">Flash</string>
+    <string name="flash_ak3_zip">Flaş Zip AK3</string>
+    <string name="flash_partition_image">Flash Görüntü Bölümü</string>
+    <string name="restore">İyileşmek</string>
+    <string name="check_kernel_version">Çekirdek Sürümünü Kontrol Edin</string>
+    <string name="mount_vendor_dlkm">Montaj Satıcısı DLKM</string>
+    <string name="unmount_vendor_dlkm">DLKM Satıcısının Bağlantısını Kaldır</string>
+    <string name="map_vendor_dlkm">DLKM Satıcı Klasörü</string>
+    <string name="unmap_vendor_dlkm">DLKM Tedarikçilerinin Eşlemesini Kaldır</string>
+    <string name="migrate">Göç</string>
+    <string name="no_backups_found">Yedek bulunamadı</string>
+    <string name="delete">Silip süpürmek</string>
+    <string name="add">Artı</string>
+    <string name="url">URL</string>
+    <string name="version">Sürüm</string>
+    <string name="date_released">Yayın tarihi</string>
+    <string name="last_updated">Son Güncelleme</string>
+    <string name="changelog">Catatan Perubahan</string>
+    <string name="check_for_updates">Güncellemeleri Kontrol Et</string>
+    <string name="download">İndirmek</string>
+    <string name="reboot">Tekrar başlat</string>
+    <string name="reboot_userspace">Yumuşak Yeniden Başlatma</string>
+    <string name="reboot_recovery">Kurtarmayı Yeniden Başlatın</string>
+    <string name="reboot_bootloader">Bootloader'ı yeniden başlatın</string>
+    <string name="reboot_download">Mulai Ulang ke Download</string>
+    <string name="reboot_edl">Mulai Ulang ke EDL</string>
+    <string name="save_ak3_log">AK3 Günlüklerini Kaydet</string>
+    <string name="save_flash_log">Flash Günlüklerini Kaydet</string>
+    <string name="save_backup_log">Yedekleme Günlüğü Tutun</string>
+    <string tools:keep="@string/save_restore_log" name="save_restore_log">Kurtarma Günlüğünü Kaydet</string>
+    <string name="save_ak3_zip_as_backup">AK3 Zip'i Yedek Olarak Tutun</string>
+    <string name="backup_type">Yedekleme Türü</string>
+    <string name="hashes">Doğramak</string>
+    <string name="partition_selection_unavailable">Eski yedeklemeler için bölüm seçimi mevcut değildir</string>
+</resources>

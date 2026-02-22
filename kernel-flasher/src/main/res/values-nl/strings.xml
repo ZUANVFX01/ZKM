@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Kernel Flasher</string>
+    <string name="root_required">Root-toegang vereist</string>
+    <string name="root_service_disconnected">De rootservice is verbroken</string>
+    <string name="device">Apparaat</string>
+    <string name="model">Model</string>
+    <string name="build_number">Bouwnummer</string>
+    <string tools:keep="@string/kernel_name" name="kernel_name">Kernelnaam</string>
+    <string name="kernel_version">Kernel-versie</string>
+    <string name="slot_suffix">Akhiran Slot</string>
+    <string name="slot">Slot</string>
+    <string name="slot_a">Slot A</string>
+    <string name="slot_b">Slot B</string>
+    <string tools:ignore="Typos" name="boot_sha1">Boot SHA1</string>
+    <string name="vendor_dlkm">Vendor DLKM</string>
+    <string name="exists">Beschikbaar</string>
+    <string name="not_found">Niet gevonden</string>
+    <string name="mounted">Gemonteerd</string>
+    <string name="unmounted">Gedemonteerd</string>
+    <string name="view">Kijk</string>
+    <string name="backups">Reserveren</string>
+    <string name="save_ramoops">Ramoeps redden</string>
+    <string name="save_dmesg">Bewaar dmesg</string>
+    <string name="save_logcat">Logcat opslaan</string>
+    <string name="back">Opbrengst</string>
+    <string name="backup">Maak een back-up</string>
+    <string name="updates">Update</string>
+    <string name="flash">Flash</string>
+    <string name="flash_ak3_zip">Flitsrits AK3</string>
+    <string name="flash_partition_image">Flash-beeldpartitie</string>
+    <string name="restore">Herstellen</string>
+    <string name="check_kernel_version">Controleer de kernelversie</string>
+    <string name="mount_vendor_dlkm">Monteer leverancier DLKM</string>
+    <string name="unmount_vendor_dlkm">Ontkoppel DLKM-leverancier</string>
+    <string name="map_vendor_dlkm">DLKM-leveranciersmap</string>
+    <string name="unmap_vendor_dlkm">De toewijzing van DLKM-leveranciers ongedaan maken</string>
+    <string name="migrate">Migratie</string>
+    <string name="no_backups_found">Geen back-up gevonden</string>
+    <string name="delete">Veeg</string>
+    <string name="add">Plus</string>
+    <string name="url">URL</string>
+    <string name="version">Versie</string>
+    <string name="date_released">Releasedatum</string>
+    <string name="last_updated">Laatst bijgewerkt</string>
+    <string name="changelog">Catatan Perubahan</string>
+    <string name="check_for_updates">Controleer op updates</string>
+    <string name="download">Downloaden</string>
+    <string name="reboot">Opnieuw opstarten</string>
+    <string name="reboot_userspace">Zacht opnieuw opstarten</string>
+    <string name="reboot_recovery">Start opnieuw op naar herstel</string>
+    <string name="reboot_bootloader">Start opnieuw op naar Bootloader</string>
+    <string name="reboot_download">Mulai Ulang ke Download</string>
+    <string name="reboot_edl">Mulai Ulang ke EDL</string>
+    <string name="save_ak3_log">Bewaar AK3-logboeken</string>
+    <string name="save_flash_log">Bewaar Flash-logboeken</string>
+    <string name="save_backup_log">Houd een back-uplogboek bij</string>
+    <string tools:keep="@string/save_restore_log" name="save_restore_log">Bewaar het herstellogboek</string>
+    <string name="save_ak3_zip_as_backup">Bewaar AK3 Zip als back-up</string>
+    <string name="backup_type">Back-uptype</string>
+    <string name="hashes">Hasj</string>
+    <string name="partition_selection_unavailable">Partitieselectie is niet beschikbaar voor oudere back-ups</string>
+</resources>
