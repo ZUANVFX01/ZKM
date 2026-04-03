@@ -15,15 +15,15 @@
     <string name="nav_fps">FPS Yöneticisi</string>
     <string name="nav_process">İşlem Yöneticisi</string>
     <string name="nav_flasher">Kernel Flasher</string>
-    <string name="nav_launcher">Etkinlik Başlatıcı</string>
+    <string name="nav_launcher">Aktivite Başlatıcı</string>
     <string name="nav_ksuweb">KSU WebUI</string>
     <string name="nav_gpu">GPU</string>
 
     <string name="pref_language">Uygulama Dili</string>
     <string name="lang_system">Sistem Varsayılanı</string>
-    <string name="lang_indonesia">Endonezyaca</string>
-    <string name="lang_english">İngilizce</string>
-    <string name="lang_region_us">Amerika Birleşik Devletleri</string>
+    <string name="lang_indonesia">Bahasa Indonesia</string>
+    <string name="lang_english">English</string>
+    <string name="lang_region_us">United States</string>
     <string name="lang_sect_recommended">Önerilen</string>
     <string name="lang_sect_all">Tüm Diller</string>
     <string name="lang_search_hint">Dil ara…</string>
@@ -40,58 +40,58 @@
     <string name="dynamic_color">Dinamik Renk</string>
     <string name="dynamic_color_desc">Duvar kağıdınıza dayalı</string>
     <string name="custom_color">Özel Renk</string>
-    <string name="custom_color_desc">Kendi temanızı oluşturun</string>
-    <string name="custom_color_editor">Özel Renk Düzenleyici</string>
+    <string name="custom_color_desc">Kendi temanızı yaratın</string>
+    <string name="custom_color_editor">Özel Renk Düzenleyicisi</string>
     <string name="color_primary">Birincil</string>
     <string name="color_secondary">İkincil</string>
     <string name="color_tertiary">Üçüncül</string>
-    <string name="background_type">Arka Plan Türü</string>
+    <string name="background_type">Arka Plan Tipi</string>
     <string name="bg_type_gallery">Galeri</string>
     <string name="bg_type_system">Sistem</string>
-    <string name="bg_adjustments">Arka Plan Ayarları</string>
+    <string name="bg_adjustments">Arka Plan Ayarlamaları</string>
     <string name="saturation">Doygunluk</string>
     <string name="bg_blur">Arka Plan Bulanıklığı</string>
     <string name="bg_blur_desc">Duvar kağıdına bulanıklık uygula</string>
     <string name="blur_strength">Bulanıklık Gücü</string>
     <string name="blur_strength_dp">%1$.0fdp</string>
-    <string name="dark_overlay">Koyu Katman</string>
-    <string name="dark_overlay_desc">Arka plana koyu ton ekle</string>
+    <string name="dark_overlay">Karanlık Kaplama</string>
+    <string name="dark_overlay_desc">Arka plana karanlık bir ton ekle</string>
     <string name="glass_effects">Cam Efektleri</string>
     <string name="card_blur">Kart Bulanıklığı</string>
     <string name="card_blur_desc">Glassmorphism stili</string>
     <string name="card_opacity">Kart Opaklığı</string>
-    <string name="weather_effects">Hava Efektleri</string>
+    <string name="weather_effects">Hava Durumu Efektleri</string>
     <string name="effect_intensity">Efekt Yoğunluğu</string>
     <string name="intensity_low">Düşük</string>
     <string name="intensity_high">Yüksek</string>
-    <string name="effect_none">Yok</string>
+    <string name="effect_none">Hiçbiri</string>
     <string name="effect_fog">Sis</string>
     <string name="effect_rain">Yağmur</string>
     <string name="effect_snow">Kar</string>
     <string name="effect_sun_rays">Güneş Işınları</string>
-    <string name="effect_desc_none">Hava efekti uygulanmadı</string>
-    <string name="effect_desc_fog">Gizemli bir atmosfer yaratan sisli katman</string>
-    <string name="effect_desc_rain">Ekranınızda düşen animasyonlu yağmur damlaları</string>
-    <string name="effect_desc_snow">Yavaşça süzülen kar taneleri</string>
-    <string name="effect_desc_sun">Köşeden ışıyan sıcak güneş ışınları</string>
+    <string name="effect_desc_none">Hava durumu efekti uygulanmadı</string>
+    <string name="effect_desc_fog">Gizemli bir atmosfer yaratan sis kaplaması</string>
+    <string name="effect_desc_rain">Ekranınızda düşen hareketli yağmur damlaları</string>
+    <string name="effect_desc_snow">Hafifçe süzülen kar taneleri</string>
+    <string name="effect_desc_sun">Köşeden parlayan sıcak güneş ışınları</string>
     <string name="preview_title">Önizleme</string>
     <string name="preview_live">Canlı Görünüm</string>
 
     <string name="settings_title">Ayarlar</string>
     <string name="pref_wallpaper_style">Duvar Kağıdı ve Stil</string>
     <string name="pref_wallpaper_style_desc">Renkler, tema, uygulama simgesi</string>
-    <string name="sect_custom">Özelleştirme</string>
+    <string name="sect_custom">Kişiselleştirme</string>
     <string name="label_applied_dpi">Uygulanan DPI</string>
     <string name="pref_applied_dpi_desc">Mevcut: %1$d dpi</string>
     <string name="pref_alt_icon">Alternatif Simge</string>
-    <string name="pref_alt_icon_desc">Alternatif uygulama simgesi kullan</string>
-    <string name="pref_polling">Yoklama Aralığı</string>
+    <string name="pref_alt_icon_desc">Alternatif uygulama simgesini kullan</string>
+    <string name="pref_polling">Yenileme Aralığı</string>
     <string name="pref_polling_desc">%1$dms</string>
 
     <string name="dialog_title_dpi">Uygulanan DPI</string>
-    <string name="dialog_msg_dpi">Mevcut cihaz DPI\'si %1$d. Uygulama yoğunluğunu değiştirmek için kaydırıcıyı ayarlayın.\n\nSeçilen: %2$d dpi</string>
-    <string name="dialog_title_polling">Yoklama Aralığı</string>
-    <string name="dialog_msg_polling">Sistem izleme için yenileme aralığını ayarlayın (1–30 saniye).</string>
+    <string name="dialog_msg_dpi">Mevcut cihaz DPI değeri: %1$d. Uygulama yoğunluğunu değiştirmek için kaydırıcıyı ayarlayın.\n\nSeçilen: %2$d dpi</string>
+    <string name="dialog_title_polling">Yenileme Aralığı</string>
+    <string name="dialog_msg_polling">Sistem izleme için yenileme aralığını belirleyin (1–30 saniye).</string>
     <string name="label_interval_sec">Aralık (saniye)</string>
     <string name="btn_confirm">Onayla</string>
     <string name="btn_cancel">İptal</string>
@@ -102,46 +102,46 @@
     <string name="fps_tab_home">Ana Sayfa</string>
     <string name="fps_tab_stats">İstatistikler</string>
     <string name="fps_tab_games">Oyunlar</string>
-    <string name="fps_tab_overlay">Katman</string>
+    <string name="fps_tab_overlay">Yer Paylaşımı (Overlay)</string>
 
     <string name="fps_system_access">Sistem Erişimi</string>
     <string name="fps_reader_mode">FPS Okuyucu Modu</string>
     <string name="fps_mode_universal_android">Evrensel Android</string>
-    <string name="fps_mode_android_desc">Maks. Android 13/14</string>
+    <string name="fps_mode_android_desc">Maksimum Android 13/14</string>
     <string name="fps_mode_universal_gpu">Evrensel GPU</string>
-    <string name="fps_mode_gpu_desc">Neredeyse tüm GPU\'lar destekler (Adreno/Diğer)</string>
+    <string name="fps_mode_gpu_desc">Neredeyse tüm GPU\'lar destekler (Adreno/Diğerleri)</string>
     <string name="fps_mode_universal_devices">Evrensel Cihazlar</string>
-    <string name="fps_mode_devices_desc">Herhangi bir cihaz (dumpsys timestats kullanarak)</string>
+    <string name="fps_mode_devices_desc">Herhangi bir cihaz (dumpsys timestats kullanılarak)</string>
     <string name="fps_beta_label">BETA</string>
     <string name="fps_device_env">Cihaz Ortamı</string>
     <string name="fps_manufacturer">Üretici</string>
     <string name="fps_model">Model</string>
     <string name="fps_android_ver">Android Sürümü</string>
-    <string name="fps_overlay_service">Katman Hizmeti</string>
+    <string name="fps_overlay_service">Yer Paylaşımı Servisi</string>
     <string name="fps_service_active">Aktif ve İzleniyor</string>
-    <string name="fps_service_stopped">Hizmet Durduruldu</string>
+    <string name="fps_service_stopped">Servis Durduruldu</string>
     <string name="fps_checking_root">Root Kontrol Ediliyor…</string>
     <string name="fps_root_needed">Root Erişimi Gerekli</string>
-    <string name="fps_start_service">Hizmeti Başlat</string>
-    <string name="fps_stop_service">Hizmeti Durdur</string>
+    <string name="fps_start_service">Servisi Başlat</string>
+    <string name="fps_stop_service">Servisi Durdur</string>
     <string name="fps_root_granted">Root Erişimi Verildi</string>
     <string name="fps_root_not_found">Root Bulunamadı</string>
-    <string name="fps_root_available_desc">KernelSU / Magisk algılandı. Tam işlevsellik mevcut.</string>
+    <string name="fps_root_available_desc">KernelSU / Magisk tespit edildi. Tam işlevsellik mevcut.</string>
     <string name="fps_root_missing_desc">FPS Yöneticisini kullanmak için lütfen cihazınızı rootlayın.</string>
 
     <string name="fps_game_launcher">Oyun Başlatıcı</string>
     <string name="fps_game_launcher_desc">İzlemeyi başlatmak için oyunları başlatın</string>
 
-    <string name="fps_overlay_active">Katman Aktif</string>
-    <string name="fps_overlay_showing">Gerçek zamanlı istatistikleri gösteriyor</string>
+    <string name="fps_overlay_active">Yer Paylaşımı Aktif</string>
+    <string name="fps_overlay_showing">Gerçek zamanlı istatistikler gösteriliyor</string>
     <string name="fps_overlay_tap_enable">Etkinleştirmek için anahtara dokunun</string>
-    <string name="fps_overlay_style">Katman Stili</string>
+    <string name="fps_overlay_style">Yer Paylaşımı Stili</string>
     <string name="fps_style_android">Android</string>
     <string name="fps_style_pc">PC Modu</string>
     <string name="fps_style_mini">Mini</string>
     <string name="fps_pc_options">PC Modu Seçenekleri</string>
-    <string name="fps_show_render">Render Adını Göster (Vulkan/OGL)</string>
-    <string name="fps_orientation">Yönlendirme</string>
+    <string name="fps_show_render">Oluşturucu Adını Göster (Vulkan/OGL)</string>
+    <string name="fps_orientation">Yönelim</string>
     <string name="fps_vertical">Dikey</string>
     <string name="fps_horizontal">Yatay</string>
     <string name="fps_metrics">Metrikler</string>
@@ -155,7 +155,7 @@
     <string name="fps_width_scale">Genişlik Ölçeği</string>
     <string name="fps_opacity">Opaklık</string>
     <string name="fps_color_theme">Renk Teması</string>
-    <string name="fps_color_android_only">Özel renk yalnızca Android Modunda mevcut</string>
+    <string name="fps_color_android_only">Özel renk yalnızca Android Modunda kullanılabilir</string>
     <string name="fps_custom_color">Özel Renk</string>
     <string name="fps_color_red">R</string>
     <string name="fps_color_green">G</string>
@@ -166,8 +166,8 @@
     <string name="fps_stat_max">MAKS FPS</string>
     <string name="fps_stat_min">MİN FPS</string>
     <string name="fps_stat_avg">ORT FPS</string>
-    <string name="fps_stat_var">VARYANS</string>
-    <string name="fps_stat_stable">STABİL %</string>
+    <string name="fps_stat_var">SAPMA</string>
+    <string name="fps_stat_stable">SABİTLİK %</string>
     <string name="fps_stat_max_temp">MAKS SICAKLIK</string>
     <string name="fps_stat_avg_pwr">ORT GÜÇ</string>
     <string name="fps_stat_ram">RAM</string>
@@ -178,7 +178,7 @@
 
     <string name="setedit_title">SetEdit</string>
     <string name="setedit_subtitle">Veritabanı Düzenleyici</string>
-    <string name="setedit_search_hint">Özellik ara...</string>
+    <string name="setedit_search_hint">Özellikleri ara...</string>
     <string name="setedit_view_grid">Izgara</string>
     <string name="setedit_view_list">Liste</string>
     <string name="setedit_empty">Özellik bulunamadı</string>
@@ -191,27 +191,27 @@
     <string name="setedit_tab_android">Android</string>
 
     <string name="setedit_msg_saved">Kaydedildi:</string>
-    <string name="setedit_msg_failed">Kaydetme başarısız</string>
+    <string name="setedit_msg_failed">Kaydedilemedi</string>
     <string name="setedit_msg_deleted">Silindi:</string>
     <string name="setedit_msg_error_delete">Android özellikleri silinemez</string>
 
     <string name="setedit_sheet_title">Özelliği Düzenle</string>
-    <string name="setedit_label_key">Anahtar</string>
+    <string name="setedit_label_key">Anahtar (Key)</string>
     <string name="setedit_label_original">Orijinal Değer</string>
     <string name="setedit_label_edit">Yeni Değer</string>
     <string name="setedit_btn_remove">Kaldır</string>
     <string name="setedit_btn_save">Kaydet</string>
 
-    <string name="home_update_new">Yenilikler:</string>
+    <string name="home_update_new">Neler yeni:</string>
     <string name="home_update_avail">Güncelleme Mevcut:</string>
 
     <string name="about_maintainer_title">ZKM Projeleri Sorumlusu</string>
-    <string name="about_opensource_thanks">Açık kaynak projelerine teşekkürler</string>
+    <string name="about_opensource_thanks">Açık kaynak projelere teşekkürler</string>
     <string name="about_section_categories">Kategoriler</string>
     <string name="about_section_links">Bağlantılar</string>
     <string name="about_link_channel">Kanal</string>
     <string name="about_link_discussion">Tartışma</string>
-    <string name="about_link_translate">Çevir</string>
+    <string name="about_link_translate">Çeviri</string>
     <string name="about_link_website">Web Sitesi</string>
     <string name="about_version_format">v%1$s (%2$d)</string>
 
@@ -222,7 +222,7 @@
     <string name="soc_system_monitor">Sistem Monitörü</string>
 
     <string name="home_features">Özellikler</string>
-    <string name="home_dashboard">Pano</string>
+    <string name="home_dashboard">Kontrol Paneli</string>
     <string name="home_device_content_desc">Cihaz</string>
 
     <string name="cat_all">Tümü</string>
@@ -239,30 +239,30 @@
     <string name="ext_thermal">Termal</string>
     <string name="ext_display">Ekran</string>
     <string name="ext_battery">Pil</string>
-    <string name="ext_dozemode">DozeModu</string>
-    <string name="ext_logs">Günlükler</string>
-    <string name="ext_fps">Fps</string>
+    <string name="ext_dozemode">Doze Modu</string>
+    <string name="ext_logs">Loglar</string>
+    <string name="ext_fps">FPS</string>
     <string name="ext_process">İşlem</string>
     <string name="ext_ksuweb">KsuWeb</string>
 
-    <string name="desc_terminal">Komut yaz</string>
+    <string name="desc_terminal">Komut yazın</string>
     <string name="desc_setedit">Veritabanını düzenle</string>
     <string name="desc_flasher">İmajları flashla</string>
-    <string name="desc_launcher">Uygulama etkinliği</string>
-    <string name="desc_dod">Uygulamayı devre dışı bırak/dondur</string>
+    <string name="desc_launcher">Uygulama aktiviteleri</string>
+    <string name="desc_dod">Uygulamayı Devre dışı bırak/Dondur</string>
     <string name="desc_compiler">Dex2oat optimize edici</string>
-    <string name="desc_thermal">İzle ve kontrol et</string>
-    <string name="desc_display">Değişiklikler ve daha fazlası</string>
+    <string name="desc_thermal">İzleme ve kontrol</string>
+    <string name="desc_display">Modifikasyonlar ve daha fazlası</string>
     <string name="desc_battery">Şarj istatistikleri denetleyicisi</string>
-    <string name="desc_dozemode">Doze modunu optimize et</string>
-    <string name="desc_logs">Günlükleri oku</string>
-    <string name="desc_fps">Kare hızı</string>
+    <string name="desc_dozemode">Doze modunu optimize edin</string>
+    <string name="desc_logs">Log kayıtlarını oku</string>
+    <string name="desc_fps">Kare hızı (Frame rate)</string>
     <string name="desc_process">Görev yöneticisi</string>
     <string name="desc_ksuweb">Web yöneticisi</string>
 
-    <string name="overall_title">Genel</string>
+    <string name="overall_title">Genel Durum</string>
     <string name="overall_subtitle">Zuan Kernel Manager</string>
-    <string name="overall_dashboard">Pano</string>
+    <string name="overall_dashboard">Kontrol Paneli</string>
     <string name="overall_processor">İşlemci</string>
     <string name="overall_graphics">Grafikler</string>
     <string name="overall_memory">Bellek</string>
@@ -272,18 +272,18 @@
     <string name="core_detail_title">Çekirdek %1$d</string>
     <string name="core_detail_governor">Governor:</string>
     <string name="core_detail_params">Governor Parametreleri</string>
-    <string name="core_detail_no_params">Mevcut parametre yok.</string>
+    <string name="core_detail_no_params">Kullanılabilir parametre yok.</string>
     <string name="core_detail_cancel">İptal</string>
     <string name="core_detail_settings">Ayarlar</string>
 
     <string name="cpu_total_load">Toplam Yük</string>
     <string name="cpu_core_usage">Çekirdek Kullanımı</string>
-    <string name="cpu_loading">Çekirdekler Yükleniyor…</string>
-    <string name="cpu_top_processes">En İyi İşlemler</string>
+    <string name="cpu_loading">Çekirdekler Yükleniyor...</string>
+    <string name="cpu_top_processes">En Yoğun İşlemler</string>
     <string name="cpu_view_all">Tümünü Gör</string>
 
     <string name="gpu_load">GPU Yükü</string>
-    <string name="gpu_renderer_info">Renderer Bilgisi</string>
+    <string name="gpu_renderer_info">Oluşturucu Bilgisi</string>
 
     <string name="ram_physical">Fiziksel RAM</string>
     <string name="ram_swap_zram">Swap / ZRAM</string>
@@ -292,41 +292,41 @@
     <string name="ram_total">Toplam</string>
 
     <string name="vm_swappiness">Swappiness</string>
-    <string name="vm_extra_free">Ekstra Boş Kilobayt</string>
-    <string name="vm_watermark">Filigran Ölçeği</string>
+    <string name="vm_extra_free">Ekstra Boş KB (Extra Free Kbytes)</string>
+    <string name="vm_watermark">Watermark Ölçeği</string>
     <string name="vm_vfs_cache">VFS Önbellek Baskısı</string>
-    <string name="vm_dirty_ratio">Kirli Oran</string>
-    <string name="vm_dirty_bg">Kirli BG Oranı</string>
+    <string name="vm_dirty_ratio">Kirli Veri Oranı (Dirty Ratio)</string>
+    <string name="vm_dirty_bg">Arka Plan Kirli Veri Oranı</string>
 
     <string name="display_density">Yoğunluk</string>
     <string name="display_hdr">HDR Desteği</string>
 
-    <string name="temp_freezing">Donma</string>
+    <string name="temp_freezing">Dondurucu</string>
     <string name="temp_cool">Serin</string>
     <string name="temp_warm">Ilık</string>
     <string name="temp_hot">Sıcak</string>
     <string name="temp_overheat">Aşırı Isınma</string>
     <string name="temp_temperature">Sıcaklık</string>
 
-    <string name="battery_details">Detaylar</string>
+    <string name="battery_details">Ayrıntılar</string>
     <string name="battery_uptime">Çalışma Süresi</string>
     <string name="battery_deep_sleep">Derin Uyku</string>
     <string name="battery_electric_current">Elektrik akımı</string>
     <string name="battery_health">Sağlık</string>
-    <string name="battery_cycles">Döngüler</string>
+    <string name="battery_cycles">Döngü Sayısı</string>
 
     <string name="update_available">Güncelleme Mevcut: %1$s</string>
-    <string name="update_tap_install">Değişiklik günlüğünü görüntülemek ve yüklemek için dokun</string>
+    <string name="update_tap_install">Değişiklikleri görmek ve yüklemek için dokunun</string>
 
     <string name="device_android_version">Android Sürümü</string>
     <string name="device_kernel_info">Kernel Bilgisi</string>
-    <string name="status_loading">Yükleniyor…</string>
+    <string name="status_loading">Yükleniyor...</string>
 
     <string name="terminal_title">zuan@kernel</string>
     <string name="terminal_overlay_title">zuan@overlay</string>
     <string name="terminal_overlay_title_locked">zuan@overlay [KİLİTLİ]</string>
     <string name="terminal_preferences_title">TERCİHLER</string>
-    <string name="terminal_overlay_active">Terminal Katmanı Aktif</string>
+    <string name="terminal_overlay_active">Terminal Yer Paylaşımı Aktif</string>
     <string name="terminal_custom_bg_desc">Özel Arka Plan</string>
 
     <string name="action_close">Kapat</string>
@@ -335,91 +335,91 @@
     <string name="action_settings">Ayarlar</string>
     <string name="action_input_keyboard">Klavye Girişi</string>
 
-    <string name="terminal_glass_mode">Cam Modu A12+</string>
-    <string name="terminal_theme_dark_glass">Tema: Koyu Cam</string>
-    <string name="terminal_theme_light_glass">Tema: Açık Cam</string>
+    <string name="terminal_glass_mode">Glass Modu A12+</string>
+    <string name="terminal_theme_dark_glass">Tema: Karanlık Cam (Dark Glass)</string>
+    <string name="terminal_theme_light_glass">Tema: Aydınlık Cam (Light Glass)</string>
     <string name="terminal_glass_intensity">Cam Yoğunluğu: %1$d dp</string>
     <string name="terminal_background_section">ARKA PLAN</string>
     <string name="terminal_live_video_wall">Canlı Video Duvarı (4K)</string>
     <string name="terminal_change_video">Videoyu Değiştir</string>
-    <string name="terminal_video_dim">Video Karartma: %1$d%%</string>
+    <string name="terminal_video_dim">Video Karartma: %% %1$d</string>
     <string name="terminal_custom_image">Özel Görüntü</string>
     <string name="terminal_select_image">Yeni Görüntü Seç</string>
     <string name="terminal_image_blur">Görüntü Bulanıklığı: %1$d dp</string>
-    <string name="terminal_image_dim">Görüntü Karartma: %1$d%%</string>
-    <string name="terminal_bubble_gradient">Balon Gradyanı</string>
-    <string name="terminal_bg_dark_mode">Arka Plan: Koyu Mod</string>
-    <string name="terminal_bg_light_mode">Arka Plan: Açık Mod</string>
-    <string name="terminal_live_gradient">Canlı Gradyan Animasyonu</string>
+    <string name="terminal_image_dim">Görüntü Karartma: %% %1$d</string>
+    <string name="terminal_bubble_gradient">Baloncuk Degradesi (Bubble Gradient)</string>
+    <string name="terminal_bg_dark_mode">AP: Karanlık Mod</string>
+    <string name="terminal_bg_light_mode">AP: Aydınlık Mod</string>
+    <string name="terminal_live_gradient">Canlı Degrade Animasyonu</string>
     <string name="terminal_fullscreen">Tam Ekran (UI)</string>
-    <string name="terminal_floating_mode">Yüzen Mod (Katman)</string>
+    <string name="terminal_floating_mode">Yüzen Mod (Yer Paylaşımı)</string>
 
     <string name="kernel_flasher_title">Kernel Flasher</string>
     <string name="flasher_mode_horizon">Horizon</string>
     <string name="flasher_mode_capntrips">Capntrips</string>
-    <string name="flasher_init">Başlatılıyor…</string>
-    <string name="flasher_checking_tools">Araçlar Kontrol Ediliyor…</string>
+    <string name="flasher_init">Başlatılıyor...</string>
+    <string name="flasher_checking_tools">Araçlar Kontrol Ediliyor...</string>
     <string name="flasher_ready">Hazır</string>
     <string name="flasher_error">Hata: %1$s</string>
-    <string name="flasher_connecting_root">Root\'a Bağlanıyor…</string>
-    <string name="flasher_scanning_partitions">Bölümler Taranıyor…</string>
-    <string name="please_wait">Lütfen bekleyin…</string>
-    <string name="error_occurred">Bir Hata Oluştu</string>
+    <string name="flasher_connecting_root">Root Bağlantısı Kuruluyor...</string>
+    <string name="flasher_scanning_partitions">Bölümler Taranıyor...</string>
+    <string name="please_wait">Lütfen bekleyin...</string>
+    <string name="error_occurred">Hata Oluştu</string>
     <string name="unknown_error">Bilinmeyen Hata</string>
     <string name="go_back">Geri Git</string>
     <string name="slot_a_not_found">Slot A Bulunamadı</string>
     <string name="slot_b_not_available">Slot B Mevcut Değil</string>
     <string name="slot_vm_not_found">Slot VM Bulunamadı</string>
     <string name="confirm_reboot_system">SİSTEMİ YENİDEN BAŞLATMAYI ONAYLA</string>
-    <string name="scanning">Taranıyor…</string>
+    <string name="scanning">Taranıyor...</string>
 
-    <string name="horizon_engine_legacy">Horizon Motoru (Eski)</string>
+    <string name="horizon_engine_legacy">Horizon Motoru (Eski Sürüm)</string>
     <string name="device_model">Cihaz Modeli</string>
     <string name="kernel_version">Kernel Sürümü</string>
     <string name="active_slot">Aktif Slot</string>
     <string name="slot_current">Slot %1$s</string>
-    <string name="boot_partitions">Önyükleme Bölümleri</string>
+    <string name="boot_partitions">Boot Bölümleri</string>
     <string name="slot_a">Slot A</string>
     <string name="slot_b">Slot B</string>
     <string name="flasher_console">Flasher Konsolu</string>
     <string name="terminal_output">Terminal Çıktısı</string>
-    <string name="horizon_ready">> Horizon Motoru Hazır…</string>
-    <string name="flashing_kernel_progress">Kernel Flashlanıyor…</string>
+    <string name="horizon_ready">> Horizon Motoru Hazır...</string>
+    <string name="flashing_kernel_progress">Kernel Flashlanıyor...</string>
     <string name="flash_horizon_method">Flashla (Horizon Yöntemi)</string>
-    <string name="flashing_complete">Flash Tamamlandı</string>
-    <string name="flasher_reboot_message">Kernel imajı başarıyla flashlandı. Değişiklikleri uygulamak için yeniden başlatma önerilir.</string>
+    <string name="flashing_complete">Flashlama Tamamlandı</string>
+    <string name="flasher_reboot_message">Kernel imajı başarıyla flashlandı. Değişikliklerin uygulanması için cihazı yeniden başlatmanız önerilir.</string>
     <string name="reboot_system">Sistemi Yeniden Başlat</string>
-    <string name="later">Sonra</string>
+    <string name="later">Daha Sonra</string>
     <string name="active_label">Aktif</string>
-    <string name="format_label">Biçim: %1$s</string>
+    <string name="format_label">Fmt: %1$s</string>
 
-    <string name="flasher_init_process">Flash İşlemi Başlatılıyor…</string>
-    <string name="flasher_success">[BAŞARILI] Flash Tamamlandı.</string>
-    <string name="flasher_failed">[BAŞARISIZ] Bir hata oluştu.</string>
-    <string name="flasher_toast_failed">Flash Başarısız!</string>
-    <string name="loading">Yükleniyor…</string>
+    <string name="flasher_init_process">Flashlama İşlemi Başlatılıyor...</string>
+    <string name="flasher_success">[BAŞARILI] Flashlama Tamamlandı.</string>
+    <string name="flasher_failed">[BAŞARISIZ] Hata oluştu.</string>
+    <string name="flasher_toast_failed">Flashlama Başarısız!</string>
+    <string name="loading">Yükleniyor...</string>
 
-    <string name="activity_launcher_title">Etkinlik Başlatıcı</string>
+    <string name="activity_launcher_title">Aktivite Başlatıcı</string>
     <string name="search_hint">Uygulama ara…</string>
     <string name="loading_apps">Uygulamalar Yükleniyor…</string>
-    <string name="apps_installed_count">Yüklenen Uygulamalar (%1$d)</string>
+    <string name="apps_installed_count">Yüklü Uygulamalar (%1$d)</string>
     <string name="user_apps">Kullanıcı Uygulamaları</string>
     <string name="system_apps">Sistem Uygulamaları</string>
     <string name="active_apps">Aktif Uygulamalar</string>
     <string name="recycle_bin">Geri Dönüşüm Kutusu</string>
     <string name="app_detail_title">Uygulama Detayı</string>
     <string name="version_info">Sürüm: %1$s (%2$s)</string>
-    <string name="total_activities">Toplam Etkinlik: %1$d</string>
-    <string name="activity_list">Etkinlik Listesi</string>
-    <string name="launch_activity_title">Etkinlik Başlatılsın mı?</string>
-    <string name="activity_name">Etkinlik Adı</string>
-    <string name="class_label">Sınıf</string>
+    <string name="total_activities">Toplam Aktivite: %1$d</string>
+    <string name="activity_list">Aktivite Listesi</string>
+    <string name="launch_activity_title">Aktivite Başlatılsın mı?</string>
+    <string name="activity_name">Aktivite Adı</string>
+    <string name="class_label">Sınıf (Class)</string>
     <string name="package_label">Paket</string>
     <string name="launch">Başlat</string>
     <string name="copy_info">Bilgiyi Kopyala</string>
-    <string name="display_settings">Görüntü Ayarları</string>
-    <string name="name_asc">Ad A-Z</string>
-    <string name="name_desc">Ad Z-A</string>
+    <string name="display_settings">Görünüm Ayarları</string>
+    <string name="name_asc">İsim A-Z</string>
+    <string name="name_desc">İsim Z-A</string>
     <string name="filter_all">Tümü</string>
     <string name="filter_system">Sistem</string>
     <string name="filter_user">Kullanıcı</string>
@@ -429,13 +429,13 @@
     <string name="error_message">Hata: %1$s</string>
     <string name="btn_back">Geri</string>
     <string name="permission_required">İzin Gerekli</string>
-    <string name="inspector_started">Denetçi Başlatıldı</string>
-    <string name="toggle_inspector">Denetçiyi Değiştir</string>
-    <string name="scanning_activities">Etkinlikler Tarınıyor…</string>
-    <string name="activities">Etkinlikler</string>
+    <string name="inspector_started">Denetleyici Başlatıldı</string>
+    <string name="toggle_inspector">Denetleyiciyi Değiştir (Toggle)</string>
+    <string name="scanning_activities">Aktiviteler Taranıyor…</string>
+    <string name="activities">Aktiviteler</string>
 
     <string name="battery_statistics_title">Pil İstatistikleri</string>
-    <string name="battery_tab_dashboard">Pano</string>
+    <string name="battery_tab_dashboard">Kontrol Paneli</string>
     <string name="battery_tab_controls">Kontroller</string>
     <string name="battery_tab_settings">Ayarlar</string>
 
@@ -450,9 +450,9 @@
     <string name="battery_discharge">Deşarj</string>
     <string name="battery_charge_max">Maks Şarj</string>
     <string name="battery_current_live_chart">Canlı Akım Grafiği</string>
-    <string name="battery_bms_data">BMS / Uevent Verileri</string>
+    <string name="battery_bms_data">BMS / Uevent Verisi</string>
     <string name="battery_discharge_charge_speed">Deşarj/Şarj Hızı</string>
-    <string name="battery_charging_type">Şarj Türü</string>
+    <string name="battery_charging_type">Şarj Tipi</string>
     <string name="battery_level">Pil Seviyesi</string>
     <string name="battery_current_voltage">Mevcut Voltaj</string>
     <string name="battery_max_voltage">Maks Voltaj</string>
@@ -462,44 +462,44 @@
     <string name="battery_cycle_count">Döngü Sayısı</string>
     <string name="battery_real_capacity">Gerçek Kapasite</string>
 
-    <string name="battery_monitor_service">Pil İzleme Hizmeti</string>
+    <string name="battery_monitor_service">Pil İzleme Servisi</string>
     <string name="battery_monitor_service_desc">Arka planda pil istatistiklerini kaydet</string>
     <string name="battery_enable_charging">Şarjı Etkinleştir</string>
-    <string name="battery_enable_charging_desc">Şarjı açma/kapama ana anahtarı</string>
-    <string name="battery_smart_cutoff">Akıllı Kesme</string>
-    <string name="battery_smart_cutoff_desc">Hedef limite şarj hizmetini durdur</string>
-    <string name="battery_limit_label">Limit: %1$d%%</string>
+    <string name="battery_enable_charging_desc">Şarjı açıp kapatmak için ana şalter</string>
+    <string name="battery_smart_cutoff">Akıllı Şarj Kesme</string>
+    <string name="battery_smart_cutoff_desc">Hedef sınırda şarj servisini durdur</string>
+    <string name="battery_limit_label">Sınır: %% %1$d</string>
     <string name="battery_thermal_profile">Termal Profil</string>
-    <string name="battery_select_thermal_profile">Termal Profil Seç</string>
+    <string name="battery_select_thermal_profile">Termal Profili Seçin</string>
     <string name="battery_thermal_default">Varsayılan (0)</string>
     <string name="battery_thermal_gaming">Oyun (13)</string>
     <string name="battery_thermal_benchmark">Benchmark (10)</string>
     <string name="battery_fast_charging">Hızlı Şarj</string>
     <string name="battery_fast_charging_desc">Hızlı şarjı zorla etkinleştir/devre dışı bırak</string>
-    <string name="battery_bypass_charging">Bypass Şarj</string>
-    <string name="battery_bypass_charging_desc">Cihazı doğrudan kaynaktan besle</string>
-    <string name="battery_charging_speed_limit">Şarj Hızı Limiti</string>
+    <string name="battery_bypass_charging">Bypass Şarjı</string>
+    <string name="battery_bypass_charging_desc">Cihaza doğrudan güç kaynağından güç sağla</string>
+    <string name="battery_charging_speed_limit">Şarj Hızı Sınırı</string>
     <string name="battery_saver_mode">Pil Tasarrufu Modu</string>
-    <string name="battery_saver_mode_desc">Güç tüketimini azalt</string>
+    <string name="battery_saver_mode_desc">Güç tüketimini azaltın</string>
 
-    <string name="battery_system_charging_limit">Sistem Şarj Limiti</string>
-    <string name="battery_system_charging_limit_desc">Pil sağlığını korumak için genel Kernel arayüzünü kullanarak şarjı sınırla.</string>
+    <string name="battery_system_charging_limit">Sistem Şarj Sınırı</string>
+    <string name="battery_system_charging_limit_desc">Pil sağlığını korumak için jenerik Kernel arayüzünü kullanarak şarjı sınırlayın.</string>
     <string name="battery_health_tips">Pil Sağlığı İpuçları</string>
-    <string name="battery_tip_temp_title">Aşırı Sıcaklıklardan Kaçın</string>
-    <string name="battery_tip_temp_desc">Optimal sağlık için pili 20°C - 30°C arasında tut</string>
-    <string name="battery_tip_discharge_title">Tam Deşarjdan Kaçın</string>
-    <string name="battery_tip_discharge_desc">Pili sık sık %%20\'nin altına düşürme</string>
+    <string name="battery_tip_temp_title">Aşırı Sıcaklıklardan Kaçının</string>
+    <string name="battery_tip_temp_desc">Optimum sağlık için pili 20°C - 30°C arasında tutun</string>
+    <string name="battery_tip_discharge_title">Tamamen Deşarj Etmekten Kaçının</string>
+    <string name="battery_tip_discharge_desc">Pil seviyesinin sık sık %%20\'nin altına düşmesine izin vermeyin</string>
 
     <string name="dod_title">DoD Yöneticisi</string>
     <string name="dod_back">Geri</string>
     <string name="dod_search_hint">Paket veya uygulama adı ara…</string>
-    <string name="dod_user_apps">Kullanıcı Uygulamaları</string>
+    <string name="dod_user_apps">Kullanıcı</string>
     <string name="dod_system_apps">Sistem</string>
-    <string name="dod_frozen_apps">Donmuş</string>
+    <string name="dod_frozen_apps">Dondurulmuş</string>
     <string name="dod_tab_all">Tümü</string>
     <string name="dod_tab_user">Kullanıcı</string>
     <string name="dod_tab_system">Sistem</string>
-    <string name="dod_tab_frozen">Donmuş</string>
+    <string name="dod_tab_frozen">Dondurulmuş</string>
     <string name="dod_status_frozen">DONDURULDU</string>
     <string name="dod_app_info">Uygulama Bilgisi</string>
     <string name="dod_version">Sürüm</string>
@@ -513,29 +513,29 @@
     <string name="dod_action_uninstall">KALDIR</string>
     <string name="dod_system_warning_title">Sistem Uygulaması Uyarısı</string>
     <string name="dod_system_warning_desc">Bir sistem uygulamasını %1$s üzeresiniz:</string>
-    <string name="dod_system_warning_notice">Sistem uygulamalarını kaldırmak veya devre dışı bırakmak bootloop, çökme veya cihaz istikrarsızlığına neden olabilir. Yalnızca ne yaptığınızı biliyorsanız devam edin.</string>
+    <string name="dod_system_warning_notice">Sistem uygulamalarını kaldırmak veya devre dışı bırakmak bootloop, çökmeler veya cihaz kararsızlığına neden olabilir. Yalnızca ne yaptığınızı biliyorsanız devam edin.</string>
     <string name="dod_accept_risk">Riski ve sorumluluğu kabul ediyorum.</string>
     <string name="dod_confirm_freeze">Dondurmayı Onayla</string>
-    <string name="dod_confirm_debloat">Debloat\'u Onayla</string>
+    <string name="dod_confirm_debloat">Debloat İşlemini Onayla</string>
 
-    <string name="dex2oat_title">Uygulama Derleyicisi</string>
+    <string name="dex2oat_title">Uygulama Derleyici</string>
     <string name="dex2oat_back">Geri</string>
     <string name="dex2oat_options">Seçenekler</string>
     <string name="dex2oat_compile_all">Her Şeyi Derle</string>
-    <string name="dex2oat_art_title">Android Runtime (ART) Hakkında</string>
-    <string name="dex2oat_art_desc">JIT/AOT derlemesinin nasıl çalıştığını ve performansı nasıl etkilediğini öğren.</string>
-    <string name="dex2oat_view_source">Kaynak Dokümantasyonu Görüntüle</string>
+    <string name="dex2oat_art_title">Android Çalışma Zamanı (ART) Hakkında</string>
+    <string name="dex2oat_art_desc">JIT/AOT derlemesinin nasıl çalıştığını ve performansı nasıl etkilediğini öğrenin.</string>
+    <string name="dex2oat_view_source">Kaynak Dokümantasyonunu Görüntüle</string>
     <string name="dex2oat_search_hint">Uygulama ara…</string>
     <string name="dex2oat_compilation_mode">Derleme Modu (Zorla)</string>
     <string name="dex2oat_compile_system_only">Yalnızca Sistem Uygulamalarını Derle</string>
     <string name="dex2oat_compile_user_only">Yalnızca Kullanıcı Uygulamalarını Derle</string>
-    <string name="dex2oat_reset_all">Tüm Derlemeyi Sıfırla</string>
+    <string name="dex2oat_reset_all">Tüm Derlemeleri Sıfırla</string>
     <string name="dex2oat_system_app">Sistem Uygulaması</string>
 
     <string name="display_title">Ekran Yöneticisi</string>
     <string name="display_back">Geri</string>
     <string name="display_tab_info">Bilgi</string>
-    <string name="display_tab_res_dpi">Çözünürlük/DPI</string>
+    <string name="display_tab_res_dpi">Çöz/DPI</string>
     <string name="display_tab_color">Renk</string>
     <string name="display_tab_extra">Ekstra</string>
     <string name="display_device_info">Cihaz Ekran Bilgisi</string>
@@ -543,12 +543,12 @@
     <string name="display_density_dpi">Yoğunluk (DPI)</string>
     <string name="display_exact_dpi">Tam X/Y DPI</string>
     <string name="display_technology">Teknoloji</string>
-    <string name="display_diagonal_size">Köşegen Boyutu</string>
+    <string name="display_diagonal_size">Diyagonal Boyut</string>
     <string name="display_physical_size">Fiziksel Boyut</string>
     <string name="display_refresh_rate">Yenileme Hızı</string>
-    <string name="display_orientation">Yönlendirme</string>
+    <string name="display_orientation">Yönelim</string>
     <string name="display_graphics_hdr">Grafikler ve HDR</string>
-    <string name="display_gpu_renderer">GPU Renderer</string>
+    <string name="display_gpu_renderer">GPU Oluşturucu</string>
     <string name="display_opengl_version">OpenGL Sürümü</string>
     <string name="display_hdr_support">HDR Desteği</string>
     <string name="display_wide_color_gamut">Geniş Renk Gamı</string>
@@ -556,21 +556,21 @@
     <string name="display_not_supported">Desteklenmiyor</string>
     <string name="display_resolution_section">Çözünürlük</string>
     <string name="display_current_resolution">Mevcut: %1$s</string>
-    <string name="display_tap_presets">Hazır Ayarlar için Dokun</string>
+    <string name="display_tap_presets">Ön Ayarlar için Dokunun</string>
     <string name="display_manual_input">Manuel Giriş</string>
     <string name="display_reset">Sıfırla</string>
-    <string name="display_presets">Hazır Ayarlar</string>
+    <string name="display_presets">Ön Ayarlar</string>
     <string name="display_density_section">Yoğunluk (DPI)</string>
     <string name="display_current_dpi">Mevcut: %1$d dpi</string>
-    <string name="display_density_desc">Düşük = Daha Küçük UI, Yüksek = Daha Büyük UI</string>
+    <string name="display_density_desc">Düşük = Daha Küçük Arayüz, Yüksek = Daha Büyük Arayüz</string>
     <string name="display_saturation_title">Renk Doygunluğu</string>
     <string name="display_saturation_level">Doygunluk Seviyesi</string>
-    <string name="display_bw">S&amp;B (0.0)</string>
+    <string name="display_bw">Siyah/Beyaz (0.0)</string>
     <string name="display_default">Varsayılan (1.0)</string>
     <string name="display_vivid">Canlı (2.0)</string>
     <string name="display_screen_timeout">Ekran Zaman Aşımı</string>
     <string name="display_font_scale">Sistem Yazı Tipi Ölçeği</string>
-    <string name="display_current_scale">Mevcut Ölçek: %1$d%%</string>
+    <string name="display_current_scale">Mevcut Ölçek: %% %1$d</string>
     <string name="display_animation_speed">Animasyon Hızı</string>
     <string name="display_off">Kapalı</string>
     <string name="display_night_light">Gece Işığı</string>
@@ -584,58 +584,58 @@
     <string name="doze_title">Doze Modu</string>
     <string name="doze_back">Geri</string>
     <string name="doze_system_state">Sistem Durumu</string>
-    <string name="doze_idle_count">Boşta Sayısı</string>
+    <string name="doze_idle_count">Boşta Kalma (Idle) Sayısı</string>
     <string name="doze_tab_apps">Uygulamalar</string>
     <string name="doze_tab_whitelist">Beyaz Liste</string>
     <string name="doze_tab_controls">Kontroller</string>
     <string name="doze_tab_settings">Ayarlar</string>
     <string name="doze_search_whitelist">Beyaz listede ara…</string>
     <string name="doze_search_all">Tüm uygulamalarda ara…</string>
-    <string name="doze_no_whitelisted">Beyaz listede uygulama yok.</string>
+    <string name="doze_no_whitelisted">Beyaz listeye alınmış uygulama yok.</string>
     <string name="doze_no_apps_found">Uygulama bulunamadı.</string>
     <string name="doze_system_app">Sistem</string>
     <string name="doze_gms_title">Google Play Hizmetleri (GMS)</string>
-    <string name="doze_force_gms">GMS Doze\'u Zorla</string>
-    <string name="doze_gms_subtitle">Pil tüketenini evcilleştir</string>
+    <string name="doze_force_gms">GMS Doze\'a Zorla</string>
+    <string name="doze_gms_subtitle">Pil düşmanını ehlileştirin</string>
     <string name="doze_mode_default">Varsayılan</string>
     <string name="doze_mode_standard">Standart</string>
     <string name="doze_mode_aggressive">Agresif</string>
-    <string name="doze_aggressive_desc">Maksimum tasarruf: Wakelocks, Alarmlar ve Arka plan görevlerini engeller. Push bildirimleri gecikebilir.</string>
-    <string name="doze_standard_desc">Dengeli: Yalnızca arka plan çalışmalarını engeller. Bildirimler için güvenli.</string>
-    <string name="doze_default_desc">Varsayılan: GMS sistem mantığına göre normal çalışır.</string>
+    <string name="doze_aggressive_desc">Maksimum tasarruf: Wakelock\'ları, Alarmları ve Arka plan görevlerini engeller. Anlık bildirimler gecikebilir.</string>
+    <string name="doze_standard_desc">Dengeli: Sadece arka plan çalışmalarını engeller. Bildirimler için güvenlidir.</string>
+    <string name="doze_default_desc">Varsayılan: GMS sistem mantığına göre normal şekilde çalışır.</string>
     <string name="doze_manual_controls">Manuel Kontroller</string>
-    <string name="doze_force_idle">Boşta Zorla</string>
+    <string name="doze_force_idle">Idle\'a (Boşta) Zorla</string>
     <string name="doze_wake_up">Uyandır</string>
     <string name="doze_step_state">Adım Durumu</string>
     <string name="doze_reset_stats">İstatistikleri Sıfırla</string>
     <string name="doze_auto_refresh">Otomatik Yenile</string>
-    <string name="doze_auto_refresh_title">Durumu Otomatik Yenile</string>
-    <string name="doze_auto_refresh_desc">Doze durumunu otomatik olarak yenile</string>
+    <string name="doze_auto_refresh_title">Otomatik Yenileme Durumu</string>
+    <string name="doze_auto_refresh_desc">Doze durumunu otomatik olarak yeniler</string>
     <string name="doze_states_info">Doze Durumları Bilgisi</string>
-    <string name="doze_state_active">AKTİF</string>
+    <string name="doze_state_active">ACTIVE</string>
     <string name="doze_state_active_desc">Cihaz normal kullanımda, Doze aktif değil</string>
     <string name="doze_state_idle_pending">IDLE_PENDING</string>
     <string name="doze_state_idle_pending_desc">Cihaz Doze moduna girmek üzere</string>
-    <string name="doze_state_sensing">ALGILANIYOR</string>
-    <string name="doze_state_sensing_desc">Cihaz Doze\'a girmeden önce hareketi algılıyor</string>
+    <string name="doze_state_sensing">SENSING</string>
+    <string name="doze_state_sensing_desc">Cihaz Doze moduna girmeden önce hareketi algılıyor</string>
     <string name="doze_state_idle">IDLE</string>
-    <string name="doze_state_idle_desc">Cihaz Doze modunda, arka plan aktivitesi kısıtlı</string>
+    <string name="doze_state_idle_desc">Cihaz Doze modunda, arka plan aktiviteleri kısıtlandı</string>
     <string name="doze_state_maintenance">IDLE_MAINTENANCE</string>
-    <string name="doze_state_maintenance_desc">Uygulamaların ertelenmiş işleri tamamlaması için kısa pencere</string>
-    <string name="doze_global_settings">Doze Modu Genel Ayarları</string>
+    <string name="doze_state_maintenance_desc">Uygulamaların ertelenmiş görevleri tamamlaması için kısa süre</string>
+    <string name="doze_global_settings">Doze Modu Global Ayarları</string>
     <string name="doze_enable">Doze Modunu Etkinleştir</string>
-    <string name="doze_enable_desc">Cihazın uyku moduna girmesine izin ver</string>
+    <string name="doze_enable_desc">Cihazın uykuya geçmesine izin ver</string>
     <string name="doze_aggressive_mode">Agresif Doze</string>
-    <string name="doze_aggressive_mode_desc">Daha hızlı Doze moduna gir</string>
-    <string name="doze_battery_tips">Pil Tasarrufu İpuçları</string>
-    <string name="doze_tip_gms_title">GMS Doze Kullan</string>
-    <string name="doze_tip_gms_desc">Maksimum pil tasarrufu için Google Play Hizmetlerini uyumaya zorla.</string>
-    <string name="doze_tip_whitelist_title">Beyaz Listeyi Sınırla</string>
-    <string name="doze_tip_whitelist_desc">Yalnızca gerçekten arka plan erişimine ihtiyaç duyan uygulamaları (WhatsApp/Telegram gibi) beyaz listeye ekle.</string>
+    <string name="doze_aggressive_mode_desc">Doze moduna daha hızlı gir</string>
+    <string name="doze_battery_tips">Pil Tasarruf İpuçları</string>
+    <string name="doze_tip_gms_title">GMS Doze Kullanın</string>
+    <string name="doze_tip_gms_desc">Maksimum pil tasarrufu için Google Play Hizmetlerini uyumaya zorlayın.</string>
+    <string name="doze_tip_whitelist_title">Beyaz Listeyi Sınırlayın</string>
+    <string name="doze_tip_whitelist_desc">Sadece arka plan erişimine gerçekten ihtiyacı olan uygulamaları (WhatsApp/Telegram gibi) beyaz listeye ekleyin.</string>
 
-    <string name="thermal_title">Termal Yönetici</string>
+    <string name="thermal_title">Termal Yöneticisi</string>
     <string name="thermal_max_temp">Maks Sıcaklık</string>
-    <string name="thermal_avg_temp">Ort Sıcaklık</string>
+    <string name="thermal_avg_temp">Ortalama Sıcaklık</string>
     <string name="thermal_active_zones">Aktif Bölgeler</string>
     <string name="thermal_policy">Politika</string>
     <string name="thermal_live">Canlı</string>
@@ -645,17 +645,17 @@
     <string name="thermal_no_disabled">Devre Dışı Bölge Yok</string>
     <string name="thermal_disable">Devre Dışı Bırak</string>
     <string name="thermal_enable">Etkinleştir</string>
-    <string name="thermal_trip_points">Trip Noktaları</string>
-    <string name="thermal_hide_trips">Tripleri Gizle</string>
-    <string name="thermal_trip_config">Trip Noktaları Yapılandırması</string>
+    <string name="thermal_trip_points">Tetikleme Noktaları (Trip Points)</string>
+    <string name="thermal_hide_trips">Tetiklemeleri Gizle</string>
+    <string name="thermal_trip_config">Tetikleme Noktaları Yapılandırması</string>
     <string name="thermal_current_state">Mevcut Durum</string>
     <string name="thermal_policy_dialog_title">Kernel Termal Politikası</string>
     <string name="thermal_back">Geri</string>
 
     <string name="logs_empty">Özellik bulunamadı</string>
-    <string name="logs_reading">Sistem günlükleri okunuyor...</string>
-    <string name="logs_search_hint">Günlükleri ara</string>
-    <string name="logs_count">%1$s günlük</string>
+    <string name="logs_reading">Sistem logları okunuyor...</string>
+    <string name="logs_search_hint">Loglarda ara</string>
+    <string name="logs_count">%1$s log</string>
     <string name="logs_status_paused">Duraklatıldı</string>
     <string name="logs_status_live">Canlı</string>
     <string name="logs_clear_search">Temizle</string>
@@ -663,51 +663,51 @@
     <string name="logs_pause">Duraklat</string>
     <string name="logs_menu">Menü</string>
     <string name="logs_settings">Ayarlar</string>
-    <string name="logs_display_options">Görüntüleme seçenekleri</string>
-    <string name="logs_save">Günlükleri kaydet</string>
-    <string name="logs_clear">Günlükleri temizle</string>
+    <string name="logs_display_options">Görünüm seçenekleri</string>
+    <string name="logs_save">Logları kaydet</string>
+    <string name="logs_clear">Logları temizle</string>
     <string name="logs_restart">Logcat\'i Yeniden Başlat</string>
     <string name="logs_copied">Panoya kopyalandı</string>
     <string name="logs_scroll_bottom">En alta kaydır</string>
 
     <string name="logs_settings_title">Logcat Ayarları</string>
-    <string name="logs_settings_desc">Günlük kaydı davranışını yapılandır</string>
-    <string name="logs_poll_interval">YOKLAMA ARALIĞI</string>
+    <string name="logs_settings_desc">Log kaydetme davranışını yapılandır</string>
+    <string name="logs_poll_interval">SORGULAMA ARALIĞI</string>
     <string name="logs_ms">%1$d ms</string>
-    <string name="logs_poll_desc">Düşük = daha hızlı güncellemeler, daha yüksek CPU kullanımı</string>
-    <string name="logs_buffers">ARABELLEKLER</string>
-    <string name="logs_max_logs">BELLEKTE MAKS GÜNLÜK</string>
+    <string name="logs_poll_desc">Düşük = daha hızlı güncellemeler, yüksek CPU kullanımı</string>
+    <string name="logs_buffers">TAMPONLAR (BUFFERS)</string>
+    <string name="logs_max_logs">BELLEKTEKİ MAKS LOG SAYISI</string>
     <string name="logs_save_location">Kayıt Konumu</string>
     <string name="logs_internal_storage">Dahili Depolama</string>
     <string name="logs_external_docs">Harici Belgeler</string>
 
-    <string name="logs_display_options_title">Görüntüleme Seçenekleri</string>
-    <string name="logs_display_options_desc">Günlük görünümünü özelleştir</string>
+    <string name="logs_display_options_title">Görünüm Seçenekleri</string>
+    <string name="logs_display_options_desc">Log görünümünü özelleştir</string>
     <string name="logs_metadata">METAVERİ</string>
     <string name="logs_advanced">GELİŞMİŞ</string>
-    <string name="logs_show_tag">Etiketi Göster</string>
+    <string name="logs_show_tag">Etiket (Tag) Göster</string>
     <string name="logs_show_time">Zamanı Göster</string>
     <string name="logs_show_date">Tarihi Göster</string>
-    <string name="logs_show_pid">İşlem ID\'sini Göster</string>
-    <string name="logs_show_tid">Thread ID\'sini Göster</string>
+    <string name="logs_show_pid">İşlem Kimliğini (PID) Göster</string>
+    <string name="logs_show_tid">İş Parçacığı Kimliğini (TID) Göster</string>
     <string name="logs_compact_mode">Kompakt Mod</string>
-    <string name="logs_compact_desc">Daha küçük dolgu ve yazı tipi boyutu</string>
+    <string name="logs_compact_desc">Daha küçük dolgu (padding) ve yazı tipi boyutu</string>
 
     <string name="logs_copy">Kopyala</string>
-    <string name="logs_raw_log">RAW GÜNLÜK</string>
+    <string name="logs_raw_log">HAM LOG</string>
     <string name="logs_time">Zaman</string>
     <string name="logs_date">Tarih</string>
-    <string name="logs_pid">İşlem ID</string>
-    <string name="logs_tid">Thread ID</string>
+    <string name="logs_pid">İşlem Kimliği (PID)</string>
+    <string name="logs_tid">İş Parçacığı Kimliği (TID)</string>
     <string name="logs_tag">Etiket</string>
-    <string name="btn_done">Tamamlandı</string>
+    <string name="btn_done">Bitti</string>
 
     <string name="fps_notification_title">ZKM Monitörü Çalışıyor</string>
-    <string name="fps_notification_text">Uygulamayı açmak için dokun</string>
+    <string name="fps_notification_text">Uygulamayı açmak için dokunun</string>
     <string name="fps_monitor_title">Monitör</string>
     <string name="fps_cpu">CPU</string>
     <string name="fps_ram">RAM</string>
-    <string name="fps_error">Hata…</string>
+    <string name="fps_error">Hata...</string>
     <string name="fps_resize">Yeniden Boyutlandır</string>
 
     <string name="process_manager">İşlem Yöneticisi</string>
@@ -715,49 +715,49 @@
     <string name="processes">İşlemler</string>
     <string name="floating_mode">Yüzen Mod</string>
     <string name="system_health">Sistem Sağlığı</string>
-    <string name="monitoring_threads">%d aktif thread izleniyor</string>
+    <string name="monitoring_threads">%d aktif iş parçacığı izleniyor</string>
     <string name="top_load">En Yüksek Yük: %1$s (%2$s)</string>
     <string name="running_processes">Çalışan İşlemler</string>
     <string name="cpu_usage">CPU Kullanımı</string>
     <string name="top_cpu_usage">En Yüksek CPU Kullanımı</string>
     <string name="top_ram_usage">En Yüksek RAM Kullanımı</string>
     <string name="memory">Bellek</string>
-    <string name="limit_format">Limit: %d</string>
+    <string name="limit_format">Sınır: %d</string>
     <string name="total">Toplam</string>
     <string name="user">Kullanıcı</string>
     <string name="sys">Sis</string>
 
-    <string name="overlay_permission_desc">Yüzen monitörü görüntülemek için lütfen \'Diğer uygulamaların üzerinde göster\' iznini verin.</string>
+    <string name="overlay_permission_desc">Yüzen monitörü göstermek için lütfen \'Diğer uygulamaların üzerinde göster\' iznine izin verin.</string>
     <string name="open_settings">Ayarları Aç</string>
     <string name="app_details">Uygulama Detayları</string>
     <string name="version">Sürüm</string>
-    <string name="build">Yapı</string>
+    <string name="build">Yapı (Build)</string>
     <string name="package_name">Paket</string>
 
-    <string name="unknown">Bilinmiyor</string>
+    <string name="unknown">Bilinmeyen</string>
     <string name="not_found">Bulunamadı</string>
     <string name="btn_close">Kapat</string>
     <string name="cpu">CPU</string>
     <string name="ram">RAM</string>
     <string name="pid">PID</string>
     <string name="manage">Yönet</string>
-    <string name="kill">Sonlandır</string>
+    <string name="kill">Kapat (Kill)</string>
     <string name="force_stop">Zorla Durdur (SIGSTOP)</string>
     <string name="ksuweb_title">KernelSU WebUI</string>
     <string name="ksuweb_no_modules">WebUI modülü bulunamadı</string>
     <string name="ksuweb_card_style">Kart Stili</string>
     <string name="ksuweb_sorting">Sıralama</string>
-    <string name="ksuweb_sort_action">Eylem Betikleri Önce</string>
-    <string name="ksuweb_sort_enabled">Etkin Olanlar Önce</string>
-    <string name="card_style_immersive">Immersive</string>
+    <string name="ksuweb_sort_action">Önce Aksiyon Betikleri (Action Scripts)</string>
+    <string name="ksuweb_sort_enabled">Önce Etkinleştirilenler</string>
+    <string name="card_style_immersive">Sürükleyici (Immersive)</string>
     <string name="card_style_minimalist">Minimalist</string>
     <string name="card_style_media">Medya</string>
     <string name="card_style_outlined">Çerçeveli</string>
     <string name="ksuweb_status_active">Aktif</string>
-    <string name="ksuweb_by_author">%s tarafından</string>
+    <string name="ksuweb_by_author">Geliştirici: %s</string>
     <string name="ksuweb_version_prefix">v%s</string>
     <string name="ksuweb_version_author_format">v%1$s • %2$s</string>
-    <string name="ksuweb_badge_action">EYLEM</string>
+    <string name="ksuweb_badge_action">AKSİYON</string>
     <string name="ksuweb_badge_disabled">DEVRE DIŞI</string>
     <string name="ksuweb_badge_webui">WEBUI</string>
     <string name="btn_refresh">Yenile</string>
@@ -773,140 +773,156 @@
     <string name="settings">Ayarlar</string>
 
     <string name="quick_tools">Hızlı Araçlar</string>
-    <string name="terminal_shell">Terminal Kabuğu</string>
-    <string name="terminal_shell_desc">Her yerde terminalde yazı yazabileceğiniz terminal penceresi</string>
+    <string name="terminal_shell">Terminal Kabuğu (Shell)</string>
+    <string name="terminal_shell_desc">Herhangi bir yerde komut yazabileceğiniz terminal penceresi</string>
     <string name="fps_monitor">FPS Monitörü</string>
-    <string name="fps_monitor_desc">Gerçek zamanlı kare hızı katmanı</string>
+    <string name="fps_monitor_desc">Gerçek zamanlı kare hızı yer paylaşımı</string>
     <string name="process_monitor">İşlem Monitörü</string>
-    <string name="process_monitor_desc">Monitör işleminizi göster</string>
-    <string name="activity_inspector">Etkinlik Denetçisi</string>
-    <string name="activity_inspector_desc">Mevcut üst etkinlik paketini ve sınıfını izle</string>
+    <string name="process_monitor_desc">Monitör işleminizi gösterin</string>
+    <string name="activity_inspector">Aktivite Denetleyicisi</string>
+    <string name="activity_inspector_desc">Mevcut en üst aktivite paketini ve sınıfını izleyin</string>
 
-    <string name="overlay_permission_required">Katman izni gerekli!</string>
+    <string name="overlay_permission_required">Yer paylaşımı (Overlay) izni gerekli!</string>
 
     <string name="power_menu">Güç Menüsü</string>
     <string name="power_reboot">Sistemi Yeniden Başlat</string>
-    <string name="power_shutdown">Gücü Kapat</string>
-    <string name="power_recovery">Kurtarma Modu</string>
+    <string name="power_shutdown">Kapat</string>
+    <string name="power_recovery">Kurtarma (Recovery) Modu</string>
     <string name="power_fastboot">Fastboot Modu</string>
-    <string name="power_restart_ui">SystemUI\'yi Yeniden Başlat</string>
+    <string name="power_restart_ui">SystemUI\'ı Yeniden Başlat</string>
     <string name="power_reboot_warning">Cihazı yeniden başlatmak istediğinizden emin misiniz?</string>
-    <string name="power_shutdown_warning">Cihaz tamamen kapatılacak.</string>
-    <string name="power_recovery_warning">Cihaz Kurtarma Moduna (TWRP/OrangeFox) yeniden başlayacak.</string>
-    <string name="power_fastboot_warning">Cihaz Fastboot/Bootloader moduna yeniden başlayacak.</string>
+    <string name="power_shutdown_warning">Cihaz tamamen kapatılacaktır.</string>
+    <string name="power_recovery_warning">Cihaz Kurtarma Modunda (TWRP/OrangeFox) yeniden başlatılacaktır.</string>
+    <string name="power_fastboot_warning">Cihaz Fastboot/Bootloader modunda yeniden başlatılacaktır.</string>
     <string name="power_restart_ui_warning">Kullanıcı Arayüzü yeniden başlatılacak. Bu birkaç saniye sürebilir.</string>
-    <string name="confirm_action">%s Onayla</string>
+    <string name="confirm_action">%s İşlemini Onayla</string>
     <string name="btn_confirm_yes">Evet, Yap</string>
 
     <string name="about_section_developer">Geliştirici Hakkında</string>
     <string name="about_section_app_info">Uygulama Bilgisi Hakkında</string>
     <string name="about_section_community">Topluluk Hakkında</string>
-    <string name="about_section_collaborator">İşbirlikçi Hakkında</string>
-    <string name="about_changelog">Değişiklik Günlüğü</string>
+    <string name="about_section_collaborator">Katkıda Bulunanlar Hakkında</string>
+    <string name="about_changelog">Değişiklik Günlüğü (Changelog)</string>
     <string name="about_opensource">Açık Kaynak</string>
 
     <string name="intro_app_label">ZuanKernel</string>
     <string name="intro_p1_title">Zuan Kernel Manager</string>
-    <string name="intro_p1_desc">Cihaz performansı üzerinde tam kontrol. Overclock, pil yönetimi ve sistem optimizasyonu tek bir uygulamada.</string>
+    <string name="intro_p1_desc">Cihaz performansınız üzerinde tam kontrol. Hız aşırtma (Overclock), pil yönetimi ve sistem optimizasyonu tek bir uygulamada.</string>
     <string name="intro_p2_title">Risk Uyarısı</string>
-    <string name="intro_p2_desc">Bu uygulama ROOT erişimi gerektirir. Yanlış yapılandırma Bootloop\'a neden olabilir. RİSK SİZE AİTTİR (DWYOR).</string>
-    <string name="intro_p3_title">Gizlilik ve Sözleşme</string>
+    <string name="intro_p2_desc">Bu uygulama ROOT erişimi gerektirir. Yanlış yapılandırma Bootloop\'a neden olabilir. DWYOR (Tüm Sorumluluk Size Aittir).</string>
+    <string name="intro_p3_title">Gizlilik ve Anlaşma</string>
     <string name="intro_p3_desc">Veriler YEREL olarak işlenir. Kişisel verilerinizi herhangi bir bulut sunucusuna göndermiyoruz.</string>
     <string name="intro_btn_next">İleri</string>
-    <string name="intro_btn_agree">Kabul Ediyorum ve Gir</string>
+    <string name="intro_btn_agree">Kabul Ediyorum ve Giriş Yap</string>
     <string name="intro_btn_decline">Reddet ve Çık</string>
-    <string name="intro_footer_legal">\'Kabul Ediyorum\'a basarak Riskleri ve Gizlilik Politikasını kabul etmiş olursunuz.</string>
+    <string name="intro_footer_legal">\'Kabul Ediyorum\' butonuna basarak Riskleri ve Gizlilik Politikasını kabul etmiş olursunuz.</string>
 
-    <string name="update_title">Ver %s\'ye Güncelle</string>
-    <string name="update_changelog_title">Yenilikler</string>
+    <string name="update_title">Ver %s Sürümüne Güncelle</string>
+    <string name="update_changelog_title">Neler Yeni</string>
     <string name="btn_update">Güncelle</string>
     <string name="downloading_update">Güncelleme indiriliyor…</string>
     <string name="auto_download">APK\'yı Otomatik İndir</string>
-    <string name="auto_download_desc">Otomatik olarak indir ve kur</string>
-    <string name="btn_manual_download">Tarayıcıyı Aç</string>
+    <string name="auto_download_desc">Otomatik olarak indir ve yükle</string>
+    <string name="btn_manual_download">Tarayıcıda Aç</string>
+<!-- Language Names -->
 
-    <!-- Language Names -->
-    <string name="lang_russian">Rusça</string>
-    <string name="lang_ukrainian">Ukraynaca</string>
-    <string name="lang_belarusian">Belarusça</string>
-    <string name="lang_kazakh">Kazakça</string>
-    <string name="lang_moldovan">Moldovaca</string>
-    <string name="lang_chinese_cn">Çince (Çin)</string>
-    <string name="lang_chinese_sg">Çince (Singapur)</string>
-    <string name="lang_chinese_tw">Çince (Tayvan)</string>
-    <string name="lang_chinese_hk">Çince (Hong Kong)</string>
-    <string name="lang_chinese_mo">Çince (Makao)</string>
-    <string name="lang_japanese">Japonca</string>
-    <string name="lang_korean">Korece</string>
-    <string name="lang_vietnamese">Vietnamca</string>
-    <string name="lang_german">Almanca</string>
-    <string name="lang_french">Fransızca</string>
-    <string name="lang_spanish">İspanyolca</string>
-    <string name="lang_portuguese">Portekizce</string>
-    <string name="lang_italian">İtalyanca</string>
-    <string name="lang_polish">Lehçe</string>
-    <string name="lang_turkish">Türkçe</string>
-    <string name="lang_dutch">Felemenkçe</string>
+<string name="lang_russian">Russian</string>
+<string name="lang_ukrainian">Ukrainian</string>
+<string name="lang_belarusian">Belarusian</string>
+<string name="lang_kazakh">Kazakh</string>
+<string name="lang_moldovan">Moldovan</string>
+<string name="lang_chinese_cn">Chinese (China)</string>
+<string name="lang_chinese_sg">Chinese (Singapore)</string>
+<string name="lang_chinese_tw">Chinese (Taiwan)</string>
+<string name="lang_chinese_hk">Chinese (Hong Kong)</string>
+<string name="lang_chinese_mo">Chinese (Macau)</string>
+<string name="lang_japanese">Japanese</string>
+<string name="lang_korean">Korean</string>
+<string name="lang_vietnamese">Vietnamese</string>
+<string name="lang_german">German</string>
+<string name="lang_french">French</string>
+<string name="lang_spanish">Spanish</string>
+<string name="lang_portuguese">Portuguese</string>
+<string name="lang_italian">Italian</string>
+<string name="lang_polish">Polish</string>
+<string name="lang_turkish">Turkish</string>
+<string name="lang_dutch">Dutch</string>
+
+<!-- ========================================== -->
+<!-- CPU/GPU SCREEN STRINGS                     -->
+<!-- ========================================== -->
 <string name="graphics_unit">Grafik Birimi</string>
-<string name="graphics_processor">Grafik İşlemci</string>
-<string name="processor_sets">İşlemci Setleri (Cpuset)</string>
+<string name="graphics_processor">Grafik İşlemcisi</string>
+<string name="processor_sets">İşlemci Kümeleri (Cpuset)</string>
 <string name="core_control">Çekirdek Kontrolü</string>
-<string name="cpu_governor">CPU Düzenleyici</string>
-<string name="select_governor">Düzenleyici Seç</string>
-<string name="min_freq">Min. Frek</string>
-<string name="max_freq">Maks. Frek</string>
+<string name="cpu_governor">CPU Governor</string>
+<string name="select_governor">Governor Seç</string>
+<string name="min_freq">Min Frek</string>
+<string name="max_freq">Maks Frek</string>
 <string name="min_frequency">Minimum Frekans</string>
 <string name="max_frequency">Maksimum Frekans</string>
 <string name="tab_performance">Performans</string>
-<string name="tab_tuning">Ayarlama</string>
+<string name="tab_tuning">İnce Ayar (Tuning)</string>
 <string name="disable_cpu_title">CPU %1$d Devre Dışı Bırakılsın mı?</string>
-<string name="disable_cpu_warning">Bu çekirdeği devre dışı bırakmak performansı düşürebilir. Sistem görevlerini işlemek için diğer çekirdeklerin etkin olduğundan emin olun.</string>
+<string name="disable_cpu_warning">Bu çekirdeği devre dışı bırakmak performansı düşürebilir. Sistem görevlerini yerine getirmek için diğer çekirdeklerin aktif olduğundan emin olun.</string>
 <string name="btn_disable">Devre Dışı Bırak</string>
-<string name="select_active_cores">Aktif çekirdekleri seç:</string>
+<string name="select_active_cores">Aktif çekirdekleri seçin:</string>
 <string name="cpu_core_id">CPU %1$d</string>
 <string name="freq_mhz_format">%1$s MHz</string>
 <string name="cluster_info_format">%1$s • %2$s-%3$s MHz</string>
-<string name="gpu_load_format">%1$s • Yük %2$s%%</string>
-<string name="cores_count">Çekirdek: %1$s</string>
+<string name="gpu_load_format">%1$s • Yük %% %2$s</string>
+<string name="cores_count">Çekirdek Sayısı: %1$s</string>
 <string name="gpu_not_supported">GPU Arayüzü desteklenmiyor</string>
 <string name="not_available">Yok</string>
 <string name="no_options">Seçenek yok</string>
 <string name="label_value">Değer</string>
+
+<!-- ========================================== -->
+<!-- MEMORY SCREEN STRINGS                      -->
+<!-- ========================================== -->
 <string name="zram_manager">ZRAM Yöneticisi</string>
 <string name="zram_status">ZRAM Durumu</string>
 <string name="disk_size_mb">Disk Boyutu: %1$d MB</string>
 <string name="zram_info_format">%1$d MB • %2$s</string>
 <string name="compression_algorithm">Sıkıştırma Algoritması</string>
-<string name="io_scheduler">I/O Zamanlayıcı</string>
+<string name="io_scheduler">G/Ç (I/O) Zamanlayıcı</string>
 <string name="select_scheduler">Zamanlayıcı Seç</string>
-<string name="tunables">Ayarlanabilirler</string>
+<string name="tunables">Ayarlanabilir Değişkenler (Tunables)</string>
 <string name="virtual_memory">Sanal Bellek</string>
 <string name="swappiness">Swappiness</string>
 <string name="vfs_cache_pressure">VFS Önbellek Baskısı</string>
-<string name="dirty_ratio">Dirty Ratio</string>
-<string name="dirty_bg_ratio">Dirty BG Ratio</string>
+<string name="dirty_ratio">Kirli Veri Oranı (Dirty Ratio)</string>
+<string name="dirty_bg_ratio">Arka Plan Kirli Veri Oranı</string>
 <string name="no_storage_devices">Desteklenen depolama cihazı bulunamadı.</string>
 <string name="scheduler_format">Zamanlayıcı: %1$s</string>
 <string name="btn_set">Ayarla</string>
-<string name="tcp_congestion">TCP Tıkanıklığı</string>
+
+<!-- ========================================== -->
+<!-- NETWORK SCREEN STRINGS                     -->
+<!-- ========================================== -->
+<string name="tcp_congestion">TCP Tıkanıklık Algoritması (Congestion)</string>
 <string name="tcp_parameters">TCP Parametreleri</string>
-<string name="syn_cookies">SYN Çerezleri</string>
+<string name="syn_cookies">SYN Cookies</string>
 <string name="enabled">Etkin</string>
 <string name="disabled">Devre Dışı</string>
-<string name="tcp_reuse">TCP Yeniden Kullanım</string>
+<string name="tcp_reuse">TCP Reuse</string>
 <string name="on">Açık</string>
 <string name="off">Kapalı</string>
-<string name="fast_open">Hızlı Açma</string>
+<string name="fast_open">Fast Open</string>
 <string name="tcp_sack">TCP SACK</string>
 <string name="ecn">ECN</string>
 <string name="kernel_log">Kernel Günlüğü</string>
 <string name="printk">Printk</string>
-<string name="feature_toggles">Özellik Anahtarları</string>
-<string name="bore_scheduler">BORE Zamanlayıcı</string>
-<string name="auto_group">Otomatik Grup</string>
-<string name="child_runs_first">Çocuk Önce Çalışır</string>
+
+<!-- ========================================== -->
+<!-- SCHEDULER SCREEN STRINGS                   -->
+<!-- ========================================== -->
+<string name="feature_toggles">Özellik Geçişleri (Toggles)</string>
+<string name="bore_scheduler">BORE Zamanlayıcısı</string>
+<string name="auto_group">Otomatik Gruplandırma (Auto Group)</string>
+<string name="child_runs_first">Önce Alt İşlemi Çalıştır (Child Runs First)</string>
 <string name="sched_stats">Zamanlayıcı İstatistikleri</string>
-<string name="tunable_scaling">Ayarlanabilir Ölçekleme</string>
+<string name="tunable_scaling">Ayarlanabilir Ölçekleme (Tunable Scaling)</string>
 <string name="cstate_aware">C-State Farkındalığı</string>
 <string name="uclamp_configuration">UClamp Yapılandırması</string>
 <string name="uclamp_max">UClamp Maks</string>
@@ -918,94 +934,94 @@
 
 <!-- MTK Screen Main -->
 <string name="mtk_gpu_title">MediaTek GPU</string>
-<string name="mtk_gpu_subtitle">Dimensity/Mali Ayarı</string>
+<string name="mtk_gpu_subtitle">Dimensity/Mali İnce Ayar</string>
 <string name="mtk_tab_freq">Frek</string>
 <string name="mtk_tab_dram">DRAM</string>
 <string name="mtk_tab_boost">Boost</string>
 <string name="mtk_tab_ppm">PPM</string>
 <string name="mtk_tab_cpu">CPU</string>
-<string name="mtk_tab_thermal">Isı</string>
+<string name="mtk_tab_thermal">Termal</string>
 
 <!-- MTK Freq Tab -->
-<string name="mtk_dvfs_enabled_title">DVFS etkin</string>
+<string name="mtk_dvfs_enabled_title">DVFS Etkinleştirildi</string>
 <string name="mtk_dvfs_enabled_desc">GPU frekansı dinamik. Statik kontrol için DVFS\'yi devre dışı bırakın veya frekansı kilitleyin.</string>
 <string name="mtk_gpu_dvfs">GPU DVFS</string>
-<string name="mtk_dynamic_scaling_on">Dinamik ölçekleme AÇIK</string>
-<string name="mtk_static_frequency">Statik frekans</string>
+<string name="mtk_dynamic_scaling_on">Dinamik Ölçeklendirme AÇIK</string>
+<string name="mtk_static_frequency">Statik Frekans</string>
 <string name="mtk_dynamic">Dinamik</string>
-<string name="mtk_freq_locked">Frekans kilitli</string>
-<string name="mtk_current_frequency">Mevcut frekans</string>
-<string name="mtk_lock_frequency">Frekansı kilitle</string>
+<string name="mtk_freq_locked">Frekans Kilitlendi</string>
+<string name="mtk_current_frequency">Mevcut Frekans</string>
+<string name="mtk_lock_frequency">Frekansı Kilitle</string>
 <string name="mtk_select_opp_index">Kilitlemek için OPP indeksi seçin</string>
-<string name="mtk_unlock_frequency">Frekans kilidini aç</string>
-<string name="mtk_dvfs_limits">DVFS limitleri</string>
+<string name="mtk_unlock_frequency">Frekans Kilidini Aç</string>
+<string name="mtk_dvfs_limits">DVFS Sınırları</string>
 <string name="mtk_minimum_boost">Minimum (Boost)</string>
 <string name="mtk_maximum_limit">Maksimum (Limit)</string>
 
 <!-- MTK DRAM Tab -->
-<string name="mtk_dram_unavailable">DRAM kontrolü kullanılamıyor</string>
-<string name="mtk_dram_type">Tip</string>
-<string name="mtk_dram_controller">DRAM kontrolcüsü</string>
+<string name="mtk_dram_unavailable">DRAM Kontrolü Mevcut Değil</string>
+<string name="mtk_dram_type">Tür</string>
+<string name="mtk_dram_controller">DRAM Kontrolcüsü</string>
 <string name="mtk_dram_mmdvfs">MediaTek MMDVFS</string>
-<string name="mtk_dram_devfreq">DevFreq Genel</string>
-<string name="mtk_dram_fliper">Fliper Eski</string>
-<string name="mtk_dram_unknown">Bilinmiyor</string>
+<string name="mtk_dram_devfreq">DevFreq Generic</string>
+<string name="mtk_dram_fliper">Fliper Legacy</string>
+<string name="mtk_dram_unknown">Bilinmeyen</string>
 <string name="mtk_dram_current_step">Mevcut</string>
-<string name="mtk_dram_force_frequency">DRAM frekansını zorla</string>
-<string name="mtk_dram_lock_opp">Belirli OPP\'ye kilitle (DVFS yok)</string>
-<string name="mtk_dram_reset_dvfs">DVFS\'ye sıfırla</string>
+<string name="mtk_dram_force_frequency">DRAM Frekansını Zorla</string>
+<string name="mtk_dram_lock_opp">Belirli bir OPP\'ye kilitle (DVFS yok)</string>
+<string name="mtk_dram_reset_dvfs">DVFS\'ye Sıfırla</string>
 
 <!-- MTK Boost Tab -->
-<string name="mtk_gaming_performance">Oyun ve performans</string>
+<string name="mtk_gaming_performance">Oyun ve Performans</string>
 <string name="mtk_fpsgo_title">FPSGO</string>
-<string name="mtk_fpsgo_subtitle">Akıcı oyun için kare artırma</string>
-<string name="mtk_ged_game_mode_title">GED Oyun Modu</string>
-<string name="mtk_ged_game_mode_subtitle">GPU yönetici oyun optimizasyonu</string>
-<string name="mtk_touch_boost_title">Dokunmatik Boost</string>
-<string name="mtk_touch_boost_subtitle">Dokunuşta CPU artırma</string>
-<string name="mtk_sched_boost_title">Zamanlayıcı Boost</string>
-<string name="mtk_sched_boost_subtitle">Ön plan uygulamaları için öncelik artırma</string>
-<string name="mtk_gaming_mode_preset">Oyun modu ön ayarı</string>
-<string name="mtk_gaming_mode_desc">Tüm artırımları anında etkinleştir</string>
-<string name="mtk_activate_gaming_mode">Oyun modunu etkinleştir</string>
+<string name="mtk_fpsgo_subtitle">Akıcı oyun için kare (frame) takviyesi</string>
+<string name="mtk_ged_game_mode_title">GED Game Mode</string>
+<string name="mtk_ged_game_mode_subtitle">GPU governor oyun optimizasyonu</string>
+<string name="mtk_touch_boost_title">Dokunmatik Boost (Touch Boost)</string>
+<string name="mtk_touch_boost_subtitle">Dokunmatik girişte CPU takviyesi</string>
+<string name="mtk_sched_boost_title">Zamanlayıcı (Scheduler) Boost</string>
+<string name="mtk_sched_boost_subtitle">Ön plan uygulamaları için öncelik takviyesi</string>
+<string name="mtk_gaming_mode_preset">Oyun Modu Ön Ayarı</string>
+<string name="mtk_gaming_mode_desc">Tüm boostları anında etkinleştirir</string>
+<string name="mtk_activate_gaming_mode">Oyun Modunu Aktifleştir</string>
 
 <!-- MTK PPM Tab -->
-<string name="mtk_ppm_unavailable">PPM kullanılamıyor</string>
+<string name="mtk_ppm_unavailable">PPM Mevcut Değil</string>
 <string name="mtk_ppm_not_found">/proc/ppm bulunamadı</string>
-<string name="mtk_ppm_controller">PPM kontrolcüsü</string>
+<string name="mtk_ppm_controller">PPM Kontrolcüsü</string>
 <string name="mtk_ppm_active">Aktif</string>
-<string name="mtk_ppm_disabled">Devre dışı</string>
-<string name="mtk_active_policies">Aktif politikalar</string>
+<string name="mtk_ppm_disabled">Devre Dışı</string>
+<string name="mtk_active_policies">Aktif Politikalar</string>
 <string name="mtk_policy_hash">Politika #</string>
-<string name="mtk_ppm_no_policies">PPM etkin ancak politika algılanmadı. Bu bir kernel kısıtlaması olabilir.</string>
-<string name="mtk_about_ppm">PPM hakkında</string>
-<string name="mtk_ppm_description">Performance Power Management CPU/GPU güç dağılımını kontrol eder. \'Isı\' politikasını devre dışı bırakmak aşırı ısınmaya neden olabilir ancak performansı artırır.</string>
+<string name="mtk_ppm_no_policies">PPM etkin ancak herhangi bir politika algılanmadı. Bu bir kernel kısıtlaması olabilir.</string>
+<string name="mtk_about_ppm">PPM Hakkında</string>
+<string name="mtk_ppm_description">Performans Güç Yönetimi (PPM) CPU/GPU güç tahsisini kontrol eder. \'Thermal\' (Termal) politikasını devre dışı bırakmak aşırı ısınmaya neden olabilir ancak performansı artırır.</string>
 
 <!-- MTK CPU Tab -->
-<string name="mtk_cpu_unavailable">CPU Misc kullanılamıyor</string>
-<string name="mtk_cci_interconnect">CCI bağlantısı</string>
-<string name="mtk_cache_coherent">Önbellek tutarlı bağlantı</string>
+<string name="mtk_cpu_unavailable">CPU Çeşitli (Misc) Ayarları Mevcut Değil</string>
+<string name="mtk_cci_interconnect">CCI Interconnect</string>
+<string name="mtk_cache_coherent">Cache Coherent Interconnect</string>
 <string name="mtk_big_little_desc">big.LITTLE küme etkileşimini kontrol eder</string>
 <string name="mtk_normal">Normal</string>
 <string name="mtk_performance">Performans</string>
-<string name="mtk_low_power">Düşük güç</string>
+<string name="mtk_low_power">Düşük Güç</string>
 <string name="mtk_balance">Denge</string>
-<string name="mtk_cpu_power_mode">CPU güç modu</string>
+<string name="mtk_cpu_power_mode">CPU Güç Modu</string>
 <string name="mtk_current_mode">Mevcut</string>
-<string name="mtk_voltage_offset">Voltaj ofseti (EEM)</string>
+<string name="mtk_voltage_offset">Voltaj Offset (EEM)</string>
 <string name="mtk_eem_unit">6.25mV/birim</string>
-<string name="mtk_offset_value">Ofset değeri</string>
+<string name="mtk_offset_value">Offset Değeri</string>
 
 <!-- MTK Thermal Tab -->
-<string name="mtk_thermal_throttling">ISI SINIRLAMA</string>
-<string name="mtk_temp_limit_exceeded">Sıcaklık limiti aşıldı</string>
-<string name="mtk_normal_temp">Normal sıcaklık</string>
-<string name="mtk_eara_thermal">EARA Isı</string>
-<string name="mtk_early_adaptation">Erken adaptasyon kaynak ayırma</string>
-<string name="mtk_eara_fake_throttle">EARA Sahte Sınırlama</string>
-<string name="mtk_fake_temp_desc">Çekirdeğe sahte sıcaklık bildir</string>
-<string name="mtk_throttling_desc">Cihaz ısı sınırlaması yapıyor. Aşırı ısınmayı önlemek için performans düşürüldü.</string>
-<string name="mtk_thermal_daemon_info">MTK ısı yönetimi çekirdek ısı daemon\'u tarafından işlenir. On-die sensörlerden (tsens) okuma.</string>
+<string name="mtk_thermal_throttling">TERMAL THROTTLING (KISMA)</string>
+<string name="mtk_temp_limit_exceeded">Sıcaklık Sınırı Aşıldı</string>
+<string name="mtk_normal_temp">Normal Sıcaklık</string>
+<string name="mtk_eara_thermal">EARA Thermal</string>
+<string name="mtk_early_adaptation">Erken Adaptasyon Kaynak Tahsisi</string>
+<string name="mtk_eara_fake_throttle">EARA Sahte Throttling</string>
+<string name="mtk_fake_temp_desc">Kernel\'a sahte sıcaklık bildirir</string>
+<string name="mtk_throttling_desc">Cihaz termal kısıtlama yapıyor. Aşırı ısınmayı önlemek için performans düşürüldü.</string>
+<string name="mtk_thermal_daemon_info">MTK termal yönetimi kernel termal daemon tarafından idare edilir. Okumalar kalıp içi sensörlerden (tsens) alınır.</string>
 
 <!-- Common Actions -->
 <string name="action_back">Geri</string>
@@ -1013,16 +1029,16 @@
 
 <!-- Adreno Screen -->
 <string name="adreno_gpu_title">Adreno GPU</string>
-<string name="adreno_gpu_subtitle">Performans ve ayar</string>
+<string name="adreno_gpu_subtitle">Performans ve İnce Ayar</string>
 <string name="adreno_tab_freq">Frek</string>
 <string name="adreno_tab_power">Güç</string>
-<string name="adreno_tab_bus">Veri yolu</string>
-<string name="adreno_tab_thermal">Isı</string>
-<string name="adreno_tab_advanced">Gelişmiş</string>
+<string name="adreno_tab_bus">Bus</string>
+<string name="adreno_tab_thermal">Termal</string>
+<string name="adreno_tab_advanced">Geliş</string>
 
 <!-- Adreno Freq -->
-<string name="adreno_current_frequency">Mevcut frekans</string>
-<string name="adreno_freq_limits">Frekans limitleri</string>
+<string name="adreno_current_frequency">Mevcut Frekans</string>
+<string name="adreno_freq_limits">Frekans Sınırları</string>
 <string name="adreno_minimum">Minimum</string>
 <string name="adreno_maximum">Maksimum</string>
 <string name="adreno_governor">Governor</string>
@@ -1032,8 +1048,8 @@
 <string name="adreno_cancel">İptal</string>
 
 <!-- Adreno Power -->
-<string name="adreno_gpu_throttling">GPU kısma</string>
-<string name="adreno_performance_limited">Performans sınırlı</string>
+<string name="adreno_gpu_throttling">GPU Throttling</string>
+<string name="adreno_performance_limited">Performans sınırlandı</string>
 <string name="adreno_full_performance">Tam performans</string>
 <string name="adreno_adreno_boost">Adreno Boost</string>
 <string name="adreno_level">Seviye</string>
@@ -1041,55 +1057,55 @@
 <string name="adreno_low">Düşük</string>
 <string name="adreno_med">Orta</string>
 <string name="adreno_high">Yüksek</string>
-<string name="adreno_boost_desc">Daha yüksek boost seviyeleri performansı artırır ancak daha fazla batarya tüketir ve daha fazla ısı üretir.</string>
+<string name="adreno_boost_desc">Yüksek boost seviyeleri performansı artırır ancak daha fazla pil tüketir ve daha fazla ısı üretir.</string>
 
 <!-- Adreno Bus -->
-<string name="adreno_bus_components">Veri yolu bileşenleri</string>
-<string name="adreno_no_bus_controls">Veri yolu kontrolü yok</string>
-<string name="adreno_no_bus_desc">Bu cihazda yapılandırılabilir veri yolu bileşeni yok</string>
-<string name="adreno_min_freq">Min frekans</string>
-<string name="adreno_max_freq">Maks frekans</string>
+<string name="adreno_bus_components">Bus Bileşenleri</string>
+<string name="adreno_no_bus_controls">Bus Kontrolü Yok</string>
+<string name="adreno_no_bus_desc">Bu cihazda yapılandırılabilir bus bileşenleri yok</string>
+<string name="adreno_min_freq">Min Frekans</string>
+<string name="adreno_max_freq">Maks Frekans</string>
 <string name="adreno_min">MİN</string>
 <string name="adreno_max">MAKS</string>
 <string name="adreno_edit">Düzenle</string>
 
 <!-- Adreno Thermal -->
-<string name="adreno_thermal_throttling">ISI SINIRLAMA</string>
-<string name="adreno_gpu_temp">GPU sıcaklığı</string>
-<string name="adreno_thermal_zones">Isı bölgeleri</string>
-<string name="adreno_cooling_devices">Soğutma cihazları</string>
+<string name="adreno_thermal_throttling">TERMAL THROTTLING (KISMA)</string>
+<string name="adreno_gpu_temp">GPU Sıcaklığı</string>
+<string name="adreno_thermal_zones">Termal Bölgeler</string>
+<string name="adreno_cooling_devices">Soğutma Cihazları</string>
 
 <!-- Adreno Advanced -->
 <string name="adreno_kgsl_advanced">KGSL Gelişmiş</string>
-<string name="adreno_force_no_nap">Zorla No NAP</string>
-<string name="adreno_no_nap_desc">GPU nun uykuya geçmesini engelle</string>
-<string name="adreno_force_clk_on">Zorla CLK Açık</string>
-<string name="adreno_clk_on_desc">Saati her zaman açık tut</string>
-<string name="adreno_force_bus_on">Zorla Veri Yolu Açık</string>
-<string name="adreno_bus_on_desc">Veri yolunu her zaman aktif tut</string>
-<string name="adreno_bus_split">Veri Yolu Bölme</string>
-<string name="adreno_bus_split_desc">Veri yolu bölmesini etkinleştir</string>
-<string name="adreno_throttling">Kısma</string>
-<string name="adreno_throttling_desc">Isı kısmasını etkinleştir</string>
-<string name="adreno_power_levels">Güç seviyeleri</string>
+<string name="adreno_force_no_nap">NAP Engellemeye Zorla (Force No NAP)</string>
+<string name="adreno_no_nap_desc">GPU\'nun NAP durumuna geçmesini engeller</string>
+<string name="adreno_force_clk_on">CLK Açık Zorla</string>
+<string name="adreno_clk_on_desc">Saati her zaman açık tutar (Keep clock always on)</string>
+<string name="adreno_force_bus_on">Bus Açık Zorla</string>
+<string name="adreno_bus_on_desc">Bus\'ı her zaman aktif tutar</string>
+<string name="adreno_bus_split">Bus Ayırma (Split)</string>
+<string name="adreno_bus_split_desc">Bus ayırmayı etkinleştirir</string>
+<string name="adreno_throttling">Throttling</string>
+<string name="adreno_throttling_desc">Termal kısıtlamayı etkinleştirir</string>
+<string name="adreno_power_levels">Güç Seviyeleri</string>
 <string name="adreno_default">Varsayılan</string>
-<string name="adreno_thermal">Isı</string>
+<string name="adreno_thermal">Termal</string>
 <string name="adreno_save">Kaydet</string>
 <string name="adreno_adreno_idler">Adreno Idler</string>
-<string name="adreno_enable_idler">Idler ı etkinleştir</string>
-<string name="adreno_idler_desc">Boşta güç tüketimini azalt</string>
-<string name="adreno_idle_wait">Boşta bekleme</string>
-<string name="adreno_down_differential">Down Differential</string>
-<string name="adreno_workload_threshold">İş yükü eşiği</string>
+<string name="adreno_enable_idler">Idler\'ı Etkinleştir</string>
+<string name="adreno_idler_desc">Boştayken (idle) güç tüketimini azaltır</string>
+<string name="adreno_idle_wait">Boşta Bekleme (Idle Wait)</string>
+<string name="adreno_down_differential">Aşağı Diferansiyel (Down Differential)</string>
+<string name="adreno_workload_threshold">İş Yükü Eşiği</string>
 <string name="adreno_simple_gpu">Simple GPU</string>
-<string name="adreno_enable_simple_gpu">Simple GPU yu etkinleştir</string>
+<string name="adreno_enable_simple_gpu">Simple GPU Etkinleştir</string>
 <string name="adreno_simple_gpu_desc">Alternatif GPU governor algoritması</string>
-<string name="adreno_laziness">Tembellik</string>
-<string name="adreno_ramp_threshold">Yükseliş eşiği</string>
+<string name="adreno_laziness">Tembellik (Laziness)</string>
+<string name="adreno_ramp_threshold">Artış Eşiği (Ramp Threshold)</string>
 
 <!-- Navigation Tabs -->
 <string name="nav_tab_feature">Özellik</string>
-<string name="nav_tab_overview">Genel bakış</string>
+<string name="nav_tab_overview">Genel Bakış</string>
 <string name="nav_tab_adjust">Ayarla</string>
 <string name="nav_tab_support">Destek</string>
 <string name="nav_tools_desc">Araçlar</string>
@@ -1101,20 +1117,19 @@
 <string name="dialog_power_title">Güç Menüsü</string>
 
 <!-- Tools -->
-<string name="tool_terminal_title">Terminal Kabuğu</string>
-<string name="tool_terminal_subtitle">Her yerde terminalde yazabileceğiniz pencere</string>
+<string name="tool_terminal_title">Terminal Shell</string>
+<string name="tool_terminal_subtitle">Herhangi bir yerde komut yazabileceğiniz terminal penceresi</string>
 <string name="tool_fps_title">FPS Monitörü</string>
-<string name="tool_fps_subtitle">Gerçek zamanlı kare hızı katmanı</string>
+<string name="tool_fps_subtitle">Gerçek zamanlı kare hızı yer paylaşımı</string>
 <string name="tool_process_title">İşlem Monitörü</string>
-<string name="tool_process_subtitle">Monitör işlemini göster</string>
+<string name="tool_process_subtitle">Monitör işleminizi gösterin</string>
 <string name="tool_activity_title">Aktivite Denetleyicisi</string>
-<string name="tool_activity_subtitle">Mevcut üst aktivite paketini ve sınıfını izle</string>
+<string name="tool_activity_subtitle">Mevcut en üst aktivite paketini ve sınıfını izleyin</string>
 
 <!-- Common Actions -->
-<string name="action_done">Tamam</string>
+<string name="action_done">Bitti</string>
 <string name="action_cancel">İptal</string>
 <string name="action_yes_do_it">Evet, Yap</string>
-<string name="confirm_action_title">%s Onayla</string>
-
+<string name="confirm_action_title">%s İşlemini Onayla</string>
 
 </resources>
